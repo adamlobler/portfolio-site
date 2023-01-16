@@ -46,20 +46,22 @@ const About: React.FC = () => {
           projects.
         </p>
         <div className="flex flex-row">
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col space-y-2 w-1/2">
             <p className="text-caption uppercase text-start">
               years of experience
             </p>
             <p className="text-h3 uppercase text-primary-500 w-5">5+</p>
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col space-y-2 w-1/2">
             <p className="text-caption text-start uppercase">clients served</p>
             <p className="text-h3 uppercase text-primary-500 w-5">30+</p>
           </div>
           <div className="pr-6 pb-4 lg:pb-0" />
         </div>
         <div className="flex justify-start">
-          <button className="btn-secondary">Find out more</button>
+          <button className="btn-secondary w-full md:w-auto">
+            Find out more
+          </button>
         </div>
         <Image
           className="lg:absolute xl:block hidden none mt-96 ml-96"
