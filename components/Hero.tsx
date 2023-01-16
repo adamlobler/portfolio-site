@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./Button";
 import Image from "next/image";
 import Circle from "../images/circle.png";
 import Cross from "../images/cross.png";
@@ -62,9 +61,9 @@ const Hero: React.FC = () => {
             I’m passionate to make the best digital solution for businesses
           </p>
           <div className="flex flex-col md:flex-row">
-            <Button text="Hire me" />
+            <button className="btn-primary">Hire me!</button>
             <div className="pr-6 pb-4 lg:pb-0" />
-            <Button text="My previous projets" type="secondary" />
+            <button className="btn-secondary">My previous projets </button>
           </div>
           <Image
             className="lg:absolute xl:block hidden none mt-96 ml-96"

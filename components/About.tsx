@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./Button";
 import Image from "next/image";
 
 import Circle from "../images/circle.png";
@@ -7,6 +6,7 @@ import Cross from "../images/cross.png";
 import Angled from "../images/angled.png";
 import Rectangle from "../images/rectangle.png";
 import Triangle from "../images/triangle.png";
+import ProfilePicture from "../images/profile_picture.png";
 
 const process = [
   {
@@ -27,6 +27,13 @@ const About: React.FC = () => {
   return (
     <section className="flex w-full xl:space-x-8 space-y flex-col justify-center xl:flex-row py-8 xl:py-16">
       <div className="flex flex-col xl:w-1/2 space-y-6 justify-start">
+        <Image
+          height={220}
+          width={220}
+          src={ProfilePicture}
+          className=" w-40 xl:w-56"
+          alt="adam_lobler"
+        />
         <h2 className="text-h5 md:text-h3 text-left">About me</h2>
         <p className="text-body1 md:text-body1 w-full text-gray-500 text-left">
           I am a product designer with 5+ years of experience based in Budapest,
@@ -52,7 +59,7 @@ const About: React.FC = () => {
           <div className="pr-6 pb-4 lg:pb-0" />
         </div>
         <div className="flex justify-start">
-          <Button text="Find out more" type="secondary" />
+          <button className="btn-secondary">Find out more</button>
         </div>
         <Image
           className="lg:absolute xl:block hidden none mt-96 ml-96"
