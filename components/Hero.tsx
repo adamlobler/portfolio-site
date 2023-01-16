@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./button";
+import Button from "./Button";
 import Image from "next/image";
 import Circle from "../images/circle.png";
 import Cross from "../images/cross.png";
@@ -12,8 +12,7 @@ import Linkedin from "../images/social/linkedin.png";
 import Mail from "../images/social/mail.png";
 import Upwork from "../images/social/upwork.png";
 
-import Social from "./social";
-
+import Social from "../components/Social";
 const socials = [
   {
     image: Instagram,
@@ -37,9 +36,9 @@ const socials = [
   },
 ];
 
-const Hero: React.FC = (props) => {
+const Hero: React.FC = () => {
   return (
-    <div className="pb-16">
+    <section className="flex flex-col w-full pb-16">
       <Image
         className="lg:absolute xl:block hidden none mt-28 ml-32"
         width={36}
@@ -54,12 +53,12 @@ const Hero: React.FC = (props) => {
         src={Cross}
         alt="cross"
       />
-      <div className="flex flex-col-reverse justify-center xl:flex-row py-8 lg:py-16">
-        <div className="flex pb-6 flex-col justify-center lg:pr-4 lg:pb-0">
-          <h1 className="text-h3 md:text-h1 pb-8 max-w-2xl text-left font-bold">
-            Hi, I’m Adam product designer
+      <div className="flex flex-col-reverse xl:flex-row items-center space-x-8 py-8 xl:py-16">
+        <div className="flex flex-col xl:w-1/2 w-full xl:max-w-none justify-center pb-6 xl:pb-0">
+          <h1 className="text-h3 md:text-h1 text-left font-bold pb-4 md:pb-8">
+            Hi, I’m Adam <br></br> product designer
           </h1>
-          <p className="text-subtitle2 md:text-subtitle1 pb-8 max-w-lg text-left">
+          <p className="text-subtitle2 md:text-subtitle1 xl:max-w-lg text-left pb-4 md:pb-8">
             I’m passionate to make the best digital solution for businesses
           </p>
           <div className="flex flex-col md:flex-row">
@@ -75,7 +74,9 @@ const Hero: React.FC = (props) => {
             alt="angled square"
           />
         </div>
-        <Image width={658} height={576} src={HeroImage} alt="heromockup" />
+        <div className="flex items-center justify-center w-full xl:w-auto ">
+          <Image width={622} height={576} src={HeroImage} alt="heromockup" />
+        </div>
         <Image
           className="lg:absolute xl:block hidden none mt-96 -ml-8"
           width={30}
@@ -104,7 +105,7 @@ const Hero: React.FC = (props) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

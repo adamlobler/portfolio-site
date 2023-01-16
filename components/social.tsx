@@ -13,7 +13,7 @@ const Social: React.FC<Props> = (props) => {
       href={props.url}
       rel="noreferrer"
       target="_blank"
-      className="flex w-fit hover:bg-blue-100 rounded-full"
+      className="flex w-fit hover:bg-primary-50 rounded-full"
     >
       <Image width={60} height={60} src={props.image} alt={props.alt} />
     </a>
