@@ -9,6 +9,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
+    "http-server": "^14.1.1",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
