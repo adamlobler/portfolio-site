@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Button from "../components/button";
+import About from "../components/About";
 import Hero from "../components/Hero";
 
 const Home: NextPage = () => {
@@ -16,8 +15,9 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <main className="flex max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 py-16 text-center">
+      <main className="flex max-w-2xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 py-16 text-center">
         <Hero />
+        <About />
       </main>
 
       <footer className="flex h-24 w-full items-center justify-center border-t">
