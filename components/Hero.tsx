@@ -6,34 +6,7 @@ import Angled from "../images/angled.png";
 import Rectangle from "../images/rectangle.png";
 import Triangle from "../images/triangle.png";
 import HeroImage from "../images/hero_image.png";
-import Instagram from "../images/social/instagram.png";
-import Linkedin from "../images/social/linkedin.png";
-import Mail from "../images/social/mail.png";
-import Upwork from "../images/social/upwork.png";
-
-import Social from "../components/Social";
-const socials = [
-  {
-    image: Instagram,
-    altText: "instagram",
-    url: "https://www.instagram.com/vallio.studio/",
-  },
-  {
-    image: Linkedin,
-    altText: "linkedin",
-    url: "https://www.linkedin.com/in/adam-lobler/",
-  },
-  {
-    image: Mail,
-    altText: "mail",
-    url: "mailto: adam.lobler@vallio.studio",
-  },
-  {
-    image: Upwork,
-    altText: "upwork",
-    url: "https://www.upwork.com/nx/find-work/best-matches",
-  },
-];
+import Socials from "./Socials";
 
 const Hero: React.FC = () => {
   return (
@@ -94,16 +67,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <p className="text-caption pb-4 text-left uppercase">Get in touch!</p>
-      <div className="flex space-x-2">
-        {socials.map((social) => (
-          <Social
-            key={social.altText}
-            image={social.image}
-            alt={social.altText}
-            url={social.url}
-          />
-        ))}
-      </div>
+      <Socials />
     </section>
   );
 };
