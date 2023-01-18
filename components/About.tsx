@@ -34,8 +34,10 @@ const About: React.FC = () => {
           className=" w-40 xl:w-56"
           alt="adam_lobler"
         />
-        <h2 className="text-h5 md:text-h3 text-left">About me</h2>
-        <p className="text-body1 md:text-body1 w-full text-gray-500 text-left">
+        <h2 className="text-h5 dark:text-white md:text-h3 text-left">
+          About me
+        </h2>
+        <p className="text-body1 md:text-body1 w-full text-gray-500 dark:text-gray-400 text-left">
           I am a product designer with 5+ years of experience based in Budapest,
           Hungary. Presently, I am working as a freelancer and seeking new
           opportunities to assist companies in creating human-centric digital
@@ -47,14 +49,20 @@ const About: React.FC = () => {
         </p>
         <div className="flex flex-row">
           <div className="flex flex-col space-y-2 w-1/2">
-            <p className="text-caption uppercase text-start">
+            <p className="text-caption dark:text-white uppercase text-start">
               years of experience
             </p>
-            <p className="text-h3 uppercase text-primary-500 w-5">5+</p>
+            <p className="text-h3 uppercase text-primary-500 dark:text-primary-400 w-5">
+              5+
+            </p>
           </div>
           <div className="flex flex-col space-y-2 w-1/2">
-            <p className="text-caption text-start uppercase">clients served</p>
-            <p className="text-h3 uppercase text-primary-500 w-5">30+</p>
+            <p className="text-caption dark:text-white text-start uppercase">
+              clients served
+            </p>
+            <p className="text-h3 uppercase text-primary-500 dark:text-primary-400 w-5">
+              30+
+            </p>
           </div>
           <div className="pr-6 pb-4 lg:pb-0" />
         </div>
@@ -73,9 +81,14 @@ const About: React.FC = () => {
       </div>
       <div className="hidden xl:flex w-full flex-col space-y-6 justify-start">
         {process.map((step) => (
-          <div key={step.title} className="bg-gray-50 space-y-2 px-8 py-8">
-            <h3 className="text-subtitle1 max-w-2xl text-left">{step.title}</h3>
-            <p className="text-body1 md:text-body1 text-gray-500 xl:max-w-lg text-left">
+          <div
+            key={step.title}
+            className="bg-gray-50 dark:bg-gray-900 space-y-2 px-8 py-8"
+          >
+            <h3 className="text-subtitle1 dark:text-white max-w-2xl text-left">
+              {step.title}
+            </h3>
+            <p className="text-body1 md:text-body1 text-gray-500 dark:text-gray-400 dark:text-gray-400 xl:max-w-lg text-left">
               {step.body}
             </p>
           </div>

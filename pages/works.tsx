@@ -51,7 +51,7 @@ const projects = [
 
 const Works: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center ">
+    <div className="flex min-h-screen dark:bg-black flex-col items-center justify-center ">
       <Head>
         <title>Adam Lobler | Works</title>
         <link rel="icon" href="/favicon.ico" />
@@ -63,8 +63,8 @@ const Works: NextPage = () => {
       <NavigationBar />
       <div className="flex flex-col max-w-2xl xl:max-w-7xl w-full px-4 py-8 ">
         <div className="py-32 space-y-4">
-          <h1 className="text-h1">Projects</h1>
-          <p className="text-subtitle1 text-gray-600">
+          <h1 className="text-h1 dark:text-white">Projects</h1>
+          <p className="text-subtitle1 text-gray-600 dark:text-gray-400">
             I have been able to assist startups and numerous businesses in
             achieving their goals!
           </p>

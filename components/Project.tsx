@@ -27,9 +27,11 @@ const Project: React.FC<Props> = (props) => {
       />
       <div className="flex flex-col items-start space-y-4">
         <div className="flex space-x-4 items-center">
-          <h2 className="text-h5 md:text-h3 text-left">{props.title}</h2>
+          <h2 className="text-h5 dark:text-white md:text-h3 text-left">
+            {props.title}
+          </h2>
           {props.size == "large" ? (
-            <ArrowRightIcon className="h-12 w-12 text-primary-500" />
+            <ArrowRightIcon className="h-12 w-12 text-primary-500 dark:text-primary-400" />
           ) : (
             ""
           )}
@@ -38,7 +40,7 @@ const Project: React.FC<Props> = (props) => {
           {props.tags.map((tag) => (
             <p
               key={tag}
-              className="text-caption uppercase text-start mr-2 text-gray-400"
+              className="text-caption uppercase text-start mr-2 text-gray-400 dark:text-gray-600"
             >
               {tag}
             </p>
@@ -47,8 +49,8 @@ const Project: React.FC<Props> = (props) => {
         <p
           className={`${
             props.size == "large"
-              ? "text-subtitle2 md:text-subtitle1 text-gray-600 text-left"
-              : "text-subtitle2 text-gray-600 text-left"
+              ? "text-subtitle2 md:text-subtitle1 text-gray-600 dark:text-gray-400 text-left"
+              : "text-subtitle2 text-gray-600 dark:text-gray-400 text-left"
           }`}
         >
           {props.description}

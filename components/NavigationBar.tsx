@@ -1,7 +1,7 @@
-import Image from "next/image";
 import React, { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import Socials from "./Socials";
+import ThemeSwitch from "./ThemeSwitch";
 
 const navigationItems = [
   {
@@ -39,32 +39,17 @@ const NavigationBar: React.FC = (props) => {
           </span>
         </a>
         <div className="flex">
-          <div className="flex md:order-2">
-            <button type="button" className="btn-primary hidden md:block">
-              Hire me!
-            </button>
-            <button
-              onClick={() => toggleNavbar()}
-              data-collapse-toggle="navbar-sticky"
-              type="button"
-              className="inline-flex items-center p-2 text-sm text-primary-500 rounded-sm md:hidden hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 ml-2"
-              aria-controls="navbar-sticky"
-              aria-expanded="false"
-            >
-              <Bars3Icon className="w-8 h-8" />
-            </button>
-          </div>
-
+          {/*Desktop navbar items*/}
           <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 mr-8"
+            className="items-center justify-between hidden w-full md:flex md:w-auto  mr-8"
             id="navbar-sticky"
           >
-            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
               {navigationItems.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.link}
-                    className="text-body2 block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-black hover:text-primary-500 md:p-0 dark:text-white"
+                    className="text-body2 block py-2 pl-3 pr-4 bg-primary-700 rounded md:bg-transparent md:text-black dark:md:text-white hover:text-primary-500 md:p-0 dark:text-white"
                     aria-current="page"
                   >
                     {item.name}
@@ -73,8 +58,25 @@ const NavigationBar: React.FC = (props) => {
               ))}
             </ul>
           </div>
+          <div className="flex">
+            <ThemeSwitch />
+            <button type="button" className="btn-primary hidden md:block">
+              Hire me!
+            </button>
+            <button
+              onClick={() => toggleNavbar()}
+              data-collapse-toggle="navbar-sticky"
+              type="button"
+              className="inline-flex items-center p-2 text-sm text-primary-500 dark:text-primary-400 rounded-sm md:hidden hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-gray-20 dark:hover:bg-gray-900 dark:focus:ring-gray-800 ml-2"
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
+            >
+              <Bars3Icon className="w-8 h-8" />
+            </button>
+          </div>
         </div>
       </div>
+      {/*Mobile navbar items*/}
       <div
         className={`${
           isOpen
@@ -83,12 +85,12 @@ const NavigationBar: React.FC = (props) => {
         }`}
         id="navbar-sticky"
       >
-        <ul className="flex flex-col rounded-lgmd:flex-row space-y-8 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <ul className="flex flex-col rounded-lgmd:flex-row space-y-8">
           {navigationItems.map((item) => (
             <li key={item.name}>
               <a
                 href="#"
-                className="text-subtitle1 text-center block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:text-black hover:text-primary-500 md:p-0 dark:text-white"
+                className="text-subtitle1 text-center block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:text-black dark:text-white hover:text-primary-500 md:p-0"
                 aria-current="page"
               >
                 {item.name}

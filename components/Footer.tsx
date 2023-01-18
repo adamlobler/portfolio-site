@@ -3,20 +3,24 @@ import Socials from "./Socials";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-col w-full bg-gray-50 items-center justify-center ">
+    <footer className="flex flex-col w-full bg-gray-50 dark:bg-gray-900 items-center justify-center ">
       <div className="flex max-w-2xl xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-32">
         <div className="flex flex-col items-start space-y-8">
-          <h2 className="text-h2">
+          <h2 className="text-h2 dark:text-white">
             Looking for help with{" "}
-            <span className=" text-primary-500">design?</span>
+            <span className=" text-primary-500 dark:text-primary-400">
+              design?
+            </span>
           </h2>
-          <p className="text-subtitle1 text-gray-600">
+          <p className="text-subtitle1 text-gray-600 dark:text-gray-400">
             Send me an e-mail to my mail address!
           </p>
           <button className="btn-primary">Contact me!</button>
         </div>
         <div className="flex flex-col w-fit">
-          <p className="text-caption pb-4 text-left uppercase">Get in touch!</p>
+          <p className="text-caption text-gray-800 dark:text-gray-100 pb-4 text-left uppercase">
+            Get in touch!
+          </p>
 
           <Socials />
         </div>

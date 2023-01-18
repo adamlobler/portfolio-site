@@ -27,10 +27,10 @@ const Hero: React.FC = () => {
       />
       <div className="flex flex-col-reverse xl:flex-row items-center space-x-8 py-8 xl:py-16">
         <div className="flex flex-col xl:w-1/2 w-full xl:max-w-none justify-center pb-6 xl:pb-0">
-          <h1 className="text-h3 md:text-h1 text-left font-bold pb-4 md:pb-8">
+          <h1 className="text-h3 dark:text-white md:text-h1 text-left font-bold pb-4 md:pb-8">
             Hi, I’m Adam <br></br> product designer
           </h1>
-          <p className="text-subtitle2 md:text-subtitle1 xl:max-w-lg text-left pb-4 md:pb-8">
+          <p className="text-subtitle2 text-gray-800 dark:text-gray-300 md:text-subtitle1 xl:max-w-lg text-left pb-4 md:pb-8">
             I’m passionate to make the best digital solution for businesses
           </p>
           <div className="flex flex-col md:flex-row">
@@ -66,7 +66,9 @@ const Hero: React.FC = () => {
           />
         </div>
       </div>
-      <p className="text-caption pb-4 text-left uppercase">Get in touch!</p>
+      <p className="text-caption text-gray-800 dark:text-gray-100 pb-4 text-left uppercase">
+        Get in touch!
+      </p>
       <Socials />
     </section>
   );
