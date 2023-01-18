@@ -6,15 +6,15 @@ import Socials from "./Socials";
 const navigationItems = [
   {
     name: "Home",
-    link: "#",
+    link: "/",
   },
   {
     name: "About",
-    link: "#",
+    link: "/",
   },
   {
-    name: "Projects",
-    link: "#",
+    name: "Works",
+    link: "/works",
   },
 ];
 
@@ -63,7 +63,7 @@ const NavigationBar: React.FC = (props) => {
               {navigationItems.map((item) => (
                 <li key={item.name}>
                   <a
-                    href="#"
+                    href={item.link}
                     className="text-body2 block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-black hover:text-primary-500 md:p-0 dark:text-white"
                     aria-current="page"
                   >
