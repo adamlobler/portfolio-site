@@ -25,8 +25,8 @@ const process = [
 
 const About: React.FC = () => {
   return (
-    <section className="flex w-full xl:space-x-8 space-y flex-col justify-center xl:flex-row py-8 xl:py-16">
-      <div className="flex flex-col xl:w-1/2 space-y-6 justify-start">
+    <section className="flex w-full space-y flex-col justify-center xl:flex-row py-8 xl:py-16">
+      <div className="flex flex-col xl:w-full space-y-6 justify-start xl:mr-16">
         <Image
           height={220}
           width={220}
@@ -71,7 +71,7 @@ const About: React.FC = () => {
           alt="angled square"
         />
       </div>
-      <div className="hidden xl:flex flex-col xl:w-1/2 space-y-6 justify-start">
+      <div className="hidden xl:flex w-full flex-col space-y-6 justify-start">
         {process.map((step) => (
           <div key={step.title} className="bg-gray-50 space-y-2 px-8 py-8">
             <h3 className="text-subtitle1 max-w-2xl text-left">{step.title}</h3>
