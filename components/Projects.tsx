@@ -5,6 +5,8 @@ import HsupDesktop from "../images/hsup_desktop.png";
 import HsupMobile from "../images/hsup_mobile.png";
 import HereforyouDesktop from "../images/hereforyou_desktop.png";
 import HereforyouMobile from "../images/hereforyou_mobile.png";
+import DinobookingDesktop from "../images/dinobooking_desktop.png";
+import DinobookingMobile from "../images/dinobooking_mobile.png";
 import Project from "./Project";
 
 const projects = [
@@ -34,6 +36,14 @@ const projects = [
     desktopImage: HereforyouDesktop,
     mobileImage: HereforyouMobile,
   },
+  {
+    title: "Dino Booking - Booking service for small businesses",
+    tags: ["Web application", "landing page"],
+    description:
+      "Dinobooking provides the most simple booking service for small businesses. The startup makes a booking website and a admin interface for subscribers where they can manage their business. (Development in progress...)",
+    desktopImage: DinobookingDesktop,
+    mobileImage: DinobookingMobile,
+  },
 ];
 
 const Projects: React.FC = () => {
@@ -48,6 +58,7 @@ const Projects: React.FC = () => {
             description={project.description}
             desktopImage={project.desktopImage}
             mobileImage={project.mobileImage}
+            size="large"
           />
         </div>
       ))}
