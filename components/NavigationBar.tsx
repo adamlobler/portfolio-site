@@ -98,7 +98,9 @@ const NavigationBar: React.FC = (props) => {
             </li>
           ))}
         </ul>
-        <button className="btn-primary w-72">Hire me!</button>
+        <a className="btn-primary w-72" href="mailto:adam.lobler@vallio.studio">
+          Hire me!
+        </a>
         <div className="pt-14">
           <Socials />
         </div>

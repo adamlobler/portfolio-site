@@ -8,6 +8,7 @@ import { Triangle } from "./svg/Triangle";
 import { Cross } from "./svg/Cross";
 import { RotatedRectangle } from "./svg/RotatedRectangle";
 import { Rectangle } from "./svg/Rectangle";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
@@ -22,9 +23,13 @@ const Hero: React.FC = () => {
             I’m passionate to make the best digital solution for businesses
           </p>
           <div className="flex flex-col md:flex-row">
-            <button className="btn-primary">Hire me!</button>
+            <a className="btn-primary" href="mailto:adam.lobler@vallio.studio">
+              Hire me!
+            </a>
             <div className="pr-6 pb-4 lg:pb-0" />
-            <button className="btn-secondary">My previous projets </button>
+            <Link className="btn-secondary" href="/works">
+              My previous projets{" "}
+            </Link>
           </div>
           <RotatedRectangle />
         </div>

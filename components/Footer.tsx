@@ -15,13 +15,14 @@ const Footer: React.FC = () => {
           <p className="text-subtitle1 text-gray-600 dark:text-gray-400">
             Send me an e-mail to my mail address!
           </p>
-          <button className="btn-primary">Contact me!</button>
+          <a href="mailto:adam.lobler@vallio.studio" className="btn-primary">
+            Contact me!
+          </a>
         </div>
         <div className="flex flex-col w-fit">
           <p className="text-caption text-gray-800 dark:text-gray-100 pb-4 text-left uppercase">
             Get in touch!
           </p>
-
           <Socials />
         </div>
       </div>
