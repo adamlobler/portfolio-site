@@ -37,11 +37,9 @@ const About: React.FC = () => {
             I am a product designer with 5+ years of experience based in
             Budapest, Hungary. Presently, I am working as a freelancer and
             seeking new opportunities to assist companies in creating
-            human-centric digital solutions. I utilize Figma to create
-            interactive prototypes that make it easier for you to visualize the
-            product. Additionally, I have coding experience and can assist with
-            software development, or if necessary, I can bring on developer
-            partners for more complex projects.
+            human-centric digital solutions. I enjoy working with agencies and
+            startups who want to solve meaningful problems through digital
+            products.
           </p>
           <div className="flex flex-row">
             <div className="flex flex-col space-y-2 w-1/2">
