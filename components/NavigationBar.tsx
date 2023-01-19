@@ -27,7 +27,7 @@ const NavigationBar: React.FC = (props) => {
       : (document.body.style.overflow = "hidden");
   };
   return (
-    <nav className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed overflow-hidden w-full top-0 left-0 max-h-screen">
+    <nav className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed overflow-hidden w-full top-0 left-0 max-h-screen z-50">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <a href="https://adamlobler.com/" className="flex items-center">
           <span className="text-button font-semibold whitespace-nowrap dark:text-white">
@@ -89,7 +89,7 @@ const NavigationBar: React.FC = (props) => {
           {navigationItems.map((item) => (
             <li key={item.name}>
               <a
-                href="#"
+                href={item.link}
                 className="text-subtitle1 text-center block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:text-black dark:text-white hover:text-primary-500 md:p-0"
                 aria-current="page"
               >
