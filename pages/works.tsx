@@ -11,6 +11,7 @@ import HereforyouDesktop from "../images/hereforyou_desktop.png";
 import HereforyouMobile from "../images/hereforyou_mobile.png";
 import DinobookingDesktop from "../images/dinobooking_desktop.png";
 import DinobookingMobile from "../images/dinobooking_mobile.png";
+import { Fade } from "react-awesome-reveal";
 
 const projects = [
   {
@@ -62,16 +63,18 @@ const Works: NextPage = () => {
       </Head>
       <NavigationBar />
       <div className="flex flex-col max-w-2xl xl:max-w-7xl w-full px-4 py-8 ">
-        <div className="py-32 space-y-4">
-          <h1 className="text-h1 dark:text-white">Projects</h1>
-          <p className="text-subtitle1 text-gray-600 dark:text-gray-400">
-            I have been able to assist startups and numerous businesses in
-            achieving their goals!
-          </p>
-        </div>
+        <Fade triggerOnce>
+          <div className="pt-16 pb-8 md:py-32 space-y-4">
+            <h1 className="text-h3 md:text-h1 dark:text-white">Works</h1>
+            <p className="text-subtitle2 md:text-subtitle1 text-gray-600 dark:text-gray-400">
+              I have been able to assist startups and numerous businesses in
+              achieving their goals!
+            </p>
+          </div>
+        </Fade>
         <div className="grid xl:grid-cols-2 gap-16">
           {projects.map((project) => (
-            <div key={project.title}>
+            <Fade triggerOnce key={project.title}>
               <Project
                 title={project.title}
                 link={project.link}
@@ -81,7 +84,7 @@ const Works: NextPage = () => {
                 mobileImage={project.mobileImage}
                 size="small"
               />
-            </div>
+            </Fade>
           ))}
         </div>
       </div>

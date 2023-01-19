@@ -8,6 +8,7 @@ import HereforyouMobile from "../images/hereforyou_mobile.png";
 import DinobookingDesktop from "../images/dinobooking_desktop.png";
 import DinobookingMobile from "../images/dinobooking_mobile.png";
 import Project from "./Project";
+import { Fade } from "react-awesome-reveal";
 
 const projects = [
   {
@@ -48,18 +49,20 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <section className="my-24 space-y-64">
+    <section className="my-24 space-y-32 xl:space-y-64">
       {projects.map((project) => (
         <div key={project.title}>
-          <Project
-            title={project.title}
-            link={project.link}
-            tags={project.tags}
-            description={project.description}
-            desktopImage={project.desktopImage}
-            mobileImage={project.mobileImage}
-            size="large"
-          />
+          <Fade triggerOnce>
+            <Project
+              title={project.title}
+              link={project.link}
+              tags={project.tags}
+              description={project.description}
+              desktopImage={project.desktopImage}
+              mobileImage={project.mobileImage}
+              size="large"
+            />
+          </Fade>
         </div>
       ))}
     </section>

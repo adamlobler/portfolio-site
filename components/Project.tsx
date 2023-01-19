@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { Fade } from "react-awesome-reveal";
 
 type Props = {
   title: string;
@@ -49,8 +50,8 @@ const Project: React.FC<Props> = (props) => {
         <p
           className={`${
             props.size == "large"
-              ? "text-subtitle2 md:text-subtitle1 text-gray-600 dark:text-gray-400 text-left"
-              : "text-subtitle2 text-gray-600 dark:text-gray-400 text-left"
+              ? "text-subtitle2 max-w-4xl md:text-subtitle1 text-gray-600 dark:text-gray-400 text-left"
+              : "text-subtitle2 max-w-4xl text-gray-600 dark:text-gray-400 text-left"
           }`}
         >
           {props.description}

@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import About from "../components/About";
-import ThemeToggler from "../components/ThemeSwitch";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import NavigationBar from "../components/NavigationBar";
 import Projects from "../components/Projects";
+import { Fade } from "react-awesome-reveal";
+
+import dynamic from "next/dynamic";
+const Animator = dynamic(
+  import("react-scroll-motion").then((it) => it.Animator),
+  { ssr: false }
+);
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +26,9 @@ const Home: NextPage = () => {
       </Head>
       <NavigationBar />
       <main className="flex max-w-2xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 py-16 text-center">
-        <Hero />
+        <Fade triggerOnce>
+          <Hero />
+        </Fade>
         <About />
         <Projects />
       </main>

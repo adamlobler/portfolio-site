@@ -7,15 +7,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "http-server": "^14.1.1",
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-awesome-reveal": "^4.1.0",
+    "react-dom": "18.2.0",
+    "react-scroll-motion": "^0.3.2"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
