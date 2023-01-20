@@ -49,20 +49,21 @@ const projects = [
     mobileImage: HereforyouMobile,
   },
   {
+    title: "Evita - Online platform for parents",
+    tags: ["Web application", "landing page"],
+    link: "https://evita.hu",
+    description:
+      "Evita is an online education platform for parents where they can learn about how to raise a child.",
+    desktopImage: EvitaDesktop,
+    mobileImage: EvitaMobile,
+  },
+  {
     title: "Dino Booking - Booking service for small businesses",
     tags: ["Web application", "Landing page"],
     description:
       "Dinobooking provides the most simple booking service for small businesses. The startup makes a booking website and a admin interface for subscribers where they can manage their business. (Development in progress...)",
     desktopImage: DinobookingDesktop,
     mobileImage: DinobookingMobile,
-  },
-  {
-    title: "Digidojo - Hungary’s first gamer coaching platform",
-    tags: ["Web application", "Landing page", "Admin UI"],
-    description:
-      "Digidojo is an online platform where gamers can book appointments to mentors who help them evolve their skills in gaming.",
-    desktopImage: DigidojoDesktop,
-    mobileImage: DigidojoMobile,
   },
   {
     title: "Wia electric yachts - Landing page for yacht company",
@@ -74,21 +75,20 @@ const projects = [
     mobileImage: WiaMobile,
   },
   {
+    title: "Digidojo - Hungary’s first gamer coaching platform",
+    tags: ["Web application", "Landing page", "Admin UI"],
+    description:
+      "Digidojo is an online platform where gamers can book appointments to mentors who help them evolve their skills in gaming.",
+    desktopImage: DigidojoDesktop,
+    mobileImage: DigidojoMobile,
+  },
+  {
     title: "Cogito - Online e-learning platform for universities",
     tags: ["Web application"],
     description:
       "Cogito is an online learning platform for universities, where students can create, update and read notes together collaboratively.",
     desktopImage: CogitoDesktop,
     mobileImage: CogitoMobile,
-  },
-  {
-    title: "Evita - Online platform for parents",
-    tags: ["Web application", "landing page"],
-    link: "https://evita.hu",
-    description:
-      "Evita is an online education platform for parents where they can learn about how to raise a child.",
-    desktopImage: EvitaDesktop,
-    mobileImage: EvitaMobile,
   },
 ];
 

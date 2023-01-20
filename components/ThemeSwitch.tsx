@@ -18,6 +18,8 @@ export default function ThemeSwitch() {
       onClick={() => {
         setTheme(resolvedTheme === "dark" ? "light" : "dark");
       }}
+      id="theme-switcher"
+      value="theme"
     >
       {resolvedTheme === "dark" ? (
         <SunIcon className="h-6 w-6 text-gray-100 m-4" />

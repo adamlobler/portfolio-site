@@ -12,6 +12,17 @@ const Home: NextPage = () => {
     <div className="flex dark:bg-black min-h-screen flex-col items-center justify-center ">
       <Head>
         <title>Adam Lobler | Product designer</title>
+        <meta
+          name="description"
+          content="I'm Adam, product designer. I’m passionate to make the best digital solution for businesses."
+          key="desc"
+        />
+        <meta property="og:title" content="Adam Lobler | Product designer" />
+        <meta
+          property="og:description"
+          content="I'm Adam, product designer. I’m passionate to make the best digital solution for businesses."
+        />
+        <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.2.x/dist/typography.min.css"
