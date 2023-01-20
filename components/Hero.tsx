@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Angled from "../images/angled.png";
 import HeroImage from "../images/hero_image.png";
 import Socials from "./Socials";
 import { Circle } from "./svg/Circle";
@@ -12,9 +11,9 @@ import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
-    <section className="flex flex-col w-full pb-16 xl:pt-16 ">
+    <section className="flex flex-col w-full  pb-16 2xl:pt-16 ">
       <Circle />
-      <div className="flex flex-col-reverse xl:flex-row items-center gap-x-8 py-8 xl:py-16">
+      <div className="flex flex-col-reverse xl:flex-row items-center gap-x-8 pt-16 2xl:py-16">
         <div className="flex flex-col xl:w-1/2 w-full xl:max-w-none justify-center pb-6 xl:pb-0">
           <h1 className="text-h3 dark:text-white md:text-h1 text-left font-bold pb-4 md:pb-8">
             Hi, I’m Adam <br></br> product designer
@@ -33,7 +32,7 @@ const Hero: React.FC = () => {
           </div>
           <RotatedRectangle />
         </div>
-        <div className="flex items-center justify-center w-full  xl:w-auto ">
+        <div className="flex items-center justify-center max-w-[530px] 2xl:max-w-none w-full  xl:w-auto ">
           <Image width={622} height={576} src={HeroImage} alt="heromockup" />
         </div>
         <Rectangle />
