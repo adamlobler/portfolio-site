@@ -7,12 +7,6 @@ import NavigationBar from "../components/NavigationBar";
 import Projects from "../components/Projects";
 import { Fade } from "react-awesome-reveal";
 
-import dynamic from "next/dynamic";
-const Animator = dynamic(
-  import("react-scroll-motion").then((it) => it.Animator),
-  { ssr: false }
-);
-
 const Home: NextPage = () => {
   return (
     <div className="flex dark:bg-black min-h-screen flex-col items-center justify-center ">
@@ -25,7 +19,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <NavigationBar />
-      <main className="flex max-w-2xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 py-16 text-center">
+      <main className="flex max-w-2xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 xl:px-16 2xl:px-0 py-16 text-center">
         <Fade triggerOnce>
           <Hero />
         </Fade>
