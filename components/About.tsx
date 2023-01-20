@@ -60,11 +60,13 @@ const About: React.FC = () => {
             </div>
             <div className="pr-6 pb-4 lg:pb-0" />
           </div>
+          {/*
           <div className="flex justify-start">
             <button className="btn-secondary w-full md:w-auto">
               Find out more
             </button>
-          </div>
+           </div>
+           */}
         </Fade>
       </div>
       <div className="hidden xl:flex w-full flex-col space-y-6 justify-start">

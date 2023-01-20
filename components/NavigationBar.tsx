@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import Socials from "./Socials";
 import ThemeSwitch from "./ThemeSwitch";
+import Link from "next/link";
 
 const navigationItems = [
   {
@@ -9,8 +10,11 @@ const navigationItems = [
     link: "/",
   },
   {
+    /*}
+  {
     name: "About",
     link: "/",
+  },*/
   },
   {
     name: "Works",
@@ -29,7 +33,7 @@ const NavigationBar: React.FC = (props) => {
   return (
     <nav className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed overflow-hidden w-full top-0 left-0 max-h-screen z-50">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="https://adamlobler.com/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <span className="text-button font-semibold whitespace-nowrap dark:text-white">
             Adam Lobler
             <span className="text-gray-400 font-medium">
@@ -37,7 +41,7 @@ const NavigationBar: React.FC = (props) => {
               | product designer
             </span>
           </span>
-        </a>
+        </Link>
         <div className="flex">
           {/*Desktop navbar items*/}
           <div
@@ -60,9 +64,12 @@ const NavigationBar: React.FC = (props) => {
           </div>
           <div className="flex">
             <ThemeSwitch />
-            <button type="button" className="btn-primary hidden md:block">
+            <a
+              className="btn-primary h-14 hidden md:block"
+              href="mailto:adam.lobler@vallio.studio"
+            >
               Hire me!
-            </button>
+            </a>
             <button
               onClick={() => toggleNavbar()}
               data-collapse-toggle="navbar-sticky"
@@ -85,7 +92,7 @@ const NavigationBar: React.FC = (props) => {
         }`}
         id="navbar-sticky"
       >
-        <ul className="flex flex-col rounded-lgmd:flex-row space-y-8">
+        <ul className="flex flex-col rounded-lg md:flex-row space-y-2">
           {navigationItems.map((item) => (
             <li key={item.name}>
               <a
@@ -98,7 +105,10 @@ const NavigationBar: React.FC = (props) => {
             </li>
           ))}
         </ul>
-        <a className="btn-primary w-72" href="mailto:adam.lobler@vallio.studio">
+        <a
+          className="btn-primary w-72 text-center h-14"
+          href="mailto:adam.lobler@vallio.studio"
+        >
           Hire me!
         </a>
         <div className="pt-14">
