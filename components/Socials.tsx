@@ -7,9 +7,9 @@ import Social from "../components/Social";
 
 const socials = [
   {
-    image: Instagram,
-    altText: "instagram",
-    url: "https://www.instagram.com/vallio.studio/",
+    image: Mail,
+    altText: "mail",
+    url: "mailto: adam.lobler@vallio.studio",
   },
   {
     image: Linkedin,
@@ -17,16 +17,21 @@ const socials = [
     url: "https://www.linkedin.com/in/adam-lobler/",
   },
   {
-    image: Mail,
-    altText: "mail",
-    url: "mailto: adam.lobler@vallio.studio",
-  },
-  {
     image: Upwork,
     altText: "upwork",
-    url: "https://www.upwork.com/nx/find-work/best-matches",
+    url: "https://www.upwork.com/freelancers/~01ea504e62d5ca4245?s=1044578476142100545",
   },
 ];
+
+{
+  /*
+  {
+    image: Instagram,
+    altText: "instagram",
+    url: "https://www.instagram.com/vallio.studio/",
+  },
+*/
+}
 
 const Socials: React.FC = () => {
   return (
