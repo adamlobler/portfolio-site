@@ -7,7 +7,7 @@
     @apply bg-primary-500 dark:bg-primary-400 text-button hover:bg-primary-600 dark:hover:bg-primary-300 text-white dark:text-black py-4 px-6 rounded-sm;
   }
   .btn-secondary {
-    @apply bg-transparent text-button hover:bg-gray-50 dark:hover:bg-gray-800 dark:text-white py-4 px-6 border border-black dark:border-white hover:border-transparent rounded-sm;
+    @apply bg-transparent flex items-center dark:hover:bg-gray-800 text-button hover:bg-gray-50 dark:text-white border border-black dark:border-white hover:border-transparent py-4 px-6 rounded-sm;
   }
   /* ... */
 }
