@@ -9,7 +9,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex dark:bg-black min-h-screen flex-col items-center justify-center ">
+    <div className="flex dark:bg-black min-h-screen flex-col items-center justify-center transition-all duration-300">
       <Head>
         <title>Adam Lobler | Product designer</title>
         <meta
