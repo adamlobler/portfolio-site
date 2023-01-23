@@ -33,7 +33,13 @@ const Hero: React.FC = () => {
           <RotatedRectangle />
         </div>
         <div className="flex items-center justify-center max-w-[530px] 2xl:max-w-none w-full  xl:w-auto ">
-          <Image width={622} height={576} src={HeroImage} alt="heromockup" />
+          <Image
+            width={622}
+            height={576}
+            placeholder="blur"
+            src={HeroImage}
+            alt="heromockup"
+          />
         </div>
         <Rectangle />
         <div>
