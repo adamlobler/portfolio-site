@@ -24,10 +24,6 @@ const Home: NextPage = () => {
         />
         <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.2.x/dist/typography.min.css"
-          rel="stylesheet"
-        />
       </Head>
       <NavigationBar />
       <main className="flex max-w-5xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16 text-center">

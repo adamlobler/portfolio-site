@@ -24,8 +24,6 @@ const About: React.FC = () => {
       <div className="flex flex-col xl:w-full space-y-6 justify-start xl:mr-16">
         <Fade triggerOnce>
           <Image
-            height={220}
-            width={220}
             src={ProfilePicture}
             className=" w-40 xl:w-56"
             alt="adam_lobler"

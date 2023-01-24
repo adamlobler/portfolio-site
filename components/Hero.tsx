@@ -34,8 +34,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="flex items-center justify-center max-w-[530px] 2xl:max-w-none w-full  xl:w-auto ">
           <Image
-            width={622}
-            height={576}
+            className="max-w-[622px] w-full"
             placeholder="blur"
             src={HeroImage}
             alt="heromockup"
