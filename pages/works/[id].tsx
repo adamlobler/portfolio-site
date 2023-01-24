@@ -66,7 +66,7 @@ const WorksDetailPage = ({
         alt="mobile_image"
         className="flex md:hidden mt-[76px]"
       />
-      <div className="flex flex-col max-w-5xl xl:max-w-7xl w-full  px-4 xl:px-16 py-8 ">
+      <div className="flex flex-col max-w-5xl xl:max-w-7xl w-full  px-4 xl:px-16 py-8 pb-32">
         <Fade triggerOnce>
           <div className="pt-16 pb-8 md:py-16 2xl:py-32 space-y-4">
             <h1 className="text-h3 md:text-h1 dark:text-white">
