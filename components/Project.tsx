@@ -4,6 +4,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Fade } from "react-awesome-reveal";
 
 type Props = {
+  path?: string;
   title: string;
   link?: string;
   tags: string[];
@@ -15,7 +16,12 @@ type Props = {
 
 const Project: React.FC<Props> = (props) => {
   return (
-    <a className="space-y-8" href={props.link} rel="noreferrer" target="_blank">
+    <a
+      className="space-y-8"
+      href={props.path ? "works/" + props.path : props.link}
+      rel="noreferrer"
+      target={props.path ? "" : "_blank"}
+    >
       <Image
         src={props.desktopImage}
         alt="desktop_image"

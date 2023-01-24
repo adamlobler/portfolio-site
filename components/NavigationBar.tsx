@@ -22,7 +22,7 @@ const navigationItems = [
   },
 ];
 
-const NavigationBar: React.FC = (props) => {
+const NavigationBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
