@@ -30,8 +30,8 @@ const Home: NextPage = () => {
         />
       </Head>
       <NavigationBar />
-      <main className="flex max-w-2xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 xl:px-16 2xl:px-0 py-16 text-center">
-        <Fade triggerOnce>
+      <main className="flex max-w-5xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16 text-center">
+        <Fade triggerOnce className="w-full">
           <Hero />
         </Fade>
         <About />
