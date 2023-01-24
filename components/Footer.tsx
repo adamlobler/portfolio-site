@@ -1,9 +1,16 @@
 import React from "react";
 import Socials from "./Socials";
+import { Circle } from "./svg/Circle";
+import { Cross } from "./svg/Cross";
+import { RotatedRectangle } from "./svg/RotatedRectangle";
 
 const Footer: React.FC = () => {
   return (
     <footer className="flex flex-col w-full bg-gray-50 dark:bg-gray-900 items-center justify-center ">
+      <Circle className="fill-white dark:fill-black lg:absolute xl:block hidden ml-[-1200px] mt-[-450px] scale-[3]" />
+      <Cross className="fill-white  dark:fill-black lg:absolute xl:block hidden ml-[1200px] mt-[-350px] scale-[3]" />
+      <RotatedRectangle className="fill-white dark:fill-black lg:absolute xl:block hidden ml-[400px] mt-[250px] scale-[3]" />
+
       <div className="flex max-w-2xl xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:py-32">
         <div className="flex flex-col items-start space-y-8">
           <h2 className="text-h4 xl:text-h2 dark:text-white">
