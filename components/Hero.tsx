@@ -12,11 +12,11 @@ import Link from "next/link";
 const Hero: React.FC = () => {
   return (
     <section className="flex flex-col w-full  pb-16 2xl:pt-16 ">
-      <Circle />
+      <Circle className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden  mt-24 ml-32" />
       <div className="flex flex-col-reverse xl:flex-row items-center gap-x-8 pt-16 2xl:py-16">
         <div className="flex flex-col xl:w-1/2 w-full xl:max-w-none justify-center pb-6 xl:pb-0">
           <h1 className="text-h3 dark:text-white md:text-h1 text-left font-bold pb-4 md:pb-8">
-            Hi, I’m Adam <br></br> product designer
+            Hi, I’m Adam product designer
           </h1>
           <p className="text-subtitle2 text-gray-800 dark:text-gray-300 md:text-subtitle1 xl:max-w-lg text-left pb-4 md:pb-8">
             I’m passionate to make the best digital solution for businesses
@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
               My previous projets{" "}
             </Link>
           </div>
-          <RotatedRectangle />
+          <RotatedRectangle className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden  mt-[450px] ml-[540px]" />
         </div>
         <div className="flex items-center justify-center max-w-[530px] 2xl:max-w-none w-full  xl:w-auto ">
           <Image
@@ -41,11 +41,11 @@ const Hero: React.FC = () => {
             alt="heromockup"
           />
         </div>
-        <Rectangle />
+        <Rectangle className="fill-gray-50 dark:fill-gray-800 lg:absolute 2xl:block hidden mt-[480px] pl-2" />
         <div>
-          <Triangle />
+          <Triangle className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden -mt-[240px]" />
         </div>
-        <Cross />
+        <Cross className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden mt-[700px] ml-[900px]" />
       </div>
       <p className="text-caption text-gray-800 dark:text-gray-100 pb-4 text-left uppercase">
         Get in touch!
