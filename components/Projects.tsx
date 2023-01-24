@@ -50,21 +50,43 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <section className="my-24 space-y-32 xl:space-y-64">
-      {projects.map((project) => (
-        <div key={project.title}>
-          <Fade triggerOnce>
-            <Project
-              title={project.title}
-              link={project.link}
-              tags={project.tags}
-              description={project.description}
-              desktopImage={project.desktopImage}
-              mobileImage={project.mobileImage}
-              size="large"
-            />
-          </Fade>
-        </div>
-      ))}
+      {projects.map((project) =>
+        project.link ? (
+          <a
+            key={project.title}
+            href={project.link}
+            rel="noreferrer"
+            target="_blank"
+            className="block"
+          >
+            <Fade triggerOnce>
+              <Project
+                title={project.title}
+                link={project.link}
+                tags={project.tags}
+                description={project.description}
+                desktopImage={project.desktopImage}
+                mobileImage={project.mobileImage}
+                size="large"
+              />
+            </Fade>
+          </a>
+        ) : (
+          <div key={project.title}>
+            <Fade triggerOnce>
+              <Project
+                title={project.title}
+                link={project.link}
+                tags={project.tags}
+                description={project.description}
+                desktopImage={project.desktopImage}
+                mobileImage={project.mobileImage}
+                size="large"
+              />
+            </Fade>
+          </div>
+        )
+      )}
     </section>
   );
 };

@@ -9,13 +9,11 @@ const navigationItems = [
     name: "Home",
     link: "/",
   },
-  {
-    /*}
+  /*}
   {
     name: "About",
     link: "/",
   },*/
-  },
   {
     name: "Works",
     link: "/works",
@@ -36,7 +34,7 @@ const NavigationBar: React.FC = () => {
         <Link href="/" className="flex items-center">
           <span className="text-button font-semibold whitespace-nowrap dark:text-white">
             Adam Lobler
-            <span className="text-gray-400 font-medium">
+            <span className="text-gray-500 dark:text-gray-400 font-medium">
               {" "}
               | product designer
             </span>
@@ -44,13 +42,10 @@ const NavigationBar: React.FC = () => {
         </Link>
         <div className="flex">
           {/*Desktop navbar items*/}
-          <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto  mr-8"
-            id="navbar-sticky"
-          >
+          <div className="items-center justify-between hidden w-full md:flex md:w-auto mr-8">
             <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
-              {navigationItems.map((item) => (
-                <li key={item.name}>
+              {navigationItems.map((item, index) => (
+                <li key={index}>
                   <a
                     href={item.link}
                     className="text-body2 block py-2 pl-3 pr-4 bg-primary-700 rounded md:bg-transparent md:text-black dark:md:text-white hover:text-primary-500 md:p-0 dark:text-white"
@@ -77,13 +72,13 @@ const NavigationBar: React.FC = () => {
               className="inline-flex items-center p-2 text-sm text-primary-500 dark:text-primary-400 rounded-sm md:hidden hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-gray-20 dark:hover:bg-gray-900 dark:focus:ring-gray-800 ml-2"
               aria-controls="navbar-sticky"
               aria-expanded="false"
+              title="Menu button"
             >
               <Bars3Icon className="w-8 h-8" />
             </button>
           </div>
         </div>
       </div>
-      {/*Mobile navbar items*/}
       <div
         className={`${
           isOpen
@@ -92,9 +87,10 @@ const NavigationBar: React.FC = () => {
         }`}
         id="navbar-sticky"
       >
+        {/*Mobile navbar items*/}
         <ul className="flex flex-col rounded-lg md:flex-row space-y-2">
-          {navigationItems.map((item) => (
-            <li key={item.name}>
+          {navigationItems.map((item, index) => (
+            <li key={index}>
               <a
                 href={item.link}
                 className="text-subtitle1 text-center block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:text-black dark:text-white hover:text-primary-500 md:p-0"

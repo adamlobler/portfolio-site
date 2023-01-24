@@ -19,6 +19,7 @@ export default function ThemeSwitch() {
         setTheme(resolvedTheme === "dark" ? "light" : "dark");
       }}
       id="theme-switcher"
+      title="Theme switcher button"
       value="theme"
     >
       {resolvedTheme === "dark" ? (

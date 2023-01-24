@@ -16,12 +16,7 @@ type Props = {
 
 const Project: React.FC<Props> = (props) => {
   return (
-    <a
-      className="space-y-8"
-      href={props.path ? "works/" + props.path : props.link}
-      rel="noreferrer"
-      target={props.path ? "" : "_blank"}
-    >
+    <div className="space-y-8">
       <Image
         src={props.desktopImage}
         alt="desktop_image"
@@ -63,7 +58,7 @@ const Project: React.FC<Props> = (props) => {
           {props.description}
         </p>
       </div>
-    </a>
+    </div>
   );
 };
 
