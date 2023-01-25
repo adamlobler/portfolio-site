@@ -8,6 +8,12 @@ import NavigationBar from "../../components/NavigationBar";
 import { Fade } from "react-awesome-reveal";
 import Footer from "../../components/Footer";
 import Image from "next/image";
+import { LinkIcon } from "@heroicons/react/24/solid";
+import Lightbox, {
+  SlideImage,
+  ContainerRect,
+} from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 interface ParamsType extends ParsedUrlQuery {
   id: string;
@@ -40,11 +46,43 @@ export const getStaticProps: GetStaticProps<{ project: Project }> = async ({
   };
 };
 
+export function renderLightbox(image: SlideImage, rect: ContainerRect) {
+  const width = Math.round(
+    image.height && image.width
+      ? Math.min(rect.width, (rect.height / image.height) * image.width)
+      : 0
+  );
+  const height = Math.round(
+    image.height && image.width
+      ? Math.min(rect.height, (rect.width / image.width) * image.height)
+      : 0
+  );
+
+  return (
+    <div style={{ position: "relative", width, height }}>
+      <Image
+        fill
+        src={image.src}
+        loading="eager"
+        alt={image.alt ? image.alt : ""}
+        sizes={
+          typeof window !== "undefined"
+            ? `${Math.ceil((width / window.innerWidth) * 100)}vw`
+            : `${width}px`
+        }
+      />
+    </div>
+  );
+}
+
 const WorksDetailPage = ({
   project,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
   const id = router.query.id as string;
+  const [open, setOpen] = React.useState(false);
+  const [index, setIndex] = React.useState(-1);
+
   return (
     <div className="flex min-h-screen dark:bg-black flex-col items-center justify-center ">
       <Head>
@@ -56,6 +94,20 @@ const WorksDetailPage = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
+      <Lightbox
+        open={open}
+        index={index}
+        close={() => {
+          setOpen(false);
+          setIndex(-1);
+        }}
+        slides={project.images}
+        render={{
+          slide: (image, offset, rect) => {
+            return renderLightbox(image, rect);
+          },
+        }}
+      />
       <Image
         src={project.desktopImage}
         alt="desktop_image"
@@ -68,7 +120,7 @@ const WorksDetailPage = ({
       />
       <div className="flex flex-col max-w-5xl xl:max-w-7xl w-full  px-4 xl:px-16 py-8 pb-32">
         <Fade triggerOnce>
-          <div className=" pb-8 md:py-16 2xl:py-32 space-y-4">
+          <div className="pb-8 md:py-16 2xl:py-32 space-y-4 md:space-y-8">
             <h1 className="text-h3 md:text-h1 dark:text-white">
               {project.title}
             </h1>
@@ -85,10 +137,28 @@ const WorksDetailPage = ({
             <p className="text-subtitle2 md:text-subtitle1 text-gray-600 dark:text-gray-400">
               {project.description}
             </p>
+            <a
+              href={project.link}
+              rel="noreferrer"
+              target="_blank"
+              className="text-primary-500 hover:text-primary-300 font-bold py-2 rounded inline-flex items-center"
+            >
+              <span className="text-button mr-2 hover:mr-3 transition-all duration-300">
+                Link to website
+              </span>
+              <LinkIcon className="w-5 h-5" />
+            </a>
           </div>
-          {project.images?.map((image) => (
+          {project.images?.map((image, index) => (
             <Fade triggerOnce key={id}>
-              <Image src={image} alt="mobile_image" className="flex pt-8" />
+              <button
+                onClick={() => {
+                  setOpen(true);
+                  setIndex(index);
+                }}
+              >
+                <Image src={image} alt="mobile_image" className="flex pt-8" />
+              </button>
             </Fade>
           ))}
         </Fade>
