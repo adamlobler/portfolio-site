@@ -11,11 +11,19 @@ const Works: NextPage = () => {
     <div className="flex min-h-screen dark:bg-black flex-col items-center justify-center ">
       <Head>
         <title>Adam Lobler | Works</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.2.x/dist/typography.min.css"
-          rel="stylesheet"
+        <meta
+          name="description"
+          content="I'm Adam, product designer. I’m passionate to make the best digital solution for businesses."
+          key="desc"
         />
+        <meta property="og:title" content="Adam Lobler | Works" />
+
+        <meta
+          property="og:description"
+          content="I'm Adam, product designer. I’m passionate to make the best digital solution for businesses."
+        />
+        <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
       <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16">

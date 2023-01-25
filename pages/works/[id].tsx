@@ -48,12 +48,12 @@ const WorksDetailPage = ({
   return (
     <div className="flex min-h-screen dark:bg-black flex-col items-center justify-center ">
       <Head>
-        <title>Adam Lobler | Works</title>
+        <title>Adam Lobler | {project.title}</title>
+        <meta name="description" content={project.description} key="desc" />
+        <meta property="og:title" content={"Adam Lobler | " + project.title} />
+        <meta property="og:description" content={project.description} />
+        <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.2.x/dist/typography.min.css"
-          rel="stylesheet"
-        />
       </Head>
       <NavigationBar />
       <Image
