@@ -18,7 +18,7 @@ const Works: NextPage = () => {
         />
       </Head>
       <NavigationBar />
-      <div className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16">
+      <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16">
         <Fade triggerOnce className="w-full">
           <div className="pt-16 pb-8 md:py-16 2xl:py-32 space-y-4">
             <h1 className="text-h3 md:text-h1 dark:text-white">Works</h1>
@@ -51,7 +51,7 @@ const Works: NextPage = () => {
             </a>
           ))}
         </div>
-      </div>
+      </section>
       <Footer />
     </div>
   );
