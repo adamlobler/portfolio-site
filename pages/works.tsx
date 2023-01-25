@@ -37,14 +37,29 @@ const Works: NextPage = () => {
           </div>
         </Fade>
         <div className="grid w-full xl:grid-cols-2 gap-16 xl:pb-48">
-          {projects.map((project) => (
-            <a
-              key={project.title}
-              href={project.path ? "/works/" + project.path : project.link}
-              rel="noreferrer"
-              target={project.path ? "" : "_blank"}
-            >
-              <Fade triggerOnce>
+          {projects.map((project) =>
+            project.link ? (
+              <a
+                key={project.title}
+                href={project.path ? "/works/" + project.path : project.link}
+                rel="noreferrer"
+                target={project.path ? "" : "_blank"}
+              >
+                <Fade triggerOnce>
+                  <Project
+                    path={project.path}
+                    title={project.title}
+                    link={project.link}
+                    tags={project.tags}
+                    description={project.description}
+                    desktopImage={project.mobileImage}
+                    mobileImage={project.mobileImage}
+                    size="small"
+                  />
+                </Fade>
+              </a>
+            ) : (
+              <Fade triggerOnce key={project.title}>
                 <Project
                   path={project.path}
                   title={project.title}
@@ -56,8 +71,8 @@ const Works: NextPage = () => {
                   size="small"
                 />
               </Fade>
-            </a>
-          ))}
+            )
+          )}
         </div>
       </section>
       <Footer />

@@ -29,19 +29,17 @@ const Projects: React.FC = () => {
             </Fade>
           </a>
         ) : (
-          <div key={project.title}>
-            <Fade triggerOnce>
-              <Project
-                title={project.title}
-                link={project.link}
-                tags={project.tags}
-                description={project.description}
-                desktopImage={project.desktopImage}
-                mobileImage={project.mobileImage}
-                size="large"
-              />
-            </Fade>
-          </div>
+          <Fade triggerOnce key={project.title}>
+            <Project
+              title={project.title}
+              link={project.link}
+              tags={project.tags}
+              description={project.description}
+              desktopImage={project.desktopImage}
+              mobileImage={project.mobileImage}
+              size="large"
+            />
+          </Fade>
         )
       )}
     </section>
