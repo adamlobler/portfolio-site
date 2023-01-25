@@ -9,12 +9,8 @@ import { Fade } from "react-awesome-reveal";
 import Footer from "../../components/Footer";
 import Image from "next/image";
 import { LinkIcon } from "@heroicons/react/24/solid";
-import Lightbox, {
-  SlideImage,
-  ContainerRect,
-} from "yet-another-react-lightbox";
+import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
 interface ParamsType extends ParsedUrlQuery {
   id: string;
 }
@@ -46,7 +42,13 @@ export const getStaticProps: GetStaticProps<{ project: Project }> = async ({
   };
 };
 
-export function renderLightbox(image: SlideImage, rect: ContainerRect) {
+export function renderLightbox(
+  image: SlideImage,
+  rect: {
+    width: number;
+    height: number;
+  }
+) {
   const width = Math.round(
     image.height && image.width
       ? Math.min(rect.width, (rect.height / image.height) * image.width)
