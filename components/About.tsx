@@ -26,6 +26,7 @@ const About: React.FC = () => {
           <Image
             src={ProfilePicture}
             className=" w-40 xl:w-56"
+            sizes="(max-width: 1280px) 160px,228px,"
             alt="adam_lobler"
           />
           <h2 className="text-h5 dark:text-white md:text-h3 text-left">

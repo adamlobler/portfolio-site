@@ -12,7 +12,7 @@ import Link from "next/link";
 const Hero: React.FC = () => {
   return (
     <section className="flex flex-col w-full  pb-16 2xl:pt-16 ">
-      <Circle className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden  mt-24 ml-32" />
+      <Circle className="fill-gray-50 dark:fill-gray-800 lg:absolute 2xl:block hidden  mt-24 ml-32" />
       <div className="flex flex-col-reverse xl:flex-row items-center gap-x-8 pt-16 2xl:py-16">
         <div className="flex flex-col xl:w-1/2 w-full xl:max-w-none justify-center pb-6 xl:pb-0">
           <h1 className="text-h3 dark:text-white md:text-h1 text-left font-bold pb-4 md:pb-8">
@@ -35,9 +35,11 @@ const Hero: React.FC = () => {
         <div className="flex items-center justify-center max-w-[530px] 2xl:max-w-none w-full  xl:w-auto ">
           <Image
             className="max-w-[622px] w-full"
-            placeholder="blur"
+            sizes="(max-width: 560px) 85vw,(max-width: 1280px) 612px,
+            616px"
             src={HeroImage}
             alt="heromockup"
+            loading="eager"
           />
         </div>
         <Rectangle className="fill-gray-50 dark:fill-gray-800 lg:absolute 2xl:block hidden mt-[480px] pl-2" />

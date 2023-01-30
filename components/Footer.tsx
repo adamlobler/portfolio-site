@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <a
-        className="flex text-gray-600 uppercase text-caption items-center justify-center py-4"
+        className="flex text-gray-700 dark:text-gray-300 uppercase text-caption items-center justify-center py-4"
         href="https://adamlobler.com"
         target="_blank"
         rel="noopener noreferrer"

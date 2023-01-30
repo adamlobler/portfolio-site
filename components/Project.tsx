@@ -21,11 +21,13 @@ const Project: React.FC<Props> = (props) => {
         src={props.desktopImage}
         alt="desktop_image"
         className={`${props.size == "large" ? "hidden xl:flex" : "hidden"}`}
+        sizes="1216px"
       />
       <Image
         src={props.mobileImage}
         alt="mobile_image"
         className={`${props.size == "large" ? "flex xl:hidden" : "flex"}`}
+        sizes="(max-width: 1028px) 85vw, 896px"
       />
       <div className="flex flex-col items-start space-y-4">
         <div className="flex space-x-4 items-center">
