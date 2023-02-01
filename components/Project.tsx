@@ -34,7 +34,7 @@ const Project: React.FC<Props> = (props) => {
           <h2 className="text-h5 dark:text-white md:text-h3 text-left">
             {props.title}
           </h2>
-          {props.size == "large" ? (
+          {props.size == "large" && (props.path || props.link) ? (
             <ArrowRightIcon className="h-12 w-12 text-primary-500 dark:text-primary-400" />
           ) : (
             ""
