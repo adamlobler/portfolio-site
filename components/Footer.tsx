@@ -26,10 +26,16 @@ const Footer: React.FC = () => {
             Contact me!
           </a>
         </div>
-        <div className="flex flex-col w-fit">
-          <p className="text-caption text-gray-800 dark:text-gray-100 pb-4 text-left uppercase">
+        <div className="flex flex-col xl:items-end w-fit">
+          <p className="text-caption text-gray-800 dark:text-gray-100 pb-5 text-left uppercase">
             Get in touch!
           </p>
+          <a
+            href="mailto:adam.lobler@vallio.studio"
+            className="text-button text-primary-600 dark:text-primary-400 pb-5 text-left"
+          >
+            adam.lobler@vallio.studio
+          </a>
           <Socials />
         </div>
       </div>
