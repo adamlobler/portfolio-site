@@ -4,10 +4,10 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 flex items-center justify-center dark:bg-primary-400 text-button hover:bg-primary-600 dark:hover:bg-primary-300 text-white dark:text-black py-4 px-6 rounded-sm;
+    @apply bg-primary-500 hover:bg-primary-600 flex items-center justify-center dark:bg-primary-400 text-button dark:hover:bg-primary-300 text-white dark:text-black py-4 px-6 rounded-sm transition-all duration-300;
   }
   .btn-secondary {
-    @apply bg-transparent flex items-center justify-center dark:hover:bg-gray-800 text-button hover:bg-gray-50 dark:text-white border border-black dark:border-white hover:border-transparent py-4 px-6 rounded-sm;
+    @apply bg-transparent flex items-center justify-center dark:hover:bg-gray-800 text-button hover:bg-gray-50 dark:text-white border border-black dark:border-white hover:border-transparent py-4 px-6 rounded-sm transition-all duration-300;
   }
   /* ... */
 }

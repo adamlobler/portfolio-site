@@ -21,6 +21,9 @@ import ViddlButtons from "../images/viddl/viddl_buttons.png";
 import ViddLCourier from "../images/viddl/viddl_courier.png";
 import ViddLDesignSystem from "../images/viddl/viddl_design_system.png";
 import ViddLParcelTracking from "../images/viddl/viddl_parceltracking.png";
+import HsupDashboard from "../images/hsup/dashboard.png"
+import HsupMobileMockup from "../images/hsup/mobile_screens.png"
+import HsupMobileScreens from "../images/hsup/mobile_screens2.png"
 
 
 
@@ -47,10 +50,11 @@ const projects: Project[] = [
             "ViddL provides last-mile delivery service for big delivery companies. The startup has an admin UI for offices where they can manage the parcels and couriers and a mobile app for delivery.",
           desktopImage: ViddlDesktop,
           mobileImage: ViddlMobile,
-          images: [ ViddLDesignSystem,ViddlButtons,ViddLCourier, ViddLParcelTracking,ViddLAdmin1,ViddlAdmin2]
+          images: [ ViddLDesignSystem,ViddlButtons,ViddLCourier,ViddLParcelTracking,ViddLAdmin1,ViddlAdmin2]
         },
         {
           id: "hsup",
+          path: "hsup",
           title: "Hungarian startup university program",
           link: "https://hsup.nkfih.gov.hu",
           tags: ["Web application", "Mobile application", "Landing page"],
@@ -58,6 +62,7 @@ const projects: Project[] = [
             "HSUP is an online education platform where students can learn about startups. It’s available on almost every hungarian university and used by thousands of students every semester.",
           desktopImage: HsupDesktop,
           mobileImage: HsupMobile,
+          images: [HsupMobileMockup,HsupDashboard,HsupMobileScreens]
         },
         {
           id: "hereforyou",

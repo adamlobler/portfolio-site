@@ -16,7 +16,7 @@ type Props = {
 
 const Project: React.FC<Props> = (props) => {
   return (
-    <div className="space-y-8">
+    <div className="group space-y-8">
       <Image
         src={props.desktopImage}
         alt="desktop_image"
@@ -26,7 +26,11 @@ const Project: React.FC<Props> = (props) => {
       <Image
         src={props.mobileImage}
         alt="mobile_image"
-        className={`${props.size == "large" ? "flex xl:hidden" : "flex"}`}
+        className={`${
+          props.size == "large"
+            ? "flex xl:hidden overflow-hidden group-hover:scale-[1.10] ease-in-out duration-500"
+            : "flex overflow-hidden group-hover:scale-[1.01] ease-in-out duration-500"
+        }`}
         sizes="(max-width: 1028px) 85vw, 896px"
       />
       <div className="flex flex-col items-start space-y-4">
@@ -35,7 +39,7 @@ const Project: React.FC<Props> = (props) => {
             {props.title}
           </h2>
           {props.size == "large" && (props.path || props.link) ? (
-            <ArrowRightIcon className="h-12 w-12 text-primary-500 dark:text-primary-400" />
+            <ArrowRightIcon className="h-12 w-12 text-primary-500 dark:text-primary-400 group-hover:ml-6 transition-all duration-500" />
           ) : (
             ""
           )}
