@@ -5,10 +5,11 @@ import NavigationBar from "../components/NavigationBar";
 import Project from "../components/Project";
 import { Fade } from "react-awesome-reveal";
 import projects from "../data/projects";
+import Layout from "../components/Layout";
 
 const Works: NextPage = () => {
   return (
-    <div className="flex min-h-screen dark:bg-black flex-col items-center justify-center ">
+    <Layout>
       <Head>
         <title>Adam Lobler | Works</title>
         <meta
@@ -25,7 +26,6 @@ const Works: NextPage = () => {
         <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavigationBar />
       <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16">
         <Fade triggerOnce className="w-full">
           <div className="pt-16 pb-8 md:py-16 2xl:py-32 space-y-4">
@@ -75,8 +75,7 @@ const Works: NextPage = () => {
           )}
         </div>
       </section>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

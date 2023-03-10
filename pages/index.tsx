@@ -1,15 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import About from "../components/About";
-import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import NavigationBar from "../components/NavigationBar";
 import Projects from "../components/Projects";
 import { Fade } from "react-awesome-reveal";
+import Layout from "../components/Layout";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex dark:bg-black min-h-screen flex-col items-center justify-center transition-all duration-300">
+    <Layout>
       <Head>
         <title>Adam Lobler | Product designer</title>
         <meta
@@ -25,7 +24,6 @@ const Home: NextPage = () => {
         <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavigationBar />
       <main className="flex max-w-5xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16 text-center">
         <Fade triggerOnce className="w-full">
           <Hero />
@@ -33,8 +31,7 @@ const Home: NextPage = () => {
         <About />
         <Projects />
       </main>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

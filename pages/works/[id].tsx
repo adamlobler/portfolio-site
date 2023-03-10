@@ -11,6 +11,7 @@ import Image from "next/image";
 import { LinkIcon } from "@heroicons/react/24/solid";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Layout from "../../components/Layout";
 interface ParamsType extends ParsedUrlQuery {
   id: string;
 }
@@ -86,7 +87,7 @@ const WorksDetailPage = ({
   const [index, setIndex] = React.useState(-1);
 
   return (
-    <div className="flex min-h-screen dark:bg-black flex-col items-center justify-center ">
+    <Layout>
       <Head>
         <title>Adam Lobler | {project.title}</title>
         <meta name="description" content={project.description} key="desc" />
@@ -95,7 +96,6 @@ const WorksDetailPage = ({
         <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavigationBar />
       <Lightbox
         open={open}
         index={index}
@@ -165,8 +165,7 @@ const WorksDetailPage = ({
           ))}
         </Fade>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
