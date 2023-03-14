@@ -1,15 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Footer from "../components/Footer";
-import NavigationBar from "../components/NavigationBar";
 import Project from "../components/Project";
 import { Fade } from "react-awesome-reveal";
-import projects from "../data/projects";
-import Layout from "../components/Layout";
+import projects from "../content/projects";
 
 const Works: NextPage = () => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Adam Lobler | Works</title>
         <meta
@@ -75,7 +72,7 @@ const Works: NextPage = () => {
           )}
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

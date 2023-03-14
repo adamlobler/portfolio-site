@@ -25,8 +25,6 @@ import HsupDashboard from "../images/hsup/dashboard.png"
 import HsupMobileMockup from "../images/hsup/mobile_screens.png"
 import HsupMobileScreens from "../images/hsup/mobile_screens2.png"
 
-
-
 export type Project = {
         id: string,
         path?: string,
@@ -50,7 +48,7 @@ const projects: Project[] = [
             "ViddL provides last-mile delivery service for big delivery companies. The startup has an admin UI for offices where they can manage the parcels and couriers and a mobile app for delivery.",
           desktopImage: ViddlDesktop,
           mobileImage: ViddlMobile,
-          images: [ ViddLDesignSystem,ViddlButtons,ViddLCourier,ViddLParcelTracking,ViddLAdmin1,ViddlAdmin2]
+          images: [ ViddLDesignSystem,ViddlButtons,ViddLCourier,ViddLParcelTracking,ViddLAdmin1,ViddlAdmin2],
         },
         {
           id: "hsup",
