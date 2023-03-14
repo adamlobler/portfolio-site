@@ -1,17 +1,14 @@
 import React from "react";
 import { useRouter } from "next/router";
-import projects, { Project } from "../../data/projects";
+import projects, { Project } from "../../content/projects";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
-import NavigationBar from "../../components/NavigationBar";
 import { Fade } from "react-awesome-reveal";
-import Footer from "../../components/Footer";
 import Image from "next/image";
 import { LinkIcon } from "@heroicons/react/24/solid";
 import Lightbox, { SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Layout from "../../components/Layout";
 interface ParamsType extends ParsedUrlQuery {
   id: string;
 }
@@ -87,7 +84,7 @@ const WorksDetailPage = ({
   const [index, setIndex] = React.useState(-1);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Adam Lobler | {project.title}</title>
         <meta name="description" content={project.description} key="desc" />
@@ -165,7 +162,7 @@ const WorksDetailPage = ({
           ))}
         </Fade>
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -59,12 +59,12 @@ const NavigationBar: React.FC = () => {
           </div>
           <div className="flex">
             <ThemeSwitch />
-            <a
+            <Link
               className="btn-primary h-14 hidden md:block"
               href="mailto:adam.lobler@vallio.studio"
             >
               Hire me!
-            </a>
+            </Link>
             <button
               onClick={() => toggleNavbar()}
               data-collapse-toggle="navbar-sticky"
@@ -91,13 +91,13 @@ const NavigationBar: React.FC = () => {
         <ul className="flex flex-col rounded-lg md:flex-row space-y-2">
           {navigationItems.map((item, index) => (
             <li key={index}>
-              <a
+              <Link
                 href={item.link}
                 className="text-subtitle1 text-center block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:text-black dark:text-white hover:text-primary-500 md:p-0"
                 aria-current="page"
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

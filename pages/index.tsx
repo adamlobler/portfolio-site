@@ -4,11 +4,10 @@ import About from "../components/About";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import { Fade } from "react-awesome-reveal";
-import Layout from "../components/Layout";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Adam Lobler | Product designer</title>
         <meta
@@ -31,7 +30,7 @@ const Home: NextPage = () => {
         <About />
         <Projects />
       </main>
-    </Layout>
+    </>
   );
 };
 
