@@ -2,12 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 flex items-center justify-center dark:bg-primary-400 text-button dark:hover:bg-primary-300 text-white dark:text-black py-4 px-6 rounded-sm transition-all duration-300;
+    @apply bg-primary-500 hover:bg-primary-300  flex items-center justify-center text-button text-white py-4 px-6 rounded-sm transition-all duration-300;
   }
   .btn-secondary {
-    @apply bg-transparent flex items-center justify-center dark:hover:bg-gray-800 text-button hover:bg-gray-50 dark:text-white border border-black dark:border-white hover:border-transparent py-4 px-6 rounded-sm transition-all duration-300;
+    @apply bg-transparent  flex items-center justify-center  dark:hover:bg-gray-800 text-button hover:bg-gray-50 dark:text-white border border-black dark:border-white hover:border-transparent py-4 px-6 rounded-sm transition-all duration-300;
+  }
+  .icon-scroll {
+    position: relative;
+    width: 40px;
+    height: 70px;
+    margin-left: -20px;
+    box-shadow: inset 0 0 0 1px #fff;
+    border-radius: 25px;
+  }
+  
+  .icon-scroll__before {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    margin-left: 16px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+  }
+  
+  @keyframes scroll {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(46px);
+    }
   }
   /* ... */
 }

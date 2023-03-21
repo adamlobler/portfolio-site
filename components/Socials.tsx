@@ -7,17 +7,17 @@ import Social from "../components/Social";
 
 const socials = [
   {
-    image: Mail,
+    image: "/img/social/mail.svg",
     altText: "mail",
     url: "mailto: adam.lobler@vallio.studio",
   },
   {
-    image: Linkedin,
+    image: "/img/social/linkedin.svg",
     altText: "linkedin",
     url: "https://www.linkedin.com/in/adam-lobler/",
   },
   {
-    image: Upwork,
+    image: "/img/social/upwork.svg",
     altText: "upwork",
     url: "https://www.upwork.com/freelancers/~01ea504e62d5ca4245?s=1044578476142100545",
   },

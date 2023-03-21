@@ -2,7 +2,7 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 
 type Props = {
-  image: StaticImageData;
+  image: string | "";
   alt: string | "";
   url: string | "";
 };
@@ -13,9 +13,9 @@ const Social: React.FC<Props> = (props) => {
       href={props.url}
       rel="noreferrer"
       target="_blank"
-      className="flex w-fit hover:bg-primary-50 dark:hover:bg-primary-800 rounded-full transition-all duration-300"
+      className="w-[60px] h-[60px] bg-white flex justify-center items-center hover:bg-primary-100 hover:drop-shadow-2xl rounded-full transition-all duration-300"
     >
-      <Image width={60} height={60} src={props.image} alt={props.alt} />
+      <Image width={32} height={32} src={props.image} alt={props.alt} />
     </a>
   );
 };

@@ -3,7 +3,7 @@ import Project from "./Project";
 import { Fade } from "react-awesome-reveal";
 import projects from "../content/projects";
 
-const Projects: React.FC = () => {
+const Projects = () => {
   const featuredProjects = projects.slice(0, 3);
   return (
     <section className="my-24 space-y-32 xl:space-y-64">

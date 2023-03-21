@@ -11,7 +11,7 @@ export default function ThemeSwitch() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <></>;
+  if (!mounted) return <div className="h-6 w-6 text-gray-100 m-4" />;
 
   return (
     <button
