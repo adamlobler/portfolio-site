@@ -1,29 +1,29 @@
-import ViddlDesktop from "../images/viddl_desktop.png";
-import ViddlMobile from "../images/viddl_mobile.png";
-import HsupDesktop from "../images/hsup_desktop.png";
-import HsupMobile from "../images/hsup_mobile.png";
-import HereforyouDesktop from "../images/hereforyou_desktop.png";
-import HereforyouMobile from "../images/hereforyou_mobile.png";
-import DinobookingDesktop from "../images/dinobooking_desktop.png";
-import DinobookingMobile from "../images/dinobooking_mobile.png";
-import DigidojoDesktop from "../images/digidojo_desktop.png";
-import DigidojoMobile from "../images/digidojo_mobile.png";
-import WiaDesktop from "../images/wia_desktop.png";
-import WiaMobile from "../images/wia_mobile.png";
-import CogitoDesktop from "../images/cogito_desktop.png";
-import CogitoMobile from "../images/cogito_mobile.png";
-import EvitaDesktop from "../images/evita_desktop.png";
-import EvitaMobile from "../images/evita_mobile.png";
+import ViddlDesktop from "../public/img/viddl_desktop.png";
+import ViddlMobile from "../public/img/viddl_mobile.png";
+import HsupDesktop from "../public/img/hsup_desktop.png";
+import HsupMobile from "../public/img/hsup_mobile.png";
+import HereforyouDesktop from "../public/img/hereforyou_desktop.png";
+import HereforyouMobile from "../public/img/hereforyou_mobile.png";
+import DinobookingDesktop from "../public/img/dinobooking_desktop.png";
+import DinobookingMobile from "../public/img/dinobooking_mobile.png";
+import DigidojoDesktop from "../public/img/digidojo_desktop.png";
+import DigidojoMobile from "../public/img/digidojo_mobile.png";
+import WiaDesktop from "../public/img/wia_desktop.png";
+import WiaMobile from "../public/img/wia_mobile.png";
+import CogitoDesktop from "../public/img/cogito_desktop.png";
+import CogitoMobile from "../public/img/cogito_mobile.png";
+import EvitaDesktop from "../public/img/evita_desktop.png";
+import EvitaMobile from "../public/img/evita_mobile.png";
 import { StaticImageData } from "next/image";
-import ViddLAdmin1 from "../images/viddl/Admin_1.png";
-import ViddlAdmin2 from "../images/viddl/Admin_2.png";
-import ViddlButtons from "../images/viddl/viddl_buttons.png";
-import ViddLCourier from "../images/viddl/viddl_courier.png";
-import ViddLDesignSystem from "../images/viddl/viddl_design_system.png";
-import ViddLParcelTracking from "../images/viddl/viddl_parceltracking.png";
-import HsupDashboard from "../images/hsup/dashboard.png"
-import HsupMobileMockup from "../images/hsup/mobile_screens.png"
-import HsupMobileScreens from "../images/hsup/mobile_screens2.png"
+import ViddLAdmin1 from "../public/img/viddl/Admin_1.png";
+import ViddlAdmin2 from "../public/img/viddl/Admin_2.png";
+import ViddlButtons from "../public/img/viddl/viddl_buttons.png";
+import ViddLCourier from "../public/img/viddl/viddl_courier.png";
+import ViddLDesignSystem from "../public/img/viddl/viddl_design_system.png";
+import ViddLParcelTracking from "../public/img/viddl/viddl_parceltracking.png";
+import HsupDashboard from "../public/img/hsup/dashboard.png"
+import HsupMobileMockup from "../public/img/hsup/mobile_screens.png"
+import HsupMobileScreens from "../public/img/hsup/mobile_screens2.png"
 
 export type Project = {
         id: string,
@@ -52,7 +52,7 @@ const projects: Project[] = [
         },
         {
           id: "hsup",
-          path: "hsup",
+          path: "/works/hsup",
           title: "Hungarian startup university program",
           link: "https://hsup.nkfih.gov.hu",
           tags: ["Web application", "Mobile application", "Landing page"],
