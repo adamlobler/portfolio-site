@@ -4,7 +4,7 @@ import { Circle } from "./svg/Circle";
 import { Cross } from "./svg/Cross";
 import { RotatedRectangle } from "./svg/RotatedRectangle";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="flex flex-col w-full bg-gray-50 dark:bg-gray-900 items-center justify-center ">
       <Circle className="fill-white dark:fill-black lg:absolute xl:block hidden ml-[-1200px] mt-[-450px] scale-[3]" />
