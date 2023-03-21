@@ -35,7 +35,7 @@ const Project: React.FC<Props> = (props) => {
       />
       <div className="flex flex-col items-start space-y-4">
         <div className="flex space-x-4 items-center">
-          <h2 className="text-h5 dark:text-white md:text-h3 text-left">
+          <h2 className="text-h4 dark:text-white md:text-h3 text-left">
             {props.title}
           </h2>
           {props.size == "large" && (props.path || props.link) ? (
