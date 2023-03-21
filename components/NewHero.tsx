@@ -14,6 +14,7 @@ const NewHero = () => {
         width={2880}
         height={1700}
         src="/img/gradient.png"
+        priority
       />
       <div className="flex mx-6 z-10 flex-col md:items-center">
         <Fade triggerOnce direction="up" duration={1500}>

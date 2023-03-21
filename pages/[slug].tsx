@@ -101,6 +101,7 @@ const Slug = ({ metadata, mdxcontent }) => {
           height={500}
           alt="desktop_image"
           className="hidden md:flex w-screen max-w-7xl"
+          priority
         />
         <Image
           src={metadata.mobileImage}
@@ -108,6 +109,7 @@ const Slug = ({ metadata, mdxcontent }) => {
           width={800}
           height={500}
           className="flex md:hidden"
+          priority
         />
         <h1 className="text-h3 px-6 xl:px-0 w-full md:text-h1 md:mb-32 dark:text-white py-8">
           {metadata.title}
