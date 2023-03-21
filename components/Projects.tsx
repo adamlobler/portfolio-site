@@ -1,7 +1,7 @@
 import React from "react";
 import Project from "./Project";
 import { Fade } from "react-awesome-reveal";
-import projects from "./projects";
+import projects from "../data/projects";
 
 const Projects = () => {
   const featuredProjects = projects.slice(0, 3);

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Project from "../components/Project";
 import { Fade } from "react-awesome-reveal";
-import projects from "../components/projects";
+import projects from "../data/projects";
 import Image from "next/image";
 
 const Works: NextPage = () => {
