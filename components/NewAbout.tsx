@@ -22,21 +22,23 @@ interface AboutProps {
   id: string;
 }
 
-const About = ({ id }: AboutProps) => {
+const NewAbout = ({ id }: AboutProps) => {
   return (
     <section
       id={id}
-      className="flex w-full space-y flex-col justify-center xl:flex-row py-4 xl:py-32"
+      className="flex w-full xl:h-screen space-y flex-col items-center justify-center xl:flex-row py-4 xl:py-32"
     >
-      <div className="flex flex-col xl:w-full space-y-6 justify-start xl:mr-16">
+      <div className="flex flex-col xl:w-full space-y-12 justify-start xl:mr-48">
         <Fade triggerOnce>
           <Image
-            src={ProfilePicture}
-            className=" w-40 xl:w-56"
+            src={"/img/adam_lobler.jpg"}
+            className=" w-56 xl:w-[300px] rounded"
+            width={300}
+            height={300}
             sizes="(max-width: 1280px) 160px,228px,"
             alt="adam_lobler"
           />
-          <h2 className="text-h5 dark:text-white md:text-h3 text-left">
+          <h2 className="text-h3 dark:text-white md:text-h2 text-left">
             About me
           </h2>
           <p className="text-body1 md:text-body1 w-full text-gray-500 dark:text-gray-400 text-left">
@@ -52,17 +54,13 @@ const About = ({ id }: AboutProps) => {
               <p className="text-caption dark:text-white uppercase text-start">
                 years of experience
               </p>
-              <p className="text-h3 uppercase text-primary-500 dark:text-primary-400 w-5">
-                5+
-              </p>
+              <p className="text-h2 uppercase text-primary-400 w-5">5+</p>
             </div>
             <div className="flex flex-col space-y-2 w-1/2">
               <p className="text-caption dark:text-white text-start uppercase">
                 clients served
               </p>
-              <p className="text-h3 uppercase text-primary-500 dark:text-primary-400 w-5">
-                30+
-              </p>
+              <p className="text-h2 uppercase text-primary-400 w-5">30+</p>
             </div>
             <div className="pr-6 pb-4 lg:pb-0" />
           </div>
@@ -93,4 +91,4 @@ const About = ({ id }: AboutProps) => {
   );
 };
 
-export default About;
+export default NewAbout;

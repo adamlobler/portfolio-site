@@ -9,7 +9,7 @@ import { RotatedRectangle } from "./svg/RotatedRectangle";
 import { Rectangle } from "./svg/Rectangle";
 import Link from "next/link";
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <section className="flex flex-col w-full  pb-16 2xl:pt-16 ">
       <Circle className="fill-gray-50 dark:fill-gray-800 lg:absolute 2xl:block hidden  mt-24 ml-32" />
