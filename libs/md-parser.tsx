@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 
 type Slug = {
   params: {
@@ -33,7 +32,7 @@ const getSlugs = () => {
     if (fileName !== "img") {
       result.push({
         params: {
-          slug: fileName.replace(/\.md$/, ""),
+          slug: fileName.replace(/\.mdx$/, ""),
         },
       });
     }
