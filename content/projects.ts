@@ -19,7 +19,6 @@ import ViddLAdmin1 from "../public/img/viddl/Admin_1.png";
 import ViddlAdmin2 from "../public/img/viddl/Admin_2.png";
 import ViddlButtons from "../public/img/viddl/viddl_buttons.png";
 import ViddLCourier from "../public/img/viddl/viddl_courier.png";
-import ViddLDesignSystem from "../public/img/viddl/viddl_design_system.png";
 import ViddLParcelTracking from "../public/img/viddl/viddl_parceltracking.png";
 import HsupDashboard from "../public/img/hsup/dashboard.png"
 import HsupMobileMockup from "../public/img/hsup/mobile_screens.png"
@@ -48,7 +47,7 @@ const projects: Project[] = [
             "ViddL provides last-mile delivery service for big delivery companies. The startup has an admin UI for offices where they can manage the parcels and couriers and a mobile app for delivery.",
           desktopImage: ViddlDesktop,
           mobileImage: ViddlMobile,
-          images: [ ViddLDesignSystem,ViddlButtons,ViddLCourier,ViddLParcelTracking,ViddLAdmin1,ViddlAdmin2],
+          images: [ ViddlButtons,ViddLCourier,ViddLParcelTracking,ViddLAdmin1,ViddlAdmin2],
         },
         {
           id: "hsup",
