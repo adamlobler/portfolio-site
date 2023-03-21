@@ -11,7 +11,7 @@ const Projects = () => {
         project.link ? (
           <a
             key={project.title}
-            href={project.path ? "/works/" + project.path : project.link}
+            href={project.path ? project.path : project.link}
             rel="noreferrer"
             target={project.path ? "" : "_blank"}
             className="block"
