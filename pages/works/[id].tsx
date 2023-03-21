@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import projects, { Project } from "../../content/projects";
+import projects, { Project } from "../../components/projects";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
