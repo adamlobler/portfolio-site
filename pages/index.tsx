@@ -4,7 +4,6 @@ import Projects from "../components/Projects";
 import { Fade } from "react-awesome-reveal";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import loader from "../components/loader";
 
 const Home: NextPage = () => {
   return (
