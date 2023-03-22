@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { Fade } from "react-awesome-reveal";
 
 type Props = {
   path?: string;

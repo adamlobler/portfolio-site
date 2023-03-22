@@ -1,58 +1,88 @@
 import React from "react";
 import Image from "next/image";
-import HeroImage from "../images/hero_image.png";
-import Socials from "./Socials";
-import { Circle } from "./svg/Circle";
-import { Triangle } from "./svg/Triangle";
-import { Cross } from "./svg/Cross";
-import { RotatedRectangle } from "./svg/RotatedRectangle";
-import { Rectangle } from "./svg/Rectangle";
 import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
+import dynamic from "next/dynamic";
+import Background from "../public/img/gradient.png";
+import Mockups from "../public/img/hero_mockups.png";
+
+import {
+  ScrollContainer,
+  batch,
+  Fade as ScrollFade,
+  Move,
+} from "react-scroll-motion";
+
+const Animator = dynamic(
+  import("react-scroll-motion").then((it) => it.Animator),
+  { ssr: false }
+);
 
 const Hero = () => {
   return (
-    <section className="flex flex-col w-full  pb-16 2xl:pt-16 ">
-      <Circle className="fill-gray-50 dark:fill-gray-800 lg:absolute 2xl:block hidden  mt-24 ml-32" />
-      <div className="flex flex-col-reverse xl:flex-row items-center gap-x-8 pt-16 2xl:py-16">
-        <div className="flex flex-col xl:w-1/2 w-full xl:max-w-none justify-center pb-6 xl:pb-0">
-          <h1 className="text-h3 dark:text-white md:text-h1 text-left font-bold pb-4 md:pb-8">
-            Hi, I’m Adam product designer
-          </h1>
-          <p className="text-subtitle2 text-gray-800 dark:text-gray-300 md:text-subtitle1 xl:max-w-lg text-left pb-4 md:pb-8">
-            I’m passionate to make the best digital solution for businesses
-          </p>
-          <div className="flex flex-col md:flex-row">
-            <a className="btn-primary" href="mailto:adam.lobler@vallio.studio">
-              Hire me!
-            </a>
-            <div className="pr-6 pb-4 lg:pb-0" />
-            <Link className="btn-secondary" href="/works">
-              My previous projets{" "}
-            </Link>
+    <ScrollContainer snap="none">
+      <section className="flex h-fit relative flex-col w-screen lg:h-[calc(100vh-76px)] justify-center items-center pb-16 2xl:pt-16 ">
+        <Image
+          src={Background}
+          className="absolute w-screen h-full lg:h-[calc(100vh-76px)]"
+          alt="bg"
+          priority
+        />
+        <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 items-center md:justify-between">
+          <div className="lg:w-7/12 2xl:w-1/2">
+            <Animator animation={ScrollFade()} className="!block">
+              <Fade triggerOnce direction="up" duration={1500}>
+                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[13vw] md:text-[6vw] xl:text-[6vw] 2xl:text-[100px] leading-tight uppercase font-bold pb-2">
+                  Hi, I’m Adam
+                </h1>
+                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[8vw] md:text-[5vw] xl:text-[5vw] 2xl:text-[72px] leading-tight uppercase font-bold pb-8 2xl:pb-16">
+                  product designer
+                </h1>
+              </Fade>
+            </Animator>
+            <Animator animation={ScrollFade()} className="!block">
+              <Fade triggerOnce direction="up" duration={1500} delay={400}>
+                <h2 className="text-subtitle1 text-center lg:text-left drop-shadow-sm text-white md:text-h5 pb-8 2xl:pb-16">
+                  I’m passionate to make the best digital solution for
+                  businesses
+                </h2>
+              </Fade>
+              <Fade triggerOnce direction="up" duration={1500} delay={800}>
+                <div className="flex w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
+                  <a
+                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
+                    href="mailto:adam.lobler@vallio.studio"
+                  >
+                    Hire me!
+                  </a>
+                  <div className="pr-6 pb-4 lg:pb-0" />
+                  <Link
+                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
+                    href="/works"
+                  >
+                    My previous projets{" "}
+                  </Link>
+                </div>
+              </Fade>
+            </Animator>
           </div>
-          <RotatedRectangle className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden  mt-[450px] ml-[540px]" />
+          <Animator
+            animation={batch(Move(), ScrollFade())}
+            className="!block aspect-[596/616] w-full max-w-md lg:max-w-none lg:w-5/12 2xl:w-1/2 my-4"
+          >
+            <Fade triggerOnce direction="up" duration={1200}>
+              <Image
+                className=" max-w-md lg:max-w-none w-full my-4"
+                alt="hero_mockups"
+                src={Mockups}
+                quality={70}
+                width={836}
+              />
+            </Fade>
+          </Animator>
         </div>
-        <div className="flex items-center justify-center max-w-[530px] 2xl:max-w-none w-full  xl:w-auto ">
-          <Image
-            className="max-w-[622px] w-full"
-            sizes="(max-width: 560px) 85vw,(max-width: 1280px) 612px,
-            616px"
-            src={HeroImage}
-            alt="heromockup"
-            loading="eager"
-          />
-        </div>
-        <Rectangle className="fill-gray-50 dark:fill-gray-800 lg:absolute 2xl:block hidden mt-[480px] pl-2" />
-        <div>
-          <Triangle className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden -mt-[240px]" />
-        </div>
-        <Cross className="fill-gray-50 dark:fill-gray-800 lg:absolute xl:block hidden mt-[700px] ml-[900px]" />
-      </div>
-      <p className="text-caption text-gray-800 dark:text-gray-100 pb-4 text-left uppercase">
-        Get in touch!
-      </p>
-      <Socials />
-    </section>
+      </section>
+    </ScrollContainer>
   );
 };
 
