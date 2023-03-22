@@ -1,4 +1,3 @@
-//markdown-blog/pages/[slug].js
 // @ts-nocheck
 
 import { getSlugs } from "../libs/md-parser";
@@ -9,6 +8,7 @@ import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { Fade } from "react-awesome-reveal";
+import Metadata from "../components/Metadata";
 
 const components = {
   Image,
@@ -24,8 +24,6 @@ const getStaticPaths = async () => {
   };
 };
 
-//define this to return specific blog conent to next-js
-//and remember to return all you need back - this will go the default function.
 const getStaticProps = async ({ params }) => {
   const slug = params.slug;
   const fileName = fs.readFileSync(`content/${slug}.mdx`, "utf-8");
@@ -70,13 +68,27 @@ const Slug = ({ metadata, mdxcontent }) => {
           className="flex md:hidden"
           priority
         />
-        <h1 className="text-h3 px-6 xl:px-0 w-full md:text-h1 md:mb-32 dark:text-white py-8">
-          {metadata.title}
-        </h1>
-        {/*
-        <article className="prose mb-64 prose-lg flex flex-col prose-headings:dark:text-white prose-headings:w-full text-gray-600 dark:text-gray-400 prose-p:max-w-2xl prose-img:max-w-none prose-p:flex prose-p:justify-center prose-img:w-full 2xl:prose-img:w-[1344px]">
-          <ReactMarkdown remarkPlugins={[gfm]}>{content}</ReactMarkdown>
-        </article>*/}
+        <div className="text-h3 px-6 xl:px-0 w-full md:mb-32  py-8">
+          <h1 className="text-h3 w-full md:text-h1  dark:text-white">
+            {metadata.title}
+          </h1>
+          <div className="flex flex-row flex-wrap md:space-x-16 my-4 md:my-16">
+            <Metadata title="DURATION" data={metadata.duration} />
+            <Metadata title="ROLE" data={metadata.role} />
+            <Metadata title="ClIENT" data={metadata.client} />
+          </div>
+          <div className="hidden sm:flex flex-row flex-wrap">
+            {metadata.tags.map((tag) => (
+              <p
+                className="text-button p-2 border rounded mr-4 my-2 whitespace-nowrap"
+                key={tag}
+              >
+                {tag}
+              </p>
+            ))}
+          </div>
+        </div>
+
         <article className="prose mb-64 mx-6 prose-lg flex flex-col items-center prose-headings:dark:text-white prose-headings:w-full text-gray-600 dark:text-gray-300 prose-img:max-w-none prose-p:flex prose-p:justify-center prose-img:w-full 2xl:prose-img:w-[1344px]">
           <MDXRemote {...mdxcontent} components={components} />
         </article>
@@ -87,5 +99,4 @@ const Slug = ({ metadata, mdxcontent }) => {
 
 export default Slug;
 
-//it will not work unless you export these two.
 export { getStaticPaths, getStaticProps };
