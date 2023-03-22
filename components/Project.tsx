@@ -16,7 +16,7 @@ type Props = {
 
 const Project: React.FC<Props> = (props) => {
   return (
-    <div className="group space-y-8">
+    <div className="group space-y-8 mx-[-24px] lg:mx-auto">
       <Image
         src={props.desktopImage}
         alt="desktop_image"
@@ -28,14 +28,14 @@ const Project: React.FC<Props> = (props) => {
         alt="mobile_image"
         className={`${
           props.size == "large"
-            ? "flex xl:hidden overflow-hidden group-hover:scale-[1.10] ease-in-out duration-500"
-            : "flex overflow-hidden group-hover:scale-[1.01] ease-in-out duration-500"
+            ? "flex xl:hidden overflow-hidden ease-in-out duration-500 "
+            : "flex overflow-hidden ease-in-out duration-500"
         }`}
         sizes="(max-width: 1028px) 85vw, 896px"
       />
-      <div className="flex flex-col items-start space-y-4">
+      <div className="flex flex-col items-start space-y-4 px-6 md:px-0">
         <div className="flex space-x-4 items-center">
-          <h2 className="text-h4 dark:text-white md:text-h3 text-left">
+          <h2 className="text-h5 dark:text-white md:text-h2 text-left">
             {props.title}
           </h2>
           {props.size == "large" && (props.path || props.link) ? (
@@ -44,11 +44,11 @@ const Project: React.FC<Props> = (props) => {
             ""
           )}
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-row flex-wrap">
           {props.tags.map((tag) => (
             <p
               key={tag}
-              className="text-caption uppercase text-start mr-2 text-gray-400 dark:text-gray-600"
+              className="text-button px-2 py-1 border rounded mr-2 my-1 whitespace-nowrap"
             >
               {tag}
             </p>
@@ -57,8 +57,8 @@ const Project: React.FC<Props> = (props) => {
         <p
           className={`${
             props.size == "large"
-              ? "text-subtitle2 max-w-4xl md:text-subtitle1 text-gray-600 dark:text-gray-400 text-left"
-              : "text-subtitle2 max-w-4xl text-gray-600 dark:text-gray-400 text-left"
+              ? "text-subtitle2 max-w-4xl md:text-subtitle1 text-gray-600 dark:text-gray-300 text-left"
+              : "text-subtitle2 max-w-4xl text-gray-600 dark:text-gray-300 text-left"
           }`}
         >
           {props.description}

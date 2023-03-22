@@ -48,7 +48,7 @@ const Works: NextPage = () => {
           </div>
         </div>
       </Fade>
-      <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-4 md:px-16 2xl:px-0 py-16">
+      <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-6 md:px-16 2xl:px-0 py-16">
         <div className="grid w-full xl:grid-cols-2 gap-16 xl:pb-48">
           {projects.map((project) =>
             project.link ? (
