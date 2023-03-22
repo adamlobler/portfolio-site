@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           property="og:description"
           content="I'm Adam, product designer. I’m passionate to make the best digital solution for businesses."
         />
-        <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
+        <meta property="og:image" content="/img/og_image.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col items-center">
