@@ -1,6 +1,5 @@
 import NavigationBar from "./NavigationBar";
 import Footer from "./Footer";
-import NewFooter from "./NewFooter";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,9 +12,7 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex flex-col items-center justify-center ">
         {children}
       </main>
-      <NewFooter />
-
-      {/*<Footer />*/}
+      <Footer />
     </div>
   );
 }

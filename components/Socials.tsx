@@ -1,8 +1,4 @@
 import React from "react";
-import Instagram from "../images/social/instagram.png";
-import Linkedin from "../images/social/linkedin.png";
-import Mail from "../images/social/mail.png";
-import Upwork from "../images/social/upwork.png";
 import Social from "../components/Social";
 
 const socials = [
