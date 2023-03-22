@@ -29,13 +29,13 @@ const NewHero = () => {
           priority
         />
         <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 items-center md:justify-between">
-          <div className="lg:w-7/12">
+          <div className="lg:w-7/12 2xl:w-1/2">
             <Animator animation={ScrollFade()} className="!block">
               <Fade triggerOnce direction="up" duration={1500}>
                 <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[13vw] md:text-[6vw] xl:text-[6vw] 2xl:text-[100px] leading-tight uppercase font-bold pb-2">
                   Hi, I’m Adam
                 </h1>
-                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[8vw] md:text-[5vw] xl:text-[5vw] 2xl:text-[80px] leading-tight uppercase font-bold pb-8 2xl:pb-16">
+                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[8vw] md:text-[5vw] xl:text-[5vw] 2xl:text-[72px] leading-tight uppercase font-bold pb-8 2xl:pb-16">
                   product designer
                 </h1>
               </Fade>
@@ -68,14 +68,13 @@ const NewHero = () => {
           </div>
           <Animator
             animation={batch(Move(), ScrollFade())}
-            className="!block aspect-[596/616] w-full max-w-md lg:max-w-none lg:w-5/12 my-4"
+            className="!block aspect-[596/616] w-full max-w-md lg:max-w-none lg:w-5/12 2xl:w-1/2 my-4"
           >
             <Fade triggerOnce direction="up" duration={1200}>
               <Image
                 alt="hero_mockups"
                 src={Mockups}
-                width={700}
-                height={700}
+                quality={80}
                 className=" max-w-md lg:max-w-none w-full my-4"
               />
             </Fade>

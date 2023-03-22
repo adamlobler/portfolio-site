@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://adamlobler.com
+
+# Sitemaps
+Sitemap: https://adamlobler.com/sitemap.xml

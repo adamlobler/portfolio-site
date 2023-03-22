@@ -4,6 +4,7 @@ import Project from "../components/Project";
 import { Fade } from "react-awesome-reveal";
 import projects from "../data/projects";
 import Image from "next/image";
+import Background from "../public/img/gradient.png";
 
 const Works: NextPage = () => {
   return (
@@ -27,11 +28,10 @@ const Works: NextPage = () => {
       <Fade triggerOnce className="w-full">
         <div className="relative flex items-center justify-center w-screen md:py-16 2xl:py-24">
           <Image
+            src={Background}
             className="absolute top-0 left-0 w-screen h-full bg-background"
             alt="bg"
-            width={2880}
-            height={1400}
-            src="/img/gradient.png"
+            priority
           />
           <div className="flex w-full space-y-2 max-w-5xl text-left xl:max-w-7xl flex-1 flex-col items-start justify-center px-4 md:px-16 2xl:px-0 py-8">
             <Fade triggerOnce direction="up">
