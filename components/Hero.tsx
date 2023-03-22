@@ -21,13 +21,13 @@ const Animator = dynamic(
 const Hero = () => {
   return (
     <ScrollContainer snap="none">
-      <section className="flex h-fit relative flex-col w-screen lg:h-[calc(100vh-76px)] justify-center items-center pb-16 2xl:pt-16 ">
+      <section className="flex bg-[#341692] h-fit relative flex-col w-screen lg:h-[calc(100vh-76px)] justify-center items-center pb-16 2xl:pt-16 ">
         <Image
           src={Background}
           className="absolute w-screen h-full lg:h-[calc(100vh-76px)]"
           alt="bg"
         />
-        <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 items-center md:justify-between">
+        <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 w-full items-center md:justify-between">
           <div className="lg:w-7/12 2xl:w-1/2">
             <Animator animation={ScrollFade()} className="!block">
               <Fade triggerOnce direction="up" duration={1500}>
@@ -67,7 +67,7 @@ const Hero = () => {
           </div>
           <Animator
             animation={batch(Move(), ScrollFade())}
-            className="!block aspect-[596/616] w-full max-w-md lg:max-w-none lg:w-5/12 2xl:w-1/2 my-4"
+            className="!block aspect-[596/616] w-full max-w-md lg:max-w-[836px] lg:w-5/12 2xl:w-1/2 my-4"
           >
             <Fade triggerOnce direction="up" duration={1200}>
               <Image
@@ -75,7 +75,7 @@ const Hero = () => {
                 alt="hero_mockups"
                 src={Mockups}
                 quality={70}
-                width={787}
+                width={836}
                 height={600}
                 priority
               />
