@@ -9,7 +9,6 @@ type Slug = {
 
 const contentDir = path.join(process.cwd(), "content");
 
-}
 const getSlugs = () => {
   const fileNames = fs.readdirSync(contentDir);
 
