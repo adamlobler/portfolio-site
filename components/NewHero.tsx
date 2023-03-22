@@ -2,63 +2,87 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
-import { Link as Scrolllink, animateScroll as scroll } from "react-scroll";
-import ScrollIcon from "./ScrollIcon/ScrollIcon";
+import dynamic from "next/dynamic";
+import Background from "../public/img/gradient.png";
+import Mockups from "../public/img/hero_mockups.png";
+
+const Animator = dynamic(
+  import("react-scroll-motion").then((it) => it.Animator),
+  { ssr: false }
+);
+
+import {
+  ScrollContainer,
+  batch,
+  Fade as ScrollFade,
+  Move,
+} from "react-scroll-motion";
 
 const NewHero = () => {
   return (
-    <section className="flex flex-col w-screen h-[calc(100vh-76px)] justify-center items-center pb-16 2xl:pt-16 ">
-      <Image
-        className="absolute w-screen h-[calc(100vh-76px)]"
-        alt="bg"
-        width={2880}
-        height={1700}
-        src="/img/gradient.png"
-        priority
-      />
-      <div className="flex mx-6 z-10 flex-col md:items-center">
-        <Fade triggerOnce direction="up" duration={1500}>
-          <h1 className="whitespace-pre-line drop-shadow-2xl text-white 2xl:max-w-[2000px] text-[12vw] md:text-[7vw] xl:text-[6vw] 2xl:text-[5vw] text-center leading-tight uppercase font-bold pb-8 2xl:pb-16">
-            Hi, I’m Adam {"\n"} product designer
-          </h1>
-        </Fade>
-        <Fade triggerOnce direction="up" duration={1500} delay={400}>
-          <h2 className="text-subtitle1 text-center drop-shadow-sm text-white md:text-h5 pb-8 2xl:pb-16">
-            I’m passionate to make the best digital solution for businesses
-          </h2>
-        </Fade>
-        <Fade triggerOnce direction="up" duration={1500} delay={800}>
-          <div className="flex w-full flex-col md:flex-row">
-            <a
-              className="flex hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
-              href="mailto:adam.lobler@vallio.studio"
-            >
-              Hire me!
-            </a>
-            <div className="pr-6 pb-4 lg:pb-0" />
-            <Link
-              className="flex hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
-              href="/works"
-            >
-              My previous projets{" "}
-            </Link>
+    <ScrollContainer snap="none">
+      <section className="flex h-fit relative flex-col w-screen lg:h-[calc(100vh-76px)] justify-center items-center pb-16 2xl:pt-16 ">
+        <Image
+          src={Background}
+          className="absolute w-screen h-full lg:h-[calc(100vh-76px)]"
+          alt="bg"
+          priority
+        />
+        <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 items-center md:justify-between">
+          <div className="lg:w-7/12">
+            <Animator animation={ScrollFade()} className="!block">
+              <Fade triggerOnce direction="up" duration={1500}>
+                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[13vw] md:text-[6vw] xl:text-[6vw] 2xl:text-[100px] leading-tight uppercase font-bold pb-2">
+                  Hi, I’m Adam
+                </h1>
+                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[8vw] md:text-[5vw] xl:text-[5vw] 2xl:text-[80px] leading-tight uppercase font-bold pb-8 2xl:pb-16">
+                  product designer
+                </h1>
+              </Fade>
+            </Animator>
+            <Animator animation={ScrollFade()} className="!block">
+              <Fade triggerOnce direction="up" duration={1500} delay={400}>
+                <h2 className="text-subtitle1 text-center lg:text-left drop-shadow-sm text-white md:text-h5 pb-8 2xl:pb-16">
+                  I’m passionate to make the best digital solution for
+                  businesses
+                </h2>
+              </Fade>
+              <Fade triggerOnce direction="up" duration={1500} delay={800}>
+                <div className="flex w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
+                  <a
+                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
+                    href="mailto:adam.lobler@vallio.studio"
+                  >
+                    Hire me!
+                  </a>
+                  <div className="pr-6 pb-4 lg:pb-0" />
+                  <Link
+                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
+                    href="/works"
+                  >
+                    My previous projets{" "}
+                  </Link>
+                </div>
+              </Fade>
+            </Animator>
           </div>
-        </Fade>
-        <Fade triggerOnce duration={3000} delay={3000}>
-          <Scrolllink
-            activeClass="active"
-            to="section-1"
-            spy={true}
-            smooth={true}
-            offset={-76}
-            duration={1500}
-            className="cursor-pointer"
+          <Animator
+            animation={batch(Move(), ScrollFade())}
+            className="!block aspect-[596/616] w-full max-w-md lg:max-w-none lg:w-5/12 my-4"
           >
-            <ScrollIcon />
-          </Scrolllink>
-        </Fade>
-      </div>
-    </section>
+            <Fade triggerOnce direction="up" duration={1200}>
+              <Image
+                alt="hero_mockups"
+                src={Mockups}
+                width={700}
+                height={700}
+                className=" max-w-md lg:max-w-none w-full my-4"
+              />
+            </Fade>
+          </Animator>
+        </div>
+      </section>
+    </ScrollContainer>
   );
 };
 
