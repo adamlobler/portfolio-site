@@ -10,13 +10,8 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { Fade } from "react-awesome-reveal";
 
-const handleClick = () => {
-  setOpen(true);
-};
-
 const components = {
   Image,
-  handleClick,
   Fade,
 };
 
@@ -51,42 +46,6 @@ const getStaticProps = async ({ params }) => {
   };
 };
 
-export function renderLightbox(
-  image: SlideImage,
-  rect: {
-    width: number;
-    height: number;
-  }
-) {
-  const width = Math.round(
-    image.height && image.width
-      ? Math.min(rect.width, (rect.height / image.height) * image.width)
-      : 0
-  );
-  const height = Math.round(
-    image.height && image.width
-      ? Math.min(rect.height, (rect.width / image.width) * image.height)
-      : 0
-  );
-
-  return (
-    <div style={{ position: "relative", width, height }}>
-      <Image
-        fill
-        src={image.src}
-        loading="eager"
-        alt={image.alt ? image.alt : ""}
-        sizes={
-          typeof window !== "undefined"
-            ? `${Math.ceil((width / window.innerWidth) * 100)}vw`
-            : `${width}px`
-        }
-      />
-    </div>
-  );
-}
-
-//render your dynamic content here
 const Slug = ({ metadata, mdxcontent }) => {
   return (
     <>
