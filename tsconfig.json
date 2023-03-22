@@ -15,7 +15,7 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/[slug].jsx", "pages/[slug].jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/[slug].jsx", "pages/[slug].jsx", "components/loader.js"],
   "exclude": ["node_modules"],
   "mdx": {
     "plugins": [

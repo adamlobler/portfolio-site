@@ -4,6 +4,7 @@ import Projects from "../components/Projects";
 import { Fade } from "react-awesome-reveal";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import loader from "../components/loader";
 
 const Home: NextPage = () => {
   return (
@@ -23,7 +24,6 @@ const Home: NextPage = () => {
         <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className="flex flex-col items-center">
         <Fade triggerOnce className="w-full">
           <Hero />

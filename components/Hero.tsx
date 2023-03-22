@@ -26,7 +26,6 @@ const Hero = () => {
           src={Background}
           className="absolute w-screen h-full lg:h-[calc(100vh-76px)]"
           alt="bg"
-          priority
         />
         <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 items-center md:justify-between">
           <div className="lg:w-7/12 2xl:w-1/2">
@@ -76,7 +75,9 @@ const Hero = () => {
                 alt="hero_mockups"
                 src={Mockups}
                 quality={70}
-                width={836}
+                width={787}
+                height={600}
+                priority
               />
             </Fade>
           </Animator>
