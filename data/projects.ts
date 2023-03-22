@@ -51,7 +51,7 @@ const projects: Project[] = [
         },
         {
           id: "hsup",
-          path: "/works/hsup",
+          path: "hsup",
           title: "Hungarian startup university program",
           link: "https://hsup.nkfih.gov.hu",
           tags: ["Web application", "Mobile application", "Landing page"],
