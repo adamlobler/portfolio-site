@@ -3,17 +3,17 @@ import Social from "../components/Social";
 
 const socials = [
   {
-    image: "/img/social/mail.svg",
+    image: "/img/social/Mail.svg",
     altText: "mail",
     url: "mailto: adam.lobler@vallio.studio",
   },
   {
-    image: "/img/social/linkedin.svg",
+    image: "/img/social/Linkedin.svg",
     altText: "linkedin",
     url: "https://www.linkedin.com/in/adam-lobler/",
   },
   {
-    image: "/img/social/upwork.svg",
+    image: "/img/social/Upwork.svg",
     altText: "upwork",
     url: "https://www.upwork.com/freelancers/~01ea504e62d5ca4245?s=1044578476142100545",
   },
