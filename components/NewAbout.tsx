@@ -18,16 +18,9 @@ const process = [
   },
 ];
 
-interface AboutProps {
-  id: string;
-}
-
-const NewAbout = ({ id }: AboutProps) => {
+const NewAbout = () => {
   return (
-    <section
-      id={id}
-      className="flex w-full xl:h-screen space-y flex-col items-center justify-center xl:flex-row py-4 xl:py-32"
-    >
+    <section className="flex w-full xl:h-screen space-y flex-col items-center justify-center xl:flex-row py-4 xl:py-32">
       <div className="flex flex-col xl:w-full space-y-12 justify-start xl:mr-48">
         <Fade triggerOnce>
           <Image
