@@ -20,7 +20,7 @@ const navigationItems = [
   },
 ];
 
-const NavigationBar: React.FC = () => {
+const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -30,7 +30,7 @@ const NavigationBar: React.FC = () => {
   };
   return (
     <nav className="bg-white pl-4 px-2 sm:px-4 py-2 dark:bg-gray-900 sticky overflow-hidden w-full top-0 left-0 max-h-screen z-50">
-      <div className="container flex flex-wrap items-center justify-between mx-auto">
+      <div className="container flex flex-wrap items-center justify-between max-w-[1800px] mx-auto">
         <Link href="/" className="flex items-center">
           <span className="text-button font-semibold whitespace-nowrap dark:text-white">
             Adam Lobler
