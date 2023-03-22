@@ -46,7 +46,7 @@ module.exports = {
       subtitle2: ["18px", { lineHeight: "1.5rem", fontWeight: 400 }],
       subtitle1: ["22px", { lineHeight: "1.5rem", fontWeight: 400 }],
       h6: ["24px", { lineHeight: "1.2rem", fontWeight: 600 }],
-      h5: ["28px", { lineHeight: "1.2", fontWeight: 700 }],
+      h5: ["34px", { lineHeight: "1.2", fontWeight: 700 }],
       h4: ["38px", { lineHeight: "1.2", fontWeight: 700 }],
       h3: ["40px", { lineHeight: "1.2", fontWeight: 700 }],
       h2: ["48px", { lineHeight: "1.2", fontWeight: 700 }],
