@@ -59,11 +59,8 @@ const NavigationBar = () => {
           </div>
           <div className="flex justify-center items-center">
             <ThemeSwitch />
-            <Link
-              className="btn-primary hidden md:block"
-              href="mailto:adam.lobler@vallio.studio"
-            >
-              Hire me!
+            <Link className="btn-primary hidden md:block" href="/contact">
+              Contact me!
             </Link>
             <button
               onClick={() => toggleNavbar()}
@@ -106,12 +103,9 @@ const NavigationBar = () => {
         <div className="pt-14">
           <Socials />
         </div>
-        <a
-          className="btn-primary w-full mx-8"
-          href="mailto:adam.lobler@vallio.studio"
-        >
-          Hire me!
-        </a>
+        <Link className="btn-primary w-full mx-8" href="/contact">
+          Contact me!
+        </Link>
       </div>
     </nav>
   );

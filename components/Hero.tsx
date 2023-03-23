@@ -21,13 +21,13 @@ const Animator = dynamic(
 const Hero = () => {
   return (
     <ScrollContainer snap="none">
-      <section className="flex bg-[#341692] h-fit relative flex-col w-screen lg:h-[calc(100vh-76px)] justify-center items-center pb-16 2xl:pt-16 ">
+      <section className="flex bg-[#341692] h-fit relative flex-col w-screen lg:h-[calc(100vh-76px)] justify-center items-center">
         <Image
           src={Background}
           className="absolute w-screen h-full lg:h-[calc(100vh-76px)]"
           alt="bg"
         />
-        <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 w-full items-center md:justify-between">
+        <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 w-full items-center pb-16 md:py-16 md:justify-between">
           <div className="lg:w-7/12 2xl:w-1/2">
             <Animator animation={ScrollFade()} className="!block">
               <Fade triggerOnce direction="up" duration={1500}>
@@ -48,12 +48,12 @@ const Hero = () => {
               </Fade>
               <Fade triggerOnce direction="up" duration={1500} delay={800}>
                 <div className="flex w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
-                  <a
+                  <Link
                     className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
-                    href="mailto:adam.lobler@vallio.studio"
+                    href="/contact"
                   >
-                    Hire me!
-                  </a>
+                    Contact me!
+                  </Link>
                   <div className="pr-6 pb-4 lg:pb-0" />
                   <Link
                     className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
