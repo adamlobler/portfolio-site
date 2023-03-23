@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="flex min-h-screen relative overflow-hidden flex-col w-full h-[680px] bg-gray-50 dark:bg-gray-900 items-center justify-center ">
+    <footer className="flex  relative overflow-hidden flex-col w-full h-[680px] bg-[#341692] dark:bg-gray-900 items-center justify-center ">
       <Image
-        className="absolute top-0 w-screen min-h-screen h-[680px] bg-background"
+        className="absolute top-0 w-screen h-[680px] bg-[#341692]"
         alt="bg"
         width={2880}
         height={1400}
