@@ -22,7 +22,7 @@ const Works: NextPage = () => {
           property="og:description"
           content="I'm Adam, product designer. I’m passionate to make the best digital solution for businesses."
         />
-        <meta property="og:image" content="https://i.imgur.com/5vJ6ZN7.png" />
+        <meta property="og:image" content="/img/og_image.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Fade triggerOnce className="w-full">
@@ -35,14 +35,14 @@ const Works: NextPage = () => {
           />
           <div className="flex w-full space-y-2 max-w-5xl text-left xl:max-w-7xl flex-1 flex-col items-start justify-center px-4 md:px-16 2xl:px-0 py-8">
             <Fade triggerOnce direction="up">
-              <h1 className="text-h3 md:text-h1 text-white drop-shadow-2xl">
+              <h1 className="text-h3 md:text-h1 text-white drop-shadow-2xl  md:mb-4">
                 Works
               </h1>
             </Fade>
             <Fade triggerOnce direction="up">
               <p className="text-subtitle2 md:text-subtitle1 text-white drop-shadow-lg">
-                I have been able to assist startups and numerous businesses in
-                achieving their goals!
+                I have been able to assist numerous businesses in achieving
+                their goals!
               </p>
             </Fade>
           </div>
