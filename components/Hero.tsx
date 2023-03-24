@@ -15,7 +15,7 @@ import {
 
 const Animator = dynamic(
   import("react-scroll-motion").then((it) => it.Animator),
-  { ssr: false }
+  { ssr: true }
 );
 
 const Hero = () => {
@@ -26,10 +26,11 @@ const Hero = () => {
           src={Background}
           className="absolute w-screen h-full lg:h-[calc(100vh-76px)]"
           quality={100}
-          width={720}
-          height={425}
+          width={480}
+          height={284}
           alt="bg"
-          priority
+          loading="eager"
+          placeholder="blur"
         />
         <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 w-full items-center pb-16 md:py-16 md:justify-between">
           <div className="lg:w-7/12 2xl:w-1/2">
@@ -78,10 +79,11 @@ const Hero = () => {
                 className=" max-w-md lg:max-w-none w-full my-4"
                 alt="hero_mockups"
                 src={Mockups}
-                quality={60}
-                width={836}
+                quality={90}
+                width={600}
                 height={600}
-                priority
+                placeholder="empty"
+                loading="eager"
               />
             </Fade>
           </Animator>

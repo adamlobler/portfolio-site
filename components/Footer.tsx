@@ -1,17 +1,19 @@
 import React from "react";
 import Socials from "./Socials";
 import Image from "next/image";
+import Background from "../public/img/gradient.png";
 
 const Footer = () => {
   return (
     <footer className="flex  relative overflow-hidden flex-col w-full h-[680px] bg-[#341692] dark:bg-gray-900 items-center justify-center ">
       <Image
         className="absolute top-0 w-screen h-[680px] bg-[#341692]"
-        alt="bg"
+        src={Background}
         quality={100}
-        width={720}
-        height={425}
-        src="/img/gradient.png"
+        width={480}
+        height={284}
+        alt="bg"
+        placeholder="blur"
       />
       <div className="flex max-w-4xl z-10 xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:py-32">
         <div className="flex flex-col items-start space-y-8">
