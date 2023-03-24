@@ -8,8 +8,9 @@ const Footer = () => {
       <Image
         className="absolute top-0 w-screen h-[680px] bg-[#341692]"
         alt="bg"
-        width={2880}
-        height={1400}
+        quality={100}
+        width={720}
+        height={425}
         src="/img/gradient.png"
       />
       <div className="flex max-w-4xl z-10 xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:py-32">
