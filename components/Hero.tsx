@@ -51,8 +51,25 @@ const Hero = () => {
                   businesses
                 </h2>
               </Fade>
+              {/*Mobile CTAs */}
+              <div className="flex md:hidden w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
+                <Link
+                  className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
+                  href="/contact"
+                >
+                  Contact me!
+                </Link>
+                <div className="pr-6 pb-4 lg:pb-0" />
+                <Link
+                  className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
+                  href="/works"
+                >
+                  My previous projets{" "}
+                </Link>
+              </div>
+              {/*Desktop CTAs*/}
               <Fade triggerOnce direction="up" duration={1500} delay={800}>
-                <div className="flex w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
+                <div className="hidden md:flex w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
                   <Link
                     className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
                     href="/contact"
