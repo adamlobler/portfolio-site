@@ -28,15 +28,17 @@ const Contact: NextPage = () => {
       </Head>
       <NavigationBar />
       <Fade>
-        <main className="flex min-h-screen flex-col items-center justify-center ">
-          <div className="flex min-h-screen relative overflow-hidden flex-col w-full bg-gray-50 dark:bg-gray-900 items-center justify-center ">
+        <main className="flex bg-[#341692] min-h-screen flex-col items-center justify-center ">
+          <div className="flex bg-[#341692] min-h-screen relative overflow-hidden flex-col w-full items-center justify-center ">
             <Image
               className="absolute h-full top-0 w-screen bg-background"
               alt="bg"
               quality={100}
-              width={720}
-              height={425}
-              src="/img/gradient.png"
+              width={480}
+              height={284}
+              loading="eager"
+              src={Background}
+              placeholder="blur"
             />
             <div className="flex max-w-4xl z-10 xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:pb-32">
               <div className="flex flex-col items-start space-y-8 md:space-y-12">
