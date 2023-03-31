@@ -70,7 +70,7 @@ const Slug = ({ metadata, mdxcontent }) => {
             priority
           />
         </Fade>
-        <div className="text-h3 px-6 xl:px-0 w-full md:mb-32  py-8">
+        <div className="text-h3 px-6 2xl:px-0 w-full md:mb-32  py-8">
           <h1 className="text-h3 w-full md:text-h1  dark:text-white">
             {metadata.title}
           </h1>
@@ -90,7 +90,13 @@ const Slug = ({ metadata, mdxcontent }) => {
             ))}
           </div>
         </div>
-        <article className="prose mb-64 mx-6 prose-lg flex flex-col items-center prose-headings:dark:text-white prose-headings:w-full text-gray-600 dark:text-gray-300 prose-img:max-w-none prose-p:flex prose-p:justify-center prose-img:w-full 2xl:prose-img:w-[1344px]">
+        <article
+          className="prose mb-64 mx-6 prose-lg flex flex-col items-center
+         prose-headings:dark:text-white prose-headings:w-full
+          text-gray-600 dark:text-gray-300 prose-img:max-w-none
+          prose-p:flex prose-p:justify-center prose-p:mb-6 prose-p:mt-0
+          prose-img:w-full 2xl:prose-img:w-[1344px]"
+        >
           <MDXRemote {...mdxcontent} components={components} />
         </article>
       </main>
