@@ -23,6 +23,11 @@ import ViddLParcelTracking from "../public/img/viddl/viddl_parceltracking.png";
 import HsupDashboard from "../public/img/hsup/dashboard.png"
 import HsupMobileMockup from "../public/img/hsup/mobile_screens.png"
 import HsupMobileScreens from "../public/img/hsup/mobile_screens2.png"
+import AikurzusMobile from "../public/img/Ai_kurzus_mobile.png"
+import AikurzusDesktop from "../public/img/Ai_kurzus_desktop.png"
+import DigicMobile from "../public/img/digic_mobile.png"
+
+
 
 export type Project = {
         id: string,
@@ -60,6 +65,25 @@ const projects: Project[] = [
           desktopImage: HsupDesktop,
           mobileImage: HsupMobile,
           images: [HsupMobileMockup,HsupDashboard,HsupMobileScreens]
+        },
+        {
+          id: "aikurzus",
+          title: "Aikurzus - Landing page for an online course",
+          tags: ["Landing page"],
+          description:
+            "Developed a welcoming landing page for an online AI course, enhanced with AI-generated images and engaging text.",
+          desktopImage: AikurzusDesktop,
+          mobileImage: AikurzusMobile,
+        },
+        {
+          id: "digic",
+          title: "Digicgroup - animation studio landing page",
+          tags: ["Landing page"],
+          link: "https://digicgroup.com",
+          description:
+            "As the UI designer, I drove the creation of a dynamic landing page for Digic Animation Studio, merging impactful visuals and engaging content to exhibit their creative expertise.",
+          desktopImage: DigicMobile,
+          mobileImage: DigicMobile,
         },
         {
           id: "hereforyou",
