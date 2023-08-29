@@ -24,7 +24,7 @@ import HsupDashboard from "../public/img/hsup/dashboard.png"
 import HsupMobileMockup from "../public/img/hsup/mobile_screens.png"
 import HsupMobileScreens from "../public/img/hsup/mobile_screens2.png"
 import AikurzusMobile from "../public/img/Ai_kurzus_mobile.png"
-import AikurzusDesktop from "../public/img/Ai_kurzus_desktop.png"
+import AikurzusDesktop from "../public/img/ai_kurzus_desktop.png"
 import DigicMobile from "../public/img/digic_mobile.png"
 
 
