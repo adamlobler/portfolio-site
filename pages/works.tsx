@@ -26,7 +26,7 @@ const Works: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Fade triggerOnce className="w-full">
-        <div className="relative flex items-center justify-center w-screen md:py-16 2xl:py-24">
+        <div className="relative flex items-center justify-center w-screen py-4 md:py-16 2xl:py-24">
           <Image
             src={Background}
             className="absolute top-0 left-0 w-screen h-full bg-background"
