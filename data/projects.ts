@@ -71,7 +71,7 @@ const projects: Project[] = [
           title: "Aikurzus - Landing page for an online course",
           tags: ["Landing page"],
           description:
-            "Developed a welcoming landing page for an online AI course, enhanced with AI-generated images and engaging text.",
+            "Designed a welcoming landing page for an online AI course, enhanced with AI-generated images and engaging text.",
           desktopImage: AikurzusDesktop,
           mobileImage: AikurzusMobile,
         },
