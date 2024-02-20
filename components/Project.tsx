@@ -27,8 +27,8 @@ const Project: React.FC<Props> = (props) => {
         alt="mobile_image"
         className={`${
           props.size == "large"
-            ? "flex xl:hidden overflow-hidden ease-in-out duration-500 "
-            : "flex overflow-hidden ease-in-out duration-500"
+            ? "flex xl:hidden overflow-hidden ease-in-out duration-500 border border-gray-100 dark:border-0 "
+            : "flex overflow-hidden ease-in-out duration-500 border border-gray-100 dark:border-0 "
         }`}
         sizes="(max-width: 1028px) 85vw, 896px"
       />
