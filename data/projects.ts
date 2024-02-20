@@ -28,6 +28,8 @@ import AikurzusDesktop from "../public/img/ai_kurzus_desktop.png"
 import DigicMobile from "../public/img/digic_mobile.png"
 import AirtimeMobile from "../public/img/airtime_landing_mobile.jpg"
 import AirtimeDesktop from "../public/img/airtime_landing_desktop.jpg"
+import ResearchSummitMobile from "../public/img/research_summit_mobile.jpg"
+import ResearchSummitDesktop from "../public/img/research_summit_desktop.jpg"
 
 
 
@@ -116,8 +118,8 @@ const projects: Project[] = [
         tags: ["Landing page", "Webflow"],
         description:
           "Landing page of the Product Research Summit organized by the AirtimeUX team.",
-        desktopImage: AirtimeDesktop,
-        mobileImage: AirtimeMobile,
+        desktopImage: ResearchSummitDesktop,
+        mobileImage: ResearchSummitMobile,
       },
         {
           id: "hereforyou",
