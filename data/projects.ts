@@ -26,6 +26,10 @@ import HsupMobileScreens from "../public/img/hsup/mobile_screens2.png"
 import AikurzusMobile from "../public/img/Ai_kurzus_mobile.png"
 import AikurzusDesktop from "../public/img/ai_kurzus_desktop.png"
 import DigicMobile from "../public/img/digic_mobile.png"
+import AirtimeMobile from "../public/img/airtime_landing_mobile.jpg"
+import AirtimeDesktop from "../public/img/airtime_landing_desktop.jpg"
+
+
 
 
 
@@ -67,6 +71,16 @@ const projects: Project[] = [
           images: [HsupMobileMockup,HsupDashboard,HsupMobileScreens]
         },
         {
+          id: "airtime",
+          title: "Airtime - The fast lane to product validation",
+          link: "https://airtimeux.com",
+          tags: ["Landing page","webflow", "Web application"],
+          description:
+            "Airtime accelerates product research for businesses, streamlining processes to maximize efficiency and propel success. ",
+          desktopImage: AirtimeDesktop,
+          mobileImage: AirtimeMobile,
+        },
+        {
           id: "aikurzus",
           title: "Aikurzus - Landing page for an online course",
           tags: ["Landing page"],
@@ -85,6 +99,26 @@ const projects: Project[] = [
           desktopImage: DigicMobile,
           mobileImage: DigicMobile,
         },
+        {
+          id: "wia",
+          title: "Wia electric yachts - Landing page for yacht company",
+          link: "http://elektromosyacht.hu",
+          tags: ["Landing page"],
+          description:
+            "Mobile friendly landing page UI design for luxury yacht manufacture company.",
+          desktopImage: WiaDesktop,
+          mobileImage: WiaMobile,
+        },
+        {
+        id: "research-summit",
+        title: "Product Research Summit by Airtime",
+        link: "https://airtimeux.com/the-product-research-summit",
+        tags: ["Landing page", "Webflow"],
+        description:
+          "Landing page of the Product Research Summit organized by the AirtimeUX team.",
+        desktopImage: AirtimeDesktop,
+        mobileImage: AirtimeMobile,
+      },
         {
           id: "hereforyou",
           title: "Hereforyou - online platform for  psychologists",
@@ -112,16 +146,6 @@ const projects: Project[] = [
             "Dinobooking provides the most simple booking service for small businesses. The startup makes a booking website and a admin interface for subscribers where they can manage their business. (Development in progress...)",
           desktopImage: DinobookingDesktop,
           mobileImage: DinobookingMobile,
-        },
-        {
-          id: "wia",
-          title: "Wia electric yachts - Landing page for yacht company",
-          link: "http://elektromosyacht.hu",
-          tags: ["Landing page"],
-          description:
-            "Mobile friendly landing page UI design for luxury yacht manufacture company.",
-          desktopImage: WiaDesktop,
-          mobileImage: WiaMobile,
         },
         {
           id: "digidojo",
