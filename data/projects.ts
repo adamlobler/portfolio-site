@@ -26,6 +26,7 @@ import HsupMobileScreens from "../public/img/hsup/mobile_screens2.png"
 import AikurzusMobile from "../public/img/Ai_kurzus_mobile.png"
 import AikurzusDesktop from "../public/img/ai_kurzus_desktop.png"
 import DigicMobile from "../public/img/digic_mobile.png"
+import DigicDesktop from "../public/img/digic_desktop.png"
 import AirtimeMobile from "../public/img/airtime_landing_mobile.jpg"
 import AirtimeDesktop from "../public/img/airtime_landing_desktop.jpg"
 import ResearchSummitMobile from "../public/img/research_summit_mobile.jpg"
@@ -98,7 +99,7 @@ const projects: Project[] = [
           link: "https://digicgroup.com",
           description:
             "As the UI designer, I drove the creation of a dynamic landing page for Digic Animation Studio, merging impactful visuals and engaging content to exhibit their creative expertise.",
-          desktopImage: DigicMobile,
+          desktopImage: DigicDesktop,
           mobileImage: DigicMobile,
         },
         {

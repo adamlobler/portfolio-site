@@ -71,14 +71,9 @@ const Slug = ({ metadata, mdxcontent }) => {
           />
         </Fade>
         <div className="text-h3 px-4 2xl:px-0 w-full md:mb-32  pt-8">
-          <h1 className="text-h3 w-full md:text-h1  dark:text-white">
+          <h1 className="text-h3 w-full md:text-h1  dark:text-white mb-4">
             {metadata.title}
           </h1>
-          <div className="flex flex-row flex-wrap md:space-x-16 my-4 md:my-16">
-            <Metadata title="DURATION" data={metadata.duration} />
-            <Metadata title="ROLE" data={metadata.role} />
-            <Metadata title="ClIENT" data={metadata.client} />
-          </div>
           <div className="hidden sm:flex flex-row flex-wrap">
             {metadata.tags.map((tag) => (
               <p
@@ -89,10 +84,16 @@ const Slug = ({ metadata, mdxcontent }) => {
               </p>
             ))}
           </div>
+          <div className="flex flex-row flex-wrap md:space-x-16 my-4 md:my-8">
+            <Metadata title="DURATION" data={metadata.duration} />
+            <Metadata title="ROLE" data={metadata.role} />
+            <Metadata title="ClIENT" data={metadata.client} />
+          </div>
+
         </div>
         <article
-          className="prose flex flex-col items-center mb-16 md:mb-64 md:mx-6
-          prose-p:px-4 prose-p:mb-6 prose-p:mt-0 prose-p:flex prose-p:justify-center
+          className="prose max-w-[750px] flex flex-col items-center mb-16 md:mb-64 md:mx-6
+          prose-p:px-4 prose-p:mb-6 prose-p:text-[18px] prose-p:mt-0 prose-p:flex prose-p:justify-center
           prose-headings:px-4 prose-headings:dark:text-white prose-headings:w-full
           prose-h1:text-h4 prose-h1:mb-0 prose-h1:mt-12
           text-gray-600 dark:text-gray-300

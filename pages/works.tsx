@@ -5,6 +5,7 @@ import { Fade } from "react-awesome-reveal";
 import projects from "../data/projects";
 import Image from "next/image";
 import Background from "../public/img/gradient.png";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 const Works: NextPage = () => {
   return (
@@ -49,7 +50,7 @@ const Works: NextPage = () => {
         </div>
       </Fade>
       <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-6 md:px-16 2xl:px-0 py-16">
-        <div className="grid w-full xl:grid-cols-2 gap-16 xl:pb-48">
+          <div className="grid w-full xl:grid-cols-1 lg:gap-48 gap-16 xl:pb-48">
           {projects.map((project) =>
             project.link ? (
               <a
@@ -65,9 +66,9 @@ const Works: NextPage = () => {
                     link={project.link}
                     tags={project.tags}
                     description={project.description}
-                    desktopImage={project.mobileImage}
+                    desktopImage={project.desktopImage}
                     mobileImage={project.mobileImage}
-                    size="small"
+                    size="large"
                   />
                 </Fade>
               </a>
@@ -79,9 +80,9 @@ const Works: NextPage = () => {
                   link={project.link}
                   tags={project.tags}
                   description={project.description}
-                  desktopImage={project.mobileImage}
+                  desktopImage={project.desktopImage}
                   mobileImage={project.mobileImage}
-                  size="small"
+                  size="large"
                 />
               </Fade>
             )

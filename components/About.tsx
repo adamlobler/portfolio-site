@@ -33,7 +33,7 @@ const About = () => {
           <h2 className="text-h3 dark:text-white md:text-h2 text-left">
             About me
           </h2>
-          <p className="text-body1 md:text-body1 w-full text-gray-500 dark:text-gray-400 text-left">
+          <p className="text-body1 md:text-body1 w-full text-gray-600 dark:text-gray-400 text-left">
             I am a product designer with 5+ years of experience based in
             Budapest, Hungary. Presently, I am working as a freelancer and
             seeking new opportunities to assist companies in creating
@@ -72,7 +72,7 @@ const About = () => {
               <h3 className="text-subtitle1 dark:text-white max-w-2xl text-left">
                 {step.title}
               </h3>
-              <p className="text-body1 md:text-body1 text-gray-500 dark:text-gray-400 xl:max-w-lg text-left">
+              <p className="text-body1 md:text-body1 text-gray-600 dark:text-gray-400 xl:max-w-lg text-left">
                 {step.body}
               </p>
             </div>
