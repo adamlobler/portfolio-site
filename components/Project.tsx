@@ -17,7 +17,7 @@ type Props = {
 const Project: React.FC<Props> = (props) => {
   return (
     <div className="group space-y-8 mx-[-24px] lg:mx-auto">
-      <Parallax speed={8} scale={[1.1, 1, 'easeOutCubic']}     opacity={[0.1, 1, 'easeOutCubic']}>
+      <Parallax className="hidden xl:block" speed={8} scale={[1.1, 1, 'easeOutCubic']}     opacity={[0.1, 1, 'easeOutCubic']}>
       <Image
         src={props.desktopImage}
         alt="desktop_image"
