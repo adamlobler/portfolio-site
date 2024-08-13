@@ -33,9 +33,9 @@ const Hero2 = () => {
             Reshape digital products together!
           </h1>
         </Fade>
-        <Animator animation={ScrollFade()} className="!block w-full">
+        <Animator animation={ScrollFade()} className="!block min-w-[300px]">
           {/*Mobile CTAs */}
-          <div className="flex md:hidden w-full items-center flex-col ">
+          <div className="flex md:hidden w-full items-center flex-col  mt-8">
             <Link
               className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
               href="/contact"
