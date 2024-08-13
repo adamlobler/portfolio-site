@@ -4,6 +4,7 @@ import Projects from "../components/Projects";
 import { Fade } from "react-awesome-reveal";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import Hero2 from "../components/Hero2";
 
 const Home: NextPage = () => {
   return (
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex flex-col items-center">
         <Fade triggerOnce className="w-full">
-          <Hero />
+          <Hero2 />
         </Fade>
         <div className="flex max-w-5xl xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-6 md:px-16 2xl:px-0 py-16 text-center">
           <About />
