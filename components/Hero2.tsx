@@ -34,24 +34,24 @@ const Hero2 = () => {
           </h1>
         </Fade>
         <Animator animation={ScrollFade()} className="!block min-w-[300px]">
-          {/*Mobile CTAs */}
-          <div className="flex md:hidden w-full items-center flex-col  mt-8">
-            <Link
-              className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
-              href="/contact"
-            >
-              Contact me!
-            </Link>
-            <div className="pr-6 pb-4 lg:pb-0" />
-            <Link
-              className="flex bg-[#0004] w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
-              href="/works"
-            >
-              Previous projets{" "}
-            </Link>
-          </div>
-          {/*Desktop CTAs*/}
           <Fade triggerOnce direction="up" duration={1500} delay={800}>
+            {/*Mobile CTAs */}
+            <div className="flex md:hidden w-full items-center flex-col  mt-8">
+              <Link
+                className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
+                href="/contact"
+              >
+                Contact me!
+              </Link>
+              <div className="pr-6 pb-4 lg:pb-0" />
+              <Link
+                className="flex bg-[#0004] w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
+                href="/works"
+              >
+                Previous projets{" "}
+              </Link>
+            </div>
+            {/*Desktop CTAs*/}
             <div className="hidden my-4 md:flex w-full max-w-sm items-center lg:max-w-none flex-col lg:flex-row">
               <Link
                 className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
