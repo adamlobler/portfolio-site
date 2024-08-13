@@ -14,19 +14,7 @@ const Animator = dynamic(
 const Hero2 = () => {
   return (
     <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.3)_50%,rgba(240,241,243,0.0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] justify-center items-center">
-      <div className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]">
-        <Fade
-          triggerOnce
-          delay={1000}
-          duration={4000}
-          className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"
-        >
-          <Spline
-            className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"
-            scene="https://prod.spline.design/050qyBgNdNCwvAVO/scene.splinecode"
-          />
-        </Fade>
-      </div>
+      <div className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"></div>
       <div className="flex max-w-[1800px] px-8 flex-col max-h-full z-10 w-full pb-16 md:py-16 items-center lg:items-start">
         <Fade triggerOnce direction="up" duration={1500}>
           <h1 className="z-99 whitespace-pre-line text-center lg:text-left drop-shadow-md text-white text-[13vw] md:text-[6vw] xl:text-[6vw] 2xl:text-[100px] leading-tight uppercase font-bold pb-2">
