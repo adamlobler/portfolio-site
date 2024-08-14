@@ -5,7 +5,7 @@ const socials = [
   {
     image: "/img/social/Mail.svg",
     altText: "mail",
-    url: "mailto: adam.lobler@vallio.studio",
+    url: "mailto: contact@adamlobler.com",
   },
   {
     image: "/img/social/Linkedin.svg",

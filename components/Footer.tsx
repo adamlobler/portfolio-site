@@ -24,7 +24,7 @@ const Footer = () => {
             Send me an e-mail and discuss the details!
           </p>
           <a
-            href="mailto:adam.lobler@vallio.studio"
+            href="mailto:contact@adamlobler.com"
             className="flex hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
           >
             Contact me!
@@ -35,10 +35,10 @@ const Footer = () => {
             Get in touch!
           </p>
           <a
-            href="mailto:adam.lobler@vallio.studio"
+            href="mailto:contact@adamlobler.com"
             className="text-subtitle1 text-white pb-8 text-left"
           >
-            adam.lobler@vallio.studio
+            contact@adamlobler.com
           </a>
           <Socials />
         </div>
