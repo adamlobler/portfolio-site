@@ -4,14 +4,14 @@ import Project from "../components/Project";
 import { Fade } from "react-awesome-reveal";
 import projects from "../data/projects";
 import Image from "next/image";
-import Background from "../public/img/gradient.png";
+import Background from "../public/img/gradient.jpg";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 const Works: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Adam Lobler | Works</title>
+        <title>Adam Lobler | Projects</title>
         <meta
           name="description"
           content="I'm Adam, product designer. I’m passionate to make the best digital solution for businesses."
@@ -37,7 +37,7 @@ const Works: NextPage = () => {
           <div className="flex w-full space-y-2 max-w-5xl text-left xl:max-w-7xl flex-1 flex-col items-start justify-center px-4 md:px-16 2xl:px-0 py-8">
             <Fade triggerOnce direction="up">
               <h1 className="text-h3 md:text-h1 text-white drop-shadow-2xl  md:mb-4">
-                Works
+                Projects
               </h1>
             </Fade>
             <Fade triggerOnce direction="up">
@@ -50,7 +50,7 @@ const Works: NextPage = () => {
         </div>
       </Fade>
       <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-6 md:px-16 2xl:px-0 py-16">
-          <div className="grid w-full xl:grid-cols-1 lg:gap-48 gap-16 xl:pb-48">
+        <div className="grid w-full xl:grid-cols-1 lg:gap-48 gap-16 xl:pb-48">
           {projects.map((project) =>
             project.link ? (
               <a

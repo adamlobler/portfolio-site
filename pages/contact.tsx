@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Fade } from "react-awesome-reveal";
 import Image from "next/image";
-import Background from "../public/img/gradient.png";
+import Background from "../public/img/gradient.jpg";
 import Socials from "../components/Socials";
 import Footer from "../components/Footer";
 import NavigationBar from "../components/NavigationBar";
