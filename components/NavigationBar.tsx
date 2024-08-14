@@ -15,7 +15,7 @@ const navigationItems = [
     link: "/",
   },*/
   {
-    name: "Works",
+    name: "Projects",
     link: "/works",
   },
 ];
