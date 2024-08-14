@@ -17,7 +17,7 @@ const Hero2 = () => {
       <div className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]">
         <Fade
           triggerOnce
-          delay={1000}
+          delay={500}
           duration={4000}
           className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"
         >
