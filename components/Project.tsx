@@ -44,7 +44,7 @@ const Project: React.FC<Props> = (props) => {
         }`}
         sizes="(max-width: 1028px) 85vw, 896px"
       />
-      <div className="flex flex-col items-start space-y-6 px-6 md:px-0">
+      <div className="flex flex-col items-start space-y-4 px-4 md:px-0">
         <div className="flex space-x-4 items-center">
           <h2 className="text-h5 dark:text-white md:text-h2 text-left lg:mr-6">
             {props.title}
