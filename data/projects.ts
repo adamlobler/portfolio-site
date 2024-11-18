@@ -27,8 +27,8 @@ import AikurzusMobile from "../public/img/Ai_kurzus_mobile.png"
 import AikurzusDesktop from "../public/img/ai_kurzus_desktop.png"
 import DigicMobile from "../public/img/digic_mobile.png"
 import DigicDesktop from "../public/img/digic_desktop.png"
-import AirtimeMobile from "../public/img/airtime_landing_mobile.jpg"
-import AirtimeDesktop from "../public/img/airtime_landing_desktop.jpg"
+import AirtimeMobile from "../public/img/airtime_mobile.png"
+import AirtimeDesktop from "../public/img/airtime_desktop.png"
 import ResearchSummitMobile from "../public/img/research_summit_mobile.jpg"
 import ResearchSummitDesktop from "../public/img/research_summit_desktop.jpg"
 
@@ -49,6 +49,17 @@ export type Project = {
 }
 
 const projects: Project[] = [
+          {
+          id: "airtime",
+          path: "airtime",
+          title: "Airtime - Your Ai researcher for user calls",
+          link: "https://airtimeux.com",
+          tags: ["Web application", "Landing page"],
+          description:
+            "Airtime is an online UX research tool designed to accelerate the workflow of product teams.",
+          desktopImage: AirtimeDesktop,
+          mobileImage: AirtimeMobile,
+        },
         {
           id: "viddl",
           path: "viddl",
@@ -72,16 +83,6 @@ const projects: Project[] = [
           desktopImage: HsupDesktop,
           mobileImage: HsupMobile,
           images: [HsupMobileMockup,HsupDashboard,HsupMobileScreens]
-        },
-        {
-          id: "airtime",
-          title: "Airtime - The fast lane to product validation",
-          link: "https://airtimeux.com",
-          tags: ["Landing page","webflow", "Web application"],
-          description:
-            "Airtime accelerates product research for businesses, streamlining processes to maximize efficiency and propel success. ",
-          desktopImage: AirtimeDesktop,
-          mobileImage: AirtimeMobile,
         },
         {
           id: "aikurzus",

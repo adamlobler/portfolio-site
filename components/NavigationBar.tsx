@@ -60,7 +60,7 @@ const NavigationBar = () => {
           <div className="flex justify-center items-center">
             <ThemeSwitch />
             <Link className="btn-primary hidden md:block" href="/contact">
-              Contact me!
+              Get in touch!
             </Link>
             <button
               onClick={() => toggleNavbar()}
@@ -104,7 +104,7 @@ const NavigationBar = () => {
           <Socials />
         </div>
         <Link className="btn-primary w-full mx-8" href="/contact">
-          Contact me!
+          Get in touch!
         </Link>
       </div>
     </nav>

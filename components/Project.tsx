@@ -17,13 +17,22 @@ type Props = {
 const Project: React.FC<Props> = (props) => {
   return (
     <div className="group space-y-8 mx-[-24px] lg:mx-auto">
-      <Parallax className="hidden xl:block" speed={8} scale={[1.1, 1, 'easeOutCubic']}     opacity={[0.1, 1, 'easeOutCubic']}>
-      <Image
-        src={props.desktopImage}
-        alt="desktop_image"
-        className={`${props.size == "large" ? "hidden xl:flex transition-all duration-500 group-hover:scale-[1.01]" : "hidden"}`}
-        sizes="1216px"
-      />
+      <Parallax
+        className="hidden xl:block"
+        speed={8}
+        scale={[1.1, 1, "easeOutCubic"]}
+        opacity={[0.4, 1, "easeOutCubic"]}
+      >
+        <Image
+          src={props.desktopImage}
+          alt="desktop_image"
+          className={`${
+            props.size == "large"
+              ? "hidden xl:flex transition-all duration-500 group-hover:scale-[1.01]"
+              : "hidden"
+          }`}
+          sizes="1216px"
+        />
       </Parallax>
       <Image
         src={props.mobileImage}

@@ -60,7 +60,7 @@ const Hero2 = () => {
 
         {/* Szöveges tartalom és gombok */}
         {isLoaded && ( // Csak akkor jelenjenek meg az elemek, ha a Spline és a wasm betöltődött
-          <div className="flex max-w-[1800px] pointer-events-none px-8 flex-col max-h-full z-10 w-full pb-16 md:py-16 items-center lg:items-start">
+          <div className="flex pointer-events-none max-w-[1800px] px-8 flex-col max-h-full z-10 w-full pb-16 md:py-16 items-center lg:items-start">
             <Fade triggerOnce direction="up" duration={1500}>
               <h1 className="z-99 whitespace-pre-line text-center lg:text-left drop-shadow-md text-white text-[13vw] md:text-[6vw] xl:text-[6vw] 2xl:text-[100px] leading-tight uppercase font-bold pb-2">
                 Reshape digital products together!
@@ -70,36 +70,30 @@ const Hero2 = () => {
             <Animator animation={ScrollFade()} className="!block min-w-[300px]">
               <Fade triggerOnce direction="up" duration={1500} delay={800}>
                 {/*Mobile CTAs */}
-                <div className="flex md:hidden w-full items-center flex-col mt-8">
+                <div className="flex pointer-events-auto md:hidden w-full items-center flex-col mt-8">
                   <Link
-                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
+                    className="btn-primary lg:hidden w-full"
                     href="/contact"
                   >
-                    Contact me!
+                    Get in touch!
                   </Link>
                   <div className="pr-6 pb-4 lg:pb-0" />
-                  <Link
-                    className="flex bg-[#0004] w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
-                    href="/works"
-                  >
-                    Previous projects
+                  <Link className="btn-secondary w-full" href="/works">
+                    Discover projects
                   </Link>
                 </div>
 
                 {/*Desktop CTAs*/}
                 <div className="hidden pointer-events-auto my-4 md:flex w-full max-w-sm items-center lg:max-w-none flex-col lg:flex-row">
-                  <Link
-                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
-                    href="/contact"
-                  >
-                    Contact me!
+                  <Link className="btn-primary w-full lg:w-fit" href="/contact">
+                    Get in touch!
                   </Link>
                   <div className="pr-6 pb-4 lg:pb-0" />
                   <Link
-                    className="flex bg-[#0004] w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
+                    className="btn-secondary  w-full lg:w-fit"
                     href="/works"
                   >
-                    Previous projects
+                    Discover projects
                   </Link>
                 </div>
               </Fade>

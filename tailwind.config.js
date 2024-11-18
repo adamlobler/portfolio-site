@@ -40,7 +40,7 @@ module.exports = {
     fontSize: {
       oveline: ["10px", { lineHeight: "1rem", fontWeight: 600 }],
       caption: ["12px", { lineHeight: "1.25rem", fontWeight: 500 }],
-      button: ["14px", { lineHeight: "1.5rem", fontWeight: 600 }],
+      button: ["14px", { lineHeight: "1.5rem", fontWeight: 500, letterSpacing:'0.3px' }],
       body2: ["14px", { lineHeight: "1.75rem", fontWeight: 600 }],
       body1: ["18px", { lineHeight: "1.8rem", fontWeight: 400, letterSpacing:'0.3px' }],
       subtitle2: ["18px", { lineHeight: "1.7rem", fontWeight: 400,  letterSpacing:'0.3px' }],

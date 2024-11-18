@@ -27,12 +27,12 @@ const Footer = () => {
             href="mailto:contact@adamlobler.com"
             className="flex hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
           >
-            Contact me!
+            Get in touch!
           </a>
         </div>
         <div className="flex flex-col xl:items-end w-fit">
           <p className="text-caption text-white pb-8 text-left uppercase">
-            Get in touch!
+            contact information
           </p>
           <a
             href="mailto:contact@adamlobler.com"
