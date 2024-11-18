@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Spline from "@splinetool/react-spline";
 import { Fade as ScrollFade } from "react-scroll-motion";
 import Head from "next/head";
+import Image from "next/image";
 
 const Animator = dynamic(
   import("react-scroll-motion").then((it) => it.Animator),
@@ -34,13 +35,16 @@ const Hero2 = () => {
 
       {/* Az oldal tartalmának rejtése a process.wasm betöltése előtt */}
       {!isLoaded && (
-        <div className="absolute w-screen h-screen bg-black flex justify-center items-center">
-          {/* Itt helyezhetünk el egy betöltő animációt */}
-          <div className="text-white">Loading...</div>
+        <div className="absolute w-screen h-screen bg-gray-200 dark:bg-gray-800 flex flex-col justify-center items-center">
+          <Image
+            src={"/img/loading.svg"}
+            alt="loading"
+            width={200}
+            height={200}
+          />
         </div>
       )}
-
-      <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.3)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] justify-center items-center">
+      <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] justify-center items-center">
         {/* Spline Background */}
         <div className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]">
           {/* Spline animáció */}
