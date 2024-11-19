@@ -50,6 +50,7 @@ const Slug = ({ metadata, mdxcontent }) => {
       <Head>
         <title>{metadata.title}</title>
         <meta property="description" content={metadata.description} />
+        <meta property="og:image" content="/img/og_image.png" />
       </Head>
       <main className="max-w-7xl flex flex-col items-center md:mx-6">
         <Fade>
@@ -89,7 +90,6 @@ const Slug = ({ metadata, mdxcontent }) => {
             <Metadata title="ROLE" data={metadata.role} />
             <Metadata title="ClIENT" data={metadata.client} />
           </div>
-
         </div>
         <article
           className="prose max-w-[750px] flex flex-col items-center mb-16 md:mb-64 md:mx-6
