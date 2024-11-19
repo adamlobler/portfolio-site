@@ -50,7 +50,7 @@ const Slug = ({ metadata, mdxcontent }) => {
       <Head>
         <title>{metadata.title}</title>
         <meta property="description" content={metadata.description} />
-        <meta property="og:image" content="/img/og_image.png" />
+        <meta property="og:image" content={metadata.ogimage} />
       </Head>
       <main className="max-w-7xl flex flex-col items-center md:mx-6">
         <Fade>
