@@ -92,7 +92,7 @@ const WorksDetailPage = ({
         <meta property="og:description" content={project.description} />
         <meta
           property="og:image"
-          content="https://yourwebsite.com/img/og_image.png"
+          content="https://adamlobler.com/img/og_image.png"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
