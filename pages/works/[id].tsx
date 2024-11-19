@@ -90,7 +90,7 @@ const WorksDetailPage = ({
         <meta name="description" content={project.description} key="desc" />
         <meta property="og:title" content={"Adam Lobler | " + project.title} />
         <meta property="og:description" content={project.description} />
-        <meta property="og:image" content="/img/og_image.png" />
+        <meta property="og:image" content="/img/airtime_desktop.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Lightbox
