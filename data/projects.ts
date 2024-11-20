@@ -85,13 +85,14 @@ const projects: Project[] = [
           images: [HsupMobileMockup,HsupDashboard,HsupMobileScreens]
         },
         {
-          id: "aikurzus",
-          title: "Aikurzus - Landing page for an online course",
-          tags: ["Landing page"],
+          id: "research-summit",
+          title: "Product Research Summit by Airtime",
+          link: "https://airtimeux.com/the-product-research-summit",
+          tags: ["Landing page", "Webflow"],
           description:
-            "Designed a welcoming landing page for an online AI course, enhanced with AI-generated images and engaging text.",
-          desktopImage: AikurzusDesktop,
-          mobileImage: AikurzusMobile,
+            "Landing page of the Product Research Summit organized by the AirtimeUX team.",
+          desktopImage: ResearchSummitDesktop,
+          mobileImage: ResearchSummitMobile,
         },
         {
           id: "digic",
@@ -114,15 +115,14 @@ const projects: Project[] = [
           mobileImage: WiaMobile,
         },
         {
-        id: "research-summit",
-        title: "Product Research Summit by Airtime",
-        link: "https://airtimeux.com/the-product-research-summit",
-        tags: ["Landing page", "Webflow"],
-        description:
-          "Landing page of the Product Research Summit organized by the AirtimeUX team.",
-        desktopImage: ResearchSummitDesktop,
-        mobileImage: ResearchSummitMobile,
-      },
+          id: "aikurzus",
+          title: "Aikurzus - Landing page for an online course",
+          tags: ["Landing page"],
+          description:
+            "Designed a welcoming landing page for an online AI course, enhanced with AI-generated images and engaging text.",
+          desktopImage: AikurzusDesktop,
+          mobileImage: AikurzusMobile,
+        },
         {
           id: "hereforyou",
           title: "Hereforyou - online platform for  psychologists",

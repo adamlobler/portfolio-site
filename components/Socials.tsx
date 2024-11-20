@@ -8,6 +8,11 @@ const socials = [
     url: "mailto: contact@adamlobler.com",
   },
   {
+    image: "/img/social/Figma.svg",
+    altText: "Figma",
+    url: "https://www.figma.com/@lobleradam",
+  },
+  {
     image: "/img/social/Linkedin.svg",
     altText: "linkedin",
     url: "https://www.linkedin.com/in/adam-lobler/",
