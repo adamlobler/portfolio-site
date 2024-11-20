@@ -5,15 +5,15 @@ import { Fade } from "react-awesome-reveal";
 const process = [
   {
     title: "Product strategy",
-    body: "Before delving into specific product details, I ensure that the product goals are clearly defined and that we are developing the appropriate solution to address the right issues.",
+    body: "Before diving into specific product details, I ensure that the product goals are clearly defined and that we are developing the appropriate solution to address the right issues.",
   },
   {
     title: "UX/UI design",
-    body: "When the business objectives are set, I create wireframes and early prototypes of the product to facilitate easy review during the initial phase of the project. Once the functionality is agreed upon, I then create high-fidelity designs in Figma, adhering to the provided branding guidelines.",
+    body: "When the business objectives are set, I create wireframes and early prototypes of the product to facilitate easy review during the initial phase of the project. Once the functionality is agreed upon, I then create high-fidelity designs in Figma, adhering to the branding guidelines.",
   },
   {
     title: "Development",
-    body: "With my knowledge in coding, I am able to assist developers in understanding the product during the development phase. If additional assistance is required, my development partners are available to help bring your product to fruition.",
+    body: "With my knowledge in coding, I am able to assist developers in understanding the product during the development phase. If additional assistance is required, my development partners are available to help bring your product to life.",
   },
 ];
 
@@ -33,9 +33,9 @@ const About = () => {
           <h2 className="text-h3 dark:text-white md:text-h2 text-left">
             About me
           </h2>
-          <p className="text-body1 md:text-body1 w-full text-gray-600 dark:text-gray-400 text-left">
+          <p className="text-body1 md:text-body1 w-full text-gray-600 dark:text-gray-300 text-left">
             I am a product designer with 5+ years of experience based in
-            Budapest, Hungary. Presently, I am working as a freelancer and
+            Budapest, Hungary. Currently, I am working as a freelancer and
             seeking new opportunities to assist companies in creating
             human-centric digital solutions. I enjoy working with agencies and
             startups who want to solve meaningful problems through digital
@@ -72,7 +72,7 @@ const About = () => {
               <h3 className="text-subtitle1 dark:text-white max-w-2xl text-left">
                 {step.title}
               </h3>
-              <p className="text-body1 md:text-body1 text-gray-600 dark:text-gray-400 xl:max-w-lg text-left">
+              <p className="text-body1 md:text-body1 text-gray-700 dark:text-gray-300 xl:max-w-lg text-left">
                 {step.body}
               </p>
             </div>

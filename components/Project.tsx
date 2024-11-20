@@ -17,13 +17,22 @@ type Props = {
 const Project: React.FC<Props> = (props) => {
   return (
     <div className="group space-y-8 mx-[-24px] lg:mx-auto">
-      <Parallax className="hidden xl:block" speed={8} scale={[1.1, 1, 'easeOutCubic']}     opacity={[0.1, 1, 'easeOutCubic']}>
-      <Image
-        src={props.desktopImage}
-        alt="desktop_image"
-        className={`${props.size == "large" ? "hidden xl:flex transition-all duration-500 group-hover:scale-[1.01]" : "hidden"}`}
-        sizes="1216px"
-      />
+      <Parallax
+        className="hidden xl:block"
+        speed={8}
+        scale={[1.1, 1, "easeOutCubic"]}
+        opacity={[0.4, 1, "easeOutCubic"]}
+      >
+        <Image
+          src={props.desktopImage}
+          alt="desktop_image"
+          className={`${
+            props.size == "large"
+              ? "hidden xl:flex transition-all duration-500 group-hover:scale-[1.01]"
+              : "hidden"
+          }`}
+          sizes="1216px"
+        />
       </Parallax>
       <Image
         src={props.mobileImage}
@@ -35,7 +44,7 @@ const Project: React.FC<Props> = (props) => {
         }`}
         sizes="(max-width: 1028px) 85vw, 896px"
       />
-      <div className="flex flex-col items-start space-y-6 px-6 md:px-0">
+      <div className="flex flex-col items-start space-y-4 px-4 md:px-0">
         <div className="flex space-x-4 items-center">
           <h2 className="text-h5 dark:text-white md:text-h2 text-left lg:mr-6">
             {props.title}
@@ -59,8 +68,8 @@ const Project: React.FC<Props> = (props) => {
         <p
           className={`${
             props.size == "large"
-              ? "text-subtitle2 max-w-4xl md:text-subtitle1 text-gray-600 dark:text-gray-300 text-left"
-              : "text-subtitle2 max-w-4xl text-gray-600 dark:text-gray-300 text-left"
+              ? "text-subtitle2 max-w-4xl md:text-subtitle1 text-gray-600 dark:text-gray-200 text-left"
+              : "text-subtitle2 max-w-4xl text-gray-600 dark:text-gray-200 text-left"
           }`}
         >
           {props.description}
