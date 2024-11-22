@@ -93,7 +93,7 @@ const Slug = ({ metadata, mdxcontent }) => {
         </div>
         <article
           className="prose max-w-[750px] flex flex-col items-center mb-16 md:mb-64 md:mx-6
-          prose-p:px-4 prose-p:mb-2 prose-p:text-[18px] prose-p:mt-0 prose-p:flex prose-p:justify-center
+          prose-p:px-4 prose-p:mb-2 prose-p:text-[18px] prose-p:mt-0 prose-p:flex prose-p:justify-center prose-li:text-[18px]
           prose-headings:px-4 prose-headings:dark:text-white prose-headings:w-full
           text-gray-600 dark:text-gray-200 tracking-wide
           prose-img:max-w-none prose-img:w-full 2xl:prose-img:w-[1344px]"
