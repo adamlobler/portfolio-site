@@ -34,12 +34,11 @@ const About = () => {
             About me
           </h2>
           <p className="text-body1 md:text-body1 w-full text-gray-600 dark:text-gray-300 text-left">
-            I am a product designer with 5+ years of experience based in
-            Budapest, Hungary. Currently, I am working as a freelancer and
-            seeking new opportunities to assist companies in creating
-            human-centric digital solutions. I enjoy working with agencies and
-            startups who want to solve meaningful problems through digital
-            products.
+            I'm a product designer with 5+ years of experience, specializing in
+            design systems. Currently, I am working as a freelancer and seeking
+            new opportunities to help companies in creating human-centric
+            digital solutions. I enjoy working with agencies and startups who
+            want to solve meaningful problems through digital products.
           </p>
           <div className="flex flex-row">
             <div className="flex flex-col space-y-2 w-1/2">
