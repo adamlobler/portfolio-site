@@ -1,6 +1,7 @@
 import NavigationBar from "./NavigationBar";
 import Footer from "./Footer";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,7 +13,8 @@ export default function Layout({ children }: LayoutProps) {
       <NavigationBar />
       <ParallaxProvider>
         <main className="flex flex-col items-center justify-center ">
-         {children}
+          {children}
+          <SpeedInsights />
         </main>
       </ParallaxProvider>
       <Footer />
