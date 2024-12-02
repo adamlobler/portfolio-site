@@ -27,18 +27,18 @@ const Hero = () => {
           crossOrigin="anonymous"
         />
       </Head>
-      <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] justify-center items-center">
+      <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] min-h-[600px] lg:min-h-[800px] justify-center items-center">
         {/* Spline Background */}
-        <div className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]">
+        <div className="absolute w-screen z-0 h-full">
           {/* Spline animation */}
           <Fade
             triggerOnce
             delay={500}
             duration={4000}
-            className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"
+            className="absolute w-screen z-0 h-full"
           >
             <Spline
-              className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"
+              className="absolute w-screen z-0 h-full"
               scene="https://prod.spline.design/050qyBgNdNCwvAVO/scene.splinecode"
               onLoad={handleLoad} // Monitoring load
             />
