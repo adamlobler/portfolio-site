@@ -6,7 +6,6 @@ import { Fade } from "react-awesome-reveal";
 import Spline from "@splinetool/react-spline";
 import { Animator, Fade as ScrollFade } from "react-scroll-motion";
 import Head from "next/head";
-import Image from "next/image";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,19 +27,6 @@ const Hero = () => {
           crossOrigin="anonymous"
         />
       </Head>
-
-      {/* Hide page content before process.wasm is loaded */}
-      {!isLoaded && (
-        <div className="absolute w-screen h-screen bg-gray-200 dark:bg-gray-800 flex flex-col justify-center items-center">
-          <Image
-            src={"/img/loading.svg"}
-            alt="loading"
-            width={200}
-            height={200}
-            priority
-          />
-        </div>
-      )}
       <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] justify-center items-center">
         {/* Spline Background */}
         <div className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]">
