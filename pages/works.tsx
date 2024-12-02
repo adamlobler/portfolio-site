@@ -5,7 +5,6 @@ import { Fade } from "react-awesome-reveal";
 import projects from "../data/projects";
 import Image from "next/image";
 import Background from "../public/img/gradient.jpg";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 const Works: NextPage = () => {
   return (

@@ -1,112 +1,109 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
-import dynamic from "next/dynamic";
-import Background from "../public/img/gradient.png";
-import Mockups from "../public/img/hero_mockups.png";
-
-import {
-  ScrollContainer,
-  batch,
-  Fade as ScrollFade,
-  Move,
-} from "react-scroll-motion";
-
-const Animator = dynamic(
-  import("react-scroll-motion").then((it) => it.Animator),
-  { ssr: true }
-);
+import Spline from "@splinetool/react-spline";
+import { Animator, Fade as ScrollFade } from "react-scroll-motion";
+import Head from "next/head";
+import Image from "next/image";
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Function to monitor loading
+  const handleLoad = () => {
+    setIsLoaded(true); // Set that the Spline and wasm have loaded
+  };
+
   return (
-    <ScrollContainer snap="none">
-      <section className="flex bg-[#341692] h-fit relative flex-col w-screen lg:h-[calc(100vh-76px)] justify-center items-center">
-        <Image
-          src={Background}
-          className="absolute w-screen h-full lg:h-[calc(100vh-76px)]"
-          quality={100}
-          width={480}
-          height={284}
-          alt="bg"
-          loading="eager"
-          placeholder="blur"
+    <>
+      {/* Preload Spline scene */}
+      <Head>
+        <link
+          rel="preload"
+          href="https://prod.spline.design/050qyBgNdNCwvAVO/scene.splinecode"
+          as="fetch"
+          type="application/octet-stream"
+          crossOrigin="anonymous"
         />
-        <div className="flex max-w-[1800px] px-8 flex-col-reverse lg:flex-row max-h-full lg:space-x-16 z-10 w-full items-center pb-16 md:py-16 md:justify-between">
-          <div className="lg:w-7/12 2xl:w-1/2">
-            <Animator animation={ScrollFade()} className="!block">
-              <Fade triggerOnce direction="up" duration={1500}>
-                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[13vw] md:text-[6vw] xl:text-[6vw] 2xl:text-[100px] leading-tight uppercase font-bold pb-2">
-                  Hi, I’m Adam
-                </h1>
-                <h1 className="whitespace-pre-line text-center lg:text-left drop-shadow-2xl text-white text-[8vw] md:text-[5vw] xl:text-[5vw] 2xl:text-[72px] leading-tight uppercase font-bold pb-8 2xl:pb-16">
-                  product designer
-                </h1>
-              </Fade>
-            </Animator>
-            <Animator animation={ScrollFade()} className="!block">
-              <Fade triggerOnce direction="up" duration={1500} delay={400}>
-                <h2 className="text-subtitle1 text-center lg:text-left drop-shadow-sm text-white md:text-h5 pb-8 2xl:pb-16">
-                  I’m passionate to make the best digital solution for
-                  businesses
-                </h2>
-              </Fade>
-              {/*Mobile CTAs */}
-              <div className="flex md:hidden w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
-                <Link
-                  className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
-                  href="/contact"
-                >
-                  Contact me!
-                </Link>
-                <div className="pr-6 pb-4 lg:pb-0" />
-                <Link
-                  className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
-                  href="/works"
-                >
-                  My previous projets{" "}
-                </Link>
-              </div>
-              {/*Desktop CTAs*/}
+      </Head>
+
+      {/* Hide page content before process.wasm is loaded */}
+      {!isLoaded && (
+        <div className="absolute w-screen h-screen bg-gray-200 dark:bg-gray-800 flex flex-col justify-center items-center">
+          <Image
+            src={"/img/loading.svg"}
+            alt="loading"
+            width={200}
+            height={200}
+            priority
+          />
+        </div>
+      )}
+      <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] justify-center items-center">
+        {/* Spline Background */}
+        <div className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]">
+          {/* Spline animation */}
+          <Fade
+            triggerOnce
+            delay={500}
+            duration={4000}
+            className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"
+          >
+            <Spline
+              className="absolute w-screen z-0 h-full lg:h-[calc(100vh-76px)]"
+              scene="https://prod.spline.design/050qyBgNdNCwvAVO/scene.splinecode"
+              onLoad={handleLoad} // Monitoring load
+            />
+          </Fade>
+          <div className="absolute w-screen z-0 bottom-0 h-[60px] bg-white dark:bg-black" />
+        </div>
+
+        {/* Text content and buttons */}
+        {isLoaded && ( // Only show elements when Spline and wasm have loaded
+          <div className="flex pointer-events-none max-w-[1800px] px-8 flex-col max-h-full z-10 w-full pb-16 md:py-16 items-center lg:items-start">
+            <Fade triggerOnce direction="up" duration={1500}>
+              <h1 className="z-99 whitespace-pre-line text-center lg:text-left drop-shadow-md text-white text-[13vw] md:text-[6vw] xl:text-[6vw] 2xl:text-[100px] leading-tight uppercase font-bold pb-2">
+                Reshape digital products together!
+              </h1>
+            </Fade>
+
+            <Animator animation={ScrollFade()} className="!block min-w-[300px]">
               <Fade triggerOnce direction="up" duration={1500} delay={800}>
-                <div className="hidden md:flex w-full max-w-sm items-center mx-auto lg:max-w-none flex-col lg:flex-row">
+                {/*Mobile CTAs */}
+                <div className="flex pointer-events-auto md:hidden w-full items-center flex-col mt-8">
                   <Link
-                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
+                    className="btn-primary lg:hidden w-full"
                     href="/contact"
                   >
-                    Contact me!
+                    Get in touch!
+                  </Link>
+                  <div className="pr-6 pb-4 lg:pb-0" />
+                  <Link className="btn-secondary w-full" href="/works">
+                    Discover projects
+                  </Link>
+                </div>
+
+                {/*Desktop CTAs*/}
+                <div className="hidden pointer-events-auto my-4 md:flex w-full max-w-sm items-center lg:max-w-none flex-col lg:flex-row">
+                  <Link className="btn-primary w-full lg:w-fit" href="/contact">
+                    Get in touch!
                   </Link>
                   <div className="pr-6 pb-4 lg:pb-0" />
                   <Link
-                    className="flex w-full lg:w-auto hover:drop-shadow-2xl items-center justify-center border-2 text-white hover:bg-white hover:bg-opacity-10 text-button py-4 px-6 rounded-sm transition-all duration-300"
+                    className="btn-secondary  w-full lg:w-fit"
                     href="/works"
                   >
-                    My previous projets{" "}
+                    Discover projects
                   </Link>
                 </div>
               </Fade>
             </Animator>
           </div>
-          <Animator
-            animation={batch(Move(), ScrollFade())}
-            className="!block aspect-[596/616] w-full max-w-md lg:max-w-[836px] lg:w-5/12 2xl:w-1/2 my-4"
-          >
-            <Fade triggerOnce direction="up" duration={1200}>
-              <Image
-                className=" max-w-md lg:max-w-none w-full my-4"
-                alt="hero_mockups"
-                src={Mockups}
-                quality={90}
-                width={600}
-                height={600}
-                placeholder="empty"
-                loading="eager"
-              />
-            </Fade>
-          </Animator>
-        </div>
+        )}
       </section>
-    </ScrollContainer>
+    </>
   );
 };
 
