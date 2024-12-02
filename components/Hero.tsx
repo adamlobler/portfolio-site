@@ -6,7 +6,6 @@ import { Fade } from "react-awesome-reveal";
 import Spline from "@splinetool/react-spline";
 import { Animator, Fade as ScrollFade } from "react-scroll-motion";
 import Head from "next/head";
-//import Image from "next/image";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
