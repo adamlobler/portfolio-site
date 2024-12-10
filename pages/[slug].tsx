@@ -85,17 +85,18 @@ const Slug = ({ metadata, mdxcontent }) => {
               </p>
             ))}
           </div>
-          <div className="flex flex-row flex-wrap md:space-x-16 my-4 md:my-8">
+          <div className="flex flex-row flex-wrap my-4 md:my-8">
             <Metadata title="DURATION" data={metadata.duration} />
             <Metadata title="ROLE" data={metadata.role} />
             <Metadata title="ClIENT" data={metadata.client} />
           </div>
         </div>
         <article
-          className="prose max-w-[750px] flex flex-col items-center mb-16 md:mb-64 md:mx-6
-          prose-p:px-4 prose-p:mb-2 prose-p:text-[18px] prose-p:mt-0 prose-p:flex prose-p:justify-center prose-li:text-[18px]
-          prose-headings:px-4 prose-headings:dark:text-white prose-headings:w-full
-          text-gray-600 dark:text-gray-200 tracking-wide
+          className="prose max-w-[750px] flex flex-col items-start mb-16 md:mb-64 md:mx-6 px-4 md:px-0
+           prose-p:mb-2 prose-p:text-[18px] prose-p:mt-0 prose-p:flex prose-p:justify-center prose-li:text-[18px]
+           prose-headings:dark:text-white prose-headings:w-full prose-ul:w-full prose-img:mb-2 prose-em:text-[14px]
+          text-gray-600 dark:text-gray-200 tracking-wide prose-strong:text-black prose-strong:dark:text-white
+          prose-a:mx-2 prose-a:text-primary-600 prose-a:dark:text-primary-300 prose-a:no-underline
           prose-img:max-w-none prose-img:w-full 2xl:prose-img:w-[1344px]"
         >
           <MDXRemote {...mdxcontent} components={components} />
