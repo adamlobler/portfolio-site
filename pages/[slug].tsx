@@ -92,12 +92,11 @@ const Slug = ({ metadata, mdxcontent }) => {
           </div>
         </div>
         <article
-          className="prose max-w-[750px] flex flex-col items-start mb-16 md:mb-64 md:mx-6 px-4 md:px-0
-           prose-p:mb-2 prose-p:text-[18px] prose-p:mt-0 prose-li:text-[18px]
-           prose-headings:dark:text-white prose-headings:w-full prose-ul:w-full prose-img:mb-2 prose-em:text-[14px]
+          className="prose max-w-[750px] flex flex-col items-center mb-16 md:mb-64 md:mx-6 px-4 md:px-0
+           prose-p:mb-2 prose-p:w-full prose-p:text-[18px] prose-p:mt-0 prose-li:text-[18px]
+           prose-headings:dark:text-white prose-headings:w-full prose-ul:w-full prose-img:mb-2 prose-img:lg:w-[1000px] prose-img:lg:max-w-none  prose-em:block prose-em:w-full prose-em:text-[14px] prose-em:text-center
           text-gray-600 dark:text-gray-200 tracking-wide prose-strong:text-black prose-strong:dark:text-white
-           prose-a:text-primary-600 prose-a:dark:text-primary-300 prose-a:no-underline
-          prose-img:max-w-none prose-img:w-full 2xl:prose-img:w-[1344px]"
+           prose-a:text-primary-600 prose-a:dark:text-primary-300 prose-a:no-underline"
         >
           <MDXRemote {...mdxcontent} components={components} />
         </article>

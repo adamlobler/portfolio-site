@@ -13,11 +13,13 @@ tags: ["Web application", "Landing page"]
 
 ## Introduction
 
+### Project overview
+
 Airtime is an online UX research tool designed to accelerate the workflow of product teams. It offers two key features: the video call analyzer, which extracts insights and identifies patterns from video calls. You can simply ask questions, and Airtime gathers the answers from multiple videos for you, saving valuable time in the analysis process. The second feature is the website survey widget, which allows users to seamlessly collect and summarize responses directly on their websites, eliminating the need to manually review feedback one by one.
 
-## My Role
+### My Role
 
-As the sole designer on a team of five, I was responsible for all aspects of design, including:
+As the only designer on a team of five, I was responsible for all aspects of design, including:
 
 - Crafting wireframes, building prototypes, and designing the UI for both the web app and the landing page.
 - Creating a comprehensive design system to ensure visual and functional consistency across the platform and future updates.
@@ -30,7 +32,7 @@ As the sole designer on a team of five, I was responsible for all aspects of des
 
 ### Research Insights & Challenges
 
-During initial user interview sessions, we discovered that many small product teams lack a dedicated UX expert. These teams often composed of product managers, developers, and founders who understand the importance of gathering user data to improve their products but face two significant challenges: limited time to derive meaningful insights from the information gathered and a lack of efficient methods to analyze and organize collected data.
+During initial user interview sessions, we discovered that many small product teams lack a dedicated UX expert. These teams often composed of product managers, developers, and founders who understand the importance of gathering user data to improve their products but face two significant challenges: limited time to find meaningful insights in the information they gathered and a lack of efficient methods to analyze and organize collected data.
 
 Through these interviews, we identified that these teams primarily rely on two research methods:
 
@@ -43,19 +45,33 @@ While eager to collect data directly from users, these teams struggled to proces
 
 When I joined the project, I observed an opportunity to enhance the team’s workflow by introducing a consistent design system. Although our small team collaborated to refine design processes, the design system needed more structure. In addition to addressing UX research bottlenecks, I worked on establishing a design system to ensure consistency and streamline future development.
 
+<Fade triggerOnce>
+  <Image
+    src="/img/airtime/airtime_buttons.png"
+    alt="airtime_button"
+    width={1200}
+    height={600}
+    className="border border-gray-50"
+/>
+
+</Fade>
+*Buttons of Airtime design system*
+
 ## Website Surveys
 
 ### Enhancing the Website Survey Widget
 
-When I joined Airtime, the website survey widget feature was already in place. This feature allowed product teams to invite participants to user interviews directly on their websites. Recognizing its potential, we decided to enhance this feature to solve the survey data collection challenges our customers faced.
+When I joined Airtime, a website survey widget feature was already in place. This feature allowed product teams to invite participants to user interviews directly on their websites. This feature didn't get so much attention at this time but recognizing its potential, we decided to use this feature as a starter point and enhance it to solve the survey data collection challenges product teams facing.
 
 ### Researching Best Practices
 
-Through user interviews, we realized our target audience valued user data but often lacked the knowledge or time to analyze the results. To address this, we gathered feedback from UX experts to understand their approaches to creating and analyzing surveys. This research helped identify areas where Airtime could automate the process.
+Through user interviews, we realized our target audience already collected user data but often lacked the knowledge or time to analyze the results. To address this, we gathered feedback from UX experts to understand their approaches to creating and analyzing surveys. This research helped identify areas where Airtime could mimick and automate the expert's processes and provide it as a feature in Airtime for small product teams.
 
 ### Survey Templates
 
-We identified common survey types, such as CSAT (Customer Satisfaction) and CES (Customer Effort Score), through expert feedback and online research. Recognizing our audience's limited UX knowledge, we renamed these surveys to focus on their purpose. For example, a CES survey became “Find bad user experiences in your product,” making it more intuitive for non-UX professionals.
+We identified common survey types, such as CSAT (Customer Satisfaction) and CES (Customer Effort Score), through expert feedback and online research. This ensured users didn’t have to create a survey from scratch, as they already had guidance on what to ask and where to display these surveys on their websites.
+Recognizing our audience’s limited UX knowledge, we renamed these surveys to focus on their purpose rather than their technical names. For instance, a CES survey was renamed to ‘Find bad user experiences in your product,’ making it more intuitive for non-UX professionals.
+While this feature helped users create proper surveys, another challenge emerged, they struggled to extract useful insights from the results.
 
 <Fade triggerOnce>
   <Image
@@ -63,20 +79,19 @@ We identified common survey types, such as CSAT (Customer Satisfaction) and CES 
     alt="airtime_survey_template"
     width={1200}
     height={600}
-    className="md:mt-[76px] w-full max-w-3xl"
   />
 </Fade>
 *Airtime survey templates*
 
 ### Streamlining Survey Results with AI
 
-We implemented AI to automate the manual analysis process, addressing key bottlenecks for researchers:
+To help our users with analysing the results, we implemented AI to automate the manual analysis processes that experts does in their daily work like:
 
 - **Grouping Responses**: Responses were automatically categorized into negative, neutral, or positive groups to highlight pain points and successes.
 - **Thematic Analysis**: AI identified recurring themes, grouping responses under clear titles and subtitles, and highlighting patterns without requiring users to review every response manually.
-- **Detailed Insights**: Users could view specific answers within each theme, striking a balance between automation and transparency.
+- **Detailed Insights**: Users could also view specific answers within each theme and group, striking a balance between automation and transparency.
 
-We validated this feature by collaborating with teams willing to share survey data, refining our AI analysis based on their feedback. This ensured the solution met user needs effectively.
+Before we implemented this feature on the platform we validated it by collaborating with teams willing to share survey data, refining our AI analysis based on their feedback. This ensured the solution met user needs effectively.
 
 <Fade triggerOnce>
   <Image
@@ -102,7 +117,8 @@ We validated this feature by collaborating with teams willing to share survey da
 ### Results
 
 By automating these tasks, the enhanced survey widget saved teams significant time and effort. Several customers adopted the feature as part of their research process, focusing on applying insights rather than getting overwhelmed by the analysis process.
-After successfully launching the survey feature, we faced increased competition as some key players introduced similar solutions. Despite achieving very good results in direct comparisons, standing out in a crowded market became challenging. To make a significant leap forward, we decided to address user interview analysis, an area that had clear room for improvement in existing tools.
+
+But after successfully launching the survey feature, we faced increased competition as some key players introduced similar solutions. Despite achieving very good results in direct comparisons, standing out in a crowded market became challenging. To make a significant leap forward, we decided to address user interview analysis, an area that had clear room for improvement in existing tools.
 
 ## Expanding to User Interview Analysis
 
@@ -131,7 +147,7 @@ AI analyzed transcripts, identifying snippets where relevant answers appeared, h
     alt="airtime_video_transcript"
     width={1200}
     height={600}
-    className="md:mt-[76px] w-full max-w-3xl"
+    className="md:mt-[76px] w-full max-w-3xl "
   />
 </Fade>
 *Airtime video analysis - transcript*
@@ -149,14 +165,23 @@ AI analyzed transcripts, identifying snippets where relevant answers appeared, h
 
 ### Realigning Personas
 
-Initially, we targeted product managers, but after launching the video analysis feature, we found that the quality of insights depended on the quality of the interviews. Poorly conducted interviews with unclear questions led to weaker analysis, while videos from research experts produced better results. This led us to refocus on researchers, who are more experienced in conducting interviews and better suited to benefit from the tool.
+Initially, we targeted small product teams without UX knowledge, but after launching the video analysis feature, we found that the quality of insights depended on the quality of the interviews. Poorly conducted interviews with unclear questions led to weaker analysis, while videos from research experts produced better results. This led us to refocus on researchers, who are more experienced in conducting interviews and better suited to benefit from the tool, since on our early tests our Ai found significantly more and better highlights from these videos.
+
+### Early Feedback & Iterations
+
+The initial launch of the interview analysis feature received a warm reception, with researchers praising how effectively the AI extracted relevant parts of interviews based on the predefined themes.
+
+However, got received the same feedback time after time, that revealed the feature’s key limitations:
+
+- **Scalability**: The tool initially worked on single interviews, but users needed insights across multiple sessions to draw broader conclusions that they also do manually when they analyse user interviews.
+- **Customizability**: Researchers wanted the ability to add their own questions, tailoring the tool to their specific needs, that also aligned with our initial findings.
 
 ### Enhancements & Results
 
 We addressed the gaps by enhancing the AI analysis feature with two key improvements:
 
-- **Custom Questions**: The ability to define custom questions for analysis, giving researchers full control over their workflows. In addition to general questions, they could ask research-specific questions, and our AI would collect the answers.
-- **Multi-Interview Analysis**: A multi-interview analysis feature (which we called Studies), enabling insights to be aggregated across sessions for deeper and more scalable results. This allowed users to organize videos into larger groups, similar to conducting multiple user interviews on a specific theme, and obtain summarized insights and recurring patterns across several videos.
+- **Multi-Interview Analysis (Studies)**: A multi-interview analysis feature (which we called Studies), enabling insights to be aggregated across interview sessions for deeper and more scalable results. This allowed users to organize videos into larger groups, similar to conducting multiple user interviews on a specific theme, and obtain summarized insights and recurring patterns across several videos.
+- **Study Questions**: The ability to define custom questions for analysis, giving researchers full control over their workflows. In addition to general questions, they could ask research-specific questions, and our AI collected the answers.
 
 <Fade triggerOnce>
   <Image
