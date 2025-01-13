@@ -71,7 +71,7 @@ const Slug = ({ metadata, mdxcontent }) => {
             priority
           />
         </Fade>
-        <div className="text-h3 px-4 2xl:px-0 w-full md:mb-32  pt-8">
+        <div className="text-h3 px-4 2xl:px-0 w-full md:mb-24  pt-8">
           <h1 className="text-h3 w-full md:text-h1  dark:text-white mb-4">
             {metadata.title}
           </h1>
@@ -85,18 +85,18 @@ const Slug = ({ metadata, mdxcontent }) => {
               </p>
             ))}
           </div>
-          <div className="flex flex-row flex-wrap md:space-x-16 my-4 md:my-8">
+          <div className="flex flex-row flex-wrap my-4 md:my-8">
             <Metadata title="DURATION" data={metadata.duration} />
             <Metadata title="ROLE" data={metadata.role} />
             <Metadata title="ClIENT" data={metadata.client} />
           </div>
         </div>
         <article
-          className="prose max-w-[750px] flex flex-col items-center mb-16 md:mb-64 md:mx-6
-          prose-p:px-4 prose-p:mb-2 prose-p:text-[18px] prose-p:mt-0 prose-p:flex prose-p:justify-center prose-li:text-[18px]
-          prose-headings:px-4 prose-headings:dark:text-white prose-headings:w-full
-          text-gray-600 dark:text-gray-200 tracking-wide
-          prose-img:max-w-none prose-img:w-full 2xl:prose-img:w-[1344px]"
+          className="prose max-w-[750px] flex flex-col items-center mb-16 md:mb-64 md:mx-6 px-4 md:px-0
+           prose-p:mb-2 prose-p:w-full prose-p:text-[18px] prose-p:mt-0 prose-li:text-[18px]
+           prose-headings:dark:text-white prose-headings:w-full prose-ul:w-full prose-img:mb-2 prose-img:lg:w-[1000px] prose-img:lg:max-w-none  prose-em:block prose-em:w-full prose-em:text-[14px] prose-em:text-center
+          text-gray-600 dark:text-gray-200 tracking-wide prose-strong:text-black prose-strong:dark:text-white
+           prose-a:text-primary-600 prose-a:dark:text-primary-300 prose-a:no-underline"
         >
           <MDXRemote {...mdxcontent} components={components} />
         </article>
