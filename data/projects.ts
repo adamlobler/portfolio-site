@@ -31,7 +31,10 @@ import AirtimeMobile from "../public/img/airtime_mobile.png"
 import AirtimeDesktop from "../public/img/airtime_desktop.png"
 import ResearchSummitMobile from "../public/img/research_summit_mobile.jpg"
 import ResearchSummitDesktop from "../public/img/research_summit_desktop.jpg"
-
+import ShadcnDesktop from "../public/img/shadcn/shadcn_desktop.jpg"
+import ShadcnMobile from "../public/img/shadcn/shadcn_mobile.jpg"
+import bmwDesktop from "../public/img/bmw/bmw_desktop.jpg"
+import bmwMobile from "../public/img/bmw/bmw_mobile.jpg"
 
 
 
@@ -59,6 +62,27 @@ const projects: Project[] = [
             "Airtime is an online UX research tool designed to accelerate the workflow of product teams.",
           desktopImage: AirtimeDesktop,
           mobileImage: AirtimeMobile,
+        },
+        {
+          id: "shadcn",
+          title: "shadcn/ui component library",
+          tags: ["Design system", "Component library"],
+          link: "https://www.figma.com/community/file/1435295819876914235/shadcn-ui-component-library",
+          description:
+            "Shadcn component library using variables, auto-layout, light/dark modes, 1544 lucide icons.",
+          desktopImage: ShadcnDesktop,
+          mobileImage: ShadcnMobile,
+        },
+        {
+          id: "bmw",
+          title: "BMW i3 UI concept",
+          path: "bmwi3",
+          tags: ["Concept", "Dark mode", "shadcn/ui"],
+          link: "https://www.figma.com/community/file/1435295819876914235/shadcn-ui-component-library",
+          description:
+            "I designed a BMW i3 UI concept for better usability, visibility, and safer navigation with the iDrive controller.",
+          desktopImage: bmwDesktop,
+          mobileImage: bmwMobile,
         },
         {
           id: "viddl",
