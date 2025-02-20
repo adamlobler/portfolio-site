@@ -1,0 +1,139 @@
+---
+title: BMW i3 UI concept
+description: I designed a BMW i3 UI concept for better usability, visibility, and safer navigation with the iDrive controller.
+duration: "2025"
+role: "UI designer"
+client: "-"
+ogimage: /img/bmw/bmw_og.png
+desktopImage: /img/bmw/bmw_desktop.jpg
+mobileImage: /img/bmw/bmw_mobile.jpg
+tags: ["Concept", "UI design", "shadcn/ui", "Dark mode"]
+---
+
+## Motivation
+
+The BMW i3 was one of the first electric cars, and even today, it still looks modern and futuristic. However, when you sit inside and the screen turns on, it immediately feels outdated. The user interface (UI) looks old, and it does not meet today’s standards for car technology.
+
+The current UI does not show enough important information on the main screen. If you want to find details, you have to go through multiple menus. This is not only inconvenient but also dangerous in a car because it takes the driver’s attention away from the road.
+
+This was my motivation to update the UI so that it matches the car’s modern look and makes the driving experience safer and more user-friendly.
+
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_1.jpg"
+    alt="bmw_ui"
+    width={1200}
+    height={600}
+    className="mt-[76px] w-full max-w-3xl"
+  />
+</Fade>
+
+## Process
+
+### 1. Wireframing and layout planning
+
+I started with wireframes to define which parts of the UI are most visible and important for the driver. I numbered the elements from left to right based on visibility, with the far-left element being number 1 because it is closest to the driver’s seat.
+
+The most important elements were:
+
+- Navigation (always visible and easy to access)
+- Car status (battery level, range, speed, etc.)
+- Media, climate, and weather information
+
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_2.jpg"
+    alt="bmw_wireframe"
+    width={1200}
+    height={600}
+    className="mt-[76px] w-full max-w-3xl"
+  />
+</Fade>
+
+### 2. Visual hierarchy and interaction design
+
+Since i3 doesn’t have touch screen the iDrive Controller is used for navigation, that’s why it’s very important that selected elements stand out clearly. To achieve this, I used a high-contrast focus ring, which highlights the selected item. This makes it easier for the driver to know where they are in the menu without looking for too long.
+
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_3.jpg"
+    alt="bmw_selectionring"
+    width={1200}
+    height={600}
+    className="mt-[76px] w-full max-w-3xl"
+  />
+</Fade>
+
+### 3. Reducing menu navigation
+
+A big issue with the current UI is that too much information is hidden inside menus. This means drivers have to go through multiple steps to find what they need, which is unsafe while driving.
+In my redesign, I kept key functions on the main screen so that drivers can access them quickly. Instead of deep menus, I used expandable cards that show more details when needed and a single layered side menu that is permanent on every screen for easy navigation.
+
+### 4. Smooth animations for better usability
+
+I used smooth transitions to help users follow changes on the screen and make it more natural. The animations are subtle and fast, so they guide the user without distracting them.
+
+<Fade triggerOnce>
+  <video
+    className="mt-[76px] w-full max-w-[1200px]"
+    width={1200}
+    controls
+    src="/bmw.mov"
+    type="video/quicktime"
+  ></video>
+</Fade>
+
+### 5. Light and dark mode for day & night use
+
+I designed both light mode and dark mode so that the UI is easy to see in different lighting conditions and don’t disturb drivers at night. I used my &nbsp;[shadcn/ui component library](https://www.figma.com/community/file/1435295819876914235/shadcn-ui-component-library) that already has light/dark modes built-in that accelerated the design process. The focus ring is also has a high contrast in both modes, ensuring that users can always clearly see which option is selected.
+
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_5.jpg"
+    alt="bmw_modes"
+    width={1200}
+    height={600}
+    className="mt-[76px] w-full max-w-3xl"
+  />
+</Fade>
+
+## Final design
+
+The updated UI makes the BMW i3 feel more modern while improving safety and usability. Drivers can now access the most important features faster and with fewer distractions. This redesign brings the UI in line with the car’s futuristic design, making the overall experience much better.
+
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_6.jpg"
+    alt="bmw_dark mode"
+    width={1200}
+    height={600}
+    className="mt-[76px] w-full max-w-3xl"
+  />
+</Fade>
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_7.jpg"
+    alt="bmw_musicplayer"
+    width={1200}
+    height={600}
+    className="mt-[16px] w-full max-w-3xl"
+  />
+</Fade>
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_8.jpg"
+    alt="bmw_interior"
+    width={1200}
+    height={600}
+    className="mt-[16px] w-full max-w-3xl"
+  />
+</Fade>
+<Fade triggerOnce>
+  <Image
+    src="/img/bmw/bmw_9.jpg"
+    alt="bmw_light_UI"
+    width={1200}
+    height={600}
+    className="mt-[16px] w-full max-w-3xl"
+  />
+</Fade>

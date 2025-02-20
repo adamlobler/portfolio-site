@@ -87,8 +87,16 @@ const Slug = ({ metadata, mdxcontent }) => {
           </div>
           <div className="flex flex-row flex-wrap my-4 md:my-8">
             <Metadata title="DURATION" data={metadata.duration} />
-            <Metadata title="ROLE" data={metadata.role} />
-            <Metadata title="ClIENT" data={metadata.client} />
+            {metadata.role ? (
+              <Metadata title="ROLE" data={metadata.role} />
+            ) : (
+              <div />
+            )}
+            {metadata.client ? (
+              <Metadata title="ClIENT" data={metadata.client} />
+            ) : (
+              <div />
+            )}
           </div>
         </div>
         <article
@@ -96,7 +104,7 @@ const Slug = ({ metadata, mdxcontent }) => {
            prose-p:mb-2 prose-p:w-full prose-p:text-[18px] prose-p:mt-0 prose-li:text-[18px]
            prose-headings:dark:text-white prose-headings:w-full prose-ul:w-full prose-img:mb-2 prose-img:lg:w-[1000px] prose-img:lg:max-w-none  prose-em:block prose-em:w-full prose-em:text-[14px] prose-em:text-center
           text-gray-600 dark:text-gray-200 tracking-wide prose-strong:text-black prose-strong:dark:text-white
-           prose-a:text-primary-600 prose-a:dark:text-primary-300 prose-a:no-underline"
+           prose-a:text-primary-600 prose-a:dark:text-primary-300 prose-a:no-underline prose-video:max-w-none prose-video:lg:w-[1000px] prose-video:lg:max-w-none"
         >
           <MDXRemote {...mdxcontent} components={components} />
         </article>
