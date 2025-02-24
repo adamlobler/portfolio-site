@@ -86,7 +86,11 @@ const Slug = ({ metadata, mdxcontent }) => {
             ))}
           </div>
           <div className="flex flex-row flex-wrap my-4 md:my-8">
-            <Metadata title="DURATION" data={metadata.duration} />
+            {metadata.duration ? (
+              <Metadata title="DURATION" data={metadata.duration} />
+            ) : (
+              <div />
+            )}
             {metadata.role ? (
               <Metadata title="ROLE" data={metadata.role} />
             ) : (
