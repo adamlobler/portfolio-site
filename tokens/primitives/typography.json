@@ -3,9 +3,9 @@
     "font": {
       "family": {
         "$type": "fontFamily",
-        "$description": "Raw stacks. Expression semantics choose which stack a theme speaks in.",
+        "$description": "Raw stacks. Expression semantics choose which stack a theme speaks in. `--font-inter` is the self-hosted subset `next/font` emits in app/layout.tsx; the rest of the stack is its fallback.",
         "sans": {
-          "$value": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif"
+          "$value": "var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif"
         },
         "serif": {
           "$value": "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif"

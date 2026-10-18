@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import Socials from "./Socials";
 import ThemeSwitch from "./theme/ThemeSwitch";
@@ -24,12 +24,24 @@ const navigationItems = [
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-    isOpen
-      ? (document.body.style.overflow = "scroll")
-      : (document.body.style.overflow = "hidden");
-  };
+
+  /**
+   * The body lock used to be written here from the *pre-update* `isOpen`, so
+   * it set the value for the state it was leaving rather than the one it was
+   * entering — the page scrolled while the menu was open and locked once it
+   * closed. It also hard-coded `overflow: scroll` on the way out instead of
+   * handing the property back to the stylesheet.
+   */
+  useEffect(() => {
+    if (!isOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [isOpen]);
+
+  const toggleNavbar = () => setIsOpen((open) => !open);
   return (
     <nav className="bg-white pl-4 px-2 sm:px-4 py-2 dark:bg-gray-900 overflow-hidden w-full top-0 left-0 max-h-screen z-50">
       <div className="container flex flex-wrap items-center justify-between max-w-[1800px] mx-auto">
@@ -67,9 +79,9 @@ const NavigationBar = () => {
               onClick={() => toggleNavbar()}
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 text-sm text-primary-500 dark:text-primary-400 rounded-xs md:hidden hover:bg-primary-50 dark:hover:bg-primary-800 focus:outline-hidden focus:ring-2 focus:ring-gray-20 dark:focus:ring-gray-800 ml-2"
+              className="inline-flex items-center p-2 text-sm text-primary-500 dark:text-primary-400 rounded-xs md:hidden hover:bg-primary-50 dark:hover:bg-primary-800 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800 ml-2"
               aria-controls="navbar-sticky"
-              aria-expanded="false"
+              aria-expanded={isOpen}
               title="Menu button"
             >
               <Bars3Icon className="w-8 h-8" />

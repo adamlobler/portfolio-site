@@ -152,6 +152,41 @@
     background-color: var(--cmp-button-secondary-bg-active);
   }
 
+  /**
+   * The hero entrance, in CSS instead of JS.
+   *
+   * `react-awesome-reveal` serialises `style="opacity:0"` into the SSR HTML
+   * and only clears it after hydration *and* an IntersectionObserver fire, so
+   * anything it wraps is invisible in the static markup — which is why the
+   * LCP headline was never a paint candidate even once the `isLoaded` gate
+   * came off. This runs off first paint instead: the text is in the HTML, it
+   * paints on the first frame, and it still arrives with the same rise.
+   */
+  .hero-reveal {
+    animation: hero-reveal var(--sem-motion-duration-slow)
+      var(--sem-motion-ease-entrance) both;
+  }
+  .hero-reveal--late {
+    animation-delay: var(--sem-motion-duration-medium);
+  }
+
+  @keyframes hero-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-reveal {
+      animation: none;
+    }
+  }
+
   /* Scroll hint. Geometry is bespoke; its colour and motion are not. */
   .icon-scroll {
     position: relative;

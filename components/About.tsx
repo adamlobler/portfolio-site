@@ -23,11 +23,11 @@ const About = () => {
       <div className="flex flex-col xl:w-full space-y-12 justify-start xl:mr-48">
         <Fade triggerOnce>
           <Image
-            src={"/img/adam_lobler.jpg"}
+            src={"/img/adam_lobler.webp"}
             className=" w-56 xl:w-[300px] rounded-sm"
             width={300}
             height={300}
-            sizes="(max-width: 1280px) 160px,228px,"
+            sizes="(max-width: 1280px) 160px, 228px"
             alt="adam_lobler"
           />
           <h2 className="text-h3 dark:text-white md:text-h2 text-left">

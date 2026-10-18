@@ -1,7 +1,7 @@
 import React from "react";
 import Socials from "./Socials";
 import Image from "next/image";
-import Background from "../public/img/gradient.jpg";
+import Background from "../public/img/gradient.webp";
 
 const Footer = () => {
   return (

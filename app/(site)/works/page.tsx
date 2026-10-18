@@ -4,7 +4,7 @@ import Image from "next/image";
 import ProjectCard from "../../../components/ProjectCard";
 import { Fade } from "../../../components/client/Reveal";
 import projects from "../../../data/projects";
-import Background from "../../../public/img/gradient.jpg";
+import Background from "../../../public/img/gradient.webp";
 
 export const metadata: Metadata = {
   title: "Projects",

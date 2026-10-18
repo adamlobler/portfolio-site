@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import Socials from "../../../components/Socials";
 import { Fade } from "../../../components/client/Reveal";
-import Background from "../../../public/img/gradient.jpg";
+import Background from "../../../public/img/gradient.webp";
 
 export const metadata: Metadata = {
   title: "Contact",

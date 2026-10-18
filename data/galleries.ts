@@ -1,10 +1,10 @@
 import type { StaticImageData } from "next/image";
 
-import ViddlAdmin1 from "../public/img/viddl/Admin_1.png";
-import ViddlAdmin2 from "../public/img/viddl/Admin_2.png";
-import ViddlButtons from "../public/img/viddl/viddl_buttons.png";
-import ViddlCourier from "../public/img/viddl/viddl_courier.png";
-import ViddlParcelTracking from "../public/img/viddl/viddl_parceltracking.png";
+import ViddlAdmin1 from "../public/img/viddl/Admin_1.webp";
+import ViddlAdmin2 from "../public/img/viddl/Admin_2.webp";
+import ViddlButtons from "../public/img/viddl/viddl_buttons.webp";
+import ViddlCourier from "../public/img/viddl/viddl_courier.webp";
+import ViddlParcelTracking from "../public/img/viddl/viddl_parceltracking.webp";
 
 /**
  * Keyed by case-study slug (the `content/<slug>.mdx` filename). These used to
