@@ -1,0 +1,33 @@
+{
+  "semDim": {
+    "spacious": {
+      "$description": "Editorial. Long measures, generous air — reads as a printed page.",
+      "space": {
+        "$type": "dimension",
+        "gutter": { "$value": "{prim.space.10}" },
+        "section": { "$value": "{prim.space.40}" },
+        "stack-xs": { "$value": "{prim.space.3}" },
+        "stack-sm": { "$value": "{prim.space.4}" },
+        "stack-md": { "$value": "{prim.space.6}" },
+        "stack-lg": { "$value": "{prim.space.12}" },
+        "stack-xl": { "$value": "{prim.space.24}" },
+        "inline-xs": { "$value": "{prim.space.3}" },
+        "inline-sm": { "$value": "{prim.space.4}" },
+        "inline-md": { "$value": "{prim.space.8}" }
+      },
+      "control": {
+        "$type": "dimension",
+        "height-sm": { "$value": "{prim.space.10}" },
+        "height-md": { "$value": "{prim.space.12}" },
+        "height-lg": { "$value": "{prim.space.16}" },
+        "pad-x": { "$value": "{prim.space.8}" },
+        "pad-y": { "$value": "{prim.space.5}" }
+      },
+      "block": {
+        "$type": "dimension",
+        "pad": { "$value": "{prim.space.10}" },
+        "nav-height": { "$value": "{prim.space.24}" }
+      }
+    }
+  }
+}

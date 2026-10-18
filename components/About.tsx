@@ -24,7 +24,7 @@ const About = () => {
         <Fade triggerOnce>
           <Image
             src={"/img/adam_lobler.jpg"}
-            className=" w-56 xl:w-[300px] rounded"
+            className=" w-56 xl:w-[300px] rounded-sm"
             width={300}
             height={300}
             sizes="(max-width: 1280px) 160px,228px,"

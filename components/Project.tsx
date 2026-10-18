@@ -59,7 +59,7 @@ const Project: React.FC<Props> = (props) => {
           {props.tags.map((tag) => (
             <p
               key={tag}
-              className="text-button px-3 py-1 border rounded mr-2 my-1 whitespace-nowrap"
+              className="text-button px-3 py-1 border rounded-sm mr-2 my-1 whitespace-nowrap"
             >
               {tag}
             </p>

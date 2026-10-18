@@ -48,7 +48,7 @@ const NavigationBar = () => {
                 <li key={index}>
                   <a
                     href={item.link}
-                    className="text-body2 block py-2 pl-3 pr-4 bg-primary-700 rounded md:bg-transparent md:text-black dark:md:text-white hover:text-primary-500 md:p-0 dark:text-white"
+                    className="text-body2 block py-2 pl-3 pr-4 bg-primary-700 rounded-sm md:bg-transparent md:text-black dark:md:text-white hover:text-primary-500 md:p-0 dark:text-white"
                     aria-current="page"
                   >
                     {item.name}
@@ -66,7 +66,7 @@ const NavigationBar = () => {
               onClick={() => toggleNavbar()}
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 text-sm text-primary-500 dark:text-primary-400 rounded-sm md:hidden hover:bg-primary-50 dark:hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-gray-20 dark:focus:ring-gray-800 ml-2"
+              className="inline-flex items-center p-2 text-sm text-primary-500 dark:text-primary-400 rounded-xs md:hidden hover:bg-primary-50 dark:hover:bg-primary-800 focus:outline-hidden focus:ring-2 focus:ring-gray-20 dark:focus:ring-gray-800 ml-2"
               aria-controls="navbar-sticky"
               aria-expanded="false"
               title="Menu button"

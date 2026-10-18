@@ -1,0 +1,75 @@
+{
+  "prim": {
+    "space": {
+      "$type": "dimension",
+      "$description": "Raw 4px-based spacing scale. Never consumed by a component — density semantics pick from it.",
+      "0": { "$value": "0px" },
+      "1": { "$value": "4px" },
+      "2": { "$value": "8px" },
+      "3": { "$value": "12px" },
+      "4": { "$value": "16px" },
+      "5": { "$value": "20px" },
+      "6": { "$value": "24px" },
+      "7": { "$value": "28px" },
+      "8": { "$value": "32px" },
+      "10": { "$value": "40px" },
+      "12": { "$value": "48px" },
+      "14": { "$value": "56px" },
+      "16": { "$value": "64px" },
+      "20": { "$value": "80px" },
+      "24": { "$value": "96px" },
+      "32": { "$value": "128px" },
+      "40": { "$value": "160px" },
+      "48": { "$value": "192px" },
+      "64": { "$value": "256px" }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$description": "Raw corner radii. Expression semantics pick from it, so a theme can be square or pillowy.",
+      "none": { "$value": "0px" },
+      "xs": { "$value": "2px" },
+      "sm": { "$value": "4px" },
+      "md": { "$value": "8px" },
+      "lg": { "$value": "12px" },
+      "xl": { "$value": "16px" },
+      "2xl": { "$value": "24px" },
+      "3xl": { "$value": "32px" },
+      "full": { "$value": "9999px" }
+    },
+    "stroke": {
+      "$type": "dimension",
+      "$description": "Raw border widths.",
+      "0": { "$value": "0px" },
+      "hairline": { "$value": "1px" },
+      "thin": { "$value": "2px" },
+      "thick": { "$value": "3px" },
+      "heavy": { "$value": "4px" }
+    },
+    "stroke-style": {
+      "$type": "strokeStyle",
+      "$description": "Raw border styles. A theme picks one; `terminal` is the only dashed one.",
+      "solid": { "$value": "solid" },
+      "dashed": { "$value": "dashed" },
+      "dotted": { "$value": "dotted" }
+    },
+    "blur": {
+      "$type": "dimension",
+      "$description": "Raw backdrop-filter radii. Only the `glass` theme leans on these.",
+      "none": { "$value": "0px" },
+      "sm": { "$value": "4px" },
+      "md": { "$value": "10px" },
+      "lg": { "$value": "20px" },
+      "xl": { "$value": "40px" }
+    },
+    "size": {
+      "$type": "dimension",
+      "$description": "Raw measure/track sizes.",
+      "control-sm": { "$value": "32px" },
+      "control-md": { "$value": "40px" },
+      "control-lg": { "$value": "56px" },
+      "measure-prose": { "$value": "750px" },
+      "measure-wide": { "$value": "1000px" },
+      "container-page": { "$value": "1344px" }
+    }
+  }
+}

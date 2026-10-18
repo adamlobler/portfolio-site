@@ -1,0 +1,289 @@
+{
+  "semColor": {
+    "brutalist": {
+      "$description": "Semantic colour for the `brutalist` theme. Values are *only* references into the primitive layer \u2014 the build fails if one holds a literal. `normal` blocks are complete; `high` blocks are deltas that win on selector specificity, so high contrast only states what it actually changes. Zero radius, hard offset shadows, mono type, black hairlines. Electric yellow-green does the shouting.",
+      "light": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.white}"
+            },
+            "raised": {
+              "$value": "{prim.color.white}"
+            },
+            "sunken": {
+              "$value": "{prim.color.ink.50}"
+            },
+            "overlay": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.black}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.black}"
+            },
+            "secondary": {
+              "$value": "{prim.color.ink.800}"
+            },
+            "muted": {
+              "$value": "{prim.color.ink.700}"
+            },
+            "inverse": {
+              "$value": "{prim.color.white}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.ink.300}"
+            },
+            "default": {
+              "$value": "{prim.color.black}"
+            },
+            "strong": {
+              "$value": "{prim.color.black}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.electric.800}"
+            },
+            "strong": {
+              "$value": "{prim.color.electric.900}"
+            },
+            "subtle": {
+              "$value": "{prim.color.electric.100}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.electric.400}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.electric.300}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.electric.500}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.black}"
+            },
+            "secondary": {
+              "$value": "{prim.color.white}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.ink.100}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.ink.200}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.black}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.electric.600}"
+            }
+          }
+        },
+        "high": {
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.black}"
+            },
+            "muted": {
+              "$value": "{prim.color.ink.800}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.ink.600}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.electric.900}"
+            },
+            "strong": {
+              "$value": "{prim.color.black}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.electric.500}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.electric.400}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.electric.600}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.electric.800}"
+            }
+          }
+        }
+      },
+      "dark": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.black}"
+            },
+            "raised": {
+              "$value": "{prim.color.ink.950}"
+            },
+            "sunken": {
+              "$value": "{prim.color.black}"
+            },
+            "overlay": {
+              "$value": "{prim.color.ink.900}"
+            },
+            "inverse": {
+              "$value": "{prim.color.white}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.white}"
+            },
+            "secondary": {
+              "$value": "{prim.color.ink.100}"
+            },
+            "muted": {
+              "$value": "{prim.color.ink.300}"
+            },
+            "inverse": {
+              "$value": "{prim.color.black}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.ink.800}"
+            },
+            "default": {
+              "$value": "{prim.color.white}"
+            },
+            "strong": {
+              "$value": "{prim.color.white}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.electric.400}"
+            },
+            "strong": {
+              "$value": "{prim.color.electric.300}"
+            },
+            "subtle": {
+              "$value": "{prim.color.electric.900}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.electric.400}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.electric.300}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.electric.500}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.black}"
+            },
+            "secondary": {
+              "$value": "{prim.color.black}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.ink.900}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.ink.800}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.white}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.electric.400}"
+            }
+          }
+        },
+        "high": {
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.white}"
+            },
+            "muted": {
+              "$value": "{prim.color.ink.100}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.ink.500}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.electric.300}"
+            },
+            "strong": {
+              "$value": "{prim.color.electric.200}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.electric.300}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.electric.200}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.electric.400}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.ink.800}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.ink.700}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.electric.200}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

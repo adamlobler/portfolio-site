@@ -1,0 +1,328 @@
+{
+  "semColor": {
+    "solar": {
+      "$description": "Semantic colour for the `solar` theme. Values are *only* references into the primitive layer \u2014 the build fails if one holds a literal. `normal` blocks are complete; `high` blocks are deltas that win on selector specificity, so high contrast only states what it actually changes. Warm, large radius, glow shadows. Low-sun amber on a stone neutral.",
+      "light": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.stone.50}"
+            },
+            "raised": {
+              "$value": "{prim.color.white}"
+            },
+            "sunken": {
+              "$value": "{prim.color.stone.100}"
+            },
+            "overlay": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.stone.900}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.stone.900}"
+            },
+            "secondary": {
+              "$value": "{prim.color.stone.700}"
+            },
+            "muted": {
+              "$value": "{prim.color.stone.700}"
+            },
+            "inverse": {
+              "$value": "{prim.color.stone.50}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.stone.200}"
+            },
+            "default": {
+              "$value": "{prim.color.stone.300}"
+            },
+            "strong": {
+              "$value": "{prim.color.stone.600}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.amber.800}"
+            },
+            "strong": {
+              "$value": "{prim.color.amber.900}"
+            },
+            "subtle": {
+              "$value": "{prim.color.amber.100}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.amber.400}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.amber.300}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.amber.500}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.stone.950}"
+            },
+            "secondary": {
+              "$value": "{prim.color.stone.100}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.stone.200}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.stone.300}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.stone.900}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.amber.600}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.white}"
+            },
+            "raised": {
+              "$value": "{prim.color.white}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.stone.950}"
+            },
+            "secondary": {
+              "$value": "{prim.color.stone.900}"
+            },
+            "muted": {
+              "$value": "{prim.color.stone.800}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.stone.400}"
+            },
+            "default": {
+              "$value": "{prim.color.stone.600}"
+            },
+            "strong": {
+              "$value": "{prim.color.stone.900}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.amber.900}"
+            },
+            "strong": {
+              "$value": "{prim.color.stone.950}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.amber.300}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.amber.200}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.amber.400}"
+            },
+            "secondary": {
+              "$value": "{prim.color.stone.200}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.stone.950}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.amber.800}"
+            }
+          }
+        }
+      },
+      "dark": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.stone.950}"
+            },
+            "raised": {
+              "$value": "{prim.color.stone.900}"
+            },
+            "sunken": {
+              "$value": "{prim.color.black}"
+            },
+            "overlay": {
+              "$value": "{prim.color.stone.900}"
+            },
+            "inverse": {
+              "$value": "{prim.color.stone.50}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.stone.50}"
+            },
+            "secondary": {
+              "$value": "{prim.color.stone.200}"
+            },
+            "muted": {
+              "$value": "{prim.color.stone.400}"
+            },
+            "inverse": {
+              "$value": "{prim.color.stone.950}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.stone.800}"
+            },
+            "default": {
+              "$value": "{prim.color.stone.700}"
+            },
+            "strong": {
+              "$value": "{prim.color.stone.500}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.amber.400}"
+            },
+            "strong": {
+              "$value": "{prim.color.amber.300}"
+            },
+            "subtle": {
+              "$value": "{prim.color.stone.800}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.amber.400}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.amber.300}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.amber.500}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.stone.950}"
+            },
+            "secondary": {
+              "$value": "{prim.color.stone.800}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.stone.700}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.stone.900}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.stone.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.amber.400}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.black}"
+            },
+            "raised": {
+              "$value": "{prim.color.stone.950}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.stone.50}"
+            },
+            "muted": {
+              "$value": "{prim.color.stone.100}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.stone.600}"
+            },
+            "default": {
+              "$value": "{prim.color.stone.400}"
+            },
+            "strong": {
+              "$value": "{prim.color.stone.200}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.amber.300}"
+            },
+            "strong": {
+              "$value": "{prim.color.amber.200}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.amber.300}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.amber.200}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.amber.400}"
+            },
+            "secondary": {
+              "$value": "{prim.color.stone.900}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.stone.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.amber.200}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

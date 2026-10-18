@@ -78,7 +78,7 @@ const Slug = ({ metadata, mdxcontent }) => {
           <div className="hidden sm:flex flex-row flex-wrap">
             {metadata.tags.map((tag) => (
               <p
-                className="text-button p-2 border rounded mr-4 my-2 whitespace-nowrap"
+                className="text-button p-2 border rounded-sm mr-4 my-2 whitespace-nowrap"
                 key={tag}
               >
                 {tag}

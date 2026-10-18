@@ -42,7 +42,7 @@ const Contact: NextPage = () => {
             />
             <div className="flex max-w-4xl z-10 xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:pb-32">
               <div className="flex flex-col items-start space-y-8 md:space-y-12">
-                <h2 className="text-h2 md:text-h1 text-white drop-shadow-sm">
+                <h2 className="text-h2 md:text-h1 text-white drop-shadow-xs">
                   Looking for help with design?
                 </h2>
                 <p className="text-subtitle1 md:text-h5 text-white drop-shadow-md">
@@ -50,7 +50,7 @@ const Contact: NextPage = () => {
                 </p>
                 <a
                   href="mailto:contact@adamlobler.com"
-                  className="flex max-w-xs min-w-[180px] w-full md:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-sm transition-all duration-300"
+                  className="flex max-w-xs min-w-[180px] w-full md:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-xs transition-all duration-300"
                 >
                   Contact me!
                 </a>

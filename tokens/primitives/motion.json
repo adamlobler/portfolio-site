@@ -1,0 +1,19 @@
+{
+  "prim": {
+    "duration": {
+      "$type": "duration",
+      "instant": { "$value": "0ms" },
+      "fast": { "$value": "120ms" },
+      "medium": { "$value": "240ms" },
+      "slow": { "$value": "300ms" },
+      "slower": { "$value": "500ms" }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "linear": { "$value": "linear" },
+      "standard": { "$value": "cubic-bezier(0.2, 0, 0, 1)" },
+      "entrance": { "$value": "cubic-bezier(0, 0, 0.2, 1)" },
+      "exit": { "$value": "cubic-bezier(0.4, 0, 1, 1)" }
+    }
+  }
+}

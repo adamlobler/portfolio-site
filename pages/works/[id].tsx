@@ -140,7 +140,7 @@ const WorksDetailPage = ({
               href={project.link}
               rel="noreferrer"
               target="_blank"
-              className="text-primary-500 hover:text-primary-300 font-bold py-2 rounded inline-flex items-center"
+              className="text-primary-500 hover:text-primary-300 font-bold py-2 rounded-sm inline-flex items-center"
             >
               <span className="text-button mr-2 hover:mr-3 transition-all duration-300">
                 Link to website

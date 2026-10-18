@@ -1,21 +1,168 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ---------------------------------------------------------------------------
+ * Tailwind v4, CSS-first. There is no `tailwind.config.js`: the theme is the
+ * generated `@theme inline` block below, which is emitted from the token JSON
+ * by `yarn tokens`.
+ *
+ * Import order is the cascade, and it is deliberate — each layer only ever
+ * overrides variables defined above it:
+ *
+ *   primitives       raw scales, `:root`
+ *   semantic-root    axis-free defaults + invariants, `:root`   <- the no-JS default
+ *   semantic-color   [data-theme][data-appearance] (+ high-contrast deltas)
+ *   semantic-density [data-density]
+ *   expression       [data-theme]
+ *   component        `:root`, all var() into the semantic layer
+ *   theme            the `@theme inline` block Tailwind reads
+ *   legacy-palette   pre-token palette shim, deleted in phase 5
+ * ------------------------------------------------------------------------- */
+@import "tailwindcss" source(none);
+@import "./tokens/primitives.css";
+@import "./tokens/semantic-root.css";
+@import "./tokens/semantic-color.css";
+@import "./tokens/semantic-density.css";
+@import "./tokens/expression.css";
+@import "./tokens/component.css";
+@import "./tokens/theme.css";
+@import "./tokens/legacy-palette.css";
+
+@plugin "@tailwindcss/typography";
+
+/**
+ * Explicit sources, replacing v3's `content` array. `source(none)` above turns
+ * off auto-detection on purpose: left on, Tailwind scans the token pipeline too
+ * and happily mints a utility out of a class name mentioned in a code comment.
+ * `app/` is listed ahead of the phase 3 router migration.
+ */
+@source "../pages/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+@source "../app/**/*.{js,ts,jsx,tsx}";
+@source "../content/**/*.mdx";
+
+/**
+ * `dark:` is wired to BOTH the class `next-themes` sets today and the new
+ * appearance axis, so existing `dark:` markup keeps working now and starts
+ * responding to the axis the moment phase 3 swaps the provider in. Without this
+ * the variant would silently fall back to v4's `prefers-color-scheme` default.
+ */
+@custom-variant dark (&:where(.dark, .dark *, [data-appearance="dark"], [data-appearance="dark"] *));
+
+/* Variants for the other three axes, so markup can respond to them directly. */
+@custom-variant compact (&:where([data-density="compact"], [data-density="compact"] *));
+@custom-variant spacious (&:where([data-density="spacious"], [data-density="spacious"] *));
+@custom-variant high-contrast (&:where([data-contrast="high"], [data-contrast="high"] *));
+
+/**
+ * Tailwind's own defaults, pointed at tokens. `--default-font-family` is what
+ * Preflight puts on `html`, so the theme's body family reaches the page without
+ * a single utility class.
+ */
+@theme inline {
+  --default-font-family: var(--sem-font-body);
+  --default-mono-font-family: var(--sem-font-mono);
+}
+
+@layer base {
+  /**
+   * v4 changed the default border colour from `gray-200` to `currentColor`.
+   * Rather than pin the old value, point it at the token — which resolves to
+   * the same colour in the default theme, and to the right one in every other.
+   */
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--sem-border-default);
+  }
+
+  /* Native UI (scrollbars, form controls) follows the appearance axis. */
+  :root {
+    color-scheme: light;
+  }
+  :root:is(.dark, [data-appearance="dark"]) {
+    color-scheme: dark;
+  }
+
+  body {
+    font-weight: var(--cmp-page-font-weight);
+    letter-spacing: var(--cmp-page-tracking);
+  }
+
+  ::selection {
+    background-color: var(--cmp-page-selection-bg);
+    color: var(--cmp-page-selection-fg);
+  }
+
+  /* One focus ring for the whole site, so the contrast axis can widen it. */
+  :focus-visible {
+    outline: var(--cmp-focus-ring-width) solid var(--cmp-focus-ring-color);
+    outline-offset: var(--cmp-focus-ring-offset);
+  }
+}
 
 @layer components {
-  .btn-primary {
-    @apply bg-primary-500 dark:bg-primary-400 dark:hover:bg-primary-500 hover:bg-primary-400  flex items-center justify-center text-button text-white font-medium py-4 px-6 rounded-sm transition-all duration-300;
-  }
+  /**
+   * The button recipes, now entirely component tokens. Nothing here names a
+   * colour, a size or a radius: colour comes off theme x appearance x contrast,
+   * padding off density, radius / weight / shadow / border style off theme. The
+   * same twenty lines render a soft violet pill and a hard-edged brutalist slab.
+   */
+  .btn-primary,
   .btn-secondary {
-    @apply bg-gray-600/50 hover:bg-gray-600/70  flex items-center justify-center text-button text-white  py-4 px-6 rounded-sm transition-all duration-300;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--cmp-button-min-height);
+    padding: var(--cmp-button-pad-y) var(--cmp-button-pad-x);
+    border-radius: var(--cmp-button-radius);
+    border-width: var(--cmp-button-border-width);
+    border-style: var(--cmp-button-border-style);
+    font-family: var(--cmp-button-font-family);
+    font-size: var(--cmp-button-font-size);
+    font-weight: var(--cmp-button-font-weight);
+    line-height: var(--cmp-button-leading);
+    letter-spacing: var(--cmp-button-tracking);
+    transition-property: background-color, border-color, box-shadow, color;
+    transition-duration: var(--cmp-button-duration);
+    transition-timing-function: var(--cmp-button-easing);
   }
+
+  .btn-primary {
+    background-color: var(--cmp-button-primary-bg);
+    border-color: var(--cmp-button-primary-border-color);
+    color: var(--cmp-button-primary-fg);
+    box-shadow: var(--cmp-button-primary-shadow);
+  }
+  .btn-primary:hover {
+    background-color: var(--cmp-button-primary-bg-hover);
+    box-shadow: var(--cmp-button-primary-shadow-hover);
+  }
+  .btn-primary:active {
+    background-color: var(--cmp-button-primary-bg-active);
+  }
+
+  .btn-secondary {
+    background-color: var(--cmp-button-secondary-bg);
+    border-color: var(--cmp-button-secondary-border-color);
+    color: var(--cmp-button-secondary-fg);
+    box-shadow: var(--cmp-button-secondary-shadow);
+  }
+  .btn-secondary:hover {
+    background-color: var(--cmp-button-secondary-bg-hover);
+    box-shadow: var(--cmp-button-secondary-shadow-hover);
+  }
+  .btn-secondary:active {
+    background-color: var(--cmp-button-secondary-bg-active);
+  }
+
+  /* Scroll hint. Geometry is bespoke; its colour and motion are not. */
   .icon-scroll {
     position: relative;
     width: 40px;
     height: 70px;
     margin-left: -20px;
-    box-shadow: inset 0 0 0 1px #fff;
-    border-radius: 25px;
+    box-shadow: inset 0 0 0 var(--sem-stroke-width-hairline) var(--sem-content-inverse);
+    border-radius: var(--sem-radius-pill);
   }
 
   .icon-scroll__before {
@@ -23,10 +170,10 @@
     content: "";
     width: 8px;
     height: 8px;
-    background: #fff;
+    background: var(--sem-content-inverse);
     margin-left: 16px;
     top: 8px;
-    border-radius: 4px;
+    border-radius: var(--sem-radius-pill);
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
     animation-name: scroll;
@@ -44,5 +191,4 @@
       transform: translateY(46px);
     }
   }
-  /* ... */
 }

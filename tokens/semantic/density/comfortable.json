@@ -1,0 +1,33 @@
+{
+  "semDim": {
+    "comfortable": {
+      "$description": "The default. Matches the spacing the site shipped with before tokens existed.",
+      "space": {
+        "$type": "dimension",
+        "gutter": { "$value": "{prim.space.6}" },
+        "section": { "$value": "{prim.space.24}" },
+        "stack-xs": { "$value": "{prim.space.2}" },
+        "stack-sm": { "$value": "{prim.space.3}" },
+        "stack-md": { "$value": "{prim.space.4}" },
+        "stack-lg": { "$value": "{prim.space.8}" },
+        "stack-xl": { "$value": "{prim.space.16}" },
+        "inline-xs": { "$value": "{prim.space.2}" },
+        "inline-sm": { "$value": "{prim.space.3}" },
+        "inline-md": { "$value": "{prim.space.6}" }
+      },
+      "control": {
+        "$type": "dimension",
+        "height-sm": { "$value": "{prim.space.8}" },
+        "height-md": { "$value": "{prim.space.10}" },
+        "height-lg": { "$value": "{prim.space.14}" },
+        "pad-x": { "$value": "{prim.space.6}" },
+        "pad-y": { "$value": "{prim.space.4}" }
+      },
+      "block": {
+        "$type": "dimension",
+        "pad": { "$value": "{prim.space.6}" },
+        "nav-height": { "$value": "{prim.space.20}" }
+      }
+    }
+  }
+}

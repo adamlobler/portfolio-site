@@ -1,0 +1,92 @@
+{
+  "semExpr": {
+    "terminal": {
+      "$description": "Expression semantics for `terminal`. Hairline phosphor glow instead of shadow; mono body, dashed rules.",
+      "radius": {
+        "$type": "dimension",
+        "control": {
+          "$value": "{prim.radius.none}"
+        },
+        "card": {
+          "$value": "{prim.radius.xs}"
+        },
+        "pill": {
+          "$value": "{prim.radius.none}"
+        }
+      },
+      "stroke": {
+        "$type": "dimension",
+        "width-hairline": {
+          "$value": "{prim.stroke.hairline}"
+        },
+        "width-emphasis": {
+          "$value": "{prim.stroke.hairline}"
+        },
+        "style": {
+          "$value": "{prim.stroke-style.dashed}",
+          "$type": "strokeStyle"
+        }
+      },
+      "shadow": {
+        "$type": "shadow",
+        "flat": {
+          "$value": "{prim.shadow.none}"
+        },
+        "raised": {
+          "$value": "{prim.shadow.phosphor-sm}"
+        },
+        "overlay": {
+          "$value": "{prim.shadow.phosphor-md}"
+        },
+        "focus": {
+          "$value": "{prim.shadow.phosphor-lg}"
+        }
+      },
+      "font": {
+        "$type": "fontFamily",
+        "display": {
+          "$value": "{prim.font.family.mono}"
+        },
+        "body": {
+          "$value": "{prim.font.family.mono}"
+        },
+        "mono": {
+          "$value": "{prim.font.family.mono}"
+        }
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "display": {
+          "$value": "{prim.font.weight.bold}"
+        },
+        "body": {
+          "$value": "{prim.font.weight.regular}"
+        },
+        "emphasis": {
+          "$value": "{prim.font.weight.medium}"
+        },
+        "strong": {
+          "$value": "{prim.font.weight.bold}"
+        }
+      },
+      "tracking": {
+        "$type": "dimension",
+        "display": {
+          "$value": "{prim.font.tracking.wide}"
+        },
+        "body": {
+          "$value": "{prim.font.tracking.wide}"
+        },
+        "caps": {
+          "$value": "{prim.font.tracking.widest}"
+        }
+      },
+      "material": {
+        "$type": "dimension",
+        "blur": {
+          "$value": "{prim.blur.none}"
+        }
+      }
+    }
+  }
+}
