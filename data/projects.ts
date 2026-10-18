@@ -15,14 +15,6 @@ import CogitoMobile from "../public/img/cogito_mobile.png";
 import EvitaDesktop from "../public/img/evita_desktop.png";
 import EvitaMobile from "../public/img/evita_mobile.png";
 import { StaticImageData } from "next/image";
-import ViddLAdmin1 from "../public/img/viddl/Admin_1.png";
-import ViddlAdmin2 from "../public/img/viddl/Admin_2.png";
-import ViddlButtons from "../public/img/viddl/viddl_buttons.png";
-import ViddLCourier from "../public/img/viddl/viddl_courier.png";
-import ViddLParcelTracking from "../public/img/viddl/viddl_parceltracking.png";
-import HsupDashboard from "../public/img/hsup/dashboard.png"
-import HsupMobileMockup from "../public/img/hsup/mobile_screens.png"
-import HsupMobileScreens from "../public/img/hsup/mobile_screens2.png"
 import AikurzusMobile from "../public/img/Ai_kurzus_mobile.png"
 import AikurzusDesktop from "../public/img/ai_kurzus_desktop.png"
 import DigicMobile from "../public/img/digic_mobile.png"
@@ -39,8 +31,12 @@ import bmwMobile from "../public/img/bmw/bmw_mobile.jpg"
 
 
 
+/**
+ * `path` is the slug of the matching `content/<path>.mdx` case study; a
+ * project without one links straight out to `link`. The old `id` field only
+ * fed the deleted `/works/[id]` route's `getStaticPaths`.
+ */
 export type Project = {
-        id: string,
         path?: string,
         title: string,
         link?: string,
@@ -48,12 +44,10 @@ export type Project = {
         description: string,
         desktopImage: StaticImageData,
         mobileImage: StaticImageData,
-        images?: StaticImageData[],
 }
 
 const projects: Project[] = [
           {
-          id: "airtime",
           path: "airtime",
           title: "Airtime - Your Ai researcher for user calls",
           link: "https://airtimeux.com",
@@ -64,7 +58,6 @@ const projects: Project[] = [
           mobileImage: AirtimeMobile,
         },
         {
-          id: "shadcn",
           title: "shadcn/ui component library",
           tags: ["Design system", "Component library"],
           link: "https://www.figma.com/community/file/1435295819876914235/shadcn-ui-component-library",
@@ -74,7 +67,6 @@ const projects: Project[] = [
           mobileImage: ShadcnMobile,
         },
         {
-          id: "bmw",
           title: "BMW i3 UI concept",
           path: "bmwi3",
           tags: ["Concept", "Dark mode", "shadcn/ui"],
@@ -85,7 +77,6 @@ const projects: Project[] = [
           mobileImage: bmwMobile,
         },
         {
-          id: "viddl",
           path: "viddl",
           title: "VIDDL - Last mile delivery startup",
           link: "https://viddl.hu",
@@ -94,10 +85,8 @@ const projects: Project[] = [
             "ViddL provides last-mile delivery service for big delivery companies. The startup has an admin UI for offices where they can manage the parcels and couriers and a mobile app for delivery.",
           desktopImage: ViddlDesktop,
           mobileImage: ViddlMobile,
-          images: [ ViddlButtons,ViddLCourier,ViddLParcelTracking,ViddLAdmin1,ViddlAdmin2],
         },
         {
-          id: "hsup",
           path: "hsup",
           title: "Hungarian startup university program",
           link: "https://hsup.nkfih.gov.hu",
@@ -106,10 +95,8 @@ const projects: Project[] = [
             "HSUP is an online education platform where students can learn about startups. It’s available on almost every hungarian university and used by thousands of students every semester.",
           desktopImage: HsupDesktop,
           mobileImage: HsupMobile,
-          images: [HsupMobileMockup,HsupDashboard,HsupMobileScreens]
         },
         {
-          id: "research-summit",
           title: "Product Research Summit by Airtime",
           link: "https://airtimeux.com/the-product-research-summit",
           tags: ["Landing page", "Webflow"],
@@ -119,7 +106,6 @@ const projects: Project[] = [
           mobileImage: ResearchSummitMobile,
         },
         {
-          id: "digic",
           title: "Digicgroup - animation studio landing page",
           tags: ["Landing page"],
           link: "https://digicgroup.com",
@@ -129,7 +115,6 @@ const projects: Project[] = [
           mobileImage: DigicMobile,
         },
         {
-          id: "wia",
           title: "Wia electric yachts - Landing page for yacht company",
           link: "http://elektromosyacht.hu",
           tags: ["Landing page"],
@@ -139,7 +124,6 @@ const projects: Project[] = [
           mobileImage: WiaMobile,
         },
         {
-          id: "aikurzus",
           title: "Aikurzus - Landing page for an online course",
           tags: ["Landing page"],
           description:
@@ -148,7 +132,6 @@ const projects: Project[] = [
           mobileImage: AikurzusMobile,
         },
         {
-          id: "hereforyou",
           title: "Hereforyou - online platform for  psychologists",
           tags: ["Web application", "Landing page"],
           description:
@@ -157,7 +140,6 @@ const projects: Project[] = [
           mobileImage: HereforyouMobile,
         },
         {
-          id: "evita",
           title: "Evita - Online platform for parents",
           tags: ["Web application", "landing page"],
           link: "https://evita.hu",
@@ -167,7 +149,6 @@ const projects: Project[] = [
           mobileImage: EvitaMobile,
         },
         {
-          id: "dinobooking",
           title: "Dino Booking - Booking service for small businesses",
           tags: ["Web application", "Landing page"],
           description:
@@ -176,7 +157,6 @@ const projects: Project[] = [
           mobileImage: DinobookingMobile,
         },
         {
-          id: "digidojo",
           title: "Digidojo - Hungary’s first gamer coaching platform",
           tags: ["Web application", "Landing page", "Admin UI"],
           description:
@@ -185,7 +165,6 @@ const projects: Project[] = [
           mobileImage: DigidojoMobile,
         },
         {
-          id: "cogito",
           title: "Cogito - Online e-learning platform for universities",
           tags: ["Web application"],
           description:

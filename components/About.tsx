@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Fade } from "react-awesome-reveal";
+import { Fade } from "./client/Reveal";
 
 const process = [
   {

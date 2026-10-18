@@ -31,20 +31,17 @@
  * Explicit sources, replacing v3's `content` array. `source(none)` above turns
  * off auto-detection on purpose: left on, Tailwind scans the token pipeline too
  * and happily mints a utility out of a class name mentioned in a code comment.
- * `app/` is listed ahead of the phase 3 router migration.
  */
-@source "../pages/**/*.{js,ts,jsx,tsx,mdx}";
-@source "../components/**/*.{js,ts,jsx,tsx}";
 @source "../app/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
 @source "../content/**/*.mdx";
 
 /**
- * `dark:` is wired to BOTH the class `next-themes` sets today and the new
- * appearance axis, so existing `dark:` markup keeps working now and starts
- * responding to the axis the moment phase 3 swaps the provider in. Without this
- * the variant would silently fall back to v4's `prefers-color-scheme` default.
+ * `dark:` is the appearance axis, nothing else. v4's default would bind it to
+ * `prefers-color-scheme`, which would ignore an explicit choice; the phase 2
+ * `.dark` bridge for `next-themes` is gone along with `next-themes` itself.
  */
-@custom-variant dark (&:where(.dark, .dark *, [data-appearance="dark"], [data-appearance="dark"] *));
+@custom-variant dark (&:where([data-appearance="dark"], [data-appearance="dark"] *));
 
 /* Variants for the other three axes, so markup can respond to them directly. */
 @custom-variant compact (&:where([data-density="compact"], [data-density="compact"] *));
@@ -79,7 +76,7 @@
   :root {
     color-scheme: light;
   }
-  :root:is(.dark, [data-appearance="dark"]) {
+  :root[data-appearance="dark"] {
     color-scheme: dark;
   }
 

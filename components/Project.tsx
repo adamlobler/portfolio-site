@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { Parallax } from "./client/Parallax";
 
 type Props = {
   path?: string;

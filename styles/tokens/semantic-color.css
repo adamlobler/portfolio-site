@@ -781,8 +781,7 @@
 }
 
 /* theme: violet, appearance: dark, contrast: normal */
-[data-theme="violet"][data-appearance="dark"],
-:root:where(.dark) {
+[data-theme="violet"][data-appearance="dark"] {
 
   /* surface */
   --sem-surface-base: var(--prim-color-neutral-900);

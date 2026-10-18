@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import Socials from "./Socials";
-import ThemeSwitch from "./ThemeSwitch";
+import ThemeSwitch from "./theme/ThemeSwitch";
 import Link from "next/link";
 
 const navigationItems = [
@@ -46,13 +48,12 @@ const NavigationBar = () => {
             <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
               {navigationItems.map((item, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={item.link}
                     className="text-body2 block py-2 pl-3 pr-4 bg-primary-700 rounded-sm md:bg-transparent md:text-black dark:md:text-white hover:text-primary-500 md:p-0 dark:text-white"
-                    aria-current="page"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

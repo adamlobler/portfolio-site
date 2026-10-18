@@ -78,25 +78,10 @@ export function colorCombinations() {
  */
 export function colorSelector({ theme, appearance, contrast }) {
   const base = `[data-theme="${theme}"][data-appearance="${appearance}"]`;
-  const selector =
-    contrast === AXES.contrast.default ? base : `${base}[data-contrast="${contrast}"]`;
-  return contrast === AXES.contrast.default && appearance === "dark" && theme === AXES.theme.default
-    ? `${selector},\n${LEGACY_DARK_SELECTOR}`
-    : selector;
+  return contrast === AXES.contrast.default
+    ? base
+    : `${base}[data-contrast="${contrast}"]`;
 }
-
-/**
- * Compatibility bridge, removed in phase 3.
- *
- * `next-themes` only ever sets a `.dark` class, so nothing writes
- * `data-appearance` yet and the colour blocks above would never match — dark
- * mode would render the light token values. This aliases `.dark` onto the
- * default theme's dark block so the token layer and the existing markup agree
- * today. `:where()` keeps the specificity at (0,1,0), below the real
- * `[data-*]` blocks, so an explicit axis always wins once phase 3's provider
- * starts setting one.
- */
-export const LEGACY_DARK_SELECTOR = ":root:where(.dark)";
 
 /** The CSS selector a block of axis-scoped tokens is emitted under. */
 export function selectorFor(root, coords) {

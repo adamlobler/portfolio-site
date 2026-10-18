@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Fade } from "react-awesome-reveal";
 import Spline from "@splinetool/react-spline";
-import { Animator, Fade as ScrollFade } from "react-scroll-motion";
-import Head from "next/head";
+
+import { Fade } from "./client/Reveal";
+
+const SCENE = "https://prod.spline.design/050qyBgNdNCwvAVO/scene.splinecode";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,16 +18,19 @@ const Hero = () => {
 
   return (
     <>
-      {/* Preload Spline scene */}
-      <Head>
-        <link
-          rel="preload"
-          href="https://prod.spline.design/050qyBgNdNCwvAVO/scene.splinecode"
-          as="fetch"
-          type="application/octet-stream"
-          crossOrigin="anonymous"
-        />
-      </Head>
+      {/**
+       * Was a `next/head` block, which the App Router does not have. React 19
+       * hoists `<link rel="preload">` into `<head>` on its own, so the preload
+       * still happens and still lives next to the thing it preloads. Phase 4
+       * deletes both along with Spline.
+       */}
+      <link
+        rel="preload"
+        href={SCENE}
+        as="fetch"
+        type="application/octet-stream"
+        crossOrigin="anonymous"
+      />
       <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] min-h-[600px] lg:min-h-[800px] justify-center items-center">
         {/* Spline Background */}
         <div className="absolute w-screen z-0 h-full">
@@ -39,7 +43,7 @@ const Hero = () => {
           >
             <Spline
               className="absolute w-screen z-0 h-full"
-              scene="https://prod.spline.design/050qyBgNdNCwvAVO/scene.splinecode"
+              scene={SCENE}
               onLoad={handleLoad} // Monitoring load
             />
           </Fade>
@@ -55,37 +59,35 @@ const Hero = () => {
               </h1>
             </Fade>
 
-            <Animator animation={ScrollFade()} className="!block min-w-[300px]">
-              <Fade triggerOnce direction="up" duration={1500} delay={800}>
-                {/*Mobile CTAs */}
-                <div className="flex pointer-events-auto md:hidden w-full items-center flex-col mt-8">
-                  <Link
-                    className="btn-primary lg:hidden w-full"
-                    href="/contact"
-                  >
-                    Get in touch!
-                  </Link>
-                  <div className="pr-6 pb-4 lg:pb-0" />
-                  <Link className="btn-secondary w-full" href="/works">
-                    Discover projects
-                  </Link>
-                </div>
+            {/**
+             * The `react-scroll-motion` <Animator> that used to wrap these
+             * CTAs is gone: the package pins `react@^18.0.11` and blocked the
+             * React 19 upgrade. It faded the buttons on scroll; phase 4 was
+             * already going to delete it with the rest of the hero.
+             */}
+            <Fade triggerOnce direction="up" duration={1500} delay={800}>
+              {/*Mobile CTAs */}
+              <div className="flex pointer-events-auto md:hidden w-full items-center flex-col mt-8">
+                <Link className="btn-primary lg:hidden w-full" href="/contact">
+                  Get in touch!
+                </Link>
+                <div className="pr-6 pb-4 lg:pb-0" />
+                <Link className="btn-secondary w-full" href="/works">
+                  Discover projects
+                </Link>
+              </div>
 
-                {/*Desktop CTAs*/}
-                <div className="hidden pointer-events-auto my-4 md:flex w-full max-w-sm items-center lg:max-w-none flex-col lg:flex-row">
-                  <Link className="btn-primary w-full lg:w-fit" href="/contact">
-                    Get in touch!
-                  </Link>
-                  <div className="pr-6 pb-4 lg:pb-0" />
-                  <Link
-                    className="btn-secondary  w-full lg:w-fit"
-                    href="/works"
-                  >
-                    Discover projects
-                  </Link>
-                </div>
-              </Fade>
-            </Animator>
+              {/*Desktop CTAs*/}
+              <div className="hidden pointer-events-auto my-4 md:flex w-full max-w-sm items-center lg:max-w-none flex-col lg:flex-row">
+                <Link className="btn-primary w-full lg:w-fit" href="/contact">
+                  Get in touch!
+                </Link>
+                <div className="pr-6 pb-4 lg:pb-0" />
+                <Link className="btn-secondary w-full lg:w-fit" href="/works">
+                  Discover projects
+                </Link>
+              </div>
+            </Fade>
           </div>
         )}
       </section>
