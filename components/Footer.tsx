@@ -1,52 +1,55 @@
 import React from "react";
+
 import Socials from "./Socials";
-import Img from "./Img";
-import Background from "../public/img/gradient.webp";
 import Button from "./ui/Button";
 
+/**
+ * The site footer, and the clearest case for `surface.brand`: it used to be a
+ * fixed gradient JPEG with `bg-[#341692]` behind it — and, in dark mode, no
+ * brand colour at all, just `surface.base`. Now it is one band that follows
+ * theme × appearance × density × contrast like everything else, and the
+ * `text-white` + `drop-shadow-*` that existed to rescue text off a photograph
+ * are gone with it: `.band` sets `color`, and both of its stops are scored
+ * against that colour by the contrast gate.
+ */
 const Footer = () => {
   return (
-    <footer className="flex  relative overflow-hidden flex-col w-full h-[680px] bg-[#341692] dark:bg-surface-base items-center justify-center ">
-      <Img
-        className="absolute top-0 w-screen h-[680px] bg-[#341692]"
-        src={Background}
-        quality={100}
-        width={480}
-        height={284}
-        alt="bg"
-        placeholder="blur"
-      />
-      <div className="flex max-w-4xl z-10 xl:max-w-page flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:py-32">
-        <div className="flex flex-col items-start space-y-8">
-          <h2 className="text-h2 xl:text-h1 text-white drop-shadow-xs">
-            Looking for help with design?
-          </h2>
-          <p className="text-subtitle1 text-white drop-shadow-md">
-            Send me an e-mail and discuss the details!
-          </p>
-          <Button href="mailto:contact@adamlobler.com">Get in touch!</Button>
+    <footer className="band">
+      <div className="band__inner">
+        <div className="flex w-full flex-col justify-between gap-stack-xl xl:flex-row xl:items-center">
+          <div className="flex flex-col items-start gap-stack-lg">
+            <h2 className="text-h2 xl:text-h1">
+              Looking for help with design?
+            </h2>
+            <p className="text-subtitle1">
+              Send me an e-mail and discuss the details!
+            </p>
+            <Button variant="on-brand" href="mailto:contact@adamlobler.com">
+              Get in touch!
+            </Button>
+          </div>
+
+          <div className="flex w-fit flex-col gap-stack-lg xl:items-end">
+            <p className="text-caption uppercase">contact information</p>
+            <a
+              href="mailto:contact@adamlobler.com"
+              className="text-subtitle1 text-left"
+            >
+              contact@adamlobler.com
+            </a>
+            <Socials />
+          </div>
         </div>
-        <div className="flex flex-col xl:items-end w-fit">
-          <p className="text-caption text-white pb-8 text-left uppercase">
-            contact information
-          </p>
-          <a
-            href="mailto:contact@adamlobler.com"
-            className="text-subtitle1 text-white pb-8 text-left"
-          >
-            contact@adamlobler.com
-          </a>
-          <Socials />
-        </div>
+
+        <a
+          className="flex items-center justify-center text-caption uppercase"
+          href="https://adamlobler.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Designed and developed by Adam Lobler
+        </a>
       </div>
-      <a
-        className="flex z-10 text-white uppercase text-caption items-center justify-center"
-        href="https://adamlobler.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Designed and developed by Adam Lobler
-      </a>
     </footer>
   );
 };

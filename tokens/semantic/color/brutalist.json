@@ -15,6 +15,12 @@
             "sunken": {
               "$value": "{prim.color.ink.50}"
             },
+            "brand": {
+              "$value": "{prim.color.electric.300}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.electric.300}"
+            },
             "overlay": {
               "$value": "{prim.color.white}"
             },
@@ -32,6 +38,9 @@
             },
             "muted": {
               "$value": "{prim.color.ink.700}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.black}"
             },
             "inverse": {
               "$value": "{prim.color.white}"
@@ -137,6 +146,15 @@
             "ring": {
               "$value": "{prim.color.electric.800}"
             }
+          },
+          "surface": {
+            "$type": "color",
+            "brand": {
+              "$value": "{prim.color.electric.200}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.electric.200}"
+            }
           }
         }
       },
@@ -152,6 +170,12 @@
             },
             "sunken": {
               "$value": "{prim.color.black}"
+            },
+            "brand": {
+              "$value": "{prim.color.electric.300}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.electric.300}"
             },
             "overlay": {
               "$value": "{prim.color.ink.900}"
@@ -170,6 +194,9 @@
             },
             "muted": {
               "$value": "{prim.color.ink.300}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.black}"
             },
             "inverse": {
               "$value": "{prim.color.black}"
@@ -279,6 +306,15 @@
           "focus": {
             "$type": "color",
             "ring": {
+              "$value": "{prim.color.electric.200}"
+            }
+          },
+          "surface": {
+            "$type": "color",
+            "brand": {
+              "$value": "{prim.color.electric.200}"
+            },
+            "brand-accent": {
               "$value": "{prim.color.electric.200}"
             }
           }

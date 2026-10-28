@@ -15,6 +15,12 @@
             "sunken": {
               "$value": "{prim.color.neutral.100}"
             },
+            "brand": {
+              "$value": "{prim.color.steel.800}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.steel.700}"
+            },
             "overlay": {
               "$value": "{prim.color.white}"
             },
@@ -32,6 +38,9 @@
             },
             "muted": {
               "$value": "{prim.color.neutral.600}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.white}"
             },
             "inverse": {
               "$value": "{prim.color.neutral.50}"
@@ -100,6 +109,12 @@
             "$type": "color",
             "raised": {
               "$value": "{prim.color.white}"
+            },
+            "brand": {
+              "$value": "{prim.color.steel.900}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.steel.800}"
             }
           },
           "content": {
@@ -171,6 +186,12 @@
             "sunken": {
               "$value": "{prim.color.black}"
             },
+            "brand": {
+              "$value": "{prim.color.steel.950}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.steel.900}"
+            },
             "overlay": {
               "$value": "{prim.color.neutral.800}"
             },
@@ -188,6 +209,9 @@
             },
             "muted": {
               "$value": "{prim.color.neutral.400}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.neutral.50}"
             },
             "inverse": {
               "$value": "{prim.color.neutral.900}"

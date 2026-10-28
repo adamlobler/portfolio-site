@@ -4,6 +4,15 @@
  */
 :root {
 
+  /* band */
+  --cmp-band-bg: var(--sem-surface-brand);
+  --cmp-band-bg-accent: var(--sem-surface-brand-accent);
+  --cmp-band-fg: var(--sem-content-on-brand);
+  --cmp-band-pad-y: var(--sem-space-section);
+  --cmp-band-pad-x: var(--sem-space-gutter);
+  --cmp-band-gap: var(--sem-space-stack-lg);
+  --cmp-band-max-width: var(--sem-measure-page);
+
   /* button.primary */
   --cmp-button-primary-bg: var(--sem-action-primary);
   --cmp-button-primary-bg-hover: var(--sem-action-primary-hover);
@@ -21,6 +30,15 @@
   --cmp-button-secondary-border-color: var(--sem-border-default);
   --cmp-button-secondary-shadow: var(--sem-shadow-flat);
   --cmp-button-secondary-shadow-hover: var(--sem-shadow-flat);
+
+  /* button.on-brand */
+  --cmp-button-on-brand-bg: var(--sem-content-on-brand);
+  --cmp-button-on-brand-bg-hover: var(--sem-content-on-brand);
+  --cmp-button-on-brand-bg-active: var(--sem-content-on-brand);
+  --cmp-button-on-brand-fg: var(--sem-surface-brand);
+  --cmp-button-on-brand-border-color: var(--sem-content-on-brand);
+  --cmp-button-on-brand-shadow: var(--sem-shadow-flat);
+  --cmp-button-on-brand-shadow-hover: var(--sem-shadow-raised);
 
   /* button */
   --cmp-button-radius: var(--sem-radius-control);
@@ -92,6 +110,16 @@
   --cmp-nav-overlay-bg: var(--sem-surface-base);
   --cmp-nav-duration: var(--sem-motion-duration-medium);
   --cmp-nav-easing: var(--sem-motion-ease-standard);
+
+  /* social */
+  --cmp-social-bg: var(--sem-content-on-brand);
+  --cmp-social-fg: var(--sem-surface-brand);
+  --cmp-social-size: var(--sem-control-height-lg);
+  --cmp-social-radius: var(--sem-radius-pill);
+  --cmp-social-shadow: var(--sem-shadow-flat);
+  --cmp-social-shadow-hover: var(--sem-shadow-raised);
+  --cmp-social-duration: var(--sem-motion-duration-slow);
+  --cmp-social-easing: var(--sem-motion-ease-standard);
 
   /* page */
   --cmp-page-bg: var(--sem-surface-base);

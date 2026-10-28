@@ -37,6 +37,24 @@ const PAIRS = [
   ["content.muted", "surface.raised", "body"],
   ["content.muted", "surface.sunken", "body"],
   ["content.inverse", "surface.inverse", "body"],
+  /**
+   * The brand band. Both gradient stops are scored against the same label,
+   * which is enough *because both stops sit on the same side of the label in
+   * luminance*: the interpolated colour is then bracketed by the two, so no
+   * point along the ramp can be worse than the worse endpoint. A theme that
+   * paired a light stop with a dark one would pass here and still be
+   * illegible mid-band — so keep new bands on one side.
+   */
+  ["content.on-brand", "surface.brand", "body"],
+  ["content.on-brand", "surface.brand-accent", "body"],
+  /**
+   * The on-brand button and the social chip invert that pair. Numerically
+   * redundant while both stops are opaque, and deliberately kept: `flatten()`
+   * composites a colour down `surface.base`, so this is the only entry that
+   * fires if a brand stop is ever made translucent — at which point it is a
+   * see-through *label*, not a see-through surface.
+   */
+  ["surface.brand", "content.on-brand", "control"],
   ["content.primary", "accent.subtle", "body"],
   ["accent.default", "surface.base", "body"],
   ["accent.default", "surface.raised", "body"],

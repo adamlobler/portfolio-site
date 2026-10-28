@@ -1,0 +1,15 @@
+{
+  "cmp": {
+    "social": {
+      "$description": "The round icon chips on the band. Their colour pair is the band's, inverted — the same two names the on-brand button uses, which is why the contrast gate already scores them. The icons themselves are `currentColor` SVGs, so `fg` is the whole of their styling.",
+      "bg":           { "$value": "{sem.content.on-brand}", "$type": "color" },
+      "fg":           { "$value": "{sem.surface.brand}", "$type": "color" },
+      "size":         { "$value": "{sem.control.height-lg}", "$type": "dimension" },
+      "radius":       { "$value": "{sem.radius.pill}", "$type": "dimension" },
+      "shadow":       { "$value": "{sem.shadow.flat}", "$type": "shadow" },
+      "shadow-hover": { "$value": "{sem.shadow.raised}", "$type": "shadow" },
+      "duration":     { "$value": "{sem.motion.duration-slow}", "$type": "duration" },
+      "easing":       { "$value": "{sem.motion.ease-standard}", "$type": "cubicBezier" }
+    }
+  }
+}

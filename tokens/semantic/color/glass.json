@@ -15,6 +15,12 @@
             "sunken": {
               "$value": "{prim.color.alpha.black-4}"
             },
+            "brand": {
+              "$value": "{prim.color.azure.900}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.azure.800}"
+            },
             "overlay": {
               "$value": "{prim.color.alpha.white-80}"
             },
@@ -32,6 +38,9 @@
             },
             "muted": {
               "$value": "{prim.color.neutral.600}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.white}"
             },
             "inverse": {
               "$value": "{prim.color.neutral.50}"
@@ -109,6 +118,12 @@
             },
             "overlay": {
               "$value": "{prim.color.white}"
+            },
+            "brand": {
+              "$value": "{prim.color.azure.950}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.azure.900}"
             }
           },
           "content": {
@@ -189,6 +204,12 @@
             "sunken": {
               "$value": "{prim.color.alpha.black-32}"
             },
+            "brand": {
+              "$value": "{prim.color.azure.950}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.azure.900}"
+            },
             "overlay": {
               "$value": "{prim.color.alpha.black-64}"
             },
@@ -206,6 +227,9 @@
             },
             "muted": {
               "$value": "{prim.color.neutral.400}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.neutral.50}"
             },
             "inverse": {
               "$value": "{prim.color.neutral.900}"
@@ -283,6 +307,12 @@
             },
             "overlay": {
               "$value": "{prim.color.neutral.900}"
+            },
+            "brand": {
+              "$value": "{prim.color.black}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.black}"
             }
           },
           "content": {

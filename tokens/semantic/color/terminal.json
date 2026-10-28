@@ -15,6 +15,12 @@
             "sunken": {
               "$value": "{prim.color.carbon.100}"
             },
+            "brand": {
+              "$value": "{prim.color.carbon.950}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.carbon.950}"
+            },
             "overlay": {
               "$value": "{prim.color.white}"
             },
@@ -32,6 +38,9 @@
             },
             "muted": {
               "$value": "{prim.color.carbon.700}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.phosphor.300}"
             },
             "inverse": {
               "$value": "{prim.color.carbon.50}"
@@ -103,6 +112,12 @@
             },
             "raised": {
               "$value": "{prim.color.white}"
+            },
+            "brand": {
+              "$value": "{prim.color.black}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.black}"
             }
           },
           "content": {
@@ -115,6 +130,9 @@
             },
             "muted": {
               "$value": "{prim.color.carbon.800}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.phosphor.200}"
             }
           },
           "border": {
@@ -177,6 +195,12 @@
             "sunken": {
               "$value": "{prim.color.black}"
             },
+            "brand": {
+              "$value": "{prim.color.carbon.900}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.carbon.900}"
+            },
             "overlay": {
               "$value": "{prim.color.carbon.900}"
             },
@@ -194,6 +218,9 @@
             },
             "muted": {
               "$value": "{prim.color.carbon.400}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.phosphor.300}"
             },
             "inverse": {
               "$value": "{prim.color.carbon.950}"
@@ -265,6 +292,12 @@
             },
             "raised": {
               "$value": "{prim.color.carbon.950}"
+            },
+            "brand": {
+              "$value": "{prim.color.black}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.black}"
             }
           },
           "content": {
@@ -277,6 +310,9 @@
             },
             "muted": {
               "$value": "{prim.color.carbon.300}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.phosphor.200}"
             }
           },
           "border": {

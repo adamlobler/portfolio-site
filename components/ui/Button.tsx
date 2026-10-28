@@ -22,6 +22,12 @@ export const button = cva("btn", {
     variant: {
       primary: "btn--primary",
       secondary: "btn--secondary",
+      /**
+       * For `.band`, where the surface is a brand colour rather than a page
+       * surface, so neither action semantic applies: the fill is the band's
+       * label colour and the label is the band's fill.
+       */
+      "on-brand": "btn--on-brand",
     },
     size: {
       sm: "btn--sm",

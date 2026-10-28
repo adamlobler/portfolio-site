@@ -1,3 +1,4 @@
+import Socials from "../Socials";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
 import Tag from "../ui/Tag";
@@ -29,6 +30,8 @@ const SURFACES = [
   ["sunken", "bg-surface-sunken", "text-content-secondary"],
   ["overlay", "bg-surface-overlay", "text-content-secondary"],
   ["inverse", "bg-surface-inverse", "text-content-inverse"],
+  ["brand", "bg-surface-brand", "text-content-on-brand"],
+  ["brand-accent", "bg-surface-brand-accent", "text-content-on-brand"],
 ] as const;
 
 /**
@@ -63,6 +66,26 @@ export default function ComponentGallery() {
           Two variants × three sizes, from one <code>cva()</code> table of class
           names. Colour comes off theme × appearance × contrast, padding off
           density, radius and shadow off theme.
+        </p>
+      </section>
+
+      <section className="flex flex-col gap-stack-md" aria-label="Brand band">
+        <h3 className="text-h6 text-content-primary">Brand band</h3>
+        <div className="band rounded-card">
+          <div className="band__inner">
+            <p className="text-subtitle1">Looking for help with design?</p>
+            <div className="flex flex-wrap items-center gap-inline-sm">
+              <Button variant="on-brand" size="md">
+                On-brand button
+              </Button>
+              <Socials />
+            </div>
+          </div>
+        </div>
+        <p className="text-caption text-content-muted">
+          Two stops and one label. A theme that points both stops at the same
+          semantic gets a flat band out of the same two lines of CSS — which is
+          what brutalist, terminal and every high-contrast block do.
         </p>
       </section>
 

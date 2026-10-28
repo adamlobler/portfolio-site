@@ -20,10 +20,13 @@
   --color-border-subtle:            var(--sem-border-subtle);
   --color-content-inverse:          var(--sem-content-inverse);
   --color-content-muted:            var(--sem-content-muted);
+  --color-content-on-brand:         var(--sem-content-on-brand);
   --color-content-primary:          var(--sem-content-primary);
   --color-content-secondary:        var(--sem-content-secondary);
   --color-focus-ring:               var(--sem-focus-ring);
   --color-surface-base:             var(--sem-surface-base);
+  --color-surface-brand:            var(--sem-surface-brand);
+  --color-surface-brand-accent:     var(--sem-surface-brand-accent);
   --color-surface-inverse:          var(--sem-surface-inverse);
   --color-surface-overlay:          var(--sem-surface-overlay);
   --color-surface-raised:           var(--sem-surface-raised);

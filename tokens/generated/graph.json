@@ -4,6 +4,76 @@
     "default": "*"
   },
   "nodes": {
+    "cmp-band-bg": {
+      "layer": "component",
+      "type": "color",
+      "group": "band",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.surface.brand}"
+      }
+    },
+    "cmp-band-bg-accent": {
+      "layer": "component",
+      "type": "color",
+      "group": "band",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.surface.brand-accent}"
+      }
+    },
+    "cmp-band-fg": {
+      "layer": "component",
+      "type": "color",
+      "group": "band",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.on-brand}"
+      }
+    },
+    "cmp-band-gap": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "band",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.space.stack-lg}"
+      }
+    },
+    "cmp-band-max-width": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "band",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.measure.page}"
+      }
+    },
+    "cmp-band-pad-x": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "band",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.space.gutter}"
+      }
+    },
+    "cmp-band-pad-y": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "band",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.space.section}"
+      }
+    },
     "cmp-button-border-style": {
       "layer": "component",
       "type": "strokeStyle",
@@ -92,6 +162,76 @@
       "varies": [],
       "values": {
         "*": "{sem.control.height-lg}"
+      }
+    },
+    "cmp-button-on-brand-bg": {
+      "layer": "component",
+      "type": "color",
+      "group": "button-on-brand",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.on-brand}"
+      }
+    },
+    "cmp-button-on-brand-bg-active": {
+      "layer": "component",
+      "type": "color",
+      "group": "button-on-brand",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.on-brand}"
+      }
+    },
+    "cmp-button-on-brand-bg-hover": {
+      "layer": "component",
+      "type": "color",
+      "group": "button-on-brand",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.on-brand}"
+      }
+    },
+    "cmp-button-on-brand-border-color": {
+      "layer": "component",
+      "type": "color",
+      "group": "button-on-brand",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.on-brand}"
+      }
+    },
+    "cmp-button-on-brand-fg": {
+      "layer": "component",
+      "type": "color",
+      "group": "button-on-brand",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.surface.brand}"
+      }
+    },
+    "cmp-button-on-brand-shadow": {
+      "layer": "component",
+      "type": "shadow",
+      "group": "button-on-brand",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.shadow.flat}"
+      }
+    },
+    "cmp-button-on-brand-shadow-hover": {
+      "layer": "component",
+      "type": "shadow",
+      "group": "button-on-brand",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.shadow.raised}"
       }
     },
     "cmp-button-pad-x": {
@@ -992,6 +1132,86 @@
       "varies": [],
       "values": {
         "*": "{sem.measure.prose}"
+      }
+    },
+    "cmp-social-bg": {
+      "layer": "component",
+      "type": "color",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.on-brand}"
+      }
+    },
+    "cmp-social-duration": {
+      "layer": "component",
+      "type": "duration",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.motion.duration-slow}"
+      }
+    },
+    "cmp-social-easing": {
+      "layer": "component",
+      "type": "cubicBezier",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.motion.ease-standard}"
+      }
+    },
+    "cmp-social-fg": {
+      "layer": "component",
+      "type": "color",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.surface.brand}"
+      }
+    },
+    "cmp-social-radius": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.radius.pill}"
+      }
+    },
+    "cmp-social-shadow": {
+      "layer": "component",
+      "type": "shadow",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.shadow.flat}"
+      }
+    },
+    "cmp-social-shadow-hover": {
+      "layer": "component",
+      "type": "shadow",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.shadow.raised}"
+      }
+    },
+    "cmp-social-size": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "social",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.control.height-lg}"
       }
     },
     "cmp-tag-border-style": {
@@ -4133,6 +4353,34 @@
         "*": "{prim.color.neutral.600}"
       }
     },
+    "sem-content-on-brand": {
+      "layer": "semantic",
+      "type": "color",
+      "group": "content",
+      "tailwind": "--color-content-on-brand",
+      "varies": [
+        "theme",
+        "appearance",
+        "contrast"
+      ],
+      "values": {
+        "brutalist.light.normal": "{prim.color.black}",
+        "brutalist.dark.normal": "{prim.color.black}",
+        "glass.light.normal": "{prim.color.white}",
+        "glass.dark.normal": "{prim.color.neutral.50}",
+        "slate.light.normal": "{prim.color.white}",
+        "slate.dark.normal": "{prim.color.neutral.50}",
+        "solar.light.normal": "{prim.color.stone.950}",
+        "solar.dark.normal": "{prim.color.stone.50}",
+        "terminal.light.normal": "{prim.color.phosphor.300}",
+        "terminal.light.high": "{prim.color.phosphor.200}",
+        "terminal.dark.normal": "{prim.color.phosphor.300}",
+        "terminal.dark.high": "{prim.color.phosphor.200}",
+        "violet.light.normal": "{prim.color.white}",
+        "violet.dark.normal": "{prim.color.white}",
+        "*": "{prim.color.white}"
+      }
+    },
     "sem-content-primary": {
       "layer": "semantic",
       "type": "color",
@@ -4837,6 +5085,76 @@
         "violet.dark.normal": "{prim.color.neutral.900}",
         "violet.dark.high": "{prim.color.neutral.950}",
         "*": "{prim.color.white}"
+      }
+    },
+    "sem-surface-brand": {
+      "layer": "semantic",
+      "type": "color",
+      "group": "surface",
+      "tailwind": "--color-surface-brand",
+      "varies": [
+        "theme",
+        "appearance",
+        "contrast"
+      ],
+      "values": {
+        "brutalist.light.normal": "{prim.color.electric.300}",
+        "brutalist.light.high": "{prim.color.electric.200}",
+        "brutalist.dark.normal": "{prim.color.electric.300}",
+        "brutalist.dark.high": "{prim.color.electric.200}",
+        "glass.light.normal": "{prim.color.azure.900}",
+        "glass.light.high": "{prim.color.azure.950}",
+        "glass.dark.normal": "{prim.color.azure.950}",
+        "glass.dark.high": "{prim.color.black}",
+        "slate.light.normal": "{prim.color.steel.800}",
+        "slate.light.high": "{prim.color.steel.900}",
+        "slate.dark.normal": "{prim.color.steel.950}",
+        "solar.light.normal": "{prim.color.amber.300}",
+        "solar.light.high": "{prim.color.amber.200}",
+        "solar.dark.normal": "{prim.color.amber.900}",
+        "solar.dark.high": "{prim.color.amber.950}",
+        "terminal.light.normal": "{prim.color.carbon.950}",
+        "terminal.light.high": "{prim.color.black}",
+        "terminal.dark.normal": "{prim.color.carbon.900}",
+        "terminal.dark.high": "{prim.color.black}",
+        "violet.light.normal": "{prim.color.violet.700}",
+        "violet.dark.normal": "{prim.color.violet.800}",
+        "*": "{prim.color.violet.700}"
+      }
+    },
+    "sem-surface-brand-accent": {
+      "layer": "semantic",
+      "type": "color",
+      "group": "surface",
+      "tailwind": "--color-surface-brand-accent",
+      "varies": [
+        "theme",
+        "appearance",
+        "contrast"
+      ],
+      "values": {
+        "brutalist.light.normal": "{prim.color.electric.300}",
+        "brutalist.light.high": "{prim.color.electric.200}",
+        "brutalist.dark.normal": "{prim.color.electric.300}",
+        "brutalist.dark.high": "{prim.color.electric.200}",
+        "glass.light.normal": "{prim.color.azure.800}",
+        "glass.light.high": "{prim.color.azure.900}",
+        "glass.dark.normal": "{prim.color.azure.900}",
+        "glass.dark.high": "{prim.color.black}",
+        "slate.light.normal": "{prim.color.steel.700}",
+        "slate.light.high": "{prim.color.steel.800}",
+        "slate.dark.normal": "{prim.color.steel.900}",
+        "solar.light.normal": "{prim.color.amber.200}",
+        "solar.light.high": "{prim.color.amber.100}",
+        "solar.dark.normal": "{prim.color.amber.700}",
+        "solar.dark.high": "{prim.color.amber.800}",
+        "terminal.light.normal": "{prim.color.carbon.950}",
+        "terminal.light.high": "{prim.color.black}",
+        "terminal.dark.normal": "{prim.color.carbon.900}",
+        "terminal.dark.high": "{prim.color.black}",
+        "violet.light.normal": "{prim.color.violet.500}",
+        "violet.dark.normal": "{prim.color.violet.600}",
+        "*": "{prim.color.violet.500}"
       }
     },
     "sem-surface-inverse": {

@@ -99,6 +99,8 @@
   --sem-surface-base: var(--prim-color-white);
   --sem-surface-raised: var(--prim-color-neutral-50);
   --sem-surface-sunken: var(--prim-color-neutral-100);
+  --sem-surface-brand: var(--prim-color-violet-700);
+  --sem-surface-brand-accent: var(--prim-color-violet-500);
   --sem-surface-overlay: var(--prim-color-white);
   --sem-surface-inverse: var(--prim-color-neutral-900);
 
@@ -106,6 +108,7 @@
   --sem-content-primary: var(--prim-color-neutral-800);
   --sem-content-secondary: var(--prim-color-neutral-700);
   --sem-content-muted: var(--prim-color-neutral-600);
+  --sem-content-on-brand: var(--prim-color-white);
   --sem-content-inverse: var(--prim-color-neutral-50);
 
   /* border */

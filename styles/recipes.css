@@ -75,6 +75,26 @@
   }
 
   /**
+   * For buttons on `.band`. Hover changes elevation rather than fill, because
+   * the fill and the label are the band's own two colours — the one pair the
+   * contrast gate scores in both directions — and tinting either of them would
+   * walk off that guarantee.
+   */
+  .btn--on-brand {
+    background-color: var(--cmp-button-on-brand-bg);
+    border-color: var(--cmp-button-on-brand-border-color);
+    color: var(--cmp-button-on-brand-fg);
+    box-shadow: var(--cmp-button-on-brand-shadow);
+  }
+  .btn--on-brand:hover {
+    background-color: var(--cmp-button-on-brand-bg-hover);
+    box-shadow: var(--cmp-button-on-brand-shadow-hover);
+  }
+  .btn--on-brand:active {
+    background-color: var(--cmp-button-on-brand-bg-active);
+  }
+
+  /**
    * Sizes rebind the locals only. `lg` is the site's historical button and is
    * the default; all three heights come off the density axis, so `compact`
    * shrinks every size without a second set of values.
@@ -98,6 +118,74 @@
   .btn:disabled {
     opacity: 0.55;
     pointer-events: none;
+  }
+
+  /* -- Brand band -------------------------------------------------------- */
+  /**
+   * The footer, /contact and the /works header. All three used to paint
+   * themselves with a fixed gradient JPEG, which is why they were the only
+   * surfaces on the site that ignored the theme — and why they carried a pile
+   * of `text-white` and `drop-shadow-*` to keep text legible over a photo.
+   *
+   * One geometry for every theme: the only thing a theme states is the two
+   * stops. Point both at the same semantic and the gradient rasterises to a
+   * flat fill, which is how `brutalist` and `terminal` opt out and how every
+   * high-contrast block flattens — no `.band--flat`, no conditional.
+   *
+   * The angle is a literal because an angle is geometry, like `.icon-scroll`'s
+   * 40x70; no theme varies it, and there is no `sem.*` to name it with.
+   *
+   * `background-color` under `background-image` is not belt-and-braces: it is
+   * what paints under forced-colors and in print, and it is the first stop, so
+   * the fallback is never off-palette.
+   */
+  .band {
+    /* Never `w-screen`: that is 100vw, which overflows by the scrollbar width. */
+    width: 100%;
+    background-color: var(--cmp-band-bg);
+    background-image: linear-gradient(
+      135deg,
+      var(--cmp-band-bg) 0%,
+      var(--cmp-band-bg-accent) 100%
+    );
+    /* Set here, which is what lets the markup drop every `text-white`. */
+    color: var(--cmp-band-fg);
+    padding-block: var(--cmp-band-pad-y);
+  }
+
+  .band__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cmp-band-gap);
+    width: 100%;
+    max-width: var(--cmp-band-max-width);
+    margin-inline: auto;
+    padding-inline: var(--cmp-band-pad-x);
+  }
+
+  /* -- Social chip ------------------------------------------------------- */
+  /**
+   * The band's colour pair, inverted. The icons are `currentColor` SVGs, so
+   * `color` here is the whole of their styling — they used to be PNG-ish SVG
+   * assets with `#522CED` baked in, i.e. the default theme's brand frozen into
+   * a file.
+   */
+  .social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--cmp-social-size);
+    height: var(--cmp-social-size);
+    border-radius: var(--cmp-social-radius);
+    background-color: var(--cmp-social-bg);
+    color: var(--cmp-social-fg);
+    box-shadow: var(--cmp-social-shadow);
+    transition-property: background-color, box-shadow;
+    transition-duration: var(--cmp-social-duration);
+    transition-timing-function: var(--cmp-social-easing);
+  }
+  .social:hover {
+    box-shadow: var(--cmp-social-shadow-hover);
   }
 
   /* -- Card -------------------------------------------------------------- */

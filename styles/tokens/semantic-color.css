@@ -9,6 +9,8 @@
   --sem-surface-base: var(--prim-color-white);
   --sem-surface-raised: var(--prim-color-white);
   --sem-surface-sunken: var(--prim-color-ink-50);
+  --sem-surface-brand: var(--prim-color-electric-300);
+  --sem-surface-brand-accent: var(--prim-color-electric-300);
   --sem-surface-overlay: var(--prim-color-white);
   --sem-surface-inverse: var(--prim-color-black);
 
@@ -16,6 +18,7 @@
   --sem-content-primary: var(--prim-color-black);
   --sem-content-secondary: var(--prim-color-ink-800);
   --sem-content-muted: var(--prim-color-ink-700);
+  --sem-content-on-brand: var(--prim-color-black);
   --sem-content-inverse: var(--prim-color-white);
 
   /* border */
@@ -63,6 +66,10 @@
 
   /* focus */
   --sem-focus-ring: var(--prim-color-electric-800);
+
+  /* surface */
+  --sem-surface-brand: var(--prim-color-electric-200);
+  --sem-surface-brand-accent: var(--prim-color-electric-200);
 }
 
 /* theme: brutalist, appearance: dark, contrast: normal */
@@ -72,6 +79,8 @@
   --sem-surface-base: var(--prim-color-black);
   --sem-surface-raised: var(--prim-color-ink-950);
   --sem-surface-sunken: var(--prim-color-black);
+  --sem-surface-brand: var(--prim-color-electric-300);
+  --sem-surface-brand-accent: var(--prim-color-electric-300);
   --sem-surface-overlay: var(--prim-color-ink-900);
   --sem-surface-inverse: var(--prim-color-white);
 
@@ -79,6 +88,7 @@
   --sem-content-primary: var(--prim-color-white);
   --sem-content-secondary: var(--prim-color-ink-100);
   --sem-content-muted: var(--prim-color-ink-300);
+  --sem-content-on-brand: var(--prim-color-black);
   --sem-content-inverse: var(--prim-color-black);
 
   /* border */
@@ -128,6 +138,10 @@
 
   /* focus */
   --sem-focus-ring: var(--prim-color-electric-200);
+
+  /* surface */
+  --sem-surface-brand: var(--prim-color-electric-200);
+  --sem-surface-brand-accent: var(--prim-color-electric-200);
 }
 
 /* theme: glass, appearance: light, contrast: normal */
@@ -137,6 +151,8 @@
   --sem-surface-base: var(--prim-color-neutral-50);
   --sem-surface-raised: var(--prim-color-alpha-white-64);
   --sem-surface-sunken: var(--prim-color-alpha-black-4);
+  --sem-surface-brand: var(--prim-color-azure-900);
+  --sem-surface-brand-accent: var(--prim-color-azure-800);
   --sem-surface-overlay: var(--prim-color-alpha-white-80);
   --sem-surface-inverse: var(--prim-color-neutral-900);
 
@@ -144,6 +160,7 @@
   --sem-content-primary: var(--prim-color-neutral-900);
   --sem-content-secondary: var(--prim-color-neutral-700);
   --sem-content-muted: var(--prim-color-neutral-600);
+  --sem-content-on-brand: var(--prim-color-white);
   --sem-content-inverse: var(--prim-color-neutral-50);
 
   /* border */
@@ -178,6 +195,8 @@
   --sem-surface-raised: var(--prim-color-white);
   --sem-surface-sunken: var(--prim-color-neutral-50);
   --sem-surface-overlay: var(--prim-color-white);
+  --sem-surface-brand: var(--prim-color-azure-950);
+  --sem-surface-brand-accent: var(--prim-color-azure-900);
 
   /* content */
   --sem-content-secondary: var(--prim-color-neutral-900);
@@ -213,6 +232,8 @@
   --sem-surface-base: var(--prim-color-neutral-950);
   --sem-surface-raised: var(--prim-color-alpha-white-8);
   --sem-surface-sunken: var(--prim-color-alpha-black-32);
+  --sem-surface-brand: var(--prim-color-azure-950);
+  --sem-surface-brand-accent: var(--prim-color-azure-900);
   --sem-surface-overlay: var(--prim-color-alpha-black-64);
   --sem-surface-inverse: var(--prim-color-neutral-50);
 
@@ -220,6 +241,7 @@
   --sem-content-primary: var(--prim-color-neutral-50);
   --sem-content-secondary: var(--prim-color-neutral-200);
   --sem-content-muted: var(--prim-color-neutral-400);
+  --sem-content-on-brand: var(--prim-color-neutral-50);
   --sem-content-inverse: var(--prim-color-neutral-900);
 
   /* border */
@@ -254,6 +276,8 @@
   --sem-surface-raised: var(--prim-color-neutral-900);
   --sem-surface-sunken: var(--prim-color-neutral-950);
   --sem-surface-overlay: var(--prim-color-neutral-900);
+  --sem-surface-brand: var(--prim-color-black);
+  --sem-surface-brand-accent: var(--prim-color-black);
 
   /* content */
   --sem-content-secondary: var(--prim-color-neutral-50);
@@ -289,6 +313,8 @@
   --sem-surface-base: var(--prim-color-white);
   --sem-surface-raised: var(--prim-color-neutral-50);
   --sem-surface-sunken: var(--prim-color-neutral-100);
+  --sem-surface-brand: var(--prim-color-steel-800);
+  --sem-surface-brand-accent: var(--prim-color-steel-700);
   --sem-surface-overlay: var(--prim-color-white);
   --sem-surface-inverse: var(--prim-color-neutral-900);
 
@@ -296,6 +322,7 @@
   --sem-content-primary: var(--prim-color-neutral-900);
   --sem-content-secondary: var(--prim-color-neutral-700);
   --sem-content-muted: var(--prim-color-neutral-600);
+  --sem-content-on-brand: var(--prim-color-white);
   --sem-content-inverse: var(--prim-color-neutral-50);
 
   /* border */
@@ -327,6 +354,8 @@
 
   /* surface */
   --sem-surface-raised: var(--prim-color-white);
+  --sem-surface-brand: var(--prim-color-steel-900);
+  --sem-surface-brand-accent: var(--prim-color-steel-800);
 
   /* content */
   --sem-content-secondary: var(--prim-color-neutral-900);
@@ -359,6 +388,8 @@
   --sem-surface-base: var(--prim-color-neutral-950);
   --sem-surface-raised: var(--prim-color-neutral-900);
   --sem-surface-sunken: var(--prim-color-black);
+  --sem-surface-brand: var(--prim-color-steel-950);
+  --sem-surface-brand-accent: var(--prim-color-steel-900);
   --sem-surface-overlay: var(--prim-color-neutral-800);
   --sem-surface-inverse: var(--prim-color-neutral-50);
 
@@ -366,6 +397,7 @@
   --sem-content-primary: var(--prim-color-neutral-50);
   --sem-content-secondary: var(--prim-color-neutral-200);
   --sem-content-muted: var(--prim-color-neutral-400);
+  --sem-content-on-brand: var(--prim-color-neutral-50);
   --sem-content-inverse: var(--prim-color-neutral-900);
 
   /* border */
@@ -429,6 +461,8 @@
   --sem-surface-base: var(--prim-color-stone-50);
   --sem-surface-raised: var(--prim-color-white);
   --sem-surface-sunken: var(--prim-color-stone-100);
+  --sem-surface-brand: var(--prim-color-amber-300);
+  --sem-surface-brand-accent: var(--prim-color-amber-200);
   --sem-surface-overlay: var(--prim-color-white);
   --sem-surface-inverse: var(--prim-color-stone-900);
 
@@ -436,6 +470,7 @@
   --sem-content-primary: var(--prim-color-stone-900);
   --sem-content-secondary: var(--prim-color-stone-700);
   --sem-content-muted: var(--prim-color-stone-700);
+  --sem-content-on-brand: var(--prim-color-stone-950);
   --sem-content-inverse: var(--prim-color-stone-50);
 
   /* border */
@@ -468,6 +503,8 @@
   /* surface */
   --sem-surface-base: var(--prim-color-white);
   --sem-surface-raised: var(--prim-color-white);
+  --sem-surface-brand: var(--prim-color-amber-200);
+  --sem-surface-brand-accent: var(--prim-color-amber-100);
 
   /* content */
   --sem-content-primary: var(--prim-color-stone-950);
@@ -501,6 +538,8 @@
   --sem-surface-base: var(--prim-color-stone-950);
   --sem-surface-raised: var(--prim-color-stone-900);
   --sem-surface-sunken: var(--prim-color-black);
+  --sem-surface-brand: var(--prim-color-amber-900);
+  --sem-surface-brand-accent: var(--prim-color-amber-700);
   --sem-surface-overlay: var(--prim-color-stone-900);
   --sem-surface-inverse: var(--prim-color-stone-50);
 
@@ -508,6 +547,7 @@
   --sem-content-primary: var(--prim-color-stone-50);
   --sem-content-secondary: var(--prim-color-stone-200);
   --sem-content-muted: var(--prim-color-stone-400);
+  --sem-content-on-brand: var(--prim-color-stone-50);
   --sem-content-inverse: var(--prim-color-stone-950);
 
   /* border */
@@ -540,6 +580,8 @@
   /* surface */
   --sem-surface-base: var(--prim-color-black);
   --sem-surface-raised: var(--prim-color-stone-950);
+  --sem-surface-brand: var(--prim-color-amber-950);
+  --sem-surface-brand-accent: var(--prim-color-amber-800);
 
   /* content */
   --sem-content-secondary: var(--prim-color-stone-50);
@@ -572,6 +614,8 @@
   --sem-surface-base: var(--prim-color-carbon-50);
   --sem-surface-raised: var(--prim-color-white);
   --sem-surface-sunken: var(--prim-color-carbon-100);
+  --sem-surface-brand: var(--prim-color-carbon-950);
+  --sem-surface-brand-accent: var(--prim-color-carbon-950);
   --sem-surface-overlay: var(--prim-color-white);
   --sem-surface-inverse: var(--prim-color-carbon-950);
 
@@ -579,6 +623,7 @@
   --sem-content-primary: var(--prim-color-carbon-900);
   --sem-content-secondary: var(--prim-color-carbon-700);
   --sem-content-muted: var(--prim-color-carbon-700);
+  --sem-content-on-brand: var(--prim-color-phosphor-300);
   --sem-content-inverse: var(--prim-color-carbon-50);
 
   /* border */
@@ -611,11 +656,14 @@
   /* surface */
   --sem-surface-base: var(--prim-color-white);
   --sem-surface-raised: var(--prim-color-white);
+  --sem-surface-brand: var(--prim-color-black);
+  --sem-surface-brand-accent: var(--prim-color-black);
 
   /* content */
   --sem-content-primary: var(--prim-color-carbon-950);
   --sem-content-secondary: var(--prim-color-carbon-900);
   --sem-content-muted: var(--prim-color-carbon-800);
+  --sem-content-on-brand: var(--prim-color-phosphor-200);
 
   /* border */
   --sem-border-subtle: var(--prim-color-carbon-400);
@@ -644,6 +692,8 @@
   --sem-surface-base: var(--prim-color-carbon-950);
   --sem-surface-raised: var(--prim-color-carbon-900);
   --sem-surface-sunken: var(--prim-color-black);
+  --sem-surface-brand: var(--prim-color-carbon-900);
+  --sem-surface-brand-accent: var(--prim-color-carbon-900);
   --sem-surface-overlay: var(--prim-color-carbon-900);
   --sem-surface-inverse: var(--prim-color-phosphor-100);
 
@@ -651,6 +701,7 @@
   --sem-content-primary: var(--prim-color-phosphor-300);
   --sem-content-secondary: var(--prim-color-phosphor-400);
   --sem-content-muted: var(--prim-color-carbon-400);
+  --sem-content-on-brand: var(--prim-color-phosphor-300);
   --sem-content-inverse: var(--prim-color-carbon-950);
 
   /* border */
@@ -683,11 +734,14 @@
   /* surface */
   --sem-surface-base: var(--prim-color-black);
   --sem-surface-raised: var(--prim-color-carbon-950);
+  --sem-surface-brand: var(--prim-color-black);
+  --sem-surface-brand-accent: var(--prim-color-black);
 
   /* content */
   --sem-content-primary: var(--prim-color-phosphor-200);
   --sem-content-secondary: var(--prim-color-phosphor-300);
   --sem-content-muted: var(--prim-color-carbon-300);
+  --sem-content-on-brand: var(--prim-color-phosphor-200);
 
   /* border */
   --sem-border-subtle: var(--prim-color-carbon-600);
@@ -716,6 +770,8 @@
   --sem-surface-base: var(--prim-color-white);
   --sem-surface-raised: var(--prim-color-neutral-50);
   --sem-surface-sunken: var(--prim-color-neutral-100);
+  --sem-surface-brand: var(--prim-color-violet-700);
+  --sem-surface-brand-accent: var(--prim-color-violet-500);
   --sem-surface-overlay: var(--prim-color-white);
   --sem-surface-inverse: var(--prim-color-neutral-900);
 
@@ -723,6 +779,7 @@
   --sem-content-primary: var(--prim-color-neutral-800);
   --sem-content-secondary: var(--prim-color-neutral-700);
   --sem-content-muted: var(--prim-color-neutral-600);
+  --sem-content-on-brand: var(--prim-color-white);
   --sem-content-inverse: var(--prim-color-neutral-50);
 
   /* border */
@@ -787,6 +844,8 @@
   --sem-surface-base: var(--prim-color-neutral-900);
   --sem-surface-raised: var(--prim-color-neutral-800);
   --sem-surface-sunken: var(--prim-color-black);
+  --sem-surface-brand: var(--prim-color-violet-800);
+  --sem-surface-brand-accent: var(--prim-color-violet-600);
   --sem-surface-overlay: var(--prim-color-neutral-800);
   --sem-surface-inverse: var(--prim-color-neutral-50);
 
@@ -794,6 +853,7 @@
   --sem-content-primary: var(--prim-color-neutral-50);
   --sem-content-secondary: var(--prim-color-neutral-200);
   --sem-content-muted: var(--prim-color-neutral-400);
+  --sem-content-on-brand: var(--prim-color-white);
   --sem-content-inverse: var(--prim-color-neutral-900);
 
   /* border */
