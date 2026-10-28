@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Img from "../../../components/Img";
 import { compileMDX } from "next-mdx-remote/rsc";
 
 import Gallery from "../../../components/Gallery";
@@ -36,10 +36,12 @@ export async function generateMetadata({
 
 /**
  * `Fade` and `Gallery` are client components handed to the MDX compiler;
- * `Image` stays on the server. The MDX itself is compiled per request at
+ * `Image` stays on the server. MDX writes `<Image>`; it resolves to `Img`,
+ * the quality-defaulted wrapper, so every case-study screenshot picks up
+ * q90 without touching the markdown. The MDX itself is compiled per request at
  * build time and its output is static HTML.
  */
-const components = { Image, Fade, Gallery };
+const components = { Image: Img, Fade, Gallery };
 
 export default async function CaseStudyPage({
   params,
@@ -67,7 +69,7 @@ export default async function CaseStudyPage({
   return (
     <div className="max-w-7xl flex flex-col items-center md:mx-6">
       <Fade>
-        <Image
+        <Img
           src={frontmatter.desktopImage}
           width={800}
           height={500}
@@ -75,7 +77,7 @@ export default async function CaseStudyPage({
           className="hidden md:flex w-screen max-w-7xl"
           priority
         />
-        <Image
+        <Img
           src={frontmatter.mobileImage}
           alt=""
           width={800}

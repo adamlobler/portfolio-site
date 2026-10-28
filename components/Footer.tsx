@@ -1,12 +1,12 @@
 import React from "react";
 import Socials from "./Socials";
-import Image from "next/image";
+import Img from "./Img";
 import Background from "../public/img/gradient.webp";
 
 const Footer = () => {
   return (
     <footer className="flex  relative overflow-hidden flex-col w-full h-[680px] bg-[#341692] dark:bg-gray-900 items-center justify-center ">
-      <Image
+      <Img
         className="absolute top-0 w-screen h-[680px] bg-[#341692]"
         src={Background}
         quality={100}

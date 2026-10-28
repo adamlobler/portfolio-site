@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Img from "./Img";
 import Lightbox, { type SlideImage } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
@@ -34,7 +34,7 @@ export default function GalleryLightbox({ slides, index, onClose }: Props) {
 
           return (
             <div style={{ position: "relative", width, height }}>
-              <Image
+              <Img
                 fill
                 src={slide.src}
                 alt={slide.alt ?? ""}

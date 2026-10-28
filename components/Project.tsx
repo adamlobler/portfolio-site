@@ -1,4 +1,5 @@
-import Image, { StaticImageData } from "next/image";
+import Img from "./Img";
+import {StaticImageData} from "next/image";
 import React from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Parallax } from "./client/Parallax";
@@ -23,7 +24,7 @@ const Project: React.FC<Props> = (props) => {
         scale={[1.1, 1, "easeOutCubic"]}
         opacity={[0.4, 1, "easeOutCubic"]}
       >
-        <Image
+        <Img
           src={props.desktopImage}
           alt="desktop_image"
           className={`${
@@ -34,7 +35,7 @@ const Project: React.FC<Props> = (props) => {
           sizes="1216px"
         />
       </Parallax>
-      <Image
+      <Img
         src={props.mobileImage}
         alt="mobile_image"
         className={`${

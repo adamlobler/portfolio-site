@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import Img from "./Img";
 import { GALLERIES } from "../data/galleries";
 
 const GalleryLightbox = dynamic(() => import("./GalleryLightbox"), {
@@ -30,7 +30,7 @@ export default function Gallery({ slug }: { slug: string }) {
           aria-label={`Open image ${i + 1} of ${images.length} full size`}
           className="flex pt-8"
         >
-          <Image src={image} alt="" sizes="(max-width: 1028px) 92vw, 1000px" />
+          <Img src={image} alt="" sizes="(max-width: 1028px) 92vw, 1000px" />
         </button>
       ))}
       {index >= 0 && (

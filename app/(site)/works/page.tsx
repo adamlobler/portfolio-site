@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Img from "../../../components/Img";
 
 import ProjectCard from "../../../components/ProjectCard";
 import { Fade } from "../../../components/client/Reveal";
@@ -21,7 +21,7 @@ export default function WorksPage() {
     <>
       <Fade triggerOnce className="w-full">
         <div className="relative flex items-center justify-center w-screen py-4 md:py-16 2xl:py-24">
-          <Image
+          <Img
             src={Background}
             className="absolute top-0 left-0 w-screen h-full bg-background"
             alt=""

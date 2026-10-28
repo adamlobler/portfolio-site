@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Img from "../../../components/Img";
 
 import Socials from "../../../components/Socials";
 import { Fade } from "../../../components/client/Reveal";
@@ -20,7 +20,7 @@ export default function ContactPage() {
     <Fade>
       <main className="flex bg-[#341692] min-h-screen flex-col items-center justify-center">
         <div className="flex bg-[#341692] min-h-screen relative overflow-hidden flex-col w-full items-center justify-center">
-          <Image
+          <Img
             className="absolute h-full top-0 w-screen bg-background"
             alt=""
             quality={100}
