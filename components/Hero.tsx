@@ -44,33 +44,20 @@ const Hero = () => {
            * React 19 upgrade. It faded the buttons on scroll; phase 4 was
            * already going to delete it with the rest of the hero.
            */}
-          <div className="hero-reveal hero-reveal--late">
-            {/*Mobile CTAs */}
-            <div className="flex pointer-events-auto md:hidden w-full items-center flex-col mt-8">
-              <Button href="/contact" block className="lg:hidden">
-                Get in touch!
-              </Button>
-              <div className="pr-6 pb-4 lg:pb-0" />
-              <Button href="/works" variant="secondary" block>
-                Discover projects
-              </Button>
-            </div>
-
-            {/*Desktop CTAs*/}
-            <div className="hidden pointer-events-auto my-4 md:flex w-full max-w-sm items-center lg:max-w-none flex-col lg:flex-row">
-              <Button href="/contact" block className="lg:w-fit">
-                Get in touch!
-              </Button>
-              <div className="pr-6 pb-4 lg:pb-0" />
-              <Button
-                href="/works"
-                variant="secondary"
-                block
-                className="lg:w-fit"
-              >
-                Discover projects
-              </Button>
-            </div>
+          {/**
+           * One row, and the buttons size themselves the way they do
+           * everywhere else on the site. This used to be the same two CTAs
+           * written twice — a `md:hidden` copy and a `hidden md:flex` copy —
+           * each forcing `w-full` and then clawing it back with `lg:w-fit`,
+           * which is why the hero's buttons were the only ones on the site
+           * that changed width with the viewport. Spacing is a `gap`; the two
+           * padding-only spacer divs between them are gone.
+           */}
+          <div className="hero-reveal hero-reveal--late pointer-events-auto mt-8 flex flex-col items-center gap-inline-sm sm:flex-row lg:items-start">
+            <Button href="/contact">Get in touch!</Button>
+            <Button href="/works" variant="secondary">
+              Discover projects
+            </Button>
           </div>
         </div>
       </section>

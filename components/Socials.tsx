@@ -31,7 +31,15 @@ const socials = [
 
 export default function Socials() {
   return (
-    <div className="flex flex-wrap gap-inline-xs">
+    /**
+     * `shrink-0`, and deliberately not `flex-wrap`. A wrapping flex row has a
+     * min-content width of *one* item, so as a flex child this row would
+     * happily be squeezed to 56px and break 3 + 1 — which is what it did
+     * inside the band's `w-fit` column at some widths. Four chips are 248px
+     * at every density, which fits the narrowest viewport inside the band's
+     * gutters, so there is nothing to wrap.
+     */
+    <div className="flex shrink-0 gap-inline-xs">
       {socials.map((social) => (
         <Social
           key={social.label}
