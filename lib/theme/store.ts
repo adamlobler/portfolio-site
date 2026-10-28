@@ -158,6 +158,9 @@ export function useAxis<A extends AxisName>(
   axis: A
 ): [AxisSelection[A], (value: AxisSelection[A]) => void] {
   const axes = useAxes();
-  const set = useCallback((value: AxisSelection[A]) => setAxis(axis, value), [axis]);
+  const set = useCallback(
+    (value: AxisSelection[A]) => setAxis(axis, value),
+    [axis]
+  );
   return [axes[axis], set];
 }

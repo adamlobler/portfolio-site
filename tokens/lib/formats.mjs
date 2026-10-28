@@ -8,7 +8,16 @@
  * own, with no duplicated blocks and no JavaScript.
  */
 import { ROOTS, AXES, DEFAULTS, selectorFor } from "./axes.mjs";
-import { cssVar, refsToVars, hasRef, semanticKey, tokenName } from "./naming.mjs";
+import {
+  cssVar,
+  refsToVars,
+  hasRef,
+  semanticKey,
+  tokenName,
+} from "./naming.mjs";
+
+/** Key for the axis-free slice in the inspector graph. Not a legal axis value. */
+export const DEFAULT_SLICE = "*";
 
 const BANNER = (note) =>
   [
@@ -69,7 +78,9 @@ export const cssAxisBlocks = ({ dictionary, options }) => {
   const chunks = [];
   for (const { coords, tokens } of blocks.values()) {
     const label = coords.map((value, i) => `${axes[i]}: ${value}`).join(", ");
-    chunks.push(`/* ${label} */\n${selectorFor(root, coords)} {\n${body(tokens, axisDepth)}\n}`);
+    chunks.push(
+      `/* ${label} */\n${selectorFor(root, coords)} {\n${body(tokens, axisDepth)}\n}`
+    );
   }
   return `${BANNER(options.note ?? "")}${chunks.join("\n\n")}\n`;
 };
@@ -126,7 +137,9 @@ export const cssThemeInline = ({ dictionary, options }) => {
   }
   mapped.sort((a, b) => a[0].localeCompare(b[0]));
   const width = Math.max(...mapped.map(([name]) => name.length)) + 1;
-  const lines = mapped.map(([name, source]) => `  ${(name + ":").padEnd(width)} var(${source});`);
+  const lines = mapped.map(
+    ([name, source]) => `  ${(name + ":").padEnd(width)} var(${source});`
+  );
 
   const note = unmapped.length
     ? [
@@ -144,34 +157,61 @@ export const cssThemeInline = ({ dictionary, options }) => {
 };
 
 /**
- * The compatibility shim that keeps the pre-token markup compiling.
+ * The reference graph the token inspector reads.
  *
- * ~95 colour classes across 19 files still say `bg-primary-500` and
- * `text-gray-600`. Rather than restyle the whole site inside a build-and-CSS
- * phase, the old palette names are re-pointed at primitives so the markup is
- * unchanged and the values are identical. Note the plain `@theme` (not
- * `inline`): these are a frozen bridge, not part of the live token system.
+ * The CSS emitters above throw away everything except names and values, which
+ * is right for the browser and useless for a page whose job is to *explain* the
+ * system. This one keeps the other half: which layer a token lives in, which
+ * axes it varies on, and the authored `{reference}` for every axis slice — so
+ * the inspector can walk component → semantic → primitive without re-reading
+ * the JSON at runtime.
  *
- * Phase 5 rewrites those call sites onto semantic utilities, and this whole
- * file is deleted — that is the only reason it is allowed to reference
- * primitives directly.
+ * Resolved *values* are deliberately absent: the inspector reads those off
+ * `getComputedStyle(document.documentElement)`, which means what it shows is
+ * what the browser actually computed, not what this build predicted.
  */
-export const cssLegacyPalette = ({ dictionary, options }) => {
-  const rows = [];
+export const jsonGraph = ({ dictionary, options }) => {
+  const nodes = {};
   for (const token of dictionary.allTokens) {
-    const [, , ramp, step] = token.path;
-    const alias = options.rampAliases[ramp];
-    if (alias && /^\d+$/.test(step ?? "")) rows.push([`--color-${alias}-${step}`, cssVar(token.path)]);
+    const root = ROOTS[token.path[0]];
+    if (!root) continue;
+    const name = tokenName(token.path);
+    const coords = token.path.slice(1, 1 + root.axisDepth);
+    const authored = String(token.original?.$value ?? token.$value);
+
+    const node = (nodes[name] ??= {
+      layer: root.layer,
+      type: token.$type ?? null,
+      group: token.path.slice(1 + root.axisDepth, -1).join("-") || null,
+      tailwind:
+        root.layer === "semantic" ? tailwindVarFor(semanticKey(name)) : null,
+      varies: [],
+      values: {},
+    });
+
+    /**
+     * `varies` is unioned across roots on purpose: the theme axis reaches a
+     * semantic token through `semColor` *and* `semExpr`, and a reader of the
+     * inspector wants "this follows theme", not two half-answers.
+     */
+    for (const axis of root.axes ?? []) {
+      if (!node.varies.includes(axis)) node.varies.push(axis);
+    }
+    node.values[coords.join(".") || DEFAULT_SLICE] = authored;
   }
-  rows.sort((a, b) => a[0].localeCompare(b[0]));
-  const width = Math.max(...rows.map(([name]) => name.length)) + 1;
-  return (
-    BANNER(options.note ?? "") +
-    "@theme {\n" +
-    rows.map(([name, source]) => `  ${(name + ":").padEnd(width)} var(${source});`).join("\n") +
-    "\n\n  /* The pre-token `maxWidth['7xl'] = 1344px` override. */\n" +
-    "  --container-7xl: 1344px;\n}\n"
+
+  const sorted = Object.fromEntries(
+    Object.entries(nodes).sort(([a], [b]) => a.localeCompare(b))
   );
+  return `${JSON.stringify(
+    {
+      note: options.note ?? "",
+      slices: { default: DEFAULT_SLICE },
+      nodes: sorted,
+    },
+    null,
+    2
+  )}\n`;
 };
 
 /** Typed names, axis types and the theme manifest a switcher UI needs. */
@@ -183,7 +223,10 @@ export const tsManifest = ({ dictionary, options }) => {
     if (layer) names[layer].push(tokenName(token.path));
   }
   const list = (items) =>
-    `[\n${[...new Set(items)].sort().map((n) => `  "${n}",`).join("\n")}\n] as const`;
+    `[\n${[...new Set(items)]
+      .sort()
+      .map((n) => `  "${n}",`)
+      .join("\n")}\n] as const`;
 
   const themes = AXES.theme.values.map((id) => ({
     id,

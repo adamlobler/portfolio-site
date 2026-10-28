@@ -13,7 +13,7 @@
  *   expression       [data-theme]
  *   component        `:root`, all var() into the semantic layer
  *   theme            the `@theme inline` block Tailwind reads
- *   legacy-palette   pre-token palette shim, deleted in phase 5
+ *   recipes          hand-written component recipes, all `var(--cmp-*)`
  * ------------------------------------------------------------------------- */
 @import "tailwindcss" source(none);
 @import "./tokens/primitives.css";
@@ -23,7 +23,7 @@
 @import "./tokens/expression.css";
 @import "./tokens/component.css";
 @import "./tokens/theme.css";
-@import "./tokens/legacy-palette.css";
+@import "./recipes.css";
 
 @plugin "@tailwindcss/typography";
 
@@ -99,60 +99,6 @@
 
 @layer components {
   /**
-   * The button recipes, now entirely component tokens. Nothing here names a
-   * colour, a size or a radius: colour comes off theme x appearance x contrast,
-   * padding off density, radius / weight / shadow / border style off theme. The
-   * same twenty lines render a soft violet pill and a hard-edged brutalist slab.
-   */
-  .btn-primary,
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: var(--cmp-button-min-height);
-    padding: var(--cmp-button-pad-y) var(--cmp-button-pad-x);
-    border-radius: var(--cmp-button-radius);
-    border-width: var(--cmp-button-border-width);
-    border-style: var(--cmp-button-border-style);
-    font-family: var(--cmp-button-font-family);
-    font-size: var(--cmp-button-font-size);
-    font-weight: var(--cmp-button-font-weight);
-    line-height: var(--cmp-button-leading);
-    letter-spacing: var(--cmp-button-tracking);
-    transition-property: background-color, border-color, box-shadow, color;
-    transition-duration: var(--cmp-button-duration);
-    transition-timing-function: var(--cmp-button-easing);
-  }
-
-  .btn-primary {
-    background-color: var(--cmp-button-primary-bg);
-    border-color: var(--cmp-button-primary-border-color);
-    color: var(--cmp-button-primary-fg);
-    box-shadow: var(--cmp-button-primary-shadow);
-  }
-  .btn-primary:hover {
-    background-color: var(--cmp-button-primary-bg-hover);
-    box-shadow: var(--cmp-button-primary-shadow-hover);
-  }
-  .btn-primary:active {
-    background-color: var(--cmp-button-primary-bg-active);
-  }
-
-  .btn-secondary {
-    background-color: var(--cmp-button-secondary-bg);
-    border-color: var(--cmp-button-secondary-border-color);
-    color: var(--cmp-button-secondary-fg);
-    box-shadow: var(--cmp-button-secondary-shadow);
-  }
-  .btn-secondary:hover {
-    background-color: var(--cmp-button-secondary-bg-hover);
-    box-shadow: var(--cmp-button-secondary-shadow-hover);
-  }
-  .btn-secondary:active {
-    background-color: var(--cmp-button-secondary-bg-active);
-  }
-
-  /**
    * The hero entrance, in CSS instead of JS.
    *
    * `react-awesome-reveal` serialises `style="opacity:0"` into the SSR HTML
@@ -193,7 +139,8 @@
     width: 40px;
     height: 70px;
     margin-left: -20px;
-    box-shadow: inset 0 0 0 var(--sem-stroke-width-hairline) var(--sem-content-inverse);
+    box-shadow: inset 0 0 0 var(--sem-stroke-width-hairline)
+      var(--sem-content-inverse);
     border-radius: var(--sem-radius-pill);
   }
 

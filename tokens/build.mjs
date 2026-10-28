@@ -12,8 +12,8 @@
  *   styles/tokens/expression.css        [data-theme]
  *   styles/tokens/component.css         component tokens, `:root`
  *   styles/tokens/theme.css             the generated `@theme inline` block
- *   styles/tokens/legacy-palette.css    pre-token palette shim, deleted in phase 5
  *   tokens/generated/tokens.ts          typed vocabulary + axis manifest
+ *   tokens/generated/graph.json         layer + axis + reference graph, for the inspector
  *
  * Flags:
  *   --check        validate and gate, write nothing (CI, and `yarn tokens:check`)
@@ -29,7 +29,7 @@ import {
   cssBlock,
   cssAxisBlocks,
   cssThemeInline,
-  cssLegacyPalette,
+  jsonGraph,
   tsManifest,
 } from "./lib/formats.mjs";
 
@@ -43,9 +43,11 @@ const THEME_DESCRIPTIONS = {
   violet: "Refined brand violet on cool grey. Soft radii, soft shadows.",
   slate: "Neutral editorial. Serif display, ink-blue accent, almost no shadow.",
   brutalist: "Zero radius, hard offset shadows, heavy mono, black hairlines.",
-  terminal: "CRT phosphor. Mono throughout, dashed rules, glow instead of shadow.",
+  terminal:
+    "CRT phosphor. Mono throughout, dashed rules, glow instead of shadow.",
   solar: "Warm stone and low-sun amber. Large radii, glow shadows.",
-  glass: "Translucent surfaces and backdrop blur. High contrast turns it opaque.",
+  glass:
+    "Translucent surfaces and backdrop blur. High contrast turns it opaque.",
 };
 
 const sd = new StyleDictionary({
@@ -55,7 +57,11 @@ const sd = new StyleDictionary({
   // cost 24 short blocks instead of a cartesian product. Style Dictionary cannot
   // know that, so its collision warning is silenced here rather than printed on
   // every build. Broken references still throw.
-  log: { warnings: "disabled", verbosity: "default", errors: { brokenReferences: "throw" } },
+  log: {
+    warnings: "disabled",
+    verbosity: "default",
+    errors: { brokenReferences: "throw" },
+  },
   source: [
     "tokens/primitives/*.json",
     "tokens/semantic/**/*.json",
@@ -65,13 +71,16 @@ const sd = new StyleDictionary({
   hooks: {
     preprocessors: { "canonical-semantics": canonicalSemantics },
     transforms: {
-      "name/axis-stripped": { type: "name", transform: (token) => tokenName(token.path) },
+      "name/axis-stripped": {
+        type: "name",
+        transform: (token) => tokenName(token.path),
+      },
     },
     formats: {
       "css/block": cssBlock,
       "css/axis-blocks": cssAxisBlocks,
       "css/theme-inline": cssThemeInline,
-      "css/legacy-palette": cssLegacyPalette,
+      "json/graph": jsonGraph,
       "ts/manifest": tsManifest,
     },
   },
@@ -142,15 +151,6 @@ const sd = new StyleDictionary({
             note: "Generated off the semantic layer: every semantic token becomes a Tailwind utility, so the token name IS the class name and the two cannot drift.",
           },
         },
-        {
-          destination: "legacy-palette.css",
-          format: "css/legacy-palette",
-          filter: (token) => token.path[0] === "prim" && token.path[1] === "color",
-          options: {
-            rampAliases: { neutral: "gray", violet: "primary" },
-            note: "Migration shim for the pre-token palette classes. Phase 5 deletes this file.",
-          },
-        },
       ],
     },
     ts: {
@@ -162,6 +162,14 @@ const sd = new StyleDictionary({
           format: "ts/manifest",
           filter: () => true,
           options: { themeDescriptions: THEME_DESCRIPTIONS },
+        },
+        {
+          destination: "graph.json",
+          format: "json/graph",
+          filter: () => true,
+          options: {
+            note: "Every token's layer, the axes it varies on, and its authored reference per axis slice. Read by the token inspector at /playground; resolved values are read from the live CSS, not from here.",
+          },
         },
       ],
     },
@@ -176,7 +184,9 @@ await sd.hasInitialized;
 // ---------------------------------------------------------------------------
 const problems = validate(sd.tokens);
 if (problems.length) {
-  console.error(`\n✗ Token architecture: ${problems.length} violation(s).${reportProblems(problems)}\n`);
+  console.error(
+    `\n✗ Token architecture: ${problems.length} violation(s).${reportProblems(problems)}\n`
+  );
   process.exit(1);
 }
 const counts = { primitive: 0, semantic: 0, component: 0 };
@@ -192,7 +202,9 @@ console.log(
 // ---------------------------------------------------------------------------
 // Gate 2 — contrast, across all 24 colour worlds.
 // ---------------------------------------------------------------------------
-const { failures, warnings, checked } = checkContrast(sd.tokens, { strictApca: STRICT_APCA });
+const { failures, warnings, checked } = checkContrast(sd.tokens, {
+  strictApca: STRICT_APCA,
+});
 if (failures.length) {
   console.error(
     `\n✗ Contrast gate: ${failures.length} of ${checked} pairs below threshold.\n` +

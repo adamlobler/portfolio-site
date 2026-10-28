@@ -37,7 +37,10 @@ export async function readCaseStudy(slug: string): Promise<{
   frontmatter: CaseStudyFrontmatter;
   body: string;
 }> {
-  const file = await fs.readFile(path.join(CONTENT_DIR, `${slug}.mdx`), "utf-8");
+  const file = await fs.readFile(
+    path.join(CONTENT_DIR, `${slug}.mdx`),
+    "utf-8"
+  );
   const { data, content } = matter(file);
   return { frontmatter: data as CaseStudyFrontmatter, body: content };
 }

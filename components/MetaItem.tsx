@@ -12,8 +12,8 @@ interface MetaItemProps {
 
 export default function MetaItem({ title, data }: MetaItemProps) {
   return (
-    <div className="border-l pl-4 md:pl-8 py-1 md:py-2 my-3 pr-16">
-      <p className="text-caption text-gray-400 md:mb-3">{title}</p>
+    <div className="border-l border-border-default pl-4 md:pl-8 py-1 md:py-2 my-3 pr-16">
+      <p className="text-caption text-content-muted md:mb-3">{title}</p>
       <p className="text-subtitle1 md:text-h6">{data}</p>
     </div>
   );

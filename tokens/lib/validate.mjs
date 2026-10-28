@@ -24,19 +24,25 @@ const PURE_REF = /^\s*\{[^}]+\}\s*$/;
 /** Yield `{ path, token }` for every leaf with a `$value`. */
 export function* walkTokens(node, path = []) {
   for (const [key, value] of Object.entries(node)) {
-    if (key.startsWith("$") || value === null || typeof value !== "object") continue;
+    if (key.startsWith("$") || value === null || typeof value !== "object")
+      continue;
     if ("$value" in value) yield { path: [...path, key], token: value };
     else yield* walkTokens(value, [...path, key]);
   }
 }
 
-const refsIn = (value) => [...String(value).matchAll(REF)].map((m) => m[1].trim());
+const refsIn = (value) =>
+  [...String(value).matchAll(REF)].map((m) => m[1].trim());
 const lookup = (tree, path) =>
-  path.split(".").reduce((node, key) => (node == null ? undefined : node[key]), tree);
+  path
+    .split(".")
+    .reduce((node, key) => (node == null ? undefined : node[key]), tree);
 
 /** Leaf names (dot-joined, relative to the slice root) defined under a subtree. */
 function leafNames(slice) {
-  return new Set([...walkTokens(slice ?? {})].map(({ path }) => path.join(".")));
+  return new Set(
+    [...walkTokens(slice ?? {})].map(({ path }) => path.join("."))
+  );
 }
 
 export function validate(tokens) {
@@ -49,7 +55,11 @@ export function validate(tokens) {
     const id = path.join(".");
     const root = ROOTS[path[0]];
     if (!root) {
-      fail("unknown-root", id, `"${path[0]}" is not a token root declared in axes.mjs`);
+      fail(
+        "unknown-root",
+        id,
+        `"${path[0]}" is not a token root declared in axes.mjs`
+      );
       continue;
     }
     const value = token.$value;
@@ -57,18 +67,30 @@ export function validate(tokens) {
 
     if (root.layer === "primitive") {
       if (refs.length) {
-        fail("primitive-holds-reference", id,
-          `primitives are raw scales and must be literal, but this references ${refs.map((r) => `{${r}}`).join(", ")}`);
+        fail(
+          "primitive-holds-reference",
+          id,
+          `primitives are raw scales and must be literal, but this references ${refs.map((r) => `{${r}}`).join(", ")}`
+        );
       }
     } else {
       if (!PURE_REF.test(String(value))) {
-        fail(root.layer === "semantic" ? "semantic-holds-literal" : "component-holds-literal", id,
-          `${root.layer} tokens must be a single reference, got ${JSON.stringify(value)}`);
+        fail(
+          root.layer === "semantic"
+            ? "semantic-holds-literal"
+            : "component-holds-literal",
+          id,
+          `${root.layer} tokens must be a single reference, got ${JSON.stringify(value)}`
+        );
       }
       for (const ref of refs) {
         const target = ROOTS[ref.split(".")[0]];
         if (!target) {
-          fail("broken-reference", id, `{${ref}} does not start at a known token root`);
+          fail(
+            "broken-reference",
+            id,
+            `{${ref}} does not start at a known token root`
+          );
           continue;
         }
         if (lookup(tokens, ref) === undefined) {
@@ -77,21 +99,38 @@ export function validate(tokens) {
         }
         if (root.layer === "semantic") {
           if (target.axisDepth > 0) {
-            fail("semantic-references-axis-scoped", id,
-              `{${ref}} is scoped to the ${target.axes.join("/")} axis; reference the axis-free \`sem.*\` name instead, or a primitive`);
+            fail(
+              "semantic-references-axis-scoped",
+              id,
+              `{${ref}} is scoped to the ${target.axes.join("/")} axis; reference the axis-free \`sem.*\` name instead, or a primitive`
+            );
           } else if (target.layer === "component") {
-            fail("semantic-references-component", id, `{${ref}} points down a layer, into the component layer`);
+            fail(
+              "semantic-references-component",
+              id,
+              `{${ref}} points down a layer, into the component layer`
+            );
           }
         }
         if (root.layer === "component") {
           if (target.layer === "primitive") {
-            fail("component-references-primitive", id,
-              `{${ref}} skips the semantic layer — component tokens must go through \`sem.*\` so they follow every axis`);
+            fail(
+              "component-references-primitive",
+              id,
+              `{${ref}} skips the semantic layer — component tokens must go through \`sem.*\` so they follow every axis`
+            );
           } else if (target.layer === "component") {
-            fail("component-references-component", id, `{${ref}} chains component tokens; keep the component layer flat`);
+            fail(
+              "component-references-component",
+              id,
+              `{${ref}} chains component tokens; keep the component layer flat`
+            );
           } else if (target.axisDepth > 0) {
-            fail("component-references-axis-scoped", id,
-              `{${ref}} bakes in a single ${target.axes.join("/")} value; reference the axis-free \`sem.*\` name`);
+            fail(
+              "component-references-axis-scoped",
+              id,
+              `{${ref}} bakes in a single ${target.axes.join("/")} value; reference the axis-free \`sem.*\` name`
+            );
           }
         }
       }
@@ -100,46 +139,70 @@ export function validate(tokens) {
 
   // ---- completeness ------------------------------------------------------
   const baseline = leafNames(
-    tokens.semColor?.[DEFAULTS.theme]?.[DEFAULTS.appearance]?.[DEFAULTS.contrast]
+    tokens.semColor?.[DEFAULTS.theme]?.[DEFAULTS.appearance]?.[
+      DEFAULTS.contrast
+    ]
   );
   for (const theme of AXES.theme.values) {
     for (const appearance of AXES.appearance.values) {
       const full = tokens.semColor?.[theme]?.[appearance]?.[DEFAULTS.contrast];
       const slice = `semColor.${theme}.${appearance}.${DEFAULTS.contrast}`;
       if (!full) {
-        fail("incomplete-axis-value", slice, `theme "${theme}" does not define its ${appearance} baseline`);
+        fail(
+          "incomplete-axis-value",
+          slice,
+          `theme "${theme}" does not define its ${appearance} baseline`
+        );
         continue;
       }
       const have = leafNames(full);
       for (const name of baseline) {
         if (!have.has(name)) {
-          fail("incomplete-axis-value", `${slice}.${name}`,
-            `every theme must define the full semantic colour contract; "${name}" is missing`);
+          fail(
+            "incomplete-axis-value",
+            `${slice}.${name}`,
+            `every theme must define the full semantic colour contract; "${name}" is missing`
+          );
         }
       }
       // High contrast is a delta set, so it needs no completeness check — but it
       // may only override names the baseline actually has.
-      for (const name of leafNames(tokens.semColor?.[theme]?.[appearance]?.high)) {
+      for (const name of leafNames(
+        tokens.semColor?.[theme]?.[appearance]?.high
+      )) {
         if (!baseline.has(name)) {
-          fail("unknown-delta-token", `semColor.${theme}.${appearance}.high.${name}`,
-            `high-contrast deltas may only override baseline names; "${name}" is not one`);
+          fail(
+            "unknown-delta-token",
+            `semColor.${theme}.${appearance}.high.${name}`,
+            `high-contrast deltas may only override baseline names; "${name}" is not one`
+          );
         }
       }
     }
   }
 
-  for (const [root, axis] of [["semDim", "density"], ["semExpr", "theme"]]) {
+  for (const [root, axis] of [
+    ["semDim", "density"],
+    ["semExpr", "theme"],
+  ]) {
     const required = leafNames(tokens[root]?.[DEFAULTS[axis]]);
     for (const value of AXES[axis].values) {
       const have = leafNames(tokens[root]?.[value]);
       if (have.size === 0) {
-        fail("incomplete-axis-value", `${root}.${value}`, `${axis} value "${value}" defines no tokens`);
+        fail(
+          "incomplete-axis-value",
+          `${root}.${value}`,
+          `${axis} value "${value}" defines no tokens`
+        );
         continue;
       }
       for (const name of required) {
         if (!have.has(name)) {
-          fail("incomplete-axis-value", `${root}.${value}.${name}`,
-            `every ${axis} value must define the full set; "${name}" is missing`);
+          fail(
+            "incomplete-axis-value",
+            `${root}.${value}.${name}`,
+            `every ${axis} value must define the full set; "${name}" is missing`
+          );
         }
       }
     }
@@ -157,7 +220,8 @@ export function reportProblems(problems) {
   const lines = [];
   for (const [rule, items] of [...byRule].sort()) {
     lines.push(`\n  ${rule}  (${items.length})`);
-    for (const { token, detail } of items.slice(0, 12)) lines.push(`    ${token}\n      ${detail}`);
+    for (const { token, detail } of items.slice(0, 12))
+      lines.push(`    ${token}\n      ${detail}`);
     if (items.length > 12) lines.push(`    … and ${items.length - 12} more`);
   }
   return lines.join("\n");

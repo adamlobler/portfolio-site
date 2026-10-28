@@ -32,7 +32,14 @@ export default function HeroScene({ scene }: { scene: string }) {
        * loaded hero looks exactly as it did before.
        */}
       <div
-        className={`absolute w-screen h-full bg-gray-800 transition-opacity duration-1000 ease-out ${
+        /**
+         * `surface-inverse` in light and `surface-base` in dark both resolve
+         * to the theme's darkest surface, which is what the white headline
+         * needs behind it either way — the Spline canvas is transparent, so
+         * this is the only thing between the text and the page. Phase 4
+         * replaces the lot.
+         */
+        className={`absolute w-screen h-full bg-surface-inverse dark:bg-surface-base transition-opacity duration-1000 ease-out ${
           isLoaded ? "opacity-0" : "opacity-100"
         }`}
       />
@@ -47,7 +54,7 @@ export default function HeroScene({ scene }: { scene: string }) {
       >
         <SplineCanvas scene={scene} onLoad={() => setIsLoaded(true)} />
       </div>
-      <div className="absolute w-screen z-0 bottom-0 h-[60px] bg-white dark:bg-black" />
+      <div className="absolute w-screen z-0 bottom-0 h-[60px] bg-surface-base" />
     </div>
   );
 }

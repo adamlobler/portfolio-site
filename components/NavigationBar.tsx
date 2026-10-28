@@ -1,111 +1,117 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+
 import Socials from "./Socials";
 import ThemeSwitch from "./theme/ThemeSwitch";
-import Link from "next/link";
+import Button from "./ui/Button";
+import { useDialog } from "../lib/a11y/dialog";
 
 const navigationItems = [
-  {
-    name: "Home",
-    link: "/",
-  },
-  /*}
-  {
-    name: "About",
-    link: "/",
-  },*/
-  {
-    name: "Projects",
-    link: "/works",
-  },
+  { name: "Home", link: "/" },
+  { name: "Projects", link: "/works" },
+  { name: "Playground", link: "/playground" },
 ];
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   /**
-   * The body lock used to be written here from the *pre-update* `isOpen`, so
-   * it set the value for the state it was leaving rather than the one it was
-   * entering — the page scrolled while the menu was open and locked once it
-   * closed. It also hard-coded `overflow: scroll` on the way out instead of
-   * handing the property back to the stylesheet.
+   * The sheet is a dialog, so it gets dialog behaviour: focus is contained,
+   * Escape closes, the body is locked while it is open and the toggle gets
+   * focus back on the way out. All four come from `lib/a11y/dialog`, which is
+   * also where the body-lock bug from phase 1 is actually fixed — the old
+   * effect here wrote the lock from the pre-update state and handed back a
+   * hard-coded `overflow: scroll`.
    */
-  useEffect(() => {
-    if (!isOpen) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previous;
-    };
-  }, [isOpen]);
+  const { ref, onBackdropClick } = useDialog({
+    open: isOpen,
+    onClose: () => setIsOpen(false),
+  });
 
-  const toggleNavbar = () => setIsOpen((open) => !open);
+  /** A route change while the sheet is open means a link inside it was used. */
+  useEffect(() => setIsOpen(false), [pathname]);
+
+  const current = (link: string) => (pathname === link ? "page" : undefined);
+
   return (
-    <nav className="bg-white pl-4 px-2 sm:px-4 py-2 dark:bg-gray-900 overflow-hidden w-full top-0 left-0 max-h-screen z-50">
-      <div className="container flex flex-wrap items-center justify-between max-w-[1800px] mx-auto">
+    <nav className="site-nav" aria-label="Main">
+      <div className="container mx-auto flex max-w-page flex-wrap items-center justify-between">
         <Link href="/" className="flex items-center">
-          <span className="text-button font-semibold whitespace-nowrap dark:text-white">
+          <span className="text-button font-semibold whitespace-nowrap text-content-primary">
             Adam Lobler
-            <span className="text-gray-500 dark:text-gray-400 font-medium">
+            <span className="font-medium text-content-muted">
               {" "}
               | product designer
             </span>
           </span>
         </Link>
-        <div className="flex justify-center items-center">
-          {/*Desktop navbar items*/}
-          <div className="items-center justify-between hidden w-full md:flex md:w-auto mr-8">
-            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
-              {navigationItems.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href={item.link}
-                    className="text-body2 block py-2 pl-3 pr-4 bg-primary-700 rounded-sm md:bg-transparent md:text-black dark:md:text-white hover:text-primary-500 md:p-0 dark:text-white"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex justify-center items-center">
+
+        <div className="flex items-center justify-center">
+          {/* Desktop navigation */}
+          <ul className="mr-8 hidden items-center gap-inline-md md:flex">
+            {navigationItems.map((item) => (
+              <li key={item.link}>
+                <Link
+                  href={item.link}
+                  className="nav-link block"
+                  aria-current={current(item.link)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center justify-center gap-inline-xs">
             <ThemeSwitch />
-            <Link className="btn-primary hidden md:block" href="/contact">
+            <Button href="/contact" className="hidden md:inline-flex">
               Get in touch!
-            </Link>
+            </Button>
             <button
-              onClick={() => toggleNavbar()}
-              data-collapse-toggle="navbar-sticky"
+              onClick={() => setIsOpen((open) => !open)}
               type="button"
-              className="inline-flex items-center p-2 text-sm text-primary-500 dark:text-primary-400 rounded-xs md:hidden hover:bg-primary-50 dark:hover:bg-primary-800 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800 ml-2"
-              aria-controls="navbar-sticky"
+              className="inline-flex items-center rounded-control p-2 text-accent-default md:hidden"
+              aria-controls="navbar-sheet"
               aria-expanded={isOpen}
-              title="Menu button"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
-              <Bars3Icon className="w-8 h-8" />
+              {isOpen ? (
+                <XMarkIcon className="h-8 w-8" />
+              ) : (
+                <Bars3Icon className="h-8 w-8" />
+              )}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile sheet */}
       <div
-        className={`${
+        ref={ref}
+        id="navbar-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site menu"
+        tabIndex={-1}
+        onClick={onBackdropClick}
+        className={
           isOpen
-            ? "flex md:hidden overflow-hidden flex-col items-center justify-center slide-in w-full h-screen space-y-8 px-4 pb-12"
+            ? "nav-overlay flex h-screen w-full flex-col items-center justify-center gap-stack-lg px-gutter pb-12 md:hidden"
             : "hidden"
-        }`}
-        id="navbar-sticky"
+        }
       >
-        {/*Mobile navbar items*/}
-        <ul className="flex flex-col rounded-lg md:flex-row space-y-2">
-          {navigationItems.map((item, index) => (
-            <li key={index}>
+        <ul className="flex flex-col gap-stack-xs md:flex-row">
+          {navigationItems.map((item) => (
+            <li key={item.link}>
               <Link
                 href={item.link}
-                className="text-subtitle1 text-center block py-6 text-black  md:bg-transparent dark:text-white md:p-0"
-                aria-current="page"
-                onClick={() => toggleNavbar()}
+                className="nav-link block py-6 text-center text-subtitle1"
+                aria-current={current(item.link)}
               >
                 {item.name}
               </Link>
@@ -116,9 +122,9 @@ const NavigationBar = () => {
         <div className="pt-14">
           <Socials />
         </div>
-        <Link className="btn-primary w-full mx-8" href="/contact">
+        <Button href="/contact" block className="mx-8">
           Get in touch!
-        </Link>
+        </Button>
       </div>
     </nav>
   );

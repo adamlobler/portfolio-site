@@ -27,7 +27,7 @@ export default function WorksPage() {
             alt=""
             priority
           />
-          <div className="flex w-full space-y-2 max-w-5xl text-left xl:max-w-7xl flex-1 flex-col items-start justify-center px-4 md:px-16 2xl:px-0 py-8">
+          <div className="flex w-full space-y-2 max-w-5xl text-left xl:max-w-page flex-1 flex-col items-start justify-center px-4 md:px-16 2xl:px-0 py-8">
             <Fade triggerOnce direction="up">
               <h1 className="text-h3 md:text-h1 text-white drop-shadow-2xl md:mb-4">
                 Projects
@@ -42,7 +42,7 @@ export default function WorksPage() {
           </div>
         </div>
       </Fade>
-      <section className="flex max-w-5xl text-left xl:max-w-7xl w-full flex-1 flex-col items-center justify-center px-6 md:px-16 2xl:px-0 py-16">
+      <section className="flex max-w-5xl text-left xl:max-w-page w-full flex-1 flex-col items-center justify-center px-6 md:px-16 2xl:px-0 py-16">
         <div className="grid w-full xl:grid-cols-1 lg:gap-48 gap-16 xl:pb-48">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />

@@ -52,13 +52,15 @@ const PAIRS = [
 
 /** WCAG is the gate; APCA is advisory unless --strict-apca. */
 const THRESHOLDS = {
-  body:    { wcag: 4.5, apca: 60, label: "body text" },
+  body: { wcag: 4.5, apca: 60, label: "body text" },
   control: { wcag: 4.5, apca: 60, label: "control label" },
   nontext: { wcag: 3.0, apca: 30, label: "non-text" },
 };
 
 const lookup = (tree, path) =>
-  path.split(".").reduce((node, key) => (node == null ? undefined : node[key]), tree);
+  path
+    .split(".")
+    .reduce((node, key) => (node == null ? undefined : node[key]), tree);
 
 /** Follow a chain of pure references down to a literal primitive value. */
 function resolveLiteral(tokens, value, seen = new Set()) {
@@ -82,8 +84,9 @@ function resolveLiteral(tokens, value, seen = new Set()) {
 function semanticValue(tokens, { theme, appearance, contrast }, name) {
   const base = `semColor.${theme}.${appearance}`;
   const node =
-    (contrast !== DEFAULTS.contrast ? lookup(tokens, `${base}.${contrast}.${name}`) : undefined) ??
-    lookup(tokens, `${base}.${DEFAULTS.contrast}.${name}`);
+    (contrast !== DEFAULTS.contrast
+      ? lookup(tokens, `${base}.${contrast}.${name}`)
+      : undefined) ?? lookup(tokens, `${base}.${DEFAULTS.contrast}.${name}`);
   if (!node) throw new Error(`No semantic colour "${name}" in ${base}`);
   return resolveLiteral(tokens, node.$value);
 }
@@ -100,19 +103,27 @@ function parse(value) {
 
 /** Source-over composite of `top` onto an opaque `under`. */
 const composite = ({ rgb, alpha }, under) =>
-  alpha >= 1 ? rgb : rgb.map((v, i) => Math.round(v * alpha + under[i] * (1 - alpha)));
+  alpha >= 1
+    ? rgb
+    : rgb.map((v, i) => Math.round(v * alpha + under[i] * (1 - alpha)));
 
 /** Flatten a semantic colour down its real backdrop stack to an opaque RGB. */
 function flatten(tokens, combo, name) {
   const root = ROOT_BACKDROP[combo.appearance];
-  const base = composite(parse(semanticValue(tokens, combo, "surface.base")), root);
+  const base = composite(
+    parse(semanticValue(tokens, combo, "surface.base")),
+    root
+  );
   if (name === "surface.base") return base;
   return composite(parse(semanticValue(tokens, combo, name)), base);
 }
 
-const srgbToLin = (c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+const srgbToLin = (c) =>
+  c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
 const luminance = ([r, g, b]) =>
-  0.2126 * srgbToLin(r / 255) + 0.7152 * srgbToLin(g / 255) + 0.0722 * srgbToLin(b / 255);
+  0.2126 * srgbToLin(r / 255) +
+  0.7152 * srgbToLin(g / 255) +
+  0.0722 * srgbToLin(b / 255);
 
 function wcagRatio(a, b) {
   const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
@@ -138,7 +149,11 @@ export function checkContrast(tokens, { strictApca = false } = {}) {
             bg = flatten(tokens, combo, bgName);
             fg = composite(parse(semanticValue(tokens, combo, fgName)), bg);
           } catch (error) {
-            failures.push({ where, pair: `${fgName} on ${bgName}`, detail: error.message });
+            failures.push({
+              where,
+              pair: `${fgName} on ${bgName}`,
+              detail: error.message,
+            });
             continue;
           }
           checked += 1;
@@ -151,7 +166,8 @@ export function checkContrast(tokens, { strictApca = false } = {}) {
             detail: `WCAG ${ratio.toFixed(2)}:1 (needs ${limit.wcag}) · APCA Lc ${lc.toFixed(0)} (wants ${limit.apca})`,
           };
           if (ratio < limit.wcag) failures.push(entry);
-          else if (lc < limit.apca) (strictApca ? failures : warnings).push(entry);
+          else if (lc < limit.apca)
+            (strictApca ? failures : warnings).push(entry);
         }
       }
     }
@@ -160,4 +176,9 @@ export function checkContrast(tokens, { strictApca = false } = {}) {
 }
 
 export const reportContrast = (items) =>
-  items.map(({ where, pair, detail }) => `    ${where.padEnd(26)} ${pair.padEnd(46)} ${detail}`).join("\n");
+  items
+    .map(
+      ({ where, pair, detail }) =>
+        `    ${where.padEnd(26)} ${pair.padEnd(46)} ${detail}`
+    )
+    .join("\n");

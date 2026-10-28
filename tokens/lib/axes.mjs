@@ -48,12 +48,17 @@ export const AXES = {
 
 /** Token tree roots, and how many leading path segments are axis coordinates. */
 export const ROOTS = {
-  prim:     { layer: "primitive", prefix: "prim", axisDepth: 0 },
-  sem:      { layer: "semantic",  prefix: "sem",  axisDepth: 0 },
-  semColor: { layer: "semantic",  prefix: "sem",  axisDepth: 3, axes: ["theme", "appearance", "contrast"] },
-  semDim:   { layer: "semantic",  prefix: "sem",  axisDepth: 1, axes: ["density"] },
-  semExpr:  { layer: "semantic",  prefix: "sem",  axisDepth: 1, axes: ["theme"] },
-  cmp:      { layer: "component", prefix: "cmp", axisDepth: 0 },
+  prim: { layer: "primitive", prefix: "prim", axisDepth: 0 },
+  sem: { layer: "semantic", prefix: "sem", axisDepth: 0 },
+  semColor: {
+    layer: "semantic",
+    prefix: "sem",
+    axisDepth: 3,
+    axes: ["theme", "appearance", "contrast"],
+  },
+  semDim: { layer: "semantic", prefix: "sem", axisDepth: 1, axes: ["density"] },
+  semExpr: { layer: "semantic", prefix: "sem", axisDepth: 1, axes: ["theme"] },
+  cmp: { layer: "component", prefix: "cmp", axisDepth: 0 },
 };
 
 export const DEFAULTS = Object.fromEntries(
@@ -87,7 +92,11 @@ export function colorSelector({ theme, appearance, contrast }) {
 export function selectorFor(root, coords) {
   switch (root) {
     case "semColor":
-      return colorSelector({ theme: coords[0], appearance: coords[1], contrast: coords[2] });
+      return colorSelector({
+        theme: coords[0],
+        appearance: coords[1],
+        contrast: coords[2],
+      });
     case "semDim":
       return `[data-density="${coords[0]}"]`;
     case "semExpr":

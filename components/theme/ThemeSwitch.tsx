@@ -4,8 +4,8 @@ import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import { useAxis } from "../../lib/theme/store";
 
 /**
- * The appearance axis only — the full four-axis control is the phase 5
- * playground.
+ * The appearance axis only — the quick toggle people expect in a nav bar. The
+ * full four-axis control lives at `/playground`.
  *
  * Both icons are always rendered and the `dark:` variant picks one, so the
  * markup does not depend on the current appearance. That is what lets this
@@ -22,12 +22,12 @@ export default function ThemeSwitch() {
       type="button"
       id="theme-switcher"
       onClick={() => setAppearance(appearance === "dark" ? "light" : "dark")}
-      className="m-4 inline-flex h-6 w-6 items-center justify-center"
+      className="m-4 inline-flex h-6 w-6 items-center justify-center text-content-secondary transition-colors hover:text-content-primary"
       title="Switch between light and dark"
       aria-label="Switch between light and dark"
     >
-      <MoonIcon className="h-6 w-6 text-gray-500 dark:hidden" />
-      <SunIcon className="hidden h-6 w-6 text-gray-100 dark:block" />
+      <MoonIcon className="h-6 w-6 dark:hidden" />
+      <SunIcon className="hidden h-6 w-6 dark:block" />
     </button>
   );
 }

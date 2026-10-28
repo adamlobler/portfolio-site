@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "../components/ui/Button";
 
 /**
  * Root-level, so it also covers unknown case-study slugs — `[slug]` sets
@@ -7,14 +7,14 @@ import Link from "next/link";
  */
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen dark:bg-black flex-col items-center justify-center gap-6 px-6 text-center">
-      <h1 className="text-h3 md:text-h1 dark:text-white">Page not found</h1>
-      <p className="text-subtitle2 text-gray-600 dark:text-gray-300">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-stack-lg bg-surface-base px-gutter text-center">
+      <h1 className="text-h3 text-content-primary md:text-h1">
+        Page not found
+      </h1>
+      <p className="text-subtitle2 text-content-muted">
         That page does not exist — it may have moved.
       </p>
-      <Link className="btn-primary" href="/">
-        Back to the homepage
-      </Link>
+      <Button href="/">Back to the homepage</Button>
     </main>
   );
 }

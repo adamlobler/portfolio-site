@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import Button from "./ui/Button";
 
 import HeroScene from "./HeroScene";
 
@@ -29,7 +29,7 @@ const Hero = () => {
         type="application/octet-stream"
         crossOrigin="anonymous"
       />
-      <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-gray-800 relative flex-col w-screen h-[calc(100vh-76px)] min-h-[600px] lg:min-h-[800px] justify-center items-center">
+      <section className="flex bg-[radial-gradient(120%_100%_at_50%_30%,rgba(240,241,243,0)_0%,rgba(15,10,70,0.4)_50%,rgba(240,241,243,0)_100%)] dark:bg-surface-raised relative flex-col w-screen h-[calc(100vh-76px)] min-h-[600px] lg:min-h-[800px] justify-center items-center">
         <HeroScene scene={SCENE} />
 
         {/* Text content and buttons — in the static HTML, ungated. */}
@@ -47,24 +47,29 @@ const Hero = () => {
           <div className="hero-reveal hero-reveal--late">
             {/*Mobile CTAs */}
             <div className="flex pointer-events-auto md:hidden w-full items-center flex-col mt-8">
-              <Link className="btn-primary lg:hidden w-full" href="/contact">
+              <Button href="/contact" block className="lg:hidden">
                 Get in touch!
-              </Link>
+              </Button>
               <div className="pr-6 pb-4 lg:pb-0" />
-              <Link className="btn-secondary w-full" href="/works">
+              <Button href="/works" variant="secondary" block>
                 Discover projects
-              </Link>
+              </Button>
             </div>
 
             {/*Desktop CTAs*/}
             <div className="hidden pointer-events-auto my-4 md:flex w-full max-w-sm items-center lg:max-w-none flex-col lg:flex-row">
-              <Link className="btn-primary w-full lg:w-fit" href="/contact">
+              <Button href="/contact" block className="lg:w-fit">
                 Get in touch!
-              </Link>
+              </Button>
               <div className="pr-6 pb-4 lg:pb-0" />
-              <Link className="btn-secondary w-full lg:w-fit" href="/works">
+              <Button
+                href="/works"
+                variant="secondary"
+                block
+                className="lg:w-fit"
+              >
                 Discover projects
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -1,0 +1,37 @@
+{
+  "cmp": {
+    "tag": {
+      "$description": "The chip used for case-study tags. Two variants — an outline chip on the page surface and a solid accent chip — plus the geometry they share. Both read the same semantic names the button does, so a tag is hard-edged in `brutalist` and pill-shaped in `solar` with nothing here changing.",
+      "outline": {
+        "bg": { "$value": "{sem.surface.base}", "$type": "color" },
+        "fg": { "$value": "{sem.content.secondary}", "$type": "color" },
+        "border-color": { "$value": "{sem.border.default}", "$type": "color" }
+      },
+      "solid": {
+        "bg": { "$value": "{sem.accent.subtle}", "$type": "color" },
+        "fg": { "$value": "{sem.accent.strong}", "$type": "color" },
+        "border-color": { "$value": "{sem.accent.subtle}", "$type": "color" }
+      },
+      "radius": { "$value": "{sem.radius.control}", "$type": "dimension" },
+      "pad-x": { "$value": "{sem.space.inline-sm}", "$type": "dimension" },
+      "pad-y": { "$value": "{sem.space.stack-xs}", "$type": "dimension" },
+      "gap": { "$value": "{sem.space.inline-xs}", "$type": "dimension" },
+      "font-size": { "$value": "{sem.text.button.size}", "$type": "dimension" },
+      "font-family": { "$value": "{sem.font.body}", "$type": "fontFamily" },
+      "font-weight": {
+        "$value": "{sem.text.button.weight}",
+        "$type": "fontWeight"
+      },
+      "leading": { "$value": "{sem.text.button.leading}", "$type": "number" },
+      "tracking": {
+        "$value": "{sem.text.button.tracking}",
+        "$type": "dimension"
+      },
+      "border-width": {
+        "$value": "{sem.stroke.width-hairline}",
+        "$type": "dimension"
+      },
+      "border-style": { "$value": "{sem.stroke.style}", "$type": "strokeStyle" }
+    }
+  }
+}

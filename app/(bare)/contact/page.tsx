@@ -4,6 +4,7 @@ import Img from "../../../components/Img";
 import Socials from "../../../components/Socials";
 import { Fade } from "../../../components/client/Reveal";
 import Background from "../../../public/img/gradient.webp";
+import Button from "../../../components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -30,7 +31,7 @@ export default function ContactPage() {
             src={Background}
             placeholder="blur"
           />
-          <div className="flex max-w-4xl z-10 xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:pb-32">
+          <div className="flex max-w-4xl z-10 xl:max-w-page flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:pb-32">
             <div className="flex flex-col items-start space-y-8 md:space-y-12">
               <h1 className="text-h2 md:text-h1 text-white drop-shadow-xs">
                 Looking for help with design?
@@ -38,12 +39,12 @@ export default function ContactPage() {
               <p className="text-subtitle1 md:text-h5 text-white drop-shadow-md">
                 Send me an e-mail and discuss the details!
               </p>
-              <a
+              <Button
                 href="mailto:contact@adamlobler.com"
-                className="flex max-w-xs min-w-[180px] w-full md:w-auto hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-xs transition-all duration-300"
+                className="max-w-xs min-w-[180px] w-full md:w-auto"
               >
                 Contact me!
-              </a>
+              </Button>
             </div>
             <div className="flex flex-col space-y-4 xl:items-end w-fit">
               <p className="text-subtitle2 text-white pb-8 text-left uppercase">

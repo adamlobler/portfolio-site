@@ -12,7 +12,7 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen dark:bg-black flex-col items-center justify-center transition-all duration-300">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-surface-base">
       <NavigationBar />
       <ParallaxBoundary>
         <main className="flex flex-col items-center justify-center">

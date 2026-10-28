@@ -22,9 +22,13 @@ const toOklch = converter("oklch");
 const STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 
 /** Fixed lightness curve shared by every derived ramp. */
-const LIGHTNESS = [0.975, 0.94, 0.885, 0.825, 0.75, 0.665, 0.58, 0.49, 0.405, 0.32, 0.22];
+const LIGHTNESS = [
+  0.975, 0.94, 0.885, 0.825, 0.75, 0.665, 0.58, 0.49, 0.405, 0.32, 0.22,
+];
 /** Chroma multiplier — peaks at 500, collapses at both ends. */
-const CHROMA_CURVE = [0.18, 0.34, 0.6, 0.82, 0.96, 1, 0.94, 0.82, 0.66, 0.5, 0.34];
+const CHROMA_CURVE = [
+  0.18, 0.34, 0.6, 0.82, 0.96, 1, 0.94, 0.82, 0.66, 0.5, 0.34,
+];
 
 const round = (n, p = 4) => Number(n.toFixed(p));
 
@@ -55,28 +59,69 @@ const RAMPS = {
   neutral: {
     $description: "Cool grey. The site's existing `gray` scale, adopted as-is.",
     steps: adopt({
-      50: "#F0F1F3", 100: "#E0E1E7", 200: "#C1C3CE", 300: "#A2A5B6",
-      400: "#83879D", 500: "#646985", 600: "#4B4F64", 700: "#323543",
-      800: "#191A21", 900: "#0A0B0D", 950: "#050507",
+      50: "#F0F1F3",
+      100: "#E0E1E7",
+      200: "#C1C3CE",
+      300: "#A2A5B6",
+      400: "#83879D",
+      500: "#646985",
+      600: "#4B4F64",
+      700: "#323543",
+      800: "#191A21",
+      900: "#0A0B0D",
+      950: "#050507",
     }),
   },
   violet: {
-    $description: "Brand violet. The site's existing `primary` scale, adopted as-is.",
+    $description:
+      "Brand violet. The site's existing `primary` scale, adopted as-is.",
     steps: adopt({
-      50: "#EEEAFE", 100: "#DCD5FB", 200: "#BAABF8", 300: "#9780F4",
-      400: "#7556F1", 500: "#522CED", 600: "#3E21B2", 700: "#291677",
-      800: "#150B3B", 900: "#080418", 950: "#04020C",
+      50: "#EEEAFE",
+      100: "#DCD5FB",
+      200: "#BAABF8",
+      300: "#9780F4",
+      400: "#7556F1",
+      500: "#522CED",
+      600: "#3E21B2",
+      700: "#291677",
+      800: "#150B3B",
+      900: "#080418",
+      950: "#04020C",
     }),
   },
   // --- derived ramps for the five new themes --------------------------------
-  steel: { $description: "Ink-blue accent for the `slate` editorial theme.", steps: derive({ hue: 248, chroma: 0.085 }) },
-  ink: { $description: "Near-achromatic ramp for `brutalist`; deliberately harsh.", steps: derive({ hue: 270, chroma: 0.008 }) },
-  electric: { $description: "High-voltage yellow accent for `brutalist`.", steps: derive({ hue: 102, chroma: 0.185 }) },
-  carbon: { $description: "Black-green neutral for the `terminal` theme.", steps: derive({ hue: 158, chroma: 0.032 }) },
-  phosphor: { $description: "CRT phosphor green accent for `terminal`.", steps: derive({ hue: 146, chroma: 0.19 }) },
-  stone: { $description: "Warm neutral for the `solar` theme.", steps: derive({ hue: 68, chroma: 0.022 }) },
-  amber: { $description: "Low-sun amber accent for `solar`.", steps: derive({ hue: 62, chroma: 0.17, hueShift: 26 }) },
-  azure: { $description: "Cold translucent blue accent for `glass`.", steps: derive({ hue: 232, chroma: 0.145 }) },
+  steel: {
+    $description: "Ink-blue accent for the `slate` editorial theme.",
+    steps: derive({ hue: 248, chroma: 0.085 }),
+  },
+  ink: {
+    $description: "Near-achromatic ramp for `brutalist`; deliberately harsh.",
+    steps: derive({ hue: 270, chroma: 0.008 }),
+  },
+  electric: {
+    $description: "High-voltage yellow accent for `brutalist`.",
+    steps: derive({ hue: 102, chroma: 0.185 }),
+  },
+  carbon: {
+    $description: "Black-green neutral for the `terminal` theme.",
+    steps: derive({ hue: 158, chroma: 0.032 }),
+  },
+  phosphor: {
+    $description: "CRT phosphor green accent for `terminal`.",
+    steps: derive({ hue: 146, chroma: 0.19 }),
+  },
+  stone: {
+    $description: "Warm neutral for the `solar` theme.",
+    steps: derive({ hue: 68, chroma: 0.022 }),
+  },
+  amber: {
+    $description: "Low-sun amber accent for `solar`.",
+    steps: derive({ hue: 62, chroma: 0.17, hueShift: 26 }),
+  },
+  azure: {
+    $description: "Cold translucent blue accent for `glass`.",
+    steps: derive({ hue: 232, chroma: 0.145 }),
+  },
 };
 
 /**
@@ -96,13 +141,19 @@ const color = {
   white: { $value: "#ffffff" },
   black: { $value: "#000000" },
   transparent: { $value: "transparent" },
-  alpha: { $description: "Neutral translucency steps, as percentages.", ...alpha },
+  alpha: {
+    $description: "Neutral translucency steps, as percentages.",
+    ...alpha,
+  },
 };
 
 for (const [name, { $description, steps }] of Object.entries(RAMPS)) {
   color[name] = { $description };
   for (const [step, oklch] of steps) {
-    color[name][step] = { $value: css(oklch), $description: formatHex(css(oklch)) ?? undefined };
+    color[name][step] = {
+      $value: css(oklch),
+      $description: formatHex(css(oklch)) ?? undefined,
+    };
   }
 }
 

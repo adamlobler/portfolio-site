@@ -10,8 +10,12 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "tokens": "node tokens/build.mjs",
-    "tokens:check": "node tokens/build.mjs --check"
+    "tokens:check": "node tokens/build.mjs --check",
+    "verify": "yarn tokens:check && yarn format:check && yarn lint && yarn typecheck"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -20,6 +24,7 @@
     "@splinetool/runtime": "^1.9.6",
     "@vercel/analytics": "^1.6.1",
     "@vercel/speed-insights": "^1.1.0",
+    "class-variance-authority": "^0.7.1",
     "gray-matter": "^4.0.3",
     "next": "15.5.28",
     "next-mdx-remote": "^6.0.0",
@@ -43,6 +48,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "15.5.28",
     "postcss": "^8.4.21",
+    "prettier": "^3.9.10",
     "style-dictionary": "^4.4.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"

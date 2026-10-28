@@ -30,7 +30,11 @@ function mergeGroups(dst, src) {
     if (META.has(key)) continue;
     if (dst[key] === undefined) {
       dst[key] = structuredClone(node);
-    } else if (typeof node === "object" && node !== null && !("$value" in node)) {
+    } else if (
+      typeof node === "object" &&
+      node !== null &&
+      !("$value" in node)
+    ) {
       mergeGroups(dst[key], node);
     }
   }

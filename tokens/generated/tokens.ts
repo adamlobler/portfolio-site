@@ -350,6 +350,23 @@ export const COMPONENT_TOKENS = [
   "cmp-section-max-width",
   "cmp-section-pad-x",
   "cmp-section-prose-width",
+  "cmp-tag-border-style",
+  "cmp-tag-border-width",
+  "cmp-tag-font-family",
+  "cmp-tag-font-size",
+  "cmp-tag-font-weight",
+  "cmp-tag-gap",
+  "cmp-tag-leading",
+  "cmp-tag-outline-bg",
+  "cmp-tag-outline-border-color",
+  "cmp-tag-outline-fg",
+  "cmp-tag-pad-x",
+  "cmp-tag-pad-y",
+  "cmp-tag-radius",
+  "cmp-tag-solid-bg",
+  "cmp-tag-solid-border-color",
+  "cmp-tag-solid-fg",
+  "cmp-tag-tracking",
 ] as const;
 export type ComponentToken = (typeof COMPONENT_TOKENS)[number];
 

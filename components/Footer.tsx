@@ -2,10 +2,11 @@ import React from "react";
 import Socials from "./Socials";
 import Img from "./Img";
 import Background from "../public/img/gradient.webp";
+import Button from "./ui/Button";
 
 const Footer = () => {
   return (
-    <footer className="flex  relative overflow-hidden flex-col w-full h-[680px] bg-[#341692] dark:bg-gray-900 items-center justify-center ">
+    <footer className="flex  relative overflow-hidden flex-col w-full h-[680px] bg-[#341692] dark:bg-surface-base items-center justify-center ">
       <Img
         className="absolute top-0 w-screen h-[680px] bg-[#341692]"
         src={Background}
@@ -15,7 +16,7 @@ const Footer = () => {
         alt="bg"
         placeholder="blur"
       />
-      <div className="flex max-w-4xl z-10 xl:max-w-7xl flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:py-32">
+      <div className="flex max-w-4xl z-10 xl:max-w-page flex-col xl:flex-row w-full space-y-16 xl:items-center justify-between px-4 py-16 md:py-32">
         <div className="flex flex-col items-start space-y-8">
           <h2 className="text-h2 xl:text-h1 text-white drop-shadow-xs">
             Looking for help with design?
@@ -23,12 +24,7 @@ const Footer = () => {
           <p className="text-subtitle1 text-white drop-shadow-md">
             Send me an e-mail and discuss the details!
           </p>
-          <a
-            href="mailto:contact@adamlobler.com"
-            className="flex hover:drop-shadow-2xl items-center justify-center bg-white text-button text-primary-500 py-4 px-6 rounded-xs transition-all duration-300"
-          >
-            Get in touch!
-          </a>
+          <Button href="mailto:contact@adamlobler.com">Get in touch!</Button>
         </div>
         <div className="flex flex-col xl:items-end w-fit">
           <p className="text-caption text-white pb-8 text-left uppercase">

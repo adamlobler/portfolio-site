@@ -1,8 +1,9 @@
 import Img from "./Img";
-import {StaticImageData} from "next/image";
+import { StaticImageData } from "next/image";
 import React from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Parallax } from "./client/Parallax";
+import Tag from "./ui/Tag";
 
 type Props = {
   path?: string;
@@ -40,37 +41,32 @@ const Project: React.FC<Props> = (props) => {
         alt="mobile_image"
         className={`${
           props.size == "large"
-            ? "flex xl:hidden overflow-hidden ease-in-out duration-500 border border-gray-100 dark:border-0 "
-            : "flex overflow-hidden ease-in-out duration-500 border border-gray-100 dark:border-0 "
+            ? "flex xl:hidden overflow-hidden ease-in-out duration-500 border border-border-subtle "
+            : "flex overflow-hidden ease-in-out duration-500 border border-border-subtle "
         }`}
         sizes="(max-width: 1028px) 85vw, 896px"
       />
       <div className="flex flex-col items-start space-y-4 px-4 md:px-0">
         <div className="flex space-x-4 items-center">
-          <h2 className="text-h5 dark:text-white md:text-h2 text-left lg:mr-6">
+          <h2 className="text-h5 text-content-primary md:text-h2 text-left lg:mr-6">
             {props.title}
           </h2>
           {props.size == "large" && (props.path || props.link) ? (
-            <ArrowRightIcon className="h-12 w-12 hidden lg:block text-primary-500 dark:text-primary-400 group-hover:ml-6 transition-all duration-500" />
+            <ArrowRightIcon className="h-12 w-12 hidden lg:block text-accent-default group-hover:ml-6 transition-all duration-500" />
           ) : (
             ""
           )}
         </div>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex flex-row flex-wrap gap-inline-xs">
           {props.tags.map((tag) => (
-            <p
-              key={tag}
-              className="text-button px-3 py-1 border rounded-sm mr-2 my-1 whitespace-nowrap"
-            >
-              {tag}
-            </p>
+            <Tag key={tag}>{tag}</Tag>
           ))}
         </div>
         <p
           className={`${
             props.size == "large"
-              ? "text-subtitle2 max-w-4xl md:text-subtitle1 text-gray-600 dark:text-gray-200 text-left"
-              : "text-subtitle2 max-w-4xl text-gray-600 dark:text-gray-200 text-left"
+              ? "text-subtitle2 max-w-4xl md:text-subtitle1 text-content-secondary text-left"
+              : "text-subtitle2 max-w-4xl text-content-secondary text-left"
           }`}
         >
           {props.description}

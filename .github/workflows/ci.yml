@@ -1,0 +1,57 @@
+# The first CI this repo has had. Four gates, cheapest first, and none of them
+# can be satisfied by a passing build alone:
+#
+#   tokens   the architecture validator and the contrast gate, over all 24
+#            colour worlds. This is the one that matters — it is what makes
+#            "component tokens may not reference primitives" and "every theme
+#            passes WCAG AA" enforceable claims rather than README prose.
+#   format   Prettier, over everything except the generated token output.
+#   lint     next/core-web-vitals.
+#   types    tsc --noEmit, which is also what proves the generated
+#            `tokens/generated/tokens.ts` still matches the code reading it.
+#
+# `yarn tokens:check` writes nothing, so a drifted `styles/tokens/*.css` would
+# still slip through — the build step after it regenerates them and the final
+# `git diff --exit-code` fails if the committed CSS is not what the JSON emits.
+name: CI
+
+on:
+  push:
+    branches: [main, develop, visual-update]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # .nvmrc pins 22; Tailwind v4's oxide binary needs >= 20.
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - name: Token architecture + contrast gates
+        run: yarn tokens:check
+
+      - name: Prettier
+        run: yarn format:check
+
+      - name: ESLint
+        run: yarn lint
+
+      - name: TypeScript
+        run: yarn typecheck
+
+      - name: Build
+        run: yarn build
+
+      - name: Generated token output is in sync with the JSON
+        run: git diff --exit-code -- styles/tokens tokens/generated
