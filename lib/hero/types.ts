@@ -48,8 +48,10 @@ export type HeroRenderer = {
   draw(frame: HeroFrame): void;
 };
 
+import type { TreatmentId } from "./ids";
+
 export type Treatment = {
-  id: string;
+  id: TreatmentId;
   label: string;
   /** One line, shown in `/lab` next to the canvas. */
   blurb: string;

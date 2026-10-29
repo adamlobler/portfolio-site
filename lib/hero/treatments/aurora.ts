@@ -21,7 +21,7 @@ type Blob = {
   fx: number;
   fy: number;
   phase: number;
-  /** Radius as a fraction of the canvas diagonal. */
+  /** Radius as a fraction of the canvas's long edge. */
   size: number;
   /**
    * Which palette entry, resolved per frame so a theme swap is free — and
@@ -126,19 +126,26 @@ export const aurora: Treatment = {
          */
         ctx.globalCompositeOperation = palette.isDark ? "lighter" : "multiply";
 
-        const diagonal = Math.hypot(width, height);
-
         for (const blob of BLOBS) {
-          // Kept inside the frame with a generous margin: a blob whose centre
-          // leaves the canvas reads as a wipe rather than as a light source.
+          /**
+           * The centres sweep past the half-way mark on both axes, so the
+           * light reaches the left and right edges of a wide hero instead of
+           * pooling in the middle. They stay inside the frame: a centre that
+           * leaves the canvas reads as a wipe rather than as a light source.
+           */
           const x =
             width *
-            (0.5 + 0.38 * Math.sin(time * blob.fx * Math.PI + blob.phase));
+            (0.5 + 0.52 * Math.sin(time * blob.fx * Math.PI + blob.phase));
           const y =
             height *
             (0.5 +
-              0.34 * Math.cos(time * blob.fy * Math.PI + blob.phase * 1.3));
-          const radius = diagonal * blob.size * 0.5;
+              0.42 * Math.cos(time * blob.fy * Math.PI + blob.phase * 1.3));
+          /**
+           * Sized off the long edge rather than the diagonal, so a 2560px
+           * hero gets proportionally wider blobs instead of the same ones
+           * with more gap between them.
+           */
+          const radius = Math.max(width, height) * blob.size * 0.62;
 
           const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
           gradient.addColorStop(0, blob.ink(palette));

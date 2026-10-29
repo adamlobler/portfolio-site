@@ -3,8 +3,9 @@
 import { useState } from "react";
 
 import HeroCanvas from "./HeroCanvas";
+import { setTreatmentChoice, useTreatmentChoice } from "../../lib/hero/choice";
 import type { EngineStats } from "../../lib/hero/engine";
-import { DEFAULT_TREATMENT, TREATMENTS } from "../../lib/hero/treatments";
+import { TREATMENTS } from "../../lib/hero/treatments";
 import AxisControls from "../playground/AxisControls";
 
 /**
@@ -24,6 +25,7 @@ export default function LabBench({
   sizes: Record<string, number>;
 }) {
   const [stats, setStats] = useState<Record<string, EngineStats>>({});
+  const chosen = useTreatmentChoice();
 
   return (
     <div className="flex flex-col gap-section">
@@ -32,7 +34,7 @@ export default function LabBench({
       <div className="grid gap-stack-lg lg:grid-cols-2">
         {TREATMENTS.map((treatment) => {
           const measured = stats[treatment.id];
-          const shipped = treatment.id === DEFAULT_TREATMENT.id;
+          const shipped = treatment.id === chosen;
 
           return (
             <article key={treatment.id} className="card gap-stack-sm">
@@ -40,9 +42,23 @@ export default function LabBench({
                 <h2 className="text-h6 text-content-primary">
                   {treatment.label}
                 </h2>
+                {/**
+                 * The pick is a visitor-side preference rather than a code
+                 * constant, so choosing here changes the homepage for this
+                 * browser with no rebuild — and the button is the state, so
+                 * there is no separate "current" badge to drift from it.
+                 */}
                 {shipped ? (
                   <span className="tag tag--solid">on the homepage</span>
-                ) : null}
+                ) : (
+                  <button
+                    type="button"
+                    className="btn btn--secondary btn--sm"
+                    onClick={() => setTreatmentChoice(treatment.id)}
+                  >
+                    Use on the homepage
+                  </button>
+                )}
               </header>
 
               <p className="text-body2 text-content-muted">{treatment.blurb}</p>
