@@ -21,8 +21,15 @@ const process = [
 const About = () => {
   return (
     <section className="flex w-full xl:h-screen space-y flex-col items-center justify-center xl:flex-row py-4 xl:py-32">
-      <div className="flex flex-col xl:w-full space-y-12 justify-start xl:mr-48">
-        <Fade triggerOnce>
+      <div className="flex flex-col xl:w-full justify-start xl:mr-48">
+        {/**
+         * The `space-y-12` lives on the reveal wrapper, not on this column.
+         * `react-awesome-reveal` wrapped *each* child in its own animated
+         * div, so the column had four children to space apart; the CSS
+         * reveal is one element around all four, and the spacing has to be
+         * inside it.
+         */}
+        <Fade triggerOnce className="flex flex-col space-y-12">
           <Img
             src={"/img/adam_lobler.webp"}
             className=" w-56 xl:w-[300px] rounded-sm"

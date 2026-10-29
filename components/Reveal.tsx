@@ -27,6 +27,11 @@ type Props = {
  * This is a server component: the content is in the HTML, visible, with no JS
  * involved at any point. The animation is a CSS scroll-driven one, guarded by
  * `@supports`, so a browser without it simply shows the content.
+ *
+ * One behavioural difference worth knowing: the library wrapped *each* child
+ * in its own animated element, so a parent's `space-y-*` applied between them.
+ * This wraps all children in one element. Give it the layout classes itself
+ * (`className="flex flex-col space-y-12"`) when it holds more than one child.
  */
 export function Fade({ children, className }: Props) {
   return (
