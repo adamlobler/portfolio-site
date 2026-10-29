@@ -4,8 +4,10 @@
  * — the theme now lives in CSS (`styles/globals.css` and the generated
  * `styles/tokens/*.css`).
  */
-export default {
+const config = {
   plugins: {
     "@tailwindcss/postcss": {},
   },
 };
+
+export default config;

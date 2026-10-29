@@ -6,7 +6,7 @@
 #            "component tokens may not reference primitives" and "every theme
 #            passes WCAG AA" enforceable claims rather than README prose.
 #   format   Prettier, over everything except the generated token output.
-#   lint     next/core-web-vitals.
+#   lint     next/core-web-vitals, through ESLint 9's flat config.
 #   types    tsc --noEmit, which is also what proves the generated
 #            `tokens/generated/tokens.ts` still matches the code reading it.
 #

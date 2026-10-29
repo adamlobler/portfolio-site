@@ -48,10 +48,5 @@ const SCRIPT = `(function(){try{var M=${JSON.stringify(
 )},r=document.documentElement,c=document.cookie.match(/(?:^|; )${AXIS_COOKIE}=([^;]*)/),p=c?decodeURIComponent(c[1]).split("."):[];for(var i=0;i<M.length;i++){var e=M[i],v=p[i];if(e.v.indexOf(v)<0){v=e.m&&window.matchMedia(e.m.q).matches?e.m.v:e.d}r.setAttribute(e.a,v)}}catch(_){}})()`;
 
 export default function ThemeScript() {
-  return (
-    <script
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: SCRIPT }}
-    />
-  );
+  return <script dangerouslySetInnerHTML={{ __html: SCRIPT }} />;
 }

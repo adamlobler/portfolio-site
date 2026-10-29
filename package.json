@@ -9,7 +9,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -37,6 +37,7 @@
     "yet-another-react-lightbox": "^3.32.2"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
     "@svgr/webpack": "^6.5.1",
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
@@ -45,7 +46,7 @@
     "@types/react-dom": "^19.3.0",
     "apca-w3": "^0.1.9",
     "culori": "^4.0.2",
-    "eslint": "^8.57.1",
+    "eslint": "^9",
     "eslint-config-next": "15.5.28",
     "postcss": "^8.4.21",
     "prettier": "^3.9.10",
