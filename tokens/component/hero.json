@@ -14,7 +14,7 @@
       "stroke-width":  { "$value": "{sem.stroke.width-emphasis}", "$type": "dimension" },
       "pad-x":         { "$value": "{sem.space.gutter}", "$type": "dimension" },
       "gap":           { "$value": "{sem.space.stack-lg}", "$type": "dimension" },
-      "max-width":     { "$value": "{sem.measure.wide}", "$type": "dimension" },
+      "max-width":     { "$value": "{sem.measure.page}", "$type": "dimension" },
       "tracking":      { "$value": "{sem.tracking.display}", "$type": "dimension" },
       "font-family":   { "$value": "{sem.font.display}", "$type": "fontFamily" },
       "font-weight":   { "$value": "{sem.weight.display}", "$type": "fontWeight" },

@@ -791,7 +791,7 @@
       "tailwind": null,
       "varies": [],
       "values": {
-        "*": "{sem.measure.wide}"
+        "*": "{sem.measure.page}"
       }
     },
     "cmp-hero-pad-x": {

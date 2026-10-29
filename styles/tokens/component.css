@@ -85,7 +85,7 @@
   --cmp-hero-stroke-width: var(--sem-stroke-width-emphasis);
   --cmp-hero-pad-x: var(--sem-space-gutter);
   --cmp-hero-gap: var(--sem-space-stack-lg);
-  --cmp-hero-max-width: var(--sem-measure-wide);
+  --cmp-hero-max-width: var(--sem-measure-page);
   --cmp-hero-tracking: var(--sem-tracking-display);
   --cmp-hero-font-family: var(--sem-font-display);
   --cmp-hero-font-weight: var(--sem-weight-display);
