@@ -15,7 +15,9 @@ export default function SiteLayout({
     <div className="flex min-h-screen flex-col items-center justify-center bg-surface-base">
       <NavigationBar />
       <ParallaxBoundary>
-        <main className="flex flex-col items-center justify-center">
+        {/* `w-full` so a full-bleed child (the hero) can be `width: 100%`
+            rather than `100vw`, which overflows by the scrollbar width. */}
+        <main className="flex w-full flex-col items-center justify-center">
           {children}
         </main>
       </ParallaxBoundary>

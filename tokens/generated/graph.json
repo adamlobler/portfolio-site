@@ -644,6 +644,186 @@
         "*": "{sem.tracking.display}"
       }
     },
+    "cmp-hero-bg": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.surface.sunken}"
+      }
+    },
+    "cmp-hero-bg-accent": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.surface.base}"
+      }
+    },
+    "cmp-hero-duration": {
+      "layer": "component",
+      "type": "duration",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.motion.duration-slow}"
+      }
+    },
+    "cmp-hero-easing": {
+      "layer": "component",
+      "type": "cubicBezier",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.motion.ease-entrance}"
+      }
+    },
+    "cmp-hero-fg": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.primary}"
+      }
+    },
+    "cmp-hero-fg-muted": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.content.secondary}"
+      }
+    },
+    "cmp-hero-font-family": {
+      "layer": "component",
+      "type": "fontFamily",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.font.display}"
+      }
+    },
+    "cmp-hero-font-weight": {
+      "layer": "component",
+      "type": "fontWeight",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.weight.display}"
+      }
+    },
+    "cmp-hero-gap": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.space.stack-lg}"
+      }
+    },
+    "cmp-hero-glow": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.accent.subtle}"
+      }
+    },
+    "cmp-hero-grid": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.border.subtle}"
+      }
+    },
+    "cmp-hero-ink-primary": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.accent.default}"
+      }
+    },
+    "cmp-hero-ink-secondary": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.surface.brand}"
+      }
+    },
+    "cmp-hero-ink-tertiary": {
+      "layer": "component",
+      "type": "color",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.accent.strong}"
+      }
+    },
+    "cmp-hero-max-width": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.measure.wide}"
+      }
+    },
+    "cmp-hero-pad-x": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.space.gutter}"
+      }
+    },
+    "cmp-hero-stroke-width": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.stroke.width-emphasis}"
+      }
+    },
+    "cmp-hero-tracking": {
+      "layer": "component",
+      "type": "dimension",
+      "group": "hero",
+      "tailwind": null,
+      "varies": [],
+      "values": {
+        "*": "{sem.tracking.display}"
+      }
+    },
     "cmp-input-bg": {
       "layer": "component",
       "type": "color",

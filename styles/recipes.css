@@ -297,6 +297,135 @@
     color: var(--cmp-tag-solid-fg);
   }
 
+  /* -- Hero -------------------------------------------------------------- */
+  /**
+   * The homepage hero, where the Spline scene used to be.
+   *
+   * Three layers, and only the middle one needs JavaScript:
+   *
+   *   .hero__backdrop  a two-stop gradient, in the server HTML. This is the
+   *                    hero with JS off, under `prefers-reduced-motion`, and
+   *                    for the moment before the canvas chunk lands.
+   *   .hero__canvas    the animation, faded in once it has painted a frame.
+   *                    Transparent, so it composites onto the gradient.
+   *   .hero__content   the headline and the CTAs, never gated on either.
+   *
+   * The height used to be `calc(100vh - 76px)` with the nav's height written
+   * out as a number; it is now the nav's own token, so the density axis moves
+   * both together. `100svh` rather than `100vh` keeps the CTAs on screen while
+   * a mobile browser's toolbar is showing.
+   */
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 600px;
+    height: calc(100svh - var(--sem-block-nav-height));
+    overflow: hidden;
+    color: var(--cmp-hero-fg);
+    background-color: var(--cmp-hero-bg);
+  }
+
+  @media (min-width: 64rem) {
+    .hero {
+      min-height: 800px;
+    }
+  }
+
+  /**
+   * The same geometry the Spline hero had — a wide radial pool behind the
+   * headline — with both stops now coming off the token layer instead of two
+   * hard-coded `rgba()` values that only ever suited the one palette.
+   */
+  .hero__backdrop {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      120% 100% at 50% 30%,
+      var(--cmp-hero-bg-accent) 0%,
+      var(--cmp-hero-bg) 70%
+    );
+  }
+
+  .hero__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* Starts invisible and is revealed by the component once it has painted,
+       so a slow first frame cannot flash an empty rectangle. */
+    opacity: 0;
+    transition: opacity var(--cmp-hero-duration) var(--cmp-hero-easing);
+  }
+  .hero__canvas.is-painted {
+    opacity: 1;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--cmp-hero-gap);
+    width: 100%;
+    max-width: var(--cmp-hero-max-width);
+    padding-inline: var(--cmp-hero-pad-x);
+    /* The content is clickable; the canvas behind it is not in the way. */
+    pointer-events: none;
+  }
+  .hero__content :is(a, button) {
+    pointer-events: auto;
+  }
+
+  .hero__title {
+    font-family: var(--cmp-hero-font-family);
+    font-weight: var(--cmp-hero-font-weight);
+    letter-spacing: var(--cmp-hero-tracking);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.05;
+    /**
+     * Two ranges rather than one `clamp()`, because the original hero was two
+     * ranges: 13vw while the headline wraps over three lines on a phone, then
+     * 6vw once it fits on two. A single curve through both ends up either
+     * tiny on mobile or enormous on a tablet.
+     */
+    font-size: clamp(2.75rem, 13vw, 5rem);
+  }
+
+  @media (min-width: 48rem) {
+    .hero__title {
+      font-size: clamp(3rem, 6vw, 100px);
+    }
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sem-space-inline-sm);
+  }
+
+  @media (min-width: 40rem) {
+    .hero__actions {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .hero__content,
+    .hero__actions {
+      align-items: flex-start;
+    }
+    .hero__title {
+      text-align: left;
+    }
+  }
+
   /* -- Site navigation --------------------------------------------------- */
   .site-nav {
     position: relative;

@@ -36,6 +36,14 @@ const PAIRS = [
   ["content.muted", "surface.base", "body"],
   ["content.muted", "surface.raised", "body"],
   ["content.muted", "surface.sunken", "body"],
+  /**
+   * The hero. Its backdrop is `surface.sunken` rather than `surface.base`, and
+   * the headline sitting on it is the page's largest piece of text — so the
+   * pair is scored here rather than inferred from the `content.muted` row
+   * above it. The canvas marks are non-text graphics on that same backdrop.
+   */
+  ["content.primary", "surface.sunken", "body"],
+  ["accent.default", "surface.sunken", "nontext"],
   ["content.inverse", "surface.inverse", "body"],
   /**
    * The brand band. Both gradient stops are scored against the same label,
