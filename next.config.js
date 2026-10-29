@@ -6,9 +6,9 @@ module.exports = {
   images: {
     // Next 15 warns, and Next 16 will require, that every `quality` a page asks
     // for is declared here. 90 is `components/Img.tsx`'s default; 75 stays for
-    // anything that opts back down. 100 is gone with the gradient JPEG that
-    // was the only thing asking for it.
-    qualities: [75, 90],
+    // anything that opts back down, and 100 for the two line-art diagrams in
+    // `content/viddl.mdx` — thin 1px rules that band at anything lower.
+    qualities: [75, 90, 100],
     // The masters in `public/img` are webp; avif is the one format that still
     // beats them, and it is tried first.
     formats: ["image/avif", "image/webp"],
