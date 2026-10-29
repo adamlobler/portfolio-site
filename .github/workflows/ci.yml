@@ -9,6 +9,10 @@
 #   lint     next/core-web-vitals, through ESLint 9's flat config.
 #   types    tsc --noEmit, which is also what proves the generated
 #            `tokens/generated/tokens.ts` still matches the code reading it.
+#   images   every `quality` a call site asks next/image for is declared in
+#            images.qualities. Next checks that at runtime and throws, so an
+#            undeclared value is invisible to the build and breaks the page
+#            when someone opens it — which is exactly how /viddl broke.
 #
 # `yarn tokens:check` writes nothing, so a drifted `styles/tokens/*.css` would
 # still slip through — the build step after it regenerates them and the final
@@ -49,6 +53,9 @@ jobs:
 
       - name: TypeScript
         run: yarn typecheck
+
+      - name: next/image qualities
+        run: yarn check:images
 
       - name: Build
         run: yarn build

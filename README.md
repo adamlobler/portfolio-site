@@ -106,6 +106,11 @@ Nothing above is a convention anyone has to remember:
 - **Sync** — CI regenerates the token output and fails if the committed CSS is
   not what the JSON emits, so the generated files can stay in the repo (they
   are committed on purpose: a theme change should be reviewable as a diff).
+- **Image qualities** — `scripts/check-image-qualities.mjs` gates every
+  `quality` prop in `app/`, `components/` and `content/` against
+  `images.qualities` in next.config.js. Next validates that at _runtime_, so an
+  undeclared value is invisible to the build and breaks the page when a visitor
+  opens it.
 
 `.github/workflows/ci.yml` runs the gates, Prettier, ESLint, `tsc --noEmit` and
 the production build on every push and pull request.
@@ -139,7 +144,7 @@ and animates only where the browser can do it without JavaScript.
 yarn dev            # Next dev server
 yarn tokens         # build the token CSS + TS from JSON (runs on prebuild)
 yarn tokens:check   # run both gates, write nothing
-yarn verify         # tokens:check + format:check + lint + typecheck
+yarn verify         # tokens:check + format:check + lint + typecheck + check:images
 yarn build          # tokens, then next build, then the sitemap
 ```
 

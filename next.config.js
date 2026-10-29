@@ -5,10 +5,15 @@ module.exports = {
   // only ever declared a single `en` locale, so nothing is lost by dropping it.
   images: {
     // Next 15 warns, and Next 16 will require, that every `quality` a page asks
-    // for is declared here. 90 is `components/Img.tsx`'s default; 75 stays for
-    // anything that opts back down, and 100 for the two line-art diagrams in
-    // `content/viddl.mdx` — thin 1px rules that band at anything lower.
-    qualities: [75, 90, 100],
+    // for is declared here — Next *throws at runtime* on an undeclared one, so
+    // `scripts/check-image-qualities.mjs` gates this list against every call
+    // site in app/, components/ and content/ rather than leaving it to whoever
+    // opens the page. 90 is `components/Img.tsx`'s default; 100 is the two
+    // line-art diagrams in `content/viddl.mdx`, thin 1px rules that band at
+    // anything lower. Next's own 75 default is unreachable: every image on the
+    // site goes through `Img`, which always sets a quality. Add a value here
+    // when a call site needs it — the gate will say so by name.
+    qualities: [90, 100],
     // The masters in `public/img` are webp; avif is the one format that still
     // beats them, and it is tried first.
     formats: ["image/avif", "image/webp"],

@@ -11,11 +11,12 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "check:images": "node scripts/check-image-qualities.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "tokens": "node tokens/build.mjs",
     "tokens:check": "node tokens/build.mjs --check",
-    "verify": "yarn tokens:check && yarn format:check && yarn lint && yarn typecheck"
+    "verify": "yarn tokens:check && yarn format:check && yarn lint && yarn typecheck && yarn check:images"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
