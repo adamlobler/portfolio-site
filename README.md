@@ -129,6 +129,10 @@ mobile nav sheet. (The gallery lightbox gets the same four from
 `yet-another-react-lightbox` and is left alone.) That is the whole case for not
 adding a headless component library.
 
+Scroll reveals are CSS, not a library: `.reveal` uses `animation-timeline:
+view()` behind an `@supports` guard, so the content ships visible in the HTML
+and animates only where the browser can do it without JavaScript.
+
 ## Commands
 
 ```bash

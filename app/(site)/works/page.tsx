@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import ProjectCard from "../../../components/ProjectCard";
-import { Fade } from "../../../components/client/Reveal";
+import { Fade } from "../../../components/Reveal";
 import projects from "../../../data/projects";
 
 export const metadata: Metadata = {

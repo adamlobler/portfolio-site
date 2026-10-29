@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import Project from "./Project";
-import { Fade } from "./client/Reveal";
+import { Fade } from "./Reveal";
 import type { Project as ProjectData } from "../data/projects";
 
 /**

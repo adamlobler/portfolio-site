@@ -5,7 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import Gallery from "../../../components/Gallery";
 import MetaItem from "../../../components/MetaItem";
 import Tag from "../../../components/ui/Tag";
-import { Fade } from "../../../components/client/Reveal";
+import { Fade } from "../../../components/Reveal";
 import { getCaseStudySlugs, readCaseStudy } from "../../../lib/content";
 
 /** Every slug is known at build time, so anything else is a 404, not a render. */
@@ -36,8 +36,8 @@ export async function generateMetadata({
 }
 
 /**
- * `Fade` and `Gallery` are client components handed to the MDX compiler;
- * `Image` stays on the server. MDX writes `<Image>`; it resolves to `Img`,
+ * `Gallery` is the only client component handed to the MDX compiler; `Fade`
+ * and `Image` stay on the server. MDX writes `<Image>`; it resolves to `Img`,
  * the quality-defaulted wrapper, so every case-study screenshot picks up
  * q90 without touching the markdown. The MDX itself is compiled per request at
  * build time and its output is static HTML.

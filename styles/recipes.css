@@ -120,6 +120,47 @@
     pointer-events: none;
   }
 
+  /* -- Scroll reveal ----------------------------------------------------- */
+  /**
+   * What `react-awesome-reveal` used to do, in CSS and with no JavaScript.
+   *
+   * `animation-timeline: view()` drives the animation from the element's own
+   * position in the scrollport rather than from a clock, so there is no
+   * observer, no hydration, and nothing to serialise into the HTML — the
+   * content ships visible and animates only as a progressive enhancement.
+   * Both guards matter: `@supports` keeps Firefox (no scroll-driven
+   * animations yet) showing plain, visible content, and the motion query
+   * means a reduced-motion visitor never gets the movement at all.
+   *
+   * The range finishes inside `entry`, so an element is fully revealed well
+   * before it reaches the middle of the screen; scrolling it off the bottom
+   * and back re-plays the reveal, which a view() timeline does by nature.
+   */
+  .reveal {
+    /* No animation here: the element is simply itself until proven otherwise. */
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: reveal-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+    }
+  }
+
+  @keyframes reveal-rise {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
   /* -- Brand band -------------------------------------------------------- */
   /**
    * The footer, /contact and the /works header. All three used to paint

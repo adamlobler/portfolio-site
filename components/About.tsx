@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "./Img";
-import { Fade } from "./client/Reveal";
+import { Fade } from "./Reveal";
 import Card from "./ui/Card";
 
 const process = [
