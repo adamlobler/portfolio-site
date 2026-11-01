@@ -1,0 +1,23 @@
+{
+  "prim": {
+    "shadow": {
+      "$type": "shadow",
+      "$description": "Complete, ready-to-use box-shadow strings. They carry their own colour so the expression layer stays a pure set of references: a theme picks a shadow *language* (soft / hard / glow / none) rather than composing geometry.",
+      "none": { "$value": "none" },
+      "soft-sm": { "$value": "0 1px 2px 0 oklch(0.22 0.008 270 / 0.08)" },
+      "soft-md": { "$value": "0 4px 12px -2px oklch(0.22 0.008 270 / 0.12), 0 2px 4px -2px oklch(0.22 0.008 270 / 0.08)" },
+      "soft-lg": { "$value": "0 18px 40px -12px oklch(0.22 0.008 270 / 0.22), 0 6px 12px -6px oklch(0.22 0.008 270 / 0.1)" },
+      "hard-sm": { "$value": "2px 2px 0 0 oklch(0.22 0.008 270 / 1)" },
+      "hard-md": { "$value": "5px 5px 0 0 oklch(0.22 0.008 270 / 1)" },
+      "hard-lg": { "$value": "10px 10px 0 0 oklch(0.22 0.008 270 / 1)" },
+      "glow-sm": { "$value": "0 0 8px 0 oklch(0.78 0.17 72 / 0.35)" },
+      "glow-md": { "$value": "0 0 24px -2px oklch(0.78 0.17 72 / 0.45)" },
+      "glow-lg": { "$value": "0 0 56px -6px oklch(0.78 0.17 72 / 0.5)" },
+      "phosphor-sm": { "$value": "0 0 6px 0 oklch(0.78 0.19 146 / 0.45)" },
+      "phosphor-md": { "$value": "0 0 20px -2px oklch(0.78 0.19 146 / 0.5)" },
+      "phosphor-lg": { "$value": "0 0 48px -8px oklch(0.78 0.19 146 / 0.55)" },
+      "glass-md": { "$value": "0 8px 32px -8px oklch(0.22 0.03 232 / 0.4), inset 0 1px 0 0 oklch(1 0 0 / 0.14)" },
+      "glass-lg": { "$value": "0 24px 64px -16px oklch(0.22 0.03 232 / 0.5), inset 0 1px 0 0 oklch(1 0 0 / 0.18)" }
+    }
+  }
+}

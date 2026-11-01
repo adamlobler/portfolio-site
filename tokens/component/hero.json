@@ -1,0 +1,25 @@
+{
+  "cmp": {
+    "hero": {
+      "$description": "The homepage hero: a backdrop and a headline, replacing the hosted Spline scene. Every colour the 2D canvas paints with is one of these, read out of the cascade with `getComputedStyle` and re-read when an axis changes — so the animation is a live demo of the token system rather than a picture of one. `bg`/`bg-accent` are the two stops of the static gradient that is in the server HTML and stays put under reduced motion, with JS off, and while the canvas lazy-loads.",
+      "bg":            { "$value": "{sem.surface.sunken}", "$type": "color" },
+      "bg-accent":     { "$value": "{sem.surface.base}", "$type": "color" },
+      "fg":            { "$value": "{sem.content.primary}", "$type": "color" },
+      "fg-muted":      { "$value": "{sem.content.secondary}", "$type": "color" },
+      "ink-primary":   { "$value": "{sem.accent.default}", "$type": "color" },
+      "ink-secondary": { "$value": "{sem.surface.brand}", "$type": "color" },
+      "ink-tertiary":  { "$value": "{sem.accent.strong}", "$type": "color" },
+      "glow":          { "$value": "{sem.accent.subtle}", "$type": "color" },
+      "grid":          { "$value": "{sem.border.subtle}", "$type": "color" },
+      "stroke-width":  { "$value": "{sem.stroke.width-emphasis}", "$type": "dimension" },
+      "pad-x":         { "$value": "{sem.space.gutter}", "$type": "dimension" },
+      "gap":           { "$value": "{sem.space.stack-lg}", "$type": "dimension" },
+      "max-width":     { "$value": "{sem.measure.page}", "$type": "dimension" },
+      "tracking":      { "$value": "{sem.tracking.display}", "$type": "dimension" },
+      "font-family":   { "$value": "{sem.font.display}", "$type": "fontFamily" },
+      "font-weight":   { "$value": "{sem.weight.display}", "$type": "fontWeight" },
+      "duration":      { "$value": "{sem.motion.duration-slow}", "$type": "duration" },
+      "easing":        { "$value": "{sem.motion.ease-entrance}", "$type": "cubicBezier" }
+    }
+  }
+}

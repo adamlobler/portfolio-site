@@ -1,0 +1,33 @@
+{
+  "semDim": {
+    "compact": {
+      "$description": "Dense. Dashboard-like: everything moves closer together, controls get shorter.",
+      "space": {
+        "$type": "dimension",
+        "gutter": { "$value": "{prim.space.4}" },
+        "section": { "$value": "{prim.space.16}" },
+        "stack-xs": { "$value": "{prim.space.1}" },
+        "stack-sm": { "$value": "{prim.space.2}" },
+        "stack-md": { "$value": "{prim.space.3}" },
+        "stack-lg": { "$value": "{prim.space.6}" },
+        "stack-xl": { "$value": "{prim.space.10}" },
+        "inline-xs": { "$value": "{prim.space.1}" },
+        "inline-sm": { "$value": "{prim.space.2}" },
+        "inline-md": { "$value": "{prim.space.4}" }
+      },
+      "control": {
+        "$type": "dimension",
+        "height-sm": { "$value": "{prim.space.7}" },
+        "height-md": { "$value": "{prim.space.8}" },
+        "height-lg": { "$value": "{prim.space.10}" },
+        "pad-x": { "$value": "{prim.space.3}" },
+        "pad-y": { "$value": "{prim.space.2}" }
+      },
+      "block": {
+        "$type": "dimension",
+        "pad": { "$value": "{prim.space.4}" },
+        "nav-height": { "$value": "{prim.space.14}" }
+      }
+    }
+  }
+}

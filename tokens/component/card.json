@@ -1,0 +1,22 @@
+{
+  "cmp": {
+    "card": {
+      "$description": "Project tiles and any raised block. `bg` is a semantic surface, which is how the `glass` theme makes cards translucent without touching this file.",
+      "bg":            { "$value": "{sem.surface.raised}", "$type": "color" },
+      "bg-hover":      { "$value": "{sem.surface.sunken}", "$type": "color" },
+      "fg":            { "$value": "{sem.content.primary}", "$type": "color" },
+      "fg-muted":      { "$value": "{sem.content.muted}", "$type": "color" },
+      "border-color":  { "$value": "{sem.border.subtle}", "$type": "color" },
+      "border-width":  { "$value": "{sem.stroke.width-hairline}", "$type": "dimension" },
+      "border-style":  { "$value": "{sem.stroke.style}", "$type": "strokeStyle" },
+      "radius":        { "$value": "{sem.radius.card}", "$type": "dimension" },
+      "pad":           { "$value": "{sem.block.pad}", "$type": "dimension" },
+      "gap":           { "$value": "{sem.space.stack-md}", "$type": "dimension" },
+      "shadow":        { "$value": "{sem.shadow.flat}", "$type": "shadow" },
+      "shadow-hover":  { "$value": "{sem.shadow.raised}", "$type": "shadow" },
+      "backdrop-blur": { "$value": "{sem.material.blur}", "$type": "dimension" },
+      "duration":      { "$value": "{sem.motion.duration-medium}", "$type": "duration" },
+      "easing":        { "$value": "{sem.motion.ease-standard}", "$type": "cubicBezier" }
+    }
+  }
+}

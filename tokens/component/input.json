@@ -1,0 +1,23 @@
+{
+  "cmp": {
+    "input": {
+      "$description": "Text fields on /contact.",
+      "bg":           { "$value": "{sem.surface.raised}", "$type": "color" },
+      "bg-disabled":  { "$value": "{sem.surface.sunken}", "$type": "color" },
+      "fg":           { "$value": "{sem.content.primary}", "$type": "color" },
+      "placeholder":  { "$value": "{sem.content.muted}", "$type": "color" },
+      "border-color": { "$value": "{sem.border.default}", "$type": "color" },
+      "border-color-focus": { "$value": "{sem.border.strong}", "$type": "color" },
+      "border-width": { "$value": "{sem.stroke.width-hairline}", "$type": "dimension" },
+      "border-style": { "$value": "{sem.stroke.style}", "$type": "strokeStyle" },
+      "radius":       { "$value": "{sem.radius.control}", "$type": "dimension" },
+      "pad-x":        { "$value": "{sem.control.pad-x}", "$type": "dimension" },
+      "pad-y":        { "$value": "{sem.control.pad-y}", "$type": "dimension" },
+      "min-height":   { "$value": "{sem.control.height-md}", "$type": "dimension" },
+      "font-size":    { "$value": "{sem.text.body1.size}", "$type": "dimension" },
+      "font-family":  { "$value": "{sem.font.body}", "$type": "fontFamily" },
+      "ring-color":   { "$value": "{sem.focus.ring}", "$type": "color" },
+      "ring-width":   { "$value": "{sem.stroke.width-emphasis}", "$type": "dimension" }
+    }
+  }
+}

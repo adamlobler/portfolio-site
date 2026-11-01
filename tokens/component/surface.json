@@ -1,0 +1,40 @@
+{
+  "cmp": {
+    "page": {
+      "$description": "The document itself, plus the two things every page needs: a link and a focus ring.",
+      "bg":        { "$value": "{sem.surface.base}", "$type": "color" },
+      "fg":        { "$value": "{sem.content.primary}", "$type": "color" },
+      "font-family": { "$value": "{sem.font.body}", "$type": "fontFamily" },
+      "font-weight": { "$value": "{sem.weight.body}", "$type": "fontWeight" },
+      "tracking":  { "$value": "{sem.tracking.body}", "$type": "dimension" },
+      "selection-bg": { "$value": "{sem.accent.subtle}", "$type": "color" },
+      "selection-fg": { "$value": "{sem.content.primary}", "$type": "color" }
+    },
+    "heading": {
+      "$description": "Display type picks up the theme's display family and weight.",
+      "fg":          { "$value": "{sem.content.primary}", "$type": "color" },
+      "font-family": { "$value": "{sem.font.display}", "$type": "fontFamily" },
+      "font-weight": { "$value": "{sem.weight.display}", "$type": "fontWeight" },
+      "tracking":    { "$value": "{sem.tracking.display}", "$type": "dimension" }
+    },
+    "section": {
+      "$description": "Page rhythm. All three values come off the density axis.",
+      "gap":       { "$value": "{sem.space.section}", "$type": "dimension" },
+      "pad-x":     { "$value": "{sem.space.gutter}", "$type": "dimension" },
+      "max-width": { "$value": "{sem.measure.page}", "$type": "dimension" },
+      "prose-width": { "$value": "{sem.measure.prose}", "$type": "dimension" }
+    },
+    "link": {
+      "fg":        { "$value": "{sem.accent.default}", "$type": "color" },
+      "fg-hover":  { "$value": "{sem.accent.strong}", "$type": "color" },
+      "duration":  { "$value": "{sem.motion.duration-fast}", "$type": "duration" }
+    },
+    "focus": {
+      "$description": "One ring for the whole site, so the contrast axis can widen it.",
+      "ring-color":  { "$value": "{sem.focus.ring}", "$type": "color" },
+      "ring-width":  { "$value": "{sem.stroke.width-emphasis}", "$type": "dimension" },
+      "ring-offset": { "$value": "{sem.space.stack-xs}", "$type": "dimension" },
+      "ring-shadow": { "$value": "{sem.shadow.focus}", "$type": "shadow" }
+    }
+  }
+}

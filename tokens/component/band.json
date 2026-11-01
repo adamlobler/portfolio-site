@@ -1,0 +1,14 @@
+{
+  "cmp": {
+    "band": {
+      "$description": "The full-bleed brand band: the site's footer, the /contact page and the /works header. It replaced a fixed gradient JPEG that ignored all four axes. Two colour stops and one label — and because a theme may point both stops at the same semantic, a flat band falls out of the same two lines of CSS as a gradient one. That is how `brutalist` and `terminal` opt out of the gradient, and how every high-contrast block flattens it.",
+      "bg":        { "$value": "{sem.surface.brand}", "$type": "color" },
+      "bg-accent": { "$value": "{sem.surface.brand-accent}", "$type": "color" },
+      "fg":        { "$value": "{sem.content.on-brand}", "$type": "color" },
+      "pad-y":     { "$value": "{sem.space.section}", "$type": "dimension" },
+      "pad-x":     { "$value": "{sem.space.gutter}", "$type": "dimension" },
+      "gap":       { "$value": "{sem.space.stack-lg}", "$type": "dimension" },
+      "max-width": { "$value": "{sem.measure.page}", "$type": "dimension" }
+    }
+  }
+}

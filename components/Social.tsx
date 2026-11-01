@@ -1,23 +1,28 @@
-import React from "react";
-import Image from "next/image";
+import type { FC, SVGProps } from "react";
 
 type Props = {
-  image: string | "";
-  alt: string | "";
-  url: string | "";
+  icon: FC<SVGProps<SVGSVGElement>>;
+  /** Names the destination, not the picture — this is a link, not an image. */
+  label: string;
+  url: string;
 };
 
-const Social: React.FC<Props> = (props) => {
+/**
+ * One icon chip. The glyph is an inline `currentColor` SVG, so its colour is
+ * whatever `.social` sets; it used to be a `next/image` pointing at a file with
+ * `#522CED` baked in, which Next could not optimise anyway (SVG needs
+ * `dangerouslyAllowSVG`) and which no theme could reach.
+ */
+export default function Social({ icon: Icon, label, url }: Props) {
   return (
     <a
-      href={props.url}
+      href={url}
       rel="noreferrer"
       target="_blank"
-      className="w-[60px] h-[60px] bg-white flex justify-center items-center hover:bg-primary-100 hover:drop-shadow-2xl rounded-full transition-all duration-300"
+      aria-label={label}
+      className="social"
     >
-      <Image width={32} height={32} src={props.image} alt={props.alt} />
+      <Icon aria-hidden="true" focusable="false" />
     </a>
   );
-};
-
-export default Social;
+}

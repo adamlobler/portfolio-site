@@ -1,0 +1,282 @@
+{
+  "sem": {
+    "$description": "Axis-less semantics. These vary on nothing, so they are emitted once into plain `:root` \u2014 alongside the canonical defaults the build synthesises for every other semantic name.",
+    "text": {
+      "$description": "The type ramp. Sizes and line heights are invariant, but weight and tracking resolve through `--sem-weight-*` / `--sem-tracking-*`, which the expression axis owns \u2014 so `brutalist` sets the same ramp in heavy mono without a single token here changing.",
+      "overline": {
+        "size": {
+          "$value": "{prim.font.size.10}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-1}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.strong}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.caps}",
+          "$type": "dimension"
+        }
+      },
+      "caption": {
+        "size": {
+          "$value": "{prim.font.size.12}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-1-25}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.emphasis}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.body}",
+          "$type": "dimension"
+        }
+      },
+      "button": {
+        "size": {
+          "$value": "{prim.font.size.14}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-1-5}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.emphasis}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.body}",
+          "$type": "dimension"
+        }
+      },
+      "body2": {
+        "size": {
+          "$value": "{prim.font.size.14}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-1-75}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.strong}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.body}",
+          "$type": "dimension"
+        }
+      },
+      "body1": {
+        "size": {
+          "$value": "{prim.font.size.18}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-1-8}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.body}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.body}",
+          "$type": "dimension"
+        }
+      },
+      "subtitle2": {
+        "size": {
+          "$value": "{prim.font.size.18}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-1-7}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.body}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.body}",
+          "$type": "dimension"
+        }
+      },
+      "subtitle1": {
+        "size": {
+          "$value": "{prim.font.size.20}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-2}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.body}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.body}",
+          "$type": "dimension"
+        }
+      },
+      "h6": {
+        "size": {
+          "$value": "{prim.font.size.24}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.rem-1-2}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.strong}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.display}",
+          "$type": "dimension"
+        }
+      },
+      "h5": {
+        "size": {
+          "$value": "{prim.font.size.34}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.tight}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.display}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.display}",
+          "$type": "dimension"
+        }
+      },
+      "h4": {
+        "size": {
+          "$value": "{prim.font.size.38}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.tight}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.display}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.display}",
+          "$type": "dimension"
+        }
+      },
+      "h3": {
+        "size": {
+          "$value": "{prim.font.size.40}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.tight}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.display}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.display}",
+          "$type": "dimension"
+        }
+      },
+      "h2": {
+        "size": {
+          "$value": "{prim.font.size.48}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.tight}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.display}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.display}",
+          "$type": "dimension"
+        }
+      },
+      "h1": {
+        "size": {
+          "$value": "{prim.font.size.84}",
+          "$type": "dimension"
+        },
+        "leading": {
+          "$value": "{prim.font.leading.tight}",
+          "$type": "number"
+        },
+        "weight": {
+          "$value": "{sem.weight.display}",
+          "$type": "fontWeight"
+        },
+        "tracking": {
+          "$value": "{sem.tracking.display}",
+          "$type": "dimension"
+        }
+      }
+    },
+    "motion": {
+      "$description": "Motion semantics. Invariant today; a future `data-motion` axis would partition here.",
+      "duration-fast": {
+        "$value": "{prim.duration.fast}",
+        "$type": "duration"
+      },
+      "duration-medium": {
+        "$value": "{prim.duration.medium}",
+        "$type": "duration"
+      },
+      "duration-slow": {
+        "$value": "{prim.duration.slow}",
+        "$type": "duration"
+      },
+      "ease-standard": {
+        "$value": "{prim.easing.standard}",
+        "$type": "cubicBezier"
+      },
+      "ease-entrance": {
+        "$value": "{prim.easing.entrance}",
+        "$type": "cubicBezier"
+      },
+      "ease-exit": {
+        "$value": "{prim.easing.exit}",
+        "$type": "cubicBezier"
+      }
+    },
+    "measure": {
+      "$type": "dimension",
+      "$description": "Reading measures and the page container.",
+      "prose": {
+        "$value": "{prim.size.measure-prose}"
+      },
+      "wide": {
+        "$value": "{prim.size.measure-wide}"
+      },
+      "page": {
+        "$value": "{prim.size.container-page}"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "cmp": {
+    "button": {
+      "$description": "Replaces the `.btn-primary` / `.btn-secondary` @apply recipes. Every value is a semantic reference, so a button follows all four axes without a single conditional: colour from theme × appearance × contrast, padding from density, radius / weight / shadow from theme.",
+      "primary": {
+        "bg":           { "$value": "{sem.action.primary}", "$type": "color" },
+        "bg-hover":     { "$value": "{sem.action.primary-hover}", "$type": "color" },
+        "bg-active":    { "$value": "{sem.action.primary-active}", "$type": "color" },
+        "fg":           { "$value": "{sem.action.primary-content}", "$type": "color" },
+        "border-color": { "$value": "{sem.action.primary}", "$type": "color" },
+        "shadow":       { "$value": "{sem.shadow.flat}", "$type": "shadow" },
+        "shadow-hover": { "$value": "{sem.shadow.raised}", "$type": "shadow" }
+      },
+      "secondary": {
+        "bg":           { "$value": "{sem.action.secondary}", "$type": "color" },
+        "bg-hover":     { "$value": "{sem.action.secondary-hover}", "$type": "color" },
+        "bg-active":    { "$value": "{sem.action.secondary-active}", "$type": "color" },
+        "fg":           { "$value": "{sem.action.secondary-content}", "$type": "color" },
+        "border-color": { "$value": "{sem.border.default}", "$type": "color" },
+        "shadow":       { "$value": "{sem.shadow.flat}", "$type": "shadow" },
+        "shadow-hover": { "$value": "{sem.shadow.flat}", "$type": "shadow" }
+      },
+      "on-brand": {
+        "$description": "For buttons sitting on `.band`, where the surface is a brand colour rather than a page surface — so neither action semantic applies. The fill is the band's label colour and the label is the band's fill, which is the one pair the contrast gate already scores in both directions. Hover is carried by elevation rather than tint: `shadow.raised` is per-theme (soft in violet, a hard offset in brutalist, a glow in terminal and solar), so the variant gets a themed hover without inventing colour names, and cannot regress contrast on hover.",
+        "bg":           { "$value": "{sem.content.on-brand}", "$type": "color" },
+        "bg-hover":     { "$value": "{sem.content.on-brand}", "$type": "color" },
+        "bg-active":    { "$value": "{sem.content.on-brand}", "$type": "color" },
+        "fg":           { "$value": "{sem.surface.brand}", "$type": "color" },
+        "border-color": { "$value": "{sem.content.on-brand}", "$type": "color" },
+        "shadow":       { "$value": "{sem.shadow.flat}", "$type": "shadow" },
+        "shadow-hover": { "$value": "{sem.shadow.raised}", "$type": "shadow" }
+      },
+      "radius":       { "$value": "{sem.radius.control}", "$type": "dimension" },
+      "pad-x":        { "$value": "{sem.control.pad-x}", "$type": "dimension" },
+      "pad-y":        { "$value": "{sem.control.pad-y}", "$type": "dimension" },
+      "min-height":   { "$value": "{sem.control.height-lg}", "$type": "dimension" },
+      "font-size":    { "$value": "{sem.text.button.size}", "$type": "dimension" },
+      "font-weight":  { "$value": "{sem.text.button.weight}", "$type": "fontWeight" },
+      "font-family":  { "$value": "{sem.font.body}", "$type": "fontFamily" },
+      "leading":      { "$value": "{sem.text.button.leading}", "$type": "number" },
+      "tracking":     { "$value": "{sem.text.button.tracking}", "$type": "dimension" },
+      "border-width": { "$value": "{sem.stroke.width-hairline}", "$type": "dimension" },
+      "border-style": { "$value": "{sem.stroke.style}", "$type": "strokeStyle" },
+      "duration":     { "$value": "{sem.motion.duration-slow}", "$type": "duration" },
+      "easing":       { "$value": "{sem.motion.ease-standard}", "$type": "cubicBezier" }
+    }
+  }
+}

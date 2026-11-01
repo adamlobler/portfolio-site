@@ -1,0 +1,92 @@
+{
+  "semExpr": {
+    "brutalist": {
+      "$description": "Expression semantics for `brutalist`. Zero radius, hard offset shadows, mono everywhere, heavy strokes.",
+      "radius": {
+        "$type": "dimension",
+        "control": {
+          "$value": "{prim.radius.none}"
+        },
+        "card": {
+          "$value": "{prim.radius.none}"
+        },
+        "pill": {
+          "$value": "{prim.radius.none}"
+        }
+      },
+      "stroke": {
+        "$type": "dimension",
+        "width-hairline": {
+          "$value": "{prim.stroke.thin}"
+        },
+        "width-emphasis": {
+          "$value": "{prim.stroke.heavy}"
+        },
+        "style": {
+          "$value": "{prim.stroke-style.solid}",
+          "$type": "strokeStyle"
+        }
+      },
+      "shadow": {
+        "$type": "shadow",
+        "flat": {
+          "$value": "{prim.shadow.none}"
+        },
+        "raised": {
+          "$value": "{prim.shadow.hard-md}"
+        },
+        "overlay": {
+          "$value": "{prim.shadow.hard-lg}"
+        },
+        "focus": {
+          "$value": "{prim.shadow.hard-sm}"
+        }
+      },
+      "font": {
+        "$type": "fontFamily",
+        "display": {
+          "$value": "{prim.font.family.mono}"
+        },
+        "body": {
+          "$value": "{prim.font.family.mono}"
+        },
+        "mono": {
+          "$value": "{prim.font.family.mono}"
+        }
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "display": {
+          "$value": "{prim.font.weight.black}"
+        },
+        "body": {
+          "$value": "{prim.font.weight.medium}"
+        },
+        "emphasis": {
+          "$value": "{prim.font.weight.semibold}"
+        },
+        "strong": {
+          "$value": "{prim.font.weight.bold}"
+        }
+      },
+      "tracking": {
+        "$type": "dimension",
+        "display": {
+          "$value": "{prim.font.tracking.none}"
+        },
+        "body": {
+          "$value": "{prim.font.tracking.none}"
+        },
+        "caps": {
+          "$value": "{prim.font.tracking.widest}"
+        }
+      },
+      "material": {
+        "$type": "dimension",
+        "blur": {
+          "$value": "{prim.blur.none}"
+        }
+      }
+    }
+  }
+}

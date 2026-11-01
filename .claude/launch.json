@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-dev",
+      "runtimeExecutable": "zsh",
+      "runtimeArgs": [
+        "-lc",
+        "export PATH=\"$(ls -d \"$HOME\"/.nvm/versions/node/v22*/bin | tail -1):$PATH\"; exec yarn dev"
+      ],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

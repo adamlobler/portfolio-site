@@ -1,0 +1,385 @@
+{
+  "semColor": {
+    "glass": {
+      "$description": "Semantic colour for the `glass` theme. Values are *only* references into the primitive layer \u2014 the build fails if one holds a literal. `normal` blocks are complete; `high` blocks are deltas that win on selector specificity, so high contrast only states what it actually changes. Translucency and blur. Raised surfaces are alpha primitives, not opaque fills \u2014 the only theme whose surfaces you can see through.",
+      "light": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "raised": {
+              "$value": "{prim.color.alpha.white-64}"
+            },
+            "sunken": {
+              "$value": "{prim.color.alpha.black-4}"
+            },
+            "brand": {
+              "$value": "{prim.color.azure.900}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.azure.800}"
+            },
+            "overlay": {
+              "$value": "{prim.color.alpha.white-80}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.alpha.white-48}"
+            },
+            "default": {
+              "$value": "{prim.color.alpha.black-8}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.500}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.azure.700}"
+            },
+            "strong": {
+              "$value": "{prim.color.azure.800}"
+            },
+            "subtle": {
+              "$value": "{prim.color.alpha.white-48}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.azure.700}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.azure.800}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.azure.900}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.white}"
+            },
+            "secondary": {
+              "$value": "{prim.color.alpha.white-48}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.alpha.white-64}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.alpha.white-80}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.800}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.azure.600}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.white}"
+            },
+            "raised": {
+              "$value": "{prim.color.white}"
+            },
+            "sunken": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "overlay": {
+              "$value": "{prim.color.white}"
+            },
+            "brand": {
+              "$value": "{prim.color.azure.950}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.azure.900}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.700}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.300}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.500}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.800}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.azure.800}"
+            },
+            "strong": {
+              "$value": "{prim.color.azure.900}"
+            },
+            "subtle": {
+              "$value": "{prim.color.neutral.100}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.azure.800}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.azure.700}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.azure.900}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.100}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.neutral.300}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.azure.700}"
+            }
+          }
+        }
+      },
+      "dark": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.neutral.950}"
+            },
+            "raised": {
+              "$value": "{prim.color.alpha.white-8}"
+            },
+            "sunken": {
+              "$value": "{prim.color.alpha.black-32}"
+            },
+            "brand": {
+              "$value": "{prim.color.azure.950}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.azure.900}"
+            },
+            "overlay": {
+              "$value": "{prim.color.alpha.black-64}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.400}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.alpha.white-8}"
+            },
+            "default": {
+              "$value": "{prim.color.alpha.white-16}"
+            },
+            "strong": {
+              "$value": "{prim.color.alpha.white-48}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.azure.300}"
+            },
+            "strong": {
+              "$value": "{prim.color.azure.200}"
+            },
+            "subtle": {
+              "$value": "{prim.color.alpha.white-8}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.azure.400}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.azure.300}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.azure.500}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.neutral.950}"
+            },
+            "secondary": {
+              "$value": "{prim.color.alpha.white-8}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.alpha.white-16}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.alpha.white-24}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.azure.300}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.black}"
+            },
+            "raised": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "sunken": {
+              "$value": "{prim.color.neutral.950}"
+            },
+            "overlay": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "brand": {
+              "$value": "{prim.color.black}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.black}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.100}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.400}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.200}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.azure.200}"
+            },
+            "strong": {
+              "$value": "{prim.color.azure.100}"
+            },
+            "subtle": {
+              "$value": "{prim.color.neutral.800}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.azure.300}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.azure.200}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.azure.400}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.azure.200}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

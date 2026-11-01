@@ -1,0 +1,464 @@
+/* ---------------------------------------------------------------------------
+ * Component recipes.
+ *
+ * One class per component, every declaration a `var(--cmp-*)` — so a recipe
+ * states *structure* (what a button is) and the token layer states appearance
+ * (what this theme's button looks like). Nothing here names a colour, a size,
+ * a radius or a duration, which is why the same forty lines render a soft
+ * violet pill and a hard-edged brutalist slab.
+ *
+ * Variants are three-deep at most and never interact, so the typed API in
+ * `components/ui/` is a `cva()` lookup table rather than a style engine: it
+ * maps props to these class names and does no composing of its own. Size
+ * variants rebind the component's *local* custom properties (`--btn-pad-x`,
+ * …) instead of repeating declarations, so a size only ever says what differs.
+ *
+ * Imported from `globals.css` after `theme.css`, so `@layer components` sorts
+ * below Tailwind's utilities — `className="btn btn--primary w-full"` works,
+ * and a utility always wins over the recipe it is layered on.
+ * ------------------------------------------------------------------------- */
+
+@layer components {
+  /* -- Button ------------------------------------------------------------ */
+  .btn {
+    --btn-min-height: var(--cmp-button-min-height);
+    --btn-pad-x: var(--cmp-button-pad-x);
+    --btn-pad-y: var(--cmp-button-pad-y);
+    --btn-font-size: var(--cmp-button-font-size);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sem-space-inline-xs);
+    min-height: var(--btn-min-height);
+    padding: var(--btn-pad-y) var(--btn-pad-x);
+    border-radius: var(--cmp-button-radius);
+    border-width: var(--cmp-button-border-width);
+    border-style: var(--cmp-button-border-style);
+    font-family: var(--cmp-button-font-family);
+    font-size: var(--btn-font-size);
+    font-weight: var(--cmp-button-font-weight);
+    line-height: var(--cmp-button-leading);
+    letter-spacing: var(--cmp-button-tracking);
+    text-align: center;
+    transition-property: background-color, border-color, box-shadow, color;
+    transition-duration: var(--cmp-button-duration);
+    transition-timing-function: var(--cmp-button-easing);
+  }
+
+  .btn--primary {
+    background-color: var(--cmp-button-primary-bg);
+    border-color: var(--cmp-button-primary-border-color);
+    color: var(--cmp-button-primary-fg);
+    box-shadow: var(--cmp-button-primary-shadow);
+  }
+  .btn--primary:hover {
+    background-color: var(--cmp-button-primary-bg-hover);
+    box-shadow: var(--cmp-button-primary-shadow-hover);
+  }
+  .btn--primary:active {
+    background-color: var(--cmp-button-primary-bg-active);
+  }
+
+  .btn--secondary {
+    background-color: var(--cmp-button-secondary-bg);
+    border-color: var(--cmp-button-secondary-border-color);
+    color: var(--cmp-button-secondary-fg);
+    box-shadow: var(--cmp-button-secondary-shadow);
+  }
+  .btn--secondary:hover {
+    background-color: var(--cmp-button-secondary-bg-hover);
+    box-shadow: var(--cmp-button-secondary-shadow-hover);
+  }
+  .btn--secondary:active {
+    background-color: var(--cmp-button-secondary-bg-active);
+  }
+
+  /**
+   * For buttons on `.band`. Hover changes elevation rather than fill, because
+   * the fill and the label are the band's own two colours — the one pair the
+   * contrast gate scores in both directions — and tinting either of them would
+   * walk off that guarantee.
+   */
+  .btn--on-brand {
+    background-color: var(--cmp-button-on-brand-bg);
+    border-color: var(--cmp-button-on-brand-border-color);
+    color: var(--cmp-button-on-brand-fg);
+    box-shadow: var(--cmp-button-on-brand-shadow);
+  }
+  .btn--on-brand:hover {
+    background-color: var(--cmp-button-on-brand-bg-hover);
+    box-shadow: var(--cmp-button-on-brand-shadow-hover);
+  }
+  .btn--on-brand:active {
+    background-color: var(--cmp-button-on-brand-bg-active);
+  }
+
+  /**
+   * Sizes rebind the locals only. `lg` is the site's historical button and is
+   * the default; all three heights come off the density axis, so `compact`
+   * shrinks every size without a second set of values.
+   */
+  .btn--sm {
+    --btn-min-height: var(--sem-control-height-sm);
+    --btn-pad-x: var(--sem-space-inline-sm);
+    --btn-pad-y: var(--sem-space-stack-xs);
+    --btn-font-size: var(--sem-text-caption-size);
+  }
+  .btn--md {
+    --btn-min-height: var(--sem-control-height-md);
+    --btn-pad-x: var(--sem-space-inline-md);
+    --btn-pad-y: var(--sem-space-stack-sm);
+  }
+  .btn--lg {
+    --btn-min-height: var(--sem-control-height-lg);
+  }
+
+  .btn[aria-disabled="true"],
+  .btn:disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* -- Scroll reveal ----------------------------------------------------- */
+  /**
+   * What `react-awesome-reveal` used to do, in CSS and with no JavaScript.
+   *
+   * `animation-timeline: view()` drives the animation from the element's own
+   * position in the scrollport rather than from a clock, so there is no
+   * observer, no hydration, and nothing to serialise into the HTML — the
+   * content ships visible and animates only as a progressive enhancement.
+   * Both guards matter: `@supports` keeps Firefox (no scroll-driven
+   * animations yet) showing plain, visible content, and the motion query
+   * means a reduced-motion visitor never gets the movement at all.
+   *
+   * The range finishes inside `entry`, so an element is fully revealed well
+   * before it reaches the middle of the screen; scrolling it off the bottom
+   * and back re-plays the reveal, which a view() timeline does by nature.
+   */
+  .reveal {
+    /* No animation here: the element is simply itself until proven otherwise. */
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: reveal-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+    }
+  }
+
+  @keyframes reveal-rise {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* -- Brand band -------------------------------------------------------- */
+  /**
+   * The footer, /contact and the /works header. All three used to paint
+   * themselves with a fixed gradient JPEG, which is why they were the only
+   * surfaces on the site that ignored the theme — and why they carried a pile
+   * of `text-white` and `drop-shadow-*` to keep text legible over a photo.
+   *
+   * One geometry for every theme: the only thing a theme states is the two
+   * stops. Point both at the same semantic and the gradient rasterises to a
+   * flat fill, which is how `brutalist` and `terminal` opt out and how every
+   * high-contrast block flattens — no `.band--flat`, no conditional.
+   *
+   * The angle is a literal because an angle is geometry, like `.icon-scroll`'s
+   * 40x70; no theme varies it, and there is no `sem.*` to name it with.
+   *
+   * `background-color` under `background-image` is not belt-and-braces: it is
+   * what paints under forced-colors and in print, and it is the first stop, so
+   * the fallback is never off-palette.
+   */
+  .band {
+    /* Never `w-screen`: that is 100vw, which overflows by the scrollbar width. */
+    width: 100%;
+    background-color: var(--cmp-band-bg);
+    background-image: linear-gradient(
+      135deg,
+      var(--cmp-band-bg) 0%,
+      var(--cmp-band-bg-accent) 100%
+    );
+    /* Set here, which is what lets the markup drop every `text-white`. */
+    color: var(--cmp-band-fg);
+    padding-block: var(--cmp-band-pad-y);
+  }
+
+  .band__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cmp-band-gap);
+    width: 100%;
+    max-width: var(--cmp-band-max-width);
+    margin-inline: auto;
+    padding-inline: var(--cmp-band-pad-x);
+  }
+
+  /* -- Social chip ------------------------------------------------------- */
+  /**
+   * The band's colour pair, inverted. The icons are `currentColor` SVGs, so
+   * `color` here is the whole of their styling — they used to be PNG-ish SVG
+   * assets with `#522CED` baked in, i.e. the default theme's brand frozen into
+   * a file.
+   */
+  .social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--cmp-social-size);
+    height: var(--cmp-social-size);
+    border-radius: var(--cmp-social-radius);
+    background-color: var(--cmp-social-bg);
+    color: var(--cmp-social-fg);
+    box-shadow: var(--cmp-social-shadow);
+    transition-property: background-color, box-shadow;
+    transition-duration: var(--cmp-social-duration);
+    transition-timing-function: var(--cmp-social-easing);
+  }
+  .social:hover {
+    box-shadow: var(--cmp-social-shadow-hover);
+  }
+
+  /* -- Card -------------------------------------------------------------- */
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cmp-card-gap);
+    padding: var(--cmp-card-pad);
+    background-color: var(--cmp-card-bg);
+    color: var(--cmp-card-fg);
+    border-radius: var(--cmp-card-radius);
+    border-width: var(--cmp-card-border-width);
+    border-style: var(--cmp-card-border-style);
+    border-color: var(--cmp-card-border-color);
+    box-shadow: var(--cmp-card-shadow);
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: var(--cmp-card-duration);
+    transition-timing-function: var(--cmp-card-easing);
+  }
+
+  /**
+   * `glass` is the reason this is a token and not a media query: its
+   * `--sem-material-blur` is a real blur and every other theme's is `0px`, so
+   * the filter is declared once and costs nothing in the five opaque themes.
+   */
+  .card {
+    backdrop-filter: blur(var(--cmp-card-backdrop-blur));
+  }
+
+  .card--interactive:hover,
+  .card--interactive:focus-within {
+    background-color: var(--cmp-card-bg-hover);
+    box-shadow: var(--cmp-card-shadow-hover);
+  }
+
+  .card--quiet {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: var(--sem-shadow-flat);
+  }
+
+  /* -- Tag --------------------------------------------------------------- */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--cmp-tag-gap);
+    padding: var(--cmp-tag-pad-y) var(--cmp-tag-pad-x);
+    border-radius: var(--cmp-tag-radius);
+    border-width: var(--cmp-tag-border-width);
+    border-style: var(--cmp-tag-border-style);
+    font-family: var(--cmp-tag-font-family);
+    font-size: var(--cmp-tag-font-size);
+    font-weight: var(--cmp-tag-font-weight);
+    line-height: var(--cmp-tag-leading);
+    letter-spacing: var(--cmp-tag-tracking);
+    white-space: nowrap;
+  }
+
+  .tag--outline {
+    background-color: var(--cmp-tag-outline-bg);
+    border-color: var(--cmp-tag-outline-border-color);
+    color: var(--cmp-tag-outline-fg);
+  }
+
+  .tag--solid {
+    background-color: var(--cmp-tag-solid-bg);
+    border-color: var(--cmp-tag-solid-border-color);
+    color: var(--cmp-tag-solid-fg);
+  }
+
+  /* -- Hero -------------------------------------------------------------- */
+  /**
+   * The homepage hero, where the Spline scene used to be.
+   *
+   * Three layers, and only the middle one needs JavaScript:
+   *
+   *   .hero__backdrop  a two-stop gradient, in the server HTML. This is the
+   *                    hero with JS off, under `prefers-reduced-motion`, and
+   *                    for the moment before the canvas chunk lands.
+   *   .hero__canvas    the animation, faded in once it has painted a frame.
+   *                    Transparent, so it composites onto the gradient.
+   *   .hero__content   the headline and the CTAs, never gated on either.
+   *
+   * The height used to be `calc(100vh - 76px)` with the nav's height written
+   * out as a number; it is now the nav's own token, so the density axis moves
+   * both together. `100svh` rather than `100vh` keeps the CTAs on screen while
+   * a mobile browser's toolbar is showing.
+   */
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 600px;
+    height: calc(100svh - var(--sem-block-nav-height));
+    overflow: hidden;
+    color: var(--cmp-hero-fg);
+    background-color: var(--cmp-hero-bg);
+  }
+
+  @media (min-width: 64rem) {
+    .hero {
+      min-height: 800px;
+    }
+  }
+
+  /**
+   * The same geometry the Spline hero had — a wide radial pool behind the
+   * headline — with both stops now coming off the token layer instead of two
+   * hard-coded `rgba()` values that only ever suited the one palette.
+   */
+  .hero__backdrop {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      120% 100% at 50% 30%,
+      var(--cmp-hero-bg-accent) 0%,
+      var(--cmp-hero-bg) 70%
+    );
+  }
+
+  .hero__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* Starts invisible and is revealed by the component once it has painted,
+       so a slow first frame cannot flash an empty rectangle. */
+    opacity: 0;
+    transition: opacity var(--cmp-hero-duration) var(--cmp-hero-easing);
+  }
+  .hero__canvas.is-painted {
+    opacity: 1;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--cmp-hero-gap);
+    width: 100%;
+    max-width: var(--cmp-hero-max-width);
+    padding-inline: var(--cmp-hero-pad-x);
+    /* The content is clickable; the canvas behind it is not in the way. */
+    pointer-events: none;
+  }
+  .hero__content :is(a, button) {
+    pointer-events: auto;
+  }
+
+  .hero__title {
+    font-family: var(--cmp-hero-font-family);
+    font-weight: var(--cmp-hero-font-weight);
+    letter-spacing: var(--cmp-hero-tracking);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.05;
+    /**
+     * Two ranges rather than one `clamp()`, because the original hero was two
+     * ranges: 13vw while the headline wraps over three lines on a phone, then
+     * 6vw once it fits on two. A single curve through both ends up either
+     * tiny on mobile or enormous on a tablet.
+     */
+    font-size: clamp(2.75rem, 13vw, 5rem);
+  }
+
+  @media (min-width: 48rem) {
+    .hero__title {
+      font-size: clamp(3rem, 6vw, 100px);
+    }
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sem-space-inline-sm);
+  }
+
+  @media (min-width: 40rem) {
+    .hero__actions {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .hero__content,
+    .hero__actions {
+      align-items: flex-start;
+    }
+    .hero__title {
+      text-align: left;
+    }
+  }
+
+  /* -- Site navigation --------------------------------------------------- */
+  .site-nav {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    padding-inline: var(--cmp-nav-pad-x);
+    padding-block: var(--sem-space-stack-sm);
+    background-color: var(--cmp-nav-bg);
+    color: var(--cmp-nav-fg);
+    border-bottom-width: var(--cmp-nav-border-width);
+    border-bottom-style: var(--cmp-nav-border-style);
+    border-bottom-color: var(--cmp-nav-border-color);
+    backdrop-filter: blur(var(--cmp-nav-backdrop-blur));
+    font-family: var(--cmp-nav-font-family);
+  }
+
+  .nav-link {
+    color: var(--cmp-nav-fg);
+    font-size: var(--cmp-nav-font-size);
+    font-weight: var(--cmp-nav-font-weight);
+    letter-spacing: var(--cmp-nav-tracking);
+    transition: color var(--cmp-nav-duration) var(--cmp-nav-easing);
+  }
+  .nav-link:hover {
+    color: var(--cmp-nav-fg-hover);
+  }
+  .nav-link[aria-current="page"] {
+    color: var(--cmp-nav-fg-active);
+  }
+
+  /* The mobile sheet. Opaque where the bar is translucent, because it covers
+     the page rather than floating over it. */
+  .nav-overlay {
+    background-color: var(--cmp-nav-overlay-bg);
+  }
+}

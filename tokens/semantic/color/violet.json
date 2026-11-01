@@ -1,0 +1,346 @@
+{
+  "semColor": {
+    "violet": {
+      "$description": "Semantic colour for the `violet` theme. Values are *only* references into the primitive layer \u2014 the build fails if one holds a literal. `normal` blocks are complete; `high` blocks are deltas that win on selector specificity, so high contrast only states what it actually changes. Refined brand violet on the site's existing cool grey. The default theme.",
+      "light": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.white}"
+            },
+            "raised": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "sunken": {
+              "$value": "{prim.color.neutral.100}"
+            },
+            "brand": {
+              "$value": "{prim.color.violet.700}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.violet.500}"
+            },
+            "overlay": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.100}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.400}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.violet.500}"
+            },
+            "strong": {
+              "$value": "{prim.color.violet.600}"
+            },
+            "subtle": {
+              "$value": "{prim.color.violet.50}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.violet.500}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.violet.400}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.violet.600}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.white}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.100}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.neutral.300}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.800}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.violet.400}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "raised": {
+              "$value": "{prim.color.white}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.700}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.300}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.500}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.800}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.violet.600}"
+            },
+            "strong": {
+              "$value": "{prim.color.violet.700}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.violet.600}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.violet.500}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.violet.700}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.violet.600}"
+            }
+          }
+        }
+      },
+      "dark": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "raised": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "sunken": {
+              "$value": "{prim.color.black}"
+            },
+            "brand": {
+              "$value": "{prim.color.violet.800}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.violet.600}"
+            },
+            "overlay": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.400}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.500}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.violet.300}"
+            },
+            "strong": {
+              "$value": "{prim.color.violet.200}"
+            },
+            "subtle": {
+              "$value": "{prim.color.violet.800}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.violet.400}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.violet.500}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.violet.600}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.white}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.neutral.500}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.violet.300}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.neutral.950}"
+            },
+            "raised": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.100}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.400}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.200}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.violet.200}"
+            },
+            "strong": {
+              "$value": "{prim.color.violet.100}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.violet.200}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.violet.100}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.violet.300}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.violet.200}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "cmp": {
+    "nav": {
+      "$description": "Top bar and the mobile overlay.",
+      "bg":            { "$value": "{sem.surface.overlay}", "$type": "color" },
+      "fg":            { "$value": "{sem.content.secondary}", "$type": "color" },
+      "fg-hover":      { "$value": "{sem.content.primary}", "$type": "color" },
+      "fg-active":     { "$value": "{sem.accent.default}", "$type": "color" },
+      "border-color":  { "$value": "{sem.border.subtle}", "$type": "color" },
+      "border-width":  { "$value": "{sem.stroke.width-hairline}", "$type": "dimension" },
+      "border-style":  { "$value": "{sem.stroke.style}", "$type": "strokeStyle" },
+      "height":        { "$value": "{sem.block.nav-height}", "$type": "dimension" },
+      "pad-x":         { "$value": "{sem.space.gutter}", "$type": "dimension" },
+      "gap":           { "$value": "{sem.space.inline-md}", "$type": "dimension" },
+      "font-size":     { "$value": "{sem.text.body2.size}", "$type": "dimension" },
+      "font-weight":   { "$value": "{sem.weight.emphasis}", "$type": "fontWeight" },
+      "font-family":   { "$value": "{sem.font.body}", "$type": "fontFamily" },
+      "tracking":      { "$value": "{sem.tracking.body}", "$type": "dimension" },
+      "shadow":        { "$value": "{sem.shadow.raised}", "$type": "shadow" },
+      "backdrop-blur": { "$value": "{sem.material.blur}", "$type": "dimension" },
+      "overlay-bg":    { "$value": "{sem.surface.base}", "$type": "color" },
+      "duration":      { "$value": "{sem.motion.duration-medium}", "$type": "duration" },
+      "easing":        { "$value": "{sem.motion.ease-standard}", "$type": "cubicBezier" }
+    }
+  }
+}

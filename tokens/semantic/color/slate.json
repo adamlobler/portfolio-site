@@ -1,0 +1,343 @@
+{
+  "semColor": {
+    "slate": {
+      "$description": "Semantic colour for the `slate` theme. Values are *only* references into the primitive layer \u2014 the build fails if one holds a literal. `normal` blocks are complete; `high` blocks are deltas that win on selector specificity, so high contrast only states what it actually changes. Neutral editorial. Low chroma, ink-blue accent, nothing shouts.",
+      "light": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.white}"
+            },
+            "raised": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "sunken": {
+              "$value": "{prim.color.neutral.100}"
+            },
+            "brand": {
+              "$value": "{prim.color.steel.800}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.steel.700}"
+            },
+            "overlay": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.white}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.100}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.400}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.steel.700}"
+            },
+            "strong": {
+              "$value": "{prim.color.steel.800}"
+            },
+            "subtle": {
+              "$value": "{prim.color.steel.50}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.steel.800}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.steel.700}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.steel.900}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.white}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.neutral.100}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.800}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.steel.500}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "raised": {
+              "$value": "{prim.color.white}"
+            },
+            "brand": {
+              "$value": "{prim.color.steel.900}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.steel.800}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.700}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.300}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.500}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.800}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.steel.800}"
+            },
+            "strong": {
+              "$value": "{prim.color.steel.900}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.steel.900}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.steel.800}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.steel.800}"
+            }
+          }
+        }
+      },
+      "dark": {
+        "normal": {
+          "surface": {
+            "$type": "color",
+            "base": {
+              "$value": "{prim.color.neutral.950}"
+            },
+            "raised": {
+              "$value": "{prim.color.neutral.900}"
+            },
+            "sunken": {
+              "$value": "{prim.color.black}"
+            },
+            "brand": {
+              "$value": "{prim.color.steel.950}"
+            },
+            "brand-accent": {
+              "$value": "{prim.color.steel.900}"
+            },
+            "overlay": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.200}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.400}"
+            },
+            "on-brand": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "inverse": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.500}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.steel.300}"
+            },
+            "strong": {
+              "$value": "{prim.color.steel.200}"
+            },
+            "subtle": {
+              "$value": "{prim.color.steel.900}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.steel.300}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.steel.200}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.steel.400}"
+            },
+            "primary-content": {
+              "$value": "{prim.color.neutral.950}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.800}"
+            },
+            "secondary-hover": {
+              "$value": "{prim.color.neutral.700}"
+            },
+            "secondary-active": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.steel.300}"
+            }
+          }
+        },
+        "high": {
+          "surface": {
+            "$type": "color",
+            "raised": {
+              "$value": "{prim.color.neutral.900}"
+            }
+          },
+          "content": {
+            "$type": "color",
+            "secondary": {
+              "$value": "{prim.color.neutral.50}"
+            },
+            "muted": {
+              "$value": "{prim.color.neutral.100}"
+            }
+          },
+          "border": {
+            "$type": "color",
+            "subtle": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "default": {
+              "$value": "{prim.color.neutral.400}"
+            },
+            "strong": {
+              "$value": "{prim.color.neutral.200}"
+            }
+          },
+          "accent": {
+            "$type": "color",
+            "default": {
+              "$value": "{prim.color.steel.200}"
+            },
+            "strong": {
+              "$value": "{prim.color.steel.100}"
+            }
+          },
+          "action": {
+            "$type": "color",
+            "primary": {
+              "$value": "{prim.color.steel.200}"
+            },
+            "primary-hover": {
+              "$value": "{prim.color.steel.100}"
+            },
+            "primary-active": {
+              "$value": "{prim.color.steel.300}"
+            },
+            "secondary": {
+              "$value": "{prim.color.neutral.600}"
+            },
+            "secondary-content": {
+              "$value": "{prim.color.neutral.50}"
+            }
+          },
+          "focus": {
+            "$type": "color",
+            "ring": {
+              "$value": "{prim.color.steel.200}"
+            }
+          }
+        }
+      }
+    }
+  }
+}
